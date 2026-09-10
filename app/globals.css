@@ -90,6 +90,30 @@
   }
 }
 
+@keyframes marketing-go-back-in {
+  from {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes marketing-go-back-in {
+    from {
+      opacity: 1;
+      transform: none;
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
 @keyframes showcase-fade-in {
   from {
     opacity: 0;

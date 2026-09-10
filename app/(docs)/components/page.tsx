@@ -5,6 +5,7 @@ import {
 import { createPageMetadata } from "@/lib/seo/metadata";
 import {
   getBrowseAllSeoDescription,
+  getBrowseAllSeoKeywords,
   getBrowseAllSeoTitle,
 } from "@/lib/seo/components-seo";
 
@@ -17,6 +18,7 @@ export const metadata = createPageMetadata({
   title: getBrowseAllSeoTitle(),
   description: getBrowseAllSeoDescription(totalCount),
   path: "/components",
+  keywords: getBrowseAllSeoKeywords(),
 });
 
 export default function ComponentsPage() {

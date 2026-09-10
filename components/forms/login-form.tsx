@@ -12,7 +12,7 @@ import {
 
 import Link from "next/link";
 
-import { AlertCircle, ArrowRight, Eye, EyeOff, Loader2, LogIn } from "lucide-react";
+import { AlertCircle, ChevronRight, Eye, EyeOff, Loader2 } from "lucide-react";
 
 import { cn } from "@/lib/cn";
 
@@ -162,17 +162,15 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
         onSubmit={handleSubmit}
         onReset={handleReset}
         className={cn(
-          "w-full max-w-md rounded-3xl border border-neutral-200 bg-white p-6 font-sans shadow-sm md:p-8",
+          "w-full max-w-md rounded-3xl bg-white p-6 font-sans md:p-8",
           className,
         )}
         {...props}
       >
         <div className="mb-7">
-          <div className="mb-5 flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] text-neutral-500 uppercase">
-            <LogIn size={15} strokeWidth={1.75} aria-hidden />
-            Secure access
-          </div>
-          <h2 className="font-serif text-3xl leading-none tracking-tight text-neutral-950">{title}</h2>
+          <h2 className="font-sans text-2xl font-semibold tracking-tight text-neutral-950">
+            {title}
+          </h2>
           <p className="mt-3 max-w-sm text-sm leading-6 text-neutral-500">{subtitle}</p>
         </div>
 
@@ -216,7 +214,7 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
               </label>
               <FormLink
                 href={forgotPasswordHref}
-                className="text-xs font-medium text-neutral-600 underline-offset-2 hover:text-neutral-900 hover:underline"
+                className="text-xs font-medium text-neutral-600 underline underline-offset-2 hover:text-neutral-900"
               >
                 {forgotPasswordLabel}
               </FormLink>
@@ -290,14 +288,14 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
         >
           {busy ? <Loader2 size={16} className="animate-spin" aria-hidden /> : null}
           {busy ? "Signing in…" : submitLabel}
-          {!busy ? <ArrowRight size={15} aria-hidden /> : null}
+          {!busy ? <ChevronRight size={15} aria-hidden /> : null}
         </button>
 
         <p className="mt-5 text-center text-sm text-neutral-500">
           {signupPrompt}{" "}
           <FormLink
             href={signupHref}
-            className="font-medium text-neutral-900 underline-offset-2 hover:underline"
+            className="font-medium text-neutral-900 underline underline-offset-2"
           >
             {signupLabel}
           </FormLink>

@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ComponentType } from "react";
 import { TailwindCSS } from "@/icons/brands/tailwind-css";
 import { Typescript } from "@/icons/brands/typescript";
 import { Vercel } from "@/icons/brands/vercel";
 import { Unplash } from "@/icons/brands/unplash";
 import { NextJs } from "@/icons/brands/next-js";
+import { siteConfig } from "@/lib/site";
 import { SponsorPlaceholderRow } from "./sponsor-placeholder-row";
 
 type ResourceItem = {
@@ -192,8 +194,8 @@ function ListRow({
 
 const sponsorPlaceholder = {
   name: "Your brand",
-  description: "Be the first sponsor — get in touch",
-  shortDescription: "Get in touch",
+  description: "Gold or Platinum — see plans",
+  shortDescription: "See plans",
   domain: "yoursite.com",
 } as const;
 
@@ -202,7 +204,12 @@ export function OpenSourcePanel() {
     <div className="mt-10 min-w-0 space-y-8 max-[499px]:overflow-hidden">
       <section>
         <h3 className="font-sans text-sm font-semibold text-neutral-900">
-          Sponsors
+          <Link
+            href={siteConfig.sponsorship.path}
+            className="transition-colors hover:text-neutral-600"
+          >
+            Sponsors
+          </Link>
         </h3>
         <ul className="mt-4 flex flex-col gap-2.5">
           <SponsorPlaceholderRow {...sponsorPlaceholder} />

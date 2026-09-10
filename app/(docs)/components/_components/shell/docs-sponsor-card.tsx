@@ -1,20 +1,21 @@
 "use client";
 
+import Link from "next/link";
 import { ChevronRight, MoveRight } from "lucide-react";
 
-import { ContactEmailTrigger } from "@/components/contact/contact-email";
+import { siteConfig } from "@/lib/site";
 
+/** Right-rail open slot — Platinum placement (distinct from left “See plans”). */
 export function DocsSponsorCard() {
   return (
     <div className="shrink-0 border-t border-neutral-100 px-6 py-5">
-      <ContactEmailTrigger
-        title="Become a sponsor"
-        description="Feel free to copy my email and send over your brand details. I’ll share the sponsorship details with you."
+      <Link
+        href={`${siteConfig.sponsorship.path}`}
         className="group block w-full rounded-lg border-2 border-neutral-900 bg-neutral-900 p-4 text-left text-white outline-none transition-colors hover:border-neutral-800 hover:bg-neutral-800"
       >
         <div className="flex items-center justify-between gap-2">
           <span className="font-mono text-[10px] tracking-[0.14em] text-neutral-400 uppercase">
-            Open slot
+            Platinum slot
           </span>
           <span className="rounded-sm bg-rose-500 px-1.5 py-px font-sans text-[8px] font-medium tracking-wide text-white uppercase">
             Available
@@ -22,15 +23,15 @@ export function DocsSponsorCard() {
         </div>
 
         <p className="mt-2 font-serif text-lg leading-snug text-white">
-          Sponsor this sidebar.
+          Feature your product here.
         </p>
 
         <p className="mt-1.5 font-sans text-xs leading-relaxed text-neutral-400">
-          Your product here — seen by every dev browsing components.
+          Sticky card next to every component — highest-intent placement.
         </p>
 
         <span className="mt-4 inline-flex w-full items-center justify-center gap-1.5 rounded-md bg-white px-3 py-2.5 font-sans text-xs font-semibold text-neutral-900 transition-colors group-hover:bg-neutral-100">
-          Become a sponsor
+          Claim this card
           <span className="relative inline-flex size-3 shrink-0 items-center justify-center">
             <ChevronRight
               size={12}
@@ -44,7 +45,7 @@ export function DocsSponsorCard() {
             />
           </span>
         </span>
-      </ContactEmailTrigger>
+      </Link>
     </div>
   );
 }

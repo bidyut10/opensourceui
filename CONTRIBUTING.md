@@ -1,10 +1,21 @@
-# Contributing to opensourceui
+# Contributing to Opensource UI
 
-Thanks for helping improve [opensourceui](https://opensourceui.in). This project is a copy-paste UI component showcase built with Next.js, React, and Tailwind CSS v4.
+Thanks for helping improve [opensourceui.in](https://opensourceui.in). This project is a free, MIT-licensed copy-paste React / Next.js component library (Tailwind CSS v4).
 
 ## Code of Conduct
 
 This project follows the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you agree to uphold it.
+
+## Before you start
+
+Read [opensourceui.in/contact](https://opensourceui.in/contact) for how to reach the maintainer.
+
+- **Bugs / broken UI** — prefer a [GitHub Issue](https://github.com/bidyut10/opensourceui/issues/new) with steps to reproduce
+- **Small fixes / docs** — open a focused pull request
+- **New components or large work** — email first with what you want to contribute (type of work, short proposal, GitHub username). Do not send only “I want to contribute.” Click the email on the contact page to **copy** it, then paste into your mail app.
+- **Sponsorships** — [sponsor page](https://opensourceui.in/sponsor), then email assets as described on [contact § sponsor](https://opensourceui.in/contact#sponsor)
+
+Also skim [CONTRIBUTING.md](./CONTRIBUTING.md) setup below and `skills/opensource-ui/references/design.md` (no purple chrome, base + `md:` only, no `sm:`).
 
 ## Ways to contribute
 
@@ -12,7 +23,7 @@ This project follows the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUC
 - Fix bugs or improve docs with a pull request
 - Add new showcase components (see below)
 - Improve accessibility, performance, or copy on existing components
-- Update agent reference docs when adding components (see below)
+- Update agent reference docs when adding components
 
 ## Agent kit (AI assistants)
 
@@ -64,43 +75,53 @@ Analytics is **optional** for local dev. Copy `.env.example` to `.env.local` onl
 3. Register it in `lib/showcase/showcase.tsx`:
 
 ```tsx
-import { MyNewCard } from "@/components/cards/my-new-card";
+import { MyNewCard } from "@/components/text/my-new-card";
 
 c(
   "my-new-card",
   <MyNewCard />,
-  "components/cards/my-new-card.tsx",
+  "components/text/my-new-card.tsx",
   "MyNewCard",
-  "Short description shown on the detail page.",
+  {
+    title: "My New Card",
+    description: "Short description shown on the detail page.",
+    usage: "<MyNewCard />",
+  },
 ),
 ```
 
-4. Run `npm run build` and `npm run lint` before opening a PR.
+4. Update `skills/opensource-ui/references/source_inventory.txt` (and `catalog.md` when useful).
+5. Run `npm run check:showcase`, `npm run lint`, and `npm run build` before opening a PR.
 
 ## Pull request guidelines
 
 - Keep changes focused — one component or one fix per PR when possible
 - Match existing code style (TypeScript, Tailwind, `cn()` helper)
 - Use `"use client"` only when the component needs client features
+- Follow design rules: neutral stage, no purple family, base + `md:` only (never `sm:`)
 - Do not commit secrets (`.env`, API keys)
 - Ensure CI passes (build + lint)
+- For large or brand-new component ideas, align via [contact](https://opensourceui.in/contact#contribute) first
 
 ## Project structure
 
 See the [README](./README.md#folder-structure) for the full layout. Key paths:
 
-| Path                         | Purpose                                              |
-| ---------------------------- | ---------------------------------------------------- |
-| `components/`                | Copy-paste UI widgets (organized by category)        |
-| `components/system/`         | App infrastructure (loaders, analytics tracker)      |
-| `icons/`                     | SVG icon components                                  |
-| `lib/showcase/showcase.tsx`  | Component registry + homepage grid                   |
-| `lib/docs/`                  | Docs shared code (`SaveScrollLink`, `CopyCodeBlock`) |
-| `app/(docs)/components/`     | Docs routes — browse, search, detail pages           |
-| `app/(marketing)/`           | Homepage + privacy page                              |
-| `skills/opensource-ui/`      | Agent kit for AI coding assistants                   |
-| `AGENTS.md`                  | AI assistant setup guide                             |
+| Path | Purpose |
+| ---- | ------- |
+| `components/` | Copy-paste UI widgets (organized by category) |
+| `components/system/` | App infrastructure (loaders, analytics tracker) |
+| `icons/` | SVG icon components |
+| `lib/showcase/showcase.tsx` | Component registry + homepage grid |
+| `lib/docs/` | Docs shared code (`SaveScrollLink`, `CopyCodeBlock`) |
+| `app/(docs)/components/` | Docs routes — browse, category, search, detail |
+| `app/(marketing)/` | Homepage, about, contact, careers, sponsor, privacy, terms |
+| `skills/opensource-ui/` | Agent kit for AI coding assistants |
+| `AGENTS.md` | AI assistant setup guide |
 
 ## Questions
 
-Open a [GitHub Issue](https://github.com/bidyut10/opensourceui/issues) or reach out on [X (@BidyutKundu12)](https://x.com/BidyutKundu12).
+- Contact page: [opensourceui.in/contact](https://opensourceui.in/contact)
+- GitHub Issues: [github.com/bidyut10/opensourceui/issues](https://github.com/bidyut10/opensourceui/issues)
+- X: [@BidyutKundu12](https://x.com/BidyutKundu12)
+- Portfolio: [bidyut.cc](https://bidyut.cc)

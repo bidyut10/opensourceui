@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { Home, LayoutGrid } from "lucide-react";
 import { usePathname } from "next/navigation";
@@ -29,11 +29,20 @@ type DocsSidebarNavProps = Readonly<{
   onNavigate?: () => void;
 }>;
 
+function scrollActiveIntoNavView(nav: HTMLElement, target: HTMLElement) {
+  const navRect = nav.getBoundingClientRect();
+  const targetRect = target.getBoundingClientRect();
+  const offset =
+    targetRect.top - navRect.top - navRect.height / 2 + targetRect.height / 2;
+  nav.scrollTop += offset;
+}
+
 export function DocsSidebarNav({
   categories,
   onNavigate,
 }: DocsSidebarNavProps) {
   const navRef = useRef<HTMLElement>(null);
+  const activeRef = useRef<HTMLElement | null>(null);
   const pathname = usePathname();
   const searchParams = useHydratedSearchParams();
 
@@ -69,6 +78,25 @@ export function DocsSidebarNav({
     pathname === "/components" &&
     !getHydratedSearchParam(searchParams, "category") &&
     !getHydratedSearchParam(searchParams, "q");
+
+  useEffect(() => {
+    if (!activeCategory && !activeSlug) return;
+
+    const run = () => {
+      const nav = navRef.current;
+      const target = activeRef.current;
+      if (!nav || !target) return;
+      scrollActiveIntoNavView(nav, target);
+    };
+
+    const frame = requestAnimationFrame(run);
+    const timer = window.setTimeout(run, 80);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
+  }, [pathname, activeCategory, activeSlug]);
 
   return (
     <nav
@@ -122,54 +150,76 @@ export function DocsSidebarNav({
       </p>
 
       <div className="space-y-5">
-        {categories.map((group) => (
-          <div key={group.category}>
-            <SaveScrollLink
-              href={getCategoryPath(group.category)}
-              onClick={onNavigate}
-              className={cn(
-                "flex items-center justify-between gap-3 py-1 font-sans text-sm transition-colors",
-                !isBrowseAll && group.category === activeCategory && !activeSlug
-                  ? "font-medium text-neutral-900"
-                  : "text-neutral-500 hover:text-neutral-900",
-              )}
-            >
-              <span className="flex min-w-0 items-center gap-1.5 truncate">
-                <span className="truncate">{group.category}</span>
-                {group.isCategoryNew ? <ShowcaseNewBadge /> : null}
-              </span>
-              <span className="shrink-0 font-mono text-[10px] text-neutral-300">
-                {group.items.length}
-              </span>
-            </SaveScrollLink>
+        {categories.map((group) => {
+          const isCategoryActive =
+            !isBrowseAll && group.category === activeCategory && !activeSlug;
 
-            <ul className="mt-1 space-y-0.5 border-l border-neutral-100 pl-3">
-              {group.items.map((item) => {
-                const isActive = activeSlug === item.slug;
+          return (
+            <div key={group.category}>
+              <SaveScrollLink
+                href={getCategoryPath(group.category)}
+                onClick={onNavigate}
+                ref={
+                  isCategoryActive
+                    ? (node) => {
+                        activeRef.current = node;
+                      }
+                    : undefined
+                }
+                className={cn(
+                  "flex items-center justify-between gap-3 py-1 font-sans text-sm transition-colors",
+                  isCategoryActive
+                    ? "font-medium text-neutral-900"
+                    : "text-neutral-500 hover:text-neutral-900",
+                )}
+              >
+                <span className="flex min-w-0 items-center gap-1.5 truncate">
+                  <span className="truncate">{group.category}</span>
+                  {group.isCategoryNew ? <ShowcaseNewBadge /> : null}
+                </span>
+                <span className="shrink-0 font-mono text-[10px] text-neutral-300">
+                  {group.items.length}
+                </span>
+              </SaveScrollLink>
 
-                return (
-                  <li key={item.slug}>
-                    <SaveScrollLink
-                      href={`/components/${item.slug}`}
-                      onClick={onNavigate}
-                      className={cn(
-                        "flex items-center gap-1.5 py-1 font-sans text-[13px] leading-snug transition-colors",
-                        isActive
-                          ? "font-medium text-neutral-900"
-                          : "text-neutral-500 hover:text-neutral-900",
-                      )}
-                    >
-                      <span className="truncate">{item.title}</span>
-                      {shouldShowShowcaseItemNewBadge(item, group.isCategoryNew)
-                        ? <ShowcaseNewBadge />
-                        : null}
-                    </SaveScrollLink>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ))}
+              <ul className="mt-1 space-y-0.5 border-l border-neutral-100 pl-3">
+                {group.items.map((item) => {
+                  const isActive = activeSlug === item.slug;
+
+                  return (
+                    <li key={item.slug}>
+                      <SaveScrollLink
+                        href={`/components/${item.slug}`}
+                        onClick={onNavigate}
+                        ref={
+                          isActive
+                            ? (node) => {
+                                activeRef.current = node;
+                              }
+                            : undefined
+                        }
+                        className={cn(
+                          "flex items-center gap-1.5 py-1 font-sans text-[13px] leading-snug transition-colors",
+                          isActive
+                            ? "font-medium text-neutral-900"
+                            : "text-neutral-500 hover:text-neutral-900",
+                        )}
+                      >
+                        <span className="truncate">{item.title}</span>
+                        {shouldShowShowcaseItemNewBadge(
+                          item,
+                          group.isCategoryNew,
+                        ) ? (
+                          <ShowcaseNewBadge />
+                        ) : null}
+                      </SaveScrollLink>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          );
+        })}
       </div>
     </nav>
   );

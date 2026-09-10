@@ -31,11 +31,13 @@ export const HOME_REVIEWS: HomeReview[] = [
   },
   {
     quote:
-      "Really clean set of components, the spacing and typography choices feel consistent across categories which is rare for an open source library. Easy to drop in and tweak.",
-    name: "Hacer",
-    platform: "product-hunt",
-    href: "https://www.producthunt.com/products/opensource-ui?comment=5559695",
-    avatar: "/woman.png",
+      "I stumbled via Twitter on your component library. It's pretty neat. I ended up looking around your site and saw your device playground — that definitely got my attention.",
+    name: "Seam",
+    platform: "twitter",
+    href: "https://www.seam.co/",
+    avatar: "/profile-picture.png",
+    role: "The CEO of Seam",
+    rating: 5,
   },
   {
     quote: "pretty cool collection mate! upvoted",

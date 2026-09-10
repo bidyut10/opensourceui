@@ -18,6 +18,7 @@
 - [ ] New components registered in `lib/showcase/showcase.tsx`
 - [ ] `skills/opensource-ui/references/source_inventory.txt` updated (if new file)
 - [ ] Follows `.cursor/rules/component-design.mdc` (no purple, no `sm:`, self-contained files)
+- [ ] Large / new-component ideas aligned via contact or an issue first (when applicable)
 
 ## Screenshots (if UI change)
 

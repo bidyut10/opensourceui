@@ -8,8 +8,11 @@ export {
 } from "./metadata";
 export {
   getBrowseAllSeoDescription,
+  getBrowseAllSeoKeywords,
   getBrowseAllSeoTitle,
   getCategorySeoDescription,
+  getCategorySeoKeywords,
   getCategorySeoTitle,
+  getMockupComponentKeywords,
 } from "./components-seo";
 export { JsonLd } from "./json-ld";

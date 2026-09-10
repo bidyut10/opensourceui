@@ -12,7 +12,7 @@ import {
 
 import Link from "next/link";
 
-import { AlertCircle, ArrowRight, Eye, EyeOff, Loader2, UserPlus } from "lucide-react";
+import { AlertCircle, ChevronRight, Eye, EyeOff, Loader2 } from "lucide-react";
 
 import { cn } from "@/lib/cn";
 
@@ -189,17 +189,15 @@ export const SignupForm = forwardRef<HTMLFormElement, SignupFormProps>(
         onSubmit={handleSubmit}
         onReset={handleReset}
         className={cn(
-          "w-full max-w-md rounded-3xl border border-neutral-200 bg-white p-6 font-sans shadow-sm md:p-8",
+          "w-full max-w-md rounded-3xl bg-white p-6 font-sans md:p-8",
           className,
         )}
         {...props}
       >
         <div className="mb-7">
-          <div className="mb-5 flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] text-neutral-500 uppercase">
-            <UserPlus size={15} strokeWidth={1.75} aria-hidden />
-            New membership
-          </div>
-          <h2 className="font-serif text-3xl leading-none tracking-tight text-neutral-950">{title}</h2>
+          <h2 className="font-sans text-2xl font-semibold tracking-tight text-neutral-950">
+            {title}
+          </h2>
           <p className="mt-3 max-w-sm text-sm leading-6 text-neutral-500">{subtitle}</p>
         </div>
 
@@ -341,11 +339,11 @@ export const SignupForm = forwardRef<HTMLFormElement, SignupFormProps>(
               <label htmlFor={`${formId}-terms`} className="cursor-pointer">
                 I agree to the{" "}
               </label>
-              <FormLink href={termsHref} className="font-medium text-neutral-900 hover:underline">
+              <FormLink href={termsHref} className="font-medium text-neutral-900 underline underline-offset-2">
                 Terms
               </FormLink>
               {" "}and{" "}
-              <FormLink href={privacyHref} className="font-medium text-neutral-900 hover:underline">
+              <FormLink href={privacyHref} className="font-medium text-neutral-900 underline underline-offset-2">
                 Privacy Policy
               </FormLink>
             </div>
@@ -372,12 +370,12 @@ export const SignupForm = forwardRef<HTMLFormElement, SignupFormProps>(
         >
           {busy ? <Loader2 size={16} className="animate-spin" aria-hidden /> : null}
           {busy ? "Creating account…" : submitLabel}
-          {!busy ? <ArrowRight size={15} aria-hidden /> : null}
+          {!busy ? <ChevronRight size={15} aria-hidden /> : null}
         </button>
 
         <p className="mt-5 text-center text-sm text-neutral-500">
           {loginPrompt}{" "}
-          <FormLink href={loginHref} className="font-medium text-neutral-900 hover:underline">
+          <FormLink href={loginHref} className="font-medium text-neutral-900 underline underline-offset-2">
             {loginLabel}
           </FormLink>
         </p>

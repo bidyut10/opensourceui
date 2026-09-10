@@ -65,6 +65,8 @@ Then ask for a specific component or page.
 
 Browse components with previews and copy-ready code at [opensourceui.in/components](https://opensourceui.in/components).
 
+Contact, sponsorships, and contribution guidance: [opensourceui.in/contact](https://opensourceui.in/contact).
+
 ## License
 
-MIT — free for personal and commercial use. See [LICENSE](./LICENSE).
+MIT — free for personal and commercial use, permanently. See [LICENSE](./LICENSE).

@@ -15,7 +15,8 @@ Security fixes are applied to the latest version on the `main` branch.
 Report security issues privately using one of these channels:
 
 1. **[GitHub Security Advisories](https://github.com/bidyut10/opensourceui/security/advisories/new)** (preferred)
-2. Direct message to the maintainer on [X (@BidyutKundu12)](https://x.com/BidyutKundu12)
+2. Email the maintainer — copy the address from [opensourceui.in/contact](https://opensourceui.in/contact) (click to copy; do not rely on a public issue)
+3. Direct message on [X (@BidyutKundu12)](https://x.com/BidyutKundu12)
 
 Include as much detail as possible: affected paths, reproduction steps, and impact.
 

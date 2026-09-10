@@ -10,7 +10,7 @@ import {
   type FormEvent,
 } from "react";
 
-import { AlertCircle, ArrowRight, Check, Loader2, MessageSquare } from "lucide-react";
+import { AlertCircle, ChevronRight, Loader2 } from "lucide-react";
 
 import { cn } from "@/lib/cn";
 
@@ -150,15 +150,13 @@ export const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
           role="status"
           aria-live="polite"
           className={cn(
-            "w-full max-w-md rounded-3xl border border-neutral-200 bg-white p-6 font-sans shadow-sm md:p-8",
+            "w-full max-w-md rounded-3xl bg-white p-6 font-sans md:p-8",
             className,
           )}
         >
-          <div className="mb-5 flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] text-emerald-700 uppercase">
-            <Check size={15} strokeWidth={2} aria-hidden />
-            Message delivered
-          </div>
-          <h2 className="font-serif text-3xl leading-none tracking-tight text-neutral-950">{successTitle}</h2>
+          <h2 className="font-sans text-2xl font-semibold tracking-tight text-neutral-950">
+            {successTitle}
+          </h2>
           <p className="mt-3 text-sm leading-6 text-neutral-500">{successMessage}</p>
         </div>
       );
@@ -172,7 +170,7 @@ export const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
         noValidate
         onSubmit={handleSubmit}
         onReset={handleReset}
-        className="rounded-3xl border border-neutral-200 bg-white p-6 font-sans shadow-sm md:p-8"
+        className="rounded-3xl bg-white p-6 font-sans md:p-8"
         {...props}
       >
         <input
@@ -186,11 +184,9 @@ export const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
         />
 
         <div className="mb-7">
-          <div className="mb-5 flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] text-neutral-500 uppercase">
-            <MessageSquare size={15} strokeWidth={1.75} aria-hidden />
-            Direct inquiry
-          </div>
-          <h2 className="font-serif text-3xl leading-none tracking-tight text-neutral-950">{title}</h2>
+          <h2 className="font-sans text-2xl font-semibold tracking-tight text-neutral-950">
+            {title}
+          </h2>
           <p className="mt-3 max-w-sm text-sm leading-6 text-neutral-500">{subtitle}</p>
         </div>
 
@@ -326,7 +322,7 @@ export const ContactForm = forwardRef<HTMLDivElement, ContactFormProps>(
         >
           {busy ? <Loader2 size={16} className="animate-spin" aria-hidden /> : null}
           {busy ? "Sending…" : submitLabel}
-          {!busy ? <ArrowRight size={15} aria-hidden /> : null}
+          {!busy ? <ChevronRight size={15} aria-hidden /> : null}
         </button>
       </form>
       </div>

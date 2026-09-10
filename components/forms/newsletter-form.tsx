@@ -9,7 +9,7 @@ import {
   type FormEvent,
 } from "react";
 
-import { AlertCircle, ArrowRight, Check, Loader2, Mail } from "lucide-react";
+import { AlertCircle, Check, ChevronRight, Loader2 } from "lucide-react";
 
 import { cn } from "@/lib/cn";
 
@@ -108,17 +108,15 @@ export const NewsletterForm = forwardRef<HTMLFormElement, NewsletterFormProps>(
         onSubmit={handleSubmit}
         onReset={handleReset}
         className={cn(
-          "w-full max-w-md rounded-3xl border border-neutral-200 bg-white p-6 font-sans shadow-sm md:p-8",
+          "w-full max-w-md rounded-3xl bg-white p-6 font-sans md:p-8",
           className,
         )}
         {...props}
       >
         <div className="mb-6">
-          <div className="mb-4 flex items-center gap-2 text-[11px] font-semibold tracking-[0.18em] text-neutral-500 uppercase">
-            <Mail size={15} strokeWidth={1.75} aria-hidden />
-            Private dispatch
-          </div>
-          <h2 className="font-serif text-3xl leading-none tracking-tight text-neutral-950">{title}</h2>
+          <h2 className="font-sans text-2xl font-semibold tracking-tight text-neutral-950">
+            {title}
+          </h2>
           <p className="mt-3 text-sm leading-6 text-neutral-500">{subtitle}</p>
         </div>
 
@@ -157,7 +155,7 @@ export const NewsletterForm = forwardRef<HTMLFormElement, NewsletterFormProps>(
               >
                 {busy ? <Loader2 size={16} className="animate-spin" aria-hidden /> : null}
                 {busy ? "Joining…" : submitLabel}
-                {!busy ? <ArrowRight size={15} aria-hidden /> : null}
+                {!busy ? <ChevronRight size={15} aria-hidden /> : null}
               </button>
             </div>
 

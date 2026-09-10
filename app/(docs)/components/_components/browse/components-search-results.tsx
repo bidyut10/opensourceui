@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { AnnotatedText } from "@/components/underlines/annotated-text";
 import { getShowcaseByCategory } from "@/lib/showcase/showcase";
 import { searchShowcaseEntries } from "@/lib/showcase/search-showcase";
@@ -12,8 +14,12 @@ export function ComponentsSearchResults({
   query,
 }: ComponentsSearchResultsProps) {
   const results = searchShowcaseEntries(query);
+  const hasResults = results.length > 0;
   const categoryAllNewMap = new Map(
-    getShowcaseByCategory().map((group) => [group.category, group.isCategoryNew]),
+    getShowcaseByCategory().map((group) => [
+      group.category,
+      group.isCategoryNew,
+    ]),
   );
 
   return (
@@ -24,16 +30,25 @@ export function ComponentsSearchResults({
         </p>
 
         <h1 className="mt-3 font-serif text-2xl text-neutral-900">
-          Results for{" "}
-          <AnnotatedText variant="highlight" color="text-yellow-100">
-            {query}
-          </AnnotatedText>
+          {hasResults ? (
+            <>
+              Results for{" "}
+              <AnnotatedText variant="highlight" color="text-yellow-100">
+                {query}
+              </AnnotatedText>
+            </>
+          ) : (
+            <>
+              No match for{" "}
+              <AnnotatedText variant="highlight" color="text-yellow-100">
+                {query}
+              </AnnotatedText>
+            </>
+          )}
         </h1>
 
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-neutral-500">
-          {results.length === 0 ? (
-            <>No components matched your search.</>
-          ) : (
+          {hasResults ? (
             <>
               Found{" "}
               <span className="font-medium text-neutral-700">
@@ -42,24 +57,38 @@ export function ComponentsSearchResults({
               {results.length === 1 ? "component" : "components"} matching your
               query.
             </>
+          ) : (
+            <>
+              Nothing in the catalog for that keyword. Open a popular demo
+              below, or{" "}
+              <Link
+                href="/components"
+                className="font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-2 transition-colors hover:decoration-neutral-500"
+              >
+                browse everything
+              </Link>
+              .
+            </>
           )}
         </p>
       </div>
 
       <section id="components" className="mt-10 min-w-0 scroll-mt-8">
-        {results.length === 0 ? (
-          <ComponentsSearchEmpty query={query} />
-        ) : (
+        {hasResults ? (
           <ul className="flex flex-col gap-2">
             {results.map((item, index) => (
               <ComponentListRow
                 key={item.slug}
                 item={item}
                 index={index}
-                categoryIsAllNew={categoryAllNewMap.get(item.category) ?? false}
+                categoryIsAllNew={
+                  categoryAllNewMap.get(item.category) ?? false
+                }
               />
             ))}
           </ul>
+        ) : (
+          <ComponentsSearchEmpty />
         )}
       </section>
     </div>

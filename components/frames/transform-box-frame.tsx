@@ -23,7 +23,7 @@ function resolveFrameColors({
 
   return {
     line: lineColor ?? shared,
-    handle: handleColor ?? shared,
+    handle: handleColor ?? color ?? DEFAULT_HANDLE_COLOR,
   };
 }
 

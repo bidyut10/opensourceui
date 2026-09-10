@@ -29,36 +29,25 @@ import { HomeTestimonials } from "./_components/home-testimonials";
 import { ShowcaseScrollRestoration } from "@/app/_shared/scroll/showcase-scroll-restoration";
 import { createPageMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
-import { LogoIcon } from "./_components/Logo";
-import { GithubRepoLink } from "@/app/_shared/github-repo-link";
-import Link from "next/link";
+import { MarketingSiteNav } from "./_components/marketing-site-nav";
 import { PhoneCustomizeDemo } from "./_components/phone-customize-demo";
+import { HomeSeoFaq } from "./_components/home-seo-faq";
 
 export const metadata: Metadata = createPageMetadata({
   title: siteConfig.title,
   description: siteConfig.description,
   path: "/",
+  absoluteTitle: true,
 });
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen w-full min-w-0 flex-col items-center gap-6 overflow-x-hidden px-3 pb-10 selection:bg-neutral-800 selection:text-white md:px-4">
-      <ShowcaseScrollRestoration />
+    <div className="flex min-h-screen w-full min-w-0 flex-col overflow-x-hidden selection:bg-neutral-800 selection:text-white">
+      <div className="flex w-full min-w-0 flex-col items-center gap-6 px-3 md:px-4">
+        <ShowcaseScrollRestoration />
 
-      <div className="mt-4 mb-10 max-w-xl px-4 md:px-0">
-        <div className="flex max-w-full items-center justify-between">
-          <Link
-            href="/"
-            className="hover:bg-muted flex items-center gap-2 transition-colors"
-          >
-            <LogoIcon className="w-6" />
-            <span className="font-sans text-lg font-medium tracking-tighter">
-              {siteConfig.displayName}
-            </span>
-          </Link>
-
-          <GithubRepoLink />
-        </div>
+        <div className="mt-4 mb-10 max-w-xl px-4 md:px-0">
+        <MarketingSiteNav />
         <Heading className="mt-36">
           Build Better{" "}
           <span className="relative inline-block">
@@ -71,14 +60,10 @@ export default function Home() {
           </span>
         </Heading>
         <Paragraph>
-          Building for the web has never been easier. Creating something
-          memorable still takes care.{" "}
-          <AnnotatedText variant="highlight" color="text-yellow-100">
-            {siteConfig.displayName}
-          </AnnotatedText>{" "}
-          is a copy-paste library of thoughtfully crafted, production-ready
-          components — pick one, drop the code in, and ship interfaces that feel
-          polished, intentional, and worth sharing.{" "}
+          {siteConfig.displayName} is a free React UI library and Next.js
+          component library — copy-paste production-ready components, Tailwind
+          CSS blocks, and device mockups. Pick one, drop the code in, and ship
+          interfaces that feel polished and intentional.{" "}
           <a
             href={siteConfig.license.url}
             target="_blank"
@@ -411,6 +396,9 @@ export default function Home() {
           a spot for sponsors who want to support the project.
         </Paragraph>
         <OpenSourcePanel />
+      </div>
+
+      <HomeSeoFaq />
       </div>
 
       <SiteFooter />

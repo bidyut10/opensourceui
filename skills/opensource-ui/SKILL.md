@@ -28,7 +28,7 @@ Use `rounded-md` for buttons, `rounded-lg` for fields and small cards, and `roun
 
 ## Catalog use
 
-The catalog contains **170 documented components** across **27 categories** as listed on the site. The source repository contains the implementation files and may include additional support or showcase files. Use the category and slug in `references/catalog.md` to locate a component page. Use the source path in `references/source_inventory.txt` when working from the cloned repository.
+The catalog contains **200+ documented components** across **30 categories** as listed on the site. The source repository contains the implementation files and may include additional support or showcase files. Use the category and slug in `references/catalog.md` to locate a component page. Use the source path in `references/source_inventory.txt` when working from the cloned repository.
 
 Component pages provide a live preview, implementation details, and copy-ready source. Treat the site's source and repository as the authority for exact props and behavior. Do not invent a prop API when source is available.
 

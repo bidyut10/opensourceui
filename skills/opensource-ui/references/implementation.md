@@ -19,13 +19,13 @@ This file is for **developers and coding agents** working in this repository —
 
 ```
 app/
-  (marketing)/          Homepage (/)
-  (docs)/components/    Component docs (/components, /components/[slug])
-  layout.tsx            Root fonts, SEO, analytics
+  (marketing)/          Homepage + about, contact, careers, sponsor, privacy, terms
+  (docs)/components/    Docs (/components, /components/category/[slug], /components/[slug])
+  layout.tsx            Root fonts, SEO
   error.tsx, not-found.tsx, loading.tsx
   sitemap.ts, robots.ts, manifest.ts
 
-components/             Copy-paste library (170 showcase entries, 27 categories)
+components/             Copy-paste library (200+ showcase entries, 30 categories)
   audio/, buttons/, calender/, docks/, dropdowns/, forms/, gallery/,
   inputs/, loaders/, mockups/, notifications/, socials/, table/,
   text/, travel/, underlines/, widgets/, wallet/, …
@@ -34,13 +34,15 @@ components/             Copy-paste library (170 showcase entries, 27 categories)
 icons/                  actions/, activity/, brands/, elements/, keys/
 lib/
   cn.ts                 Class merge helper
-  site.ts               Site name, URL, author, license
+  site.ts               Site name, URL, author, license, Polar tiers
   showcase/showcase.tsx Component registry (homepage + docs)
+  showcase/category-slug.ts  Category URL helpers
   seo/                  Metadata + JSON-LD helpers
+  navigation/           Marketing path memory (go-back)
 skills/opensource-ui/   Agent kit (SKILL.md + references/)
 ```
 
-Category in the docs sidebar is derived from the folder after `components/` (e.g. `widgets/` → **Widgets**).
+Category in the docs sidebar is derived from the folder after `components/` (e.g. `widgets/` → **Widgets**). Category pages live at `/components/category/{slug}` (e.g. `/components/category/mockups`).
 
 ## Local setup
 
@@ -150,6 +152,6 @@ More icons: [nexticons.in](https://nexticons.in)
 
 ## Numbers (keep in sync when adding components)
 
-- **170** showcase slugs
-- **27** docs categories (from showcase folder segments)
-- **168** unique component files (some slugs share one file, e.g. analog clocks)
+- **207** showcase slugs (~200+ in marketing copy)
+- **30** docs categories (from showcase folder segments)
+- **205** unique component files (some slugs share one file, e.g. analog clocks)

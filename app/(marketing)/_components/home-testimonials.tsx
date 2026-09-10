@@ -45,7 +45,7 @@ function ReviewCard({
   rating = 5,
 }: HomeReview) {
   const subtitle =
-    role ?? (platform === "product-hunt" ? "Product Hunt" : "@SaidAitmbarek");
+    role ?? (platform === "product-hunt" ? "Product Hunt" : "Twitter");
 
   return (
     <figure className="flex w-full flex-col rounded-2xl border border-neutral-100 bg-white p-4 md:h-full md:min-w-0">

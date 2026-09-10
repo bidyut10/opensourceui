@@ -5,6 +5,7 @@ import { getCategoryGroupBySlug, getCategoryPath, getCategorySlug } from "@/lib/
 import {
   createPageMetadata,
   getCategorySeoDescription,
+  getCategorySeoKeywords,
   getCategorySeoTitle,
   getComponentsItemListJsonLd,
   JsonLd,
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }: Props) {
     title: getCategorySeoTitle(group.category),
     description: getCategorySeoDescription(group.category, group.items.length),
     path: getCategoryPath(group.category),
+    keywords: getCategorySeoKeywords(group.category),
   });
 }
 

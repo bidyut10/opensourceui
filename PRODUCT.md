@@ -25,10 +25,10 @@ Copy-paste React components that look production-ready without learning a design
 ## Conversion & proof
 
 - Primary CTA: browse and copy components (`/components`)
-- Secondary CTA: GitHub and sponsor
-- The line a visitor remembers after 10 seconds: Free, copy-paste, production-ready React/Next components
+- Secondary CTAs: GitHub, sponsor (`/sponsor`), contact (`/contact`)
+- The line a visitor remembers after 10 seconds: Free forever, copy-paste, production-ready React/Next components
 - Belief ladder:
-  1. These components are free and open source
+  1. These components are free and open source — and stay free
   2. They look intentional and production-ready, not template-generic
   3. I can copy a single file without adopting a whole system
   4. So I should browse `/components` and paste one into my app

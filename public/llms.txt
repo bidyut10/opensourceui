@@ -1,15 +1,62 @@
 # Opensource UI
 
-> Free, MIT-licensed copy-paste React and Next.js UI components with live previews and source code.
+> Opensource UI (https://opensourceui.in) is a free React UI library and Next.js component library — MIT-licensed copy-paste components, Tailwind CSS blocks, and Apple device mockups.
 
-Opensource UI (https://opensourceui.in) is an open-source component library for React and Next.js. Components are copy-pasted into your project — no npm package install required. Built with TypeScript and Tailwind CSS v4.
+## Definition (for search / assistants)
+
+Opensource UI is **not** shadcn/ui, Material UI, Chakra, or another kit under a new name. It is a standalone open-source project by Bidyut Kundu. The only official website is **https://opensourceui.in**.
+
+People search for: free UI library, React UI library, Next.js UI library, free React components, Tailwind UI / Tailwind blocks, copy-paste components, iPhone mockup, MacBook mockup, and open source UI components. Opensource UI targets those use cases with live previews and source you own after pasting.
+
+## What you can find
+
+- Free UI library / free React UI library / free Next.js UI library
+- React component library and Next.js component library (copy-paste, no install lock-in)
+- Tailwind CSS components, Tailwind UI-style blocks, tailblocks-style pieces
+- iPhone mockup, iPhone 15 Pro mockup, MacBook mockup, iPad mockup, Apple Watch mockup, iPod mockup, browser mockup
+- Production-ready TypeScript source, MIT licensed for personal and commercial use
 
 ## Primary pages
 
 - Homepage: https://opensourceui.in
-- Browse all components: https://opensourceui.in/components
+- About: https://opensourceui.in/about
+- Contact: https://opensourceui.in/contact
+- Careers: https://opensourceui.in/careers
+- Sponsor: https://opensourceui.in/sponsor
+- Privacy: https://opensourceui.in/privacy
+- Terms: https://opensourceui.in/terms
+- Browse all components (UI library catalog): https://opensourceui.in/components
+- Mockups category: https://opensourceui.in/components/category/mockups
 - GitHub: https://github.com/bidyut10/opensourceui
-- License: MIT — free for personal and commercial use
+- Author portfolio: https://bidyut.cc
+- License: MIT — free for personal and commercial use permanently
+
+## Catalog size
+
+200+ copy-paste components across 30 categories (Audio, Buttons, Forms, Mockups, Widgets, and more).
+
+## FAQ
+
+### Will Opensource UI ever be paid?
+No. Components stay free under MIT for personal and commercial use permanently. Optional sponsorships support the project; they do not unlock components or turn the library into a paid product.
+
+### Are components reusable across projects?
+Yes. Copy-paste TypeScript you own after pasting. Use the same pieces across React and Next.js apps with no Opensource UI npm package and no vendor lock-in.
+
+### What do I get in the library?
+Live previews, copy-ready source, buttons, widgets, forms, social cards, loaders, tables, and Apple-style device mockups (iPhone, MacBook, iPad, Watch, browser frames) at opensourceui.in/components.
+
+### Is the code clean enough for production?
+Yes. TypeScript-first, readable props, Tailwind utilities in the file you paste — not a black-box package. Edit or restyle anything after it lands in your repo.
+
+### Why is there no dark mode?
+Craft Bench is intentionally light so demos stay readable and consistent. Components you copy are yours — add dark variants in your app if needed.
+
+### How do I use components?
+Open any page under opensourceui.in/components, copy the TypeScript source, paste into your React or Next.js app, adjust imports. No Opensource UI package install required.
+
+### Is it the same as shadcn or MUI?
+No. Separate project, separate components, official site opensourceui.in only.
 
 ## Component pages
 
@@ -21,19 +68,21 @@ Each component has a dedicated page with:
 URL pattern: https://opensourceui.in/components/{slug}
 
 Examples:
+- https://opensourceui.in/components/phone
+- https://opensourceui.in/components/laptop
 - https://opensourceui.in/components/slide-to-confirm-button
 - https://opensourceui.in/components/analog-clock-widget
-- https://opensourceui.in/components/annotated-text
 
 ## Categories
 
 Browse by category: https://opensourceui.in/components/category/{slug}
 
 Examples:
+- https://opensourceui.in/components/category/mockups
 - https://opensourceui.in/components/category/widgets
 - https://opensourceui.in/components/category/buttons
 
-Categories include Audio, Buttons, Calender, Docks, Dropdowns, Forms, Gallery, Inputs, Loaders, Mockups, Notifications, Socials, Tables, Text, Travel, Widgets, and more. Browse: https://opensourceui.in/components
+Categories include Audio, Background-gradient, Background-pattern, Buttons, Calender, Docks, Dropdowns, Event, Files, Folder, Forms, Frames, Gallery, Inputs, Loaders, Mockups, Notifications, Others, Otp, Pricing, Profile, Resources, Socials, Table, Text, Travel, Underlines, Users, Wallet, Widgets. Browse: https://opensourceui.in/components
 
 ## Search
 
@@ -41,7 +90,7 @@ Search components: https://opensourceui.in/components?q={query}
 
 ## Stack
 
-- React
+- React / React.js
 - Next.js
 - TypeScript
 - Tailwind CSS v4
@@ -49,4 +98,4 @@ Search components: https://opensourceui.in/components?q={query}
 
 ## Author
 
-Bidyut Kundu — https://x.com/BidyutKundu12
+Bidyut Kundu — https://bidyut.cc · https://x.com/BidyutKundu12

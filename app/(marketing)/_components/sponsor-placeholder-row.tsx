@@ -1,6 +1,8 @@
 "use client";
 
-import { ContactEmailTrigger } from "@/components/contact/contact-email";
+import Link from "next/link";
+
+import { siteConfig } from "@/lib/site";
 
 type SponsorPlaceholderRowProps = Readonly<{
   name: string;
@@ -19,10 +21,8 @@ export function SponsorPlaceholderRow({
 
   return (
     <li className="min-w-0">
-      <ContactEmailTrigger
-        title="Become a sponsor"
-        description="Feel free to copy my email and send over your brand details. I’ll share the sponsorship details with you.
-"
+      <Link
+        href={siteConfig.sponsorship.path}
         className="group flex min-w-0 w-full items-center gap-2.5 py-0.5 max-[499px]:gap-2"
       >
         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded border border-dashed border-neutral-300">
@@ -56,7 +56,7 @@ export function SponsorPlaceholderRow({
             {domain}
           </span>
         </div>
-      </ContactEmailTrigger>
+      </Link>
     </li>
   );
 }

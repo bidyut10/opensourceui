@@ -1,151 +1,114 @@
-# [Opensource UI](https://opensourceui.in) 
+# [Opensource UI](https://opensourceui.in)
 
 [![Live site](https://img.shields.io/badge/live-opensourceui.in-000000?style=flat-square)](https://opensourceui.in)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](./LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
 [![Deploy with Vercel](https://img.shields.io/badge/deploy-Vercel-000000?style=flat-square&logo=vercel)](https://vercel.com/new/clone?repository-url=https://github.com/bidyut10/opensourceui)
 
-Live site: [opensourceui.in](https://opensourceui.in)
+[opensourceui.in](https://opensourceui.in) — free React and Next.js UI you copy into your project.
 
-Premium free React/Next.js components, built with Tailwind CSS and TypeScript. No subscriptions, no paywalls. Browse **170 components** with live previews, setup guides, and copy-ready source at `/components`.
+**200+ components**, Tailwind, TypeScript, live previews. MIT for good — no paywall later, no “free forever*” fine print. I maintain this myself.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bidyut10/opensourceui)
 
-## Why I built this
+## Why this exists
 
-Most UI kits either look the same or need you to learn a whole system before you can use one button. I wanted something closer to how I actually work: find a component that looks good, drop the file into my project, tweak the props, move on.
+Most kits want you to learn a whole system before one button feels usable. I got tired of that. I wanted to find something that looks right, paste the file, tweak props, and ship.
 
-These components are meant to be copied, not installed as a package. No provider wrappers, no theme config to decode. Each file is self-contained.
+So these pieces are meant to be copied, not installed. No provider maze. No theme config ritual. One file, your repo, your edits.
 
-Icons are plain SVG React components in `icons/`—no extra npm package. I also use [nexticons.in](https://nexticons.in) alongside them.
+Hand-written SVGs live in `icons/`. I pull from [nexticons.in](https://nexticons.in) too. Plenty of components use [lucide-react](https://lucide.dev) as well.
 
-## Use with AI coding assistants
+## AI coding agents
 
-Opensource UI works with **any** coding agent — Cursor, Claude Code, Codex, Copilot, Grok, ChatGPT, and others.
+Works with Cursor, Claude Code, Codex, Copilot, Grok, ChatGPT — whatever you use.
 
-The agent kit lives at **`skills/opensource-ui/`** and includes a skill workflow plus reference docs (catalog, design system, implementation guide, and file inventory). See **[AGENTS.md](./AGENTS.md)** for setup steps per tool and example prompts.
-
-Quick start:
+Point the agent at **`skills/opensource-ui/`**. Full setup notes are in **[AGENTS.md](./AGENTS.md)**.
 
 ```text
 Read skills/opensource-ui/SKILL.md and add the Opensource UI Login Form to my Next.js app.
 ```
 
-No second copy needed — use `skills/opensource-ui/` directly in any agent (including Cursor via `@skills/opensource-ui/SKILL.md` or by mentioning the path in your prompt).
+In Cursor you can `@skills/opensource-ui/SKILL.md` or just mention that path. No duplicate skill folder required.
 
-## Tech stack
+## Stack
 
-- **Next.js 16** (App Router)
-- **React 19**
-- **TypeScript**
-- **Tailwind CSS v4**
-- **clsx** + **tailwind-merge** (`cn()` helper)
-- **PostHog** (optional client-side analytics)
+- Next.js 16 (App Router, static export)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- `clsx` + `tailwind-merge` via `cn()`
+- PostHog if you want analytics (optional)
 
-No shadcn, no MUI, no Radix underneath. Just React, Tailwind, and SVG.
+No shadcn, MUI, or Radix under the hood — React, Tailwind, and SVG.
 
-## Site routes
+## Where things live on the site
 
-| Route                                | Purpose                                      |
-| ------------------------------------ | -------------------------------------------- |
-| `/`                                  | Marketing homepage with live component demos |
-| `/components`                        | Browse all components (A–Z index)            |
-| `/components?category=Audio`         | Category catalog with preview cards          |
-| `/components?category=Audio&q=music` | Search results (also via header search)      |
-| `/components/[slug]`                 | Component detail — preview, setup, copy code |
+| Route | What you get |
+| ----- | ------------ |
+| `/` | Homepage — demos, FAQ, sponsors |
+| `/components` | Full catalog |
+| `/components?q=iphone` | Search |
+| `/components/category/mockups` | Category browse (swap the slug) |
+| `/components/[slug]` | Preview, setup, copy source |
+| `/about` | Story and who runs this |
+| `/contact` | Support, bugs, PRs, contributions |
+| `/careers` | Hiring truth (usually: nothing open) |
+| `/sponsor` | Brand placement on the site |
+| `/privacy` · `/terms` | Legal |
 
-The docs section uses a three-column layout on large screens: sidebar navigation, main content, and on-page table of contents.
+Docs on a wide screen: sidebar, content, TOC. Dead search queries get popular demos instead of an empty hole.
 
-## Design principles
+## How I like the UI to feel
 
-**Copy-paste first.** Each component lives in its own file with sensible defaults. Paste it into a Next.js app, fix import paths, and it should render.
+**Copy-paste first.** Paste into Next.js, fix imports, it should render.
 
-**Light theme, clean surfaces.** White or near-white backgrounds, neutral borders, restrained accents.
+**Craft Bench.** Paper white, quiet borders, accents only when state needs them. No purple dashboard cosplay. Catalog stays light on purpose — you can add dark in your app after you own the file.
 
-**Consistent API.** Interactive components use `forwardRef`. Props extend native HTML types. Classes merge through `cn()`. Client components use `"use client"` only when needed.
+**Boring in the good way.** `forwardRef`, native HTML props, `cn()` for classes, `"use client"` only when the browser is required.
 
-**Real demo content.** Cards ship with names, numbers, and labels that look like real UI—not empty gray boxes.
+**Real demo copy.** Names and numbers that look like product UI, not gray placeholders.
 
-**Icons as components.** Hand-written SVGs in `icons/`. Files use kebab-case (`arrow-right.tsx`). Exports stay PascalCase (`ArrowRight`).
+**Icons.** Kebab-case files, PascalCase exports, under `icons/`.
 
-**Organized by purpose.** Clocks in `clocks/`, audio in `audio/`, travel widgets in `travel/`. Easy to find what you need.
+**Responsive.** Base + `md:` — never `sm:`.
 
-## Folder structure
+**By purpose.** `forms/`, `mockups/`, `widgets/`, and the rest of the folders match how you hunt for pieces.
+
+## Repo map
 
 ```
 app/
-  layout.tsx                    Root layout, fonts, SEO, global widgets
-  globals.css                   Tailwind v4
-  loading.tsx, not-found.tsx
-  robots.ts, sitemap.ts, manifest.ts
+  (marketing)/     Home, about, contact, careers, sponsor, privacy, terms
+  (docs)/          /components browse, category, search, detail
+  _shared/         Navigation + scroll helpers
 
-  (marketing)/                  Homepage (/)
-    page.tsx
-    _components/                Hero, footer, tech stack, CTAs
-
-  (docs)/                       Component docs (/components)
-    components/
-      layout.tsx                Docs shell (header + sidebar)
-      page.tsx                  Browse / category / search views
-      [slug]/                   Detail page + copy-code blocks
-      _components/
-        shell/                  Header, sidebar, TOC, search
-        browse/                 Catalog, browse-all, search results
-        detail/                 Preview stage
-
-  _shared/                      Shared client utilities
-    navigation/                 Hydrated search params
-    scroll/                     Scroll-to-top, scroll restoration
-
-components/                     Copy-paste UI library (170 widgets)
-  audio/, buttons/, calender/, docks/, dropdowns/, forms/, gallery/
-  inputs/, loaders/, mockups/, notifications/, socials/, table/
-  text/, travel/, underlines/, widgets/, wallet/, …
-  system/                       App-only (analytics, page loader)
-
-icons/
-  actions/, activity/, brands/, elements/, keys/
-
+components/        Copy-paste library (200+)
+icons/             SVG components
 lib/
-  cn.ts                         clsx + tailwind-merge helper
-  site.ts                       Site name, URL, author, mailto links
-  shared/                       Cross-feature utilities (BOX_PATTERN, etc.)
-  docs/                         Docs-only shared code (SaveScrollLink, CopyCodeBlock)
-  showcase/
-    showcase.tsx                Component registry — edit this to add components
-    search-showcase.ts            Docs search filtering
-    highlight-code.tsx            Syntax highlighting for code blocks
-    scroll-restoration.ts       Scroll position on back navigation
-    server.ts                   Read component source files from disk
-  analytics/client/             Optional PostHog page views + component clicks
-
-types/
-  types.tsx                     Shared TypeScript types
-
-public/                         Static assets (images, favicon)
-
-skills/opensource-ui/          Agent kit (SKILL.md + references/)
-AGENTS.md                       AI assistant setup guide
+  cn.ts            Class merge
+  site.ts          Site config, author, sponsorship tiers
+  showcase/        Registry — edit showcase.tsx to add components
+  seo/             Metadata + JSON-LD
+skills/opensource-ui/   Agent kit
+AGENTS.md
 ```
 
-Route groups like `(marketing)` and `(docs)` organize files without changing URLs.
+`(marketing)` and `(docs)` are route groups — they do not show up in the URL.
 
 ## Icons
-
-Icons are React components that return inline SVG. Files use **kebab-case**; imports use the folder path:
 
 ```tsx
 import { ArrowRight } from "@/icons/actions/arrow-right";
 import { Bell } from "@/icons/elements/bell";
-import { Pause } from "@/icons/keys/pause";
 
 <ArrowRight size={16} />
 <Bell size={20} color="#171717" className="opacity-60" />
 ```
 
-More icons at [nexticons.in](https://nexticons.in).
+More at [nexticons.in](https://nexticons.in).
 
-## Getting started
+## Run it locally
 
 ```bash
 git clone https://github.com/bidyut10/opensourceui.git
@@ -154,43 +117,36 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) for the homepage, or [http://localhost:3000/components](http://localhost:3000/components) for the component docs.
-
-### Commands
+Homepage: [http://localhost:3000](http://localhost:3000)  
+Components: [http://localhost:3000/components](http://localhost:3000/components)
 
 ```bash
-npm run dev      # local dev server
-npm run build    # production build
-npm run start    # run production build
-npm run lint     # eslint
+npm run dev            # dev server
+npm run build          # static export (runs check:showcase)
+npm run lint
 npm run typecheck
-npm run format:check
+npm run format
+npm run check:showcase
 ```
 
-Format files and sort Tailwind classes (uses `prettier-plugin-tailwindcss`):
+Needs Node.js 20+.
 
-```bash
-npx prettier --write .
-npx prettier --check .   # dry run
-```
+## Use a component in your app
 
-Node.js 20 or later.
+Skip `npm install opensourceui` — there is no such package. Copy the file from `components/`, then usually:
 
-## Using a component in your project
+- `lib/cn.ts` (+ `clsx`, `tailwind-merge`)
+- matching files from `icons/`
+- `lucide-react` if that import is there
+- `next/image` when the component uses images
 
-There is no `npm install` step for the UI library. Copy the file you want from `components/` into your project and update imports. Most components need:
+Keep `"use client"` when the source has it.
 
-- `@/lib/cn` — copy `lib/cn.ts` (and install `clsx` + `tailwind-merge`)
-- Icons from `@/icons/...` — copy the icon files the component imports
-- `next/image` if the component uses images
+Detail pages at `/components/[slug]` have the preview and copy-ready source.
 
-Keep `"use client"` if the file has it. Components without it can render as server components.
+### Register something new in the showcase
 
-Each component also has a detail page at `/components/[slug]` with a live preview, setup steps, and copy-ready source.
-
-### Adding a component to the showcase
-
-Edit **`lib/showcase/showcase.tsx`**:
+Edit `lib/showcase/showcase.tsx`:
 
 ```tsx
 import { MyNewCard } from "@/components/text/my-new-card";
@@ -200,44 +156,64 @@ c(
   <MyNewCard />,
   "components/text/my-new-card.tsx",
   "MyNewCard",
-  "Short description shown on the detail page.",
+  {
+    title: "My New Card",
+    description: "Shown on the detail page.",
+    usage: "<MyNewCard />",
+  },
 ),
 ```
 
-Add the `c(...)` entry to a row in `showcaseRows`. Each inner array is one homepage row (1, 2, or 3 items). The slug automatically powers `/components/my-new-card` and sidebar navigation.
+Drop that into a row in `showcaseRows`. Update `skills/opensource-ui/references/source_inventory.txt` (and `catalog.md` when it helps).
 
-## Analytics (optional)
+## Analytics
 
-Set `NEXT_PUBLIC_POSTHOG_KEY` in `.env.local` to enable client-side page views and component click tracking. Leave it empty to run without analytics.
+Optional. Set `NEXT_PUBLIC_POSTHOG_KEY` in `.env.local` if you want page views and click tracking. Leave it blank to stay dark.
 
-## Deploy on Vercel
+## Deploy
 
-This project is built for [Vercel](https://vercel.com). Connect the GitHub repo and deploy:
+Built for [Vercel](https://vercel.com) as a static export:
 
 1. Fork or clone [github.com/bidyut10/opensourceui](https://github.com/bidyut10/opensourceui)
-2. Import the project in [Vercel](https://vercel.com/new)
-3. Add env vars from `.env.example` only if you want PostHog analytics
+2. Import in [Vercel](https://vercel.com/new)
+3. Env from `.env.example` only if you care about PostHog
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bidyut10/opensourceui)
 
+Cloudflare Pages works too — see `wrangler.toml` and `npm run pages:deploy`.
+
+## Sponsoring
+
+If this saved you an afternoon:
+
+- **[GitHub Sponsors](https://github.com/sponsors/bidyut10)** — support me directly
+- **[opensourceui.in/sponsor](https://opensourceui.in/sponsor)** — put your brand on the site (homepage, docs, README listing)
+
+Components stay free either way. Sponsoring is optional.
+
 ## Contributing
 
-Contributions are welcome. See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, adding components, and PR guidelines.
+Happy to take help. [CONTRIBUTING.md](./CONTRIBUTING.md) covers setup and PRs.
 
-This project follows the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md).
+Questions, sponsorships, or bigger contribution ideas → [opensourceui.in/contact](https://opensourceui.in/contact). Click the email to copy it; it will not open your mail app.
+
+We follow the [Contributor Covenant](./CODE_OF_CONDUCT.md).
 
 ## Security
 
-To report a vulnerability, see [SECURITY.md](./SECURITY.md). Do not open public issues for security problems.
+Found something sensitive? Read [SECURITY.md](./SECURITY.md). Do not file a public issue for that.
 
-## Project links
+## Links
 
-- Website: [opensourceui.in](https://opensourceui.in)
-- Repository: [github.com/bidyut10/opensourceui](https://github.com/bidyut10/opensourceui)
-- Author: [Bidyut Kundu](https://x.com/BidyutKundu12)
+- Site: [opensourceui.in](https://opensourceui.in)
+- Contact: [opensourceui.in/contact](https://opensourceui.in/contact)
+- GitHub Sponsors: [github.com/sponsors/bidyut10](https://github.com/sponsors/bidyut10)
+- Brand sponsorships: [opensourceui.in/sponsor](https://opensourceui.in/sponsor)
+- Repo: [github.com/bidyut10/opensourceui](https://github.com/bidyut10/opensourceui)
+- Me: [bidyut.cc](https://bidyut.cc) · [X](https://x.com/BidyutKundu12)
 
 ## License
 
-[MIT](./LICENSE) — free for personal and commercial use. Attribution is appreciated but not required.
+[MIT](./LICENSE) — personal and commercial use, permanently. Credit is nice; not required.
 
-If something breaks in your setup, open an issue on [GitHub](https://github.com/bidyut10/opensourceui/issues).
+Something broken? Open an issue on [GitHub](https://github.com/bidyut10/opensourceui/issues).

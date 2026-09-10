@@ -3,11 +3,12 @@ import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
 import { AnalyticsTracker } from "@/components/system/analytics";
-import { ContactEmailProvider } from "@/components/contact/contact-email";
 import { NavigationLoader } from "@/app/_shared/navigation/navigation-loader";
+import { PathMemoryTracker } from "@/app/_shared/navigation/path-memory-tracker";
 import { ScrollToTopButton } from "@/app/_shared/scroll/scroll-to-top-button";
 import { JsonLd, getRootSiteJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
+import { Suspense } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.displayName,
-  authors: [{ name: siteConfig.author.name, url: siteConfig.author.url }],
+  authors: [{ name: siteConfig.author.name, url: siteConfig.author.portfolioUrl }],
   creator: siteConfig.author.name,
   publisher: siteConfig.displayName,
   keywords: [...siteConfig.keywords],
@@ -113,10 +114,11 @@ export default function RootLayout({
         className="flex min-h-full flex-col overflow-x-hidden"
       >
         <JsonLd data={getRootSiteJsonLd()} />
-        <ContactEmailProvider>
-          {children}
-          <AnalyticsTracker />
-        </ContactEmailProvider>
+        {children}
+        <AnalyticsTracker />
+        <Suspense fallback={null}>
+          <PathMemoryTracker />
+        </Suspense>
         <NavigationLoader />
         <ScrollToTopButton />
       </body>
