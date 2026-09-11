@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 
-/**
- * Shared landmark for marketing routes so skip-to-content works site-wide.
- */
+/** Shared landmark for marketing routes. */
 export default function MarketingLayout({
   children,
 }: Readonly<{

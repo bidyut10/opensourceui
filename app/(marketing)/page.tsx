@@ -60,10 +60,9 @@ export default function Home() {
             </span>
           </Heading>
           <Paragraph>
-            {siteConfig.displayName} is a free React UI library and Next.js
-            component library — copy-paste production-ready components, Tailwind
-            CSS blocks, and device mockups. Pick one, drop the code in, and ship
-            interfaces that feel polished and intentional.{" "}
+            {siteConfig.displayName} gives you free React and Next.js components
+            to copy into your own code. Phone mockups, forms, widgets, and more,
+            with live previews so you can see what you&apos;re getting.{" "}
             <a
               href={siteConfig.license.url}
               target="_blank"
@@ -71,8 +70,8 @@ export default function Home() {
               className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-neutral-950 hover:decoration-neutral-500"
             >
               {siteConfig.license.name} licensed
-            </a>{" "}
-            — free for personal and commercial use.
+            </a>
+            , for personal and commercial use.
           </Paragraph>
           <CtaButtons />
         </div>
