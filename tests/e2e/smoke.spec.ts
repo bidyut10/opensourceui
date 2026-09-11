@@ -59,7 +59,10 @@ test.describe("static site smoke", () => {
 
   test("unknown route shows 404", async ({ page }) => {
     await page.goto("/this-page-does-not-exist");
-    await expect(page.getByRole("heading", { name: /404/i })).toBeVisible();
+    await expect(page.getByText("404", { exact: true })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: /page not found/i }),
+    ).toBeVisible();
     await expect(
       page.getByRole("link", { name: /browse components/i }),
     ).toBeVisible();

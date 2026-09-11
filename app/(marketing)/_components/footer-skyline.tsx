@@ -4,10 +4,15 @@ import { cn } from "@/lib/cn";
 
 type FooterSkylineProps = {
   className?: string;
+  /** Eager-load when the skyline is likely LCP (e.g. 404 / error pages). */
+  priority?: boolean;
 };
 
 /** Full-bleed London skyline mark. Desktop-only pull; not selectable/draggable. */
-export function FooterSkyline({ className }: FooterSkylineProps) {
+export function FooterSkyline({
+  className,
+  priority = false,
+}: FooterSkylineProps) {
   return (
     <div
       aria-hidden="true"
@@ -23,6 +28,8 @@ export function FooterSkyline({ className }: FooterSkylineProps) {
         height={1479}
         sizes="100vw"
         quality={100}
+        priority={priority}
+        loading={priority ? "eager" : undefined}
         draggable={false}
         className="block h-auto w-full max-w-none select-none [-webkit-user-drag:none]"
       />

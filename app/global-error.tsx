@@ -8,10 +8,7 @@ type GlobalErrorProps = Readonly<{
   reset: () => void;
 }>;
 
-/**
- * Root-layout crash boundary. Must define its own <html>/<body>.
- * Keep styles inline — CSS modules / Tailwind may not load here.
- */
+/** Root crash boundary — same minimal layout with inline styles. */
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
   useEffect(() => {
     console.error(error);
@@ -22,61 +19,125 @@ export default function GlobalError({ error, reset }: GlobalErrorProps) {
       <body
         style={{
           margin: 0,
-          minHeight: "100vh",
+          minHeight: "100dvh",
           display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: "1rem",
+          flexDirection: "column",
           fontFamily:
             "ui-sans-serif, system-ui, -apple-system, Segoe UI, sans-serif",
           color: "#171717",
           background: "#fff",
         }}
       >
-        <main id="main-content" style={{ maxWidth: "36rem", width: "100%" }}>
-          <h1 style={{ fontSize: "1.75rem", fontWeight: 600, margin: 0 }}>
-            Something went wrong
-          </h1>
-          <p
-            style={{ marginTop: "0.75rem", color: "#737373", lineHeight: 1.5 }}
-          >
-            The site hit an unexpected error. You can try again or go home.
-          </p>
-          <div
-            style={{
-              marginTop: "1.5rem",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "0.75rem",
-            }}
-          >
-            <button
-              type="button"
-              onClick={reset}
+        <main
+          id="main-content"
+          style={{
+            flex: 1,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            padding: "4rem 1.5rem",
+            boxSizing: "border-box",
+          }}
+        >
+          <div style={{ width: "100%", maxWidth: "36rem" }}>
+            <p
               style={{
-                border: "1px solid #262626",
-                background: "#262626",
-                color: "#fff",
-                borderRadius: "0.375rem",
-                padding: "0.5rem 1rem",
-                fontSize: "0.875rem",
-                cursor: "pointer",
+                margin: 0,
+                fontFamily: "ui-monospace, monospace",
+                fontSize: 10,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "#a3a3a3",
               }}
             >
-              Try again
-            </button>
-            <Link
-              href="/"
+              Error
+            </p>
+            <h1
               style={{
-                alignSelf: "center",
-                fontSize: "0.875rem",
-                color: "#525252",
+                margin: "0.75rem 0 0",
+                fontFamily:
+                  "ui-serif, Georgia, Cambria, Times New Roman, serif",
+                fontSize: "1.875rem",
+                fontWeight: 400,
+                letterSpacing: "-0.02em",
+                color: "#171717",
               }}
             >
-              Home
-            </Link>
+              Something went wrong
+            </h1>
+            <p
+              style={{
+                margin: "0.5rem 0 0",
+                maxWidth: "28rem",
+                fontSize: "0.875rem",
+                lineHeight: 1.6,
+                color: "#737373",
+              }}
+            >
+              This page hit a snag. Try again, or go home.
+            </p>
+            <div
+              style={{
+                marginTop: "2rem",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "1rem",
+              }}
+            >
+              <button
+                type="button"
+                onClick={reset}
+                style={{
+                  padding: 0,
+                  border: 0,
+                  background: "none",
+                  fontSize: "0.875rem",
+                  fontWeight: 500,
+                  color: "#171717",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "4px",
+                  textDecorationColor: "#d4d4d4",
+                  cursor: "pointer",
+                }}
+              >
+                Try again
+              </button>
+              <Link
+                href="/"
+                style={{
+                  fontSize: "0.875rem",
+                  color: "#737373",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "4px",
+                  textDecorationColor: "#e5e5e5",
+                }}
+              >
+                Home
+              </Link>
+            </div>
           </div>
         </main>
+
+        <div aria-hidden="true" style={{ width: "100%", marginTop: "auto" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element -- global-error cannot rely on next/image */}
+          <img
+            src="/footer.webp"
+            alt=""
+            width={4134}
+            height={1479}
+            loading="eager"
+            fetchPriority="high"
+            draggable={false}
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              userSelect: "none",
+              pointerEvents: "none",
+            }}
+          />
+        </div>
       </body>
     </html>
   );
