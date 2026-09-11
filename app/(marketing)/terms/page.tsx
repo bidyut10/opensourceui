@@ -43,10 +43,9 @@ export default function TermsPage() {
                 do not use the site or purchase a placement.
               </p>
               <p className="mt-2">
-                {displayName} is an open-source component library and marketing
-                site operated by {author.name}. These Terms protect the project,
-                visitors, and the maintainer from misuse, fraud, and harmful
-                content.
+                {`${displayName} is an open-source component library and marketing site operated by ${author.name}.`}{" "}
+                These Terms protect the project, visitors, and the maintainer
+                from misuse, fraud, and harmful content.
               </p>
             </section>
 
@@ -55,14 +54,14 @@ export default function TermsPage() {
                 2. The site &amp; components
               </h2>
               <p className="mt-2">
-                Components and code on {displayName} are offered under the{" "}
+                Components and code on {`${displayName} are offered under the `}
                 <a
                   href={siteConfig.license.url}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-2"
                 >
-                  {siteConfig.license.name} License
+                  {`${siteConfig.license.name} License`}
                 </a>{" "}
                 unless a file says otherwise. You are responsible for how you
                 use copied code in your own projects.
@@ -221,12 +220,10 @@ export default function TermsPage() {
                 9. Limitation of liability
               </h2>
               <p className="mt-2">
-                To the fullest extent allowed by law, {displayName} and{" "}
-                {author.name} are not liable for indirect, incidental, or
-                consequential damages, lost profits, or loss of data arising
-                from the site or sponsorships. Our total liability for any claim
-                related to a sponsorship is limited to the fees you paid for
-                that sponsorship in the three months before the claim.
+                {`To the fullest extent allowed by law, ${displayName} and ${author.name} are not liable for indirect, incidental, or consequential damages, lost profits, or loss of data arising from the site or sponsorships.`}{" "}
+                Our total liability for any claim related to a sponsorship is
+                limited to the fees you paid for that sponsorship in the three
+                months before the claim.
               </p>
             </section>
 

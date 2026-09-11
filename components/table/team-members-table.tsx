@@ -69,7 +69,9 @@ export const TeamMembersTable = forwardRef<
       <div className="flex items-center justify-between border-b border-neutral-100 px-4 py-3">
         <div>
           <p className="text-sm font-semibold text-neutral-900">Team members</p>
-          <p className="text-xs text-neutral-500">{MEMBERS.length} people</p>
+          <p className="text-xs text-neutral-500">
+            {`${MEMBERS.length} people`}
+          </p>
         </div>
         <button
           type="button"

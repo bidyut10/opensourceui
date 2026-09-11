@@ -98,7 +98,7 @@ export const JournalWritingCard = forwardRef<
 
         <div className="flex h-9 items-center justify-between border-t border-neutral-100 px-4">
           <span className="text-[10px] leading-none text-neutral-400">
-            {words} words
+            {`${words} words`}
           </span>
           <div
             className="flex h-4 items-center justify-end gap-1.5"

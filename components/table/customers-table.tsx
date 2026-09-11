@@ -74,7 +74,7 @@ export const CustomersTable = forwardRef<HTMLDivElement, CustomersTableProps>(
           <div>
             <p className="text-sm font-semibold text-neutral-900">Customers</p>
             <p className="text-xs text-neutral-500">
-              {CUSTOMERS.length} accounts
+              {`${CUSTOMERS.length} accounts`}
             </p>
           </div>
           <p className="text-right">

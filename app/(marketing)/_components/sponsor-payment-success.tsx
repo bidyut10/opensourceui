@@ -87,7 +87,7 @@ export function SponsorPaymentSuccess() {
             Payment received
           </p>
           <p className="mt-1 font-serif text-xl text-white">
-            Thanks — {planLabel} sponsorship is confirmed
+            {`Thanks — ${planLabel} sponsorship is confirmed`}
           </p>
           <p className="mt-2 text-sm leading-relaxed text-neutral-400">
             Polar handled the payment. Send your brand details next so we can

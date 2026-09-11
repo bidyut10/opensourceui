@@ -81,7 +81,7 @@ export const TasksTable = forwardRef<HTMLDivElement, TasksTableProps>(
           <div>
             <p className="text-sm font-semibold text-neutral-900">Tasks</p>
             <p className="text-xs text-neutral-500">
-              {completed} of {TASKS.length} done
+              {`${completed} of ${TASKS.length} done`}
             </p>
           </div>
         </div>

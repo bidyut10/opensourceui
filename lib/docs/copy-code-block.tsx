@@ -283,7 +283,7 @@ export function SetupGuide({
             rel="noopener noreferrer"
             className="font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-neutral-900 hover:decoration-neutral-500"
           >
-            Read the {siteConfig.license.name} license
+            {`Read the ${siteConfig.license.name} license`}
           </a>
           .
         </p>

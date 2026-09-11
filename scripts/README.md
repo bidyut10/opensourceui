@@ -13,6 +13,7 @@ scripts/
 | `checks/check-showcase-files.mjs`             | `npm run check:showcase`                    |
 | `checks/check-catalog-integrity.mjs`          | `npm run check:catalog`                     |
 | `checks/check-design-guard.mjs`               | `npm run check:design`                      |
+| `checks/check-jsx-text-space.mjs`             | `npm run check:jsx-space`                   |
 | `deploy/strip-worker-incompatible-assets.mjs` | runs as `postbuild`                         |
 | `deploy/cloudflare-pages-deploy.mjs`          | `npm run cf:deploy` (Worker + assets)       |
 | `deploy/optimize-public-images.mjs`           | optional: recompress heavy `public/` assets |

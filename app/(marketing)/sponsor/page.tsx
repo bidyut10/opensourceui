@@ -220,9 +220,7 @@ export default function SponsorPage() {
         <div className="mt-36 w-full max-w-xl px-4 md:px-0">
           <Heading>What you get from this audience</Heading>
           <Paragraph>
-            Launched {launchLabel} — {siteConfig.stats.pageViews} visits and{" "}
-            {siteConfig.stats.visitors} unique users since. More views means
-            more people learn your name.
+            {`Launched ${launchLabel} — ${siteConfig.stats.pageViews} visits and ${siteConfig.stats.visitors} unique users since. More views means more people learn your name.`}
           </Paragraph>
           <div className="mt-10">
             <SponsorTrafficChart />

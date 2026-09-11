@@ -60,18 +60,16 @@ export default function Home() {
             </span>
           </Heading>
           <Paragraph>
-            {siteConfig.displayName} gives you free React and Next.js components
-            to copy into your own code. Phone mockups, forms, widgets, and more,
-            with live previews so you can see what you&apos;re getting.{" "}
+            {`${siteConfig.displayName} gives you free React and Next.js components to copy into your own code. Phone mockups, forms, widgets, and more, with live previews so you can see what you're getting.`}{" "}
             <a
               href={siteConfig.license.url}
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-neutral-950 hover:decoration-neutral-500"
             >
-              {siteConfig.license.name} licensed
+              {`${siteConfig.license.name} licensed`}
             </a>
-            , for personal and commercial use.
+            {`, for personal and commercial use.`}
           </Paragraph>
           <CtaButtons />
         </div>
@@ -353,7 +351,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="font-medium text-neutral-800 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-neutral-950 hover:decoration-neutral-500"
             >
-              {siteConfig.license.name} licensed
+              {`${siteConfig.license.name} licensed`}
             </a>
             , free for personal and commercial use. No install, no lock-in.
           </Paragraph>

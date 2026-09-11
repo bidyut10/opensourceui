@@ -42,10 +42,7 @@ export default function CareersPage() {
                 No openings right now
               </h2>
               <p className="mt-2">
-                There are no job positions at {displayName} today. Not a
-                &quot;we&apos;re always hiring&quot; page with empty roles. Just
-                the truth: this is still a one-person project, and I am not
-                ready to hire yet.
+                {`There are no job positions at ${displayName} today. Not a "we're always hiring" page with empty roles. Just the truth: this is still a one-person project, and I am not ready to hire yet.`}
               </p>
               <p className="mt-2">
                 I would rather say that clearly than list phantom jobs or make
@@ -58,10 +55,10 @@ export default function CareersPage() {
                 How it actually works
               </h2>
               <p className="mt-2">
-                I built {displayName} on nights and weekends. Components, docs,
-                the site, sponsorships, replies to email — that is mostly me.
-                The library is free and MIT licensed because that is the point,
-                not because there is a big company behind it.
+                {`I built ${displayName} on nights and weekends.`} Components,
+                docs, the site, sponsorships, replies to email — that is mostly
+                me. The library is free and MIT licensed because that is the
+                point, not because there is a big company behind it.
               </p>
               <p className="mt-2">
                 Growth has been real, and that is exciting. It is also why I am
@@ -111,8 +108,8 @@ export default function CareersPage() {
                   sponsor
                 </Link>
                 , or just email me. I read everything. Say what you are good at
-                and why {displayName} matters to you — even without a role open,
-                I like knowing who is out there.
+                and why {`${displayName} matters to you`} — even without a role
+                open, I like knowing who is out there.
               </p>
               <p className="mt-2">
                 Me:{" "}

@@ -139,9 +139,8 @@ const FAQ_ITEMS: FaqItem[] = [
     question: `Is ${siteConfig.displayName} the same as shadcn or Material UI?`,
     answer: (
       <>
-        No. {siteConfig.displayName} is its own open-source project — copy-paste
-        UI with a separate design system and components. Official site is only
-        opensourceui.in.
+        No.{" "}
+        {`${siteConfig.displayName} is its own open-source project — copy-paste UI with a separate design system and components. Official site is only opensourceui.in.`}
       </>
     ),
   },

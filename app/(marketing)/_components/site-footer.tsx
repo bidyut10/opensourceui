@@ -87,7 +87,7 @@ export function SiteFooter() {
                 rel="noopener noreferrer"
                 className="font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-2 transition-colors hover:text-neutral-900 hover:decoration-neutral-500"
               >
-                {siteConfig.license.name} licensed
+                {`${siteConfig.license.name} licensed`}
               </a>{" "}
               — {siteConfig.license.shortNote} Made &amp; maintained by{" "}
               <a

@@ -48,11 +48,11 @@ export default function ContactPage() {
             <section>
               <h2 className="font-semibold text-neutral-900">Start here</h2>
               <p className="mt-2">
-                {displayName} is still in an early, hands-on phase. I maintain
-                the site, ship components, answer mail, and handle sponsorships
-                myself. That is why this page points at my personal inbox
-                instead of some faceless support bot — one person reads the
-                thread and replies.
+                {`${displayName} is still in an early, hands-on phase.`} I
+                maintain the site, ship components, answer mail, and handle
+                sponsorships myself. That is why this page points at my personal
+                inbox instead of some faceless support bot — one person reads
+                the thread and replies.
               </p>
               <p className="mt-2">
                 I am streamlining how people reach out so messages do not pile
@@ -121,8 +121,8 @@ export default function ContactPage() {
                 Why personal email
               </h2>
               <p className="mt-2">
-                There is no support desk behind {displayName} yet. Early on I
-                tried to keep everything simple: ship components, keep the MIT
+                {`There is no support desk behind ${displayName} yet.`} Early on
+                I tried to keep everything simple: ship components, keep the MIT
                 license clear, and stay reachable without building a ticket
                 system I cannot staff. So mail comes to me — {author.name} — at{" "}
                 <CopyEmail />.

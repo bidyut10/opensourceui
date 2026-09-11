@@ -86,8 +86,8 @@ export default function AboutPage() {
                 It started selfishly. I kept rebuilding the same little pieces —
                 clocks, mockups, buttons with slightly nicer motion — for my own
                 projects. In June I tossed a rough prototype online. People
-                actually used it. So on {launchLabel} I launched the site for
-                real at{" "}
+                actually used it.{" "}
+                {`So on ${launchLabel} I launched the site for real at `}
                 <a
                   href={url}
                   className="font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-2"
@@ -115,10 +115,7 @@ export default function AboutPage() {
                 commercial work. {license.shortNote}
               </p>
               <p className="mt-2">
-                Since launch the site has seen {stats.pageViews} page views and{" "}
-                {stats.visitors} visitors. That still surprises me. It also
-                means I care a lot about not shipping junk just to pad the
-                count.
+                {`Since launch the site has seen ${stats.pageViews} page views and ${stats.visitors} visitors. That still surprises me. It also means I care a lot about not shipping junk just to pad the count.`}
               </p>
             </section>
 
