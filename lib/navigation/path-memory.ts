@@ -37,8 +37,7 @@ export function rememberPath(pathname: string, search = "") {
   if (!booted) {
     sessionStorage.setItem(BOOT_KEY, "1");
     const nav = performance.getEntriesByType("navigation")[0] as
-      | PerformanceNavigationTiming
-      | undefined;
+      PerformanceNavigationTiming | undefined;
     const referrer = document.referrer;
     const sameOrigin =
       Boolean(referrer) && referrer.startsWith(window.location.origin);

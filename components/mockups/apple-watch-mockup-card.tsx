@@ -3,13 +3,7 @@
 import React from "react";
 
 export type AppleWatchFrameVariant =
-  | "black"
-  | "silver"
-  | "titanium"
-  | "starlight"
-  | "blue"
-  | "gold"
-  | "rose";
+  "black" | "silver" | "titanium" | "starlight" | "blue" | "gold" | "rose";
 
 interface AppleWatchMockupCardProps {
   variant?: AppleWatchFrameVariant;
