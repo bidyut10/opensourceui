@@ -37,7 +37,7 @@ export default function SponsorPage() {
 
   return (
     <div className="flex min-h-screen w-full min-w-0 flex-col overflow-x-hidden selection:bg-neutral-800 selection:text-white">
-      <div className="flex w-full min-w-0 flex-1 flex-col items-center gap-6 px-3 pt-4 md:px-4">
+      <div className="flex w-full min-w-0 flex-1 flex-col items-center gap-6 px-6 pt-4 md:px-4">
         <div className="w-full max-w-xl px-4 md:px-0">
           <MarketingSiteNav />
 

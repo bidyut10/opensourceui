@@ -32,7 +32,7 @@ export default function AboutPage() {
 
   return (
     <div className="flex min-h-screen w-full min-w-0 flex-col overflow-x-hidden selection:bg-neutral-800 selection:text-white">
-      <div className="flex w-full min-w-0 flex-1 flex-col items-center px-3 pt-4 md:px-4">
+      <div className="flex w-full min-w-0 flex-1 flex-col items-center px-6 pt-4 md:px-4">
         <article className="w-full max-w-xl">
           <MarketingSiteNav />
 

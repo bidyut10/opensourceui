@@ -71,7 +71,7 @@ export function CopyEmail({
           className,
         )}
       >
-        {children ?? email}
+        {children ?? "Email"}
       </button>
 
       <span
