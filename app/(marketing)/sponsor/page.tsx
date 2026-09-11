@@ -149,7 +149,7 @@ export default function SponsorPage() {
 
                       <p
                         className={cn(
-                          "mt-3 min-h-[2.75rem] text-sm leading-snug text-pretty",
+                          "mt-3 min-h-11 text-sm leading-snug text-pretty",
                           isPlatinum ? "text-neutral-600" : "text-neutral-500",
                         )}
                       >
