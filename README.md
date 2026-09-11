@@ -133,7 +133,7 @@ npm run verify:quick   # same without build + e2e
 npm run check:showcase
 ```
 
-Needs Node.js 22.22+.
+Needs Node.js 22.x.
 
 **Before push:** Husky runs Prettier/ESLint on commit, then `npm run verify` on push. If verify fails, the push is blocked until you fix it. GitHub CI mirrors the same checks.
 
