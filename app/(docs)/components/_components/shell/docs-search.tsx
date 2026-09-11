@@ -54,6 +54,7 @@ export function DocsSearch() {
     getSearchShortcutLabel,
     () => "Control K",
   );
+  const isApple = shortcutLabel === "Command K";
   const [, startTransition] = useTransition();
 
   const applySearch = useCallback(
@@ -102,7 +103,12 @@ export function DocsSearch() {
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+      // Exactly one of Cmd or Ctrl, and nothing else held, so Ctrl+Shift+K and
+      // Ctrl+Alt+K stay free for the browser and the OS.
+      const searchChord =
+        event.metaKey !== event.ctrlKey && !event.shiftKey && !event.altKey;
+
+      if (searchChord && event.key.toLowerCase() === "k") {
         event.preventDefault();
         inputRef.current?.focus();
         inputRef.current?.select();
@@ -147,14 +153,18 @@ export function DocsSearch() {
         autoComplete="off"
         autoCorrect="off"
         spellCheck={false}
-        className="w-full rounded-lg border border-neutral-100 bg-neutral-50/50 py-1.5 pr-3 pl-8 font-sans text-sm text-neutral-800 transition-colors outline-none placeholder:text-neutral-400 focus:border-rose-200 focus:bg-white md:pr-14"
+        className="w-full rounded-lg border border-neutral-100 bg-neutral-50/50 py-1.5 pr-3 pl-8 font-sans text-sm text-neutral-800 transition-colors outline-none placeholder:text-neutral-400 focus:border-rose-200 focus:bg-white md:pr-16"
       />
       <kbd
         aria-label={shortcutLabel}
         suppressHydrationWarning
         className="pointer-events-none absolute top-1/2 right-2.5 hidden -translate-y-1/2 items-center gap-0.5 rounded border border-neutral-100 bg-white px-1.5 py-0.5 font-mono text-[10px] text-neutral-400 md:inline-flex"
       >
-        <Command size={10} aria-hidden className="text-neutral-400" />
+        {isApple ? (
+          <Command size={10} aria-hidden className="text-neutral-400" />
+        ) : (
+          <span aria-hidden>Ctrl</span>
+        )}
         <span> + K</span>
       </kbd>
     </label>
