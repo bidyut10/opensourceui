@@ -47,7 +47,7 @@ export const EditorialQuoteCard = forwardRef<
         ref={ref}
         data-slot="editorial-quote-card"
         className={cn(
-          "w-sm border border-neutral-200 bg-[#f6f2eb] p-5 font-sans sm:p-6",
+          "w-sm border border-neutral-200 bg-[#f6f2eb] p-5 font-sans md:p-6",
           className,
         )}
         {...props}
@@ -64,7 +64,7 @@ export const EditorialQuoteCard = forwardRef<
 
         <blockquote
           data-slot="editorial-quote-card-quote"
-          className="text-lg leading-snug font-semibold tracking-tight text-neutral-700 sm:text-xl"
+          className="text-lg leading-snug font-semibold tracking-tight text-neutral-700 md:text-xl"
         >
           {segments.map(({ id, part }) =>
             part.toLowerCase() === accentWord.toLowerCase() ? (

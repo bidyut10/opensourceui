@@ -141,11 +141,15 @@ export const FilterSortDropdown = forwardRef<
             }}
             className={cn(
               "flex w-full cursor-pointer items-center justify-between rounded-lg border bg-white px-3 py-2.5 text-left transition-colors",
-              open ? "border-neutral-300" : "border-neutral-200 hover:border-neutral-300",
+              open
+                ? "border-neutral-300"
+                : "border-neutral-200 hover:border-neutral-300",
             )}
           >
             <span className="min-w-0">
-              <span className="block text-[10px] text-neutral-400">{label}</span>
+              <span className="block text-[10px] text-neutral-400">
+                {label}
+              </span>
               <span className="mt-0.5 block truncate text-[12px] font-medium text-neutral-800">
                 {selectedOption?.label}
               </span>

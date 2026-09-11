@@ -7,8 +7,9 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - uses: actions/checkout@v5
@@ -19,5 +20,33 @@ jobs:
           cache: npm
 
       - run: npm ci
-      - run: npm run lint
-      - run: npm run build
+
+      - name: Install Playwright Chromium
+        run: npx playwright install chromium --with-deps
+
+      - name: Format (Prettier + Tailwind class order)
+        run: npm run format:check
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Showcase paths
+        run: npm run check:showcase
+
+      - name: Catalog integrity
+        run: npm run check:catalog
+
+      - name: Design guard
+        run: npm run check:design
+
+      - name: Unit tests
+        run: npm run test
+
+      - name: Production build
+        run: npm run build
+
+      - name: E2E smoke + a11y
+        run: npm run test:e2e

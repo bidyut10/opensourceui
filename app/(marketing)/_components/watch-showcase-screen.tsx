@@ -278,8 +278,8 @@ export function WatchShowcaseScreen() {
             className={cn(
               "absolute inset-0",
               isActive
-                ? "z-10 opacity-100 transition-opacity duration-300 ease-smooth motion-reduce:transition-none"
-                : "z-0 pointer-events-none opacity-0",
+                ? "ease-smooth z-10 opacity-100 transition-opacity duration-300 motion-reduce:transition-none"
+                : "pointer-events-none z-0 opacity-0",
             )}
           >
             <Face active={isActive} />

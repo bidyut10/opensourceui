@@ -31,7 +31,10 @@ export function ComponentsCatalog({
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-8 md:px-8 md:py-10">
       <div id="overview" className="scroll-mt-8">
-        <Link href="/components" className="font-mono text-[11px] tracking-[0.14em] text-neutral-400 uppercase">
+        <Link
+          href="/components"
+          className="font-mono text-[11px] tracking-[0.14em] text-neutral-400 uppercase"
+        >
           Components / Docs
         </Link>
 

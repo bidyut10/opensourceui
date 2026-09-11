@@ -39,14 +39,7 @@ export const DepthOutlineButton = forwardRef<
   DepthOutlineButtonProps
 >(
   (
-    {
-      className,
-      children,
-      size = "md",
-      type = "button",
-      disabled,
-      ...props
-    },
+    { className, children, size = "md", type = "button", disabled, ...props },
     ref,
   ) => {
     return (

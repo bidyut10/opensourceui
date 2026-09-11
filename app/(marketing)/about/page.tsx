@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { FooterSkyline } from "@/app/(marketing)/_components/footer-skyline";
 import { MarketingGoBack } from "@/app/(marketing)/_components/marketing-go-back";
@@ -37,24 +36,24 @@ export default function AboutPage() {
         <article className="w-full max-w-xl">
           <MarketingSiteNav />
 
-          <Suspense fallback={<div className="mt-20" />}>
-            <MarketingGoBack>
-              <h1 className="font-serif text-3xl text-neutral-900">About</h1>
-              <p className="mt-2 text-sm text-neutral-500">
-                Who runs {displayName}, and why it exists
-              </p>
-            </MarketingGoBack>
-          </Suspense>
+          <MarketingGoBack>
+            <h1 className="font-serif text-3xl text-neutral-900">About</h1>
+            <p className="mt-2 text-sm text-neutral-500">
+              Who runs {displayName}, and why it exists
+            </p>
+          </MarketingGoBack>
 
           <div className="mt-8 space-y-6 text-sm leading-relaxed text-neutral-700">
             <section>
-              <h2 className="font-semibold text-neutral-900">Hey — I&apos;m Bidyut</h2>
+              <h2 className="font-semibold text-neutral-900">
+                Hey — I&apos;m Bidyut
+              </h2>
               <p className="mt-2">
-                I build {displayName}. Not a big team, not a funded design system
-                company — just me, shipping components when I have nights and
-                weekends free. If something feels uneven or unfinished, that&apos;s
-                usually because one person is balancing this with everything else.
-                I still answer emails myself.
+                I build {displayName}. Not a big team, not a funded design
+                system company — just me, shipping components when I have nights
+                and weekends free. If something feels uneven or unfinished,
+                that&apos;s usually because one person is balancing this with
+                everything else. I still answer emails myself.
               </p>
               <p className="mt-2">
                 You can find me on{" "}
@@ -98,10 +97,11 @@ export default function AboutPage() {
                 .
               </p>
               <p className="mt-2">
-                The idea was simple then, and it still is: copy the source, paste
-                it into your app, own it. No install lock-in. No &quot;import
-                thirty packages to get a card.&quot; React, Next.js, TypeScript,
-                Tailwind — the stack most of us already live in.
+                The idea was simple then, and it still is: copy the source,
+                paste it into your app, own it. No install lock-in. No
+                &quot;import thirty packages to get a card.&quot; React,
+                Next.js, TypeScript, Tailwind — the stack most of us already
+                live in.
               </p>
             </section>
 
@@ -109,15 +109,16 @@ export default function AboutPage() {
               <h2 className="font-semibold text-neutral-900">What you get</h2>
               <p className="mt-2">
                 A growing set of production-ready UI pieces across categories —
-                widgets, mockups (phones, laptops, watches), forms, social cards,
-                loaders, and more. Each one has a live preview and the code
-                sitting right there. MIT licensed. Free for personal and
+                widgets, mockups (phones, laptops, watches), forms, social
+                cards, loaders, and more. Each one has a live preview and the
+                code sitting right there. MIT licensed. Free for personal and
                 commercial work. {license.shortNote}
               </p>
               <p className="mt-2">
                 Since launch the site has seen {stats.pageViews} page views and{" "}
-                {stats.visitors} visitors. That still surprises me. It also means
-                I care a lot about not shipping junk just to pad the count.
+                {stats.visitors} visitors. That still surprises me. It also
+                means I care a lot about not shipping junk just to pad the
+                count.
               </p>
             </section>
 
@@ -128,23 +129,23 @@ export default function AboutPage() {
               <p className="mt-2">
                 Quiet over flashy. Hairline borders, clear type, motion that
                 respects reduced-motion. I avoid the purple-gradient dashboard
-                look that every AI template dumps on the internet. If a component
-                feels like it belongs in a real product — not a demo reel —
-                that&apos;s the bar.
+                look that every AI template dumps on the internet. If a
+                component feels like it belongs in a real product — not a demo
+                reel — that&apos;s the bar.
               </p>
               <p className="mt-2">
-                I watch what people actually open with PostHog, then build more of
-                what gets used. Mockups and buttons got a lot of love recently,
-                so those sections grew. If something&apos;s missing, tell me —
-                half the roadmap is just people asking nicely.
+                I watch what people actually open with PostHog, then build more
+                of what gets used. Mockups and buttons got a lot of love
+                recently, so those sections grew. If something&apos;s missing,
+                tell me — half the roadmap is just people asking nicely.
               </p>
             </section>
 
             <section>
               <h2 className="font-semibold text-neutral-900">Support</h2>
               <p className="mt-2">
-                The library stays free. If it saved you an afternoon and you want
-                to keep it alive, you can{" "}
+                The library stays free. If it saved you an afternoon and you
+                want to keep it alive, you can{" "}
                 <Link
                   href={siteConfig.sponsorship.path}
                   className="font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-2"
@@ -181,7 +182,7 @@ export default function AboutPage() {
                 >
                   Privacy Policy
                 </Link>
-                .                 Hiring status (honest version) is on{" "}
+                . Hiring status (honest version) is on{" "}
                 <Link
                   href="/careers"
                   className="font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-2"

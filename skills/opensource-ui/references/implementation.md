@@ -6,14 +6,14 @@ This file is for **developers and coding agents** working in this repository —
 
 ## Stack
 
-| Layer | Choice |
-| ----- | ------ |
-| Framework | Next.js 16 (App Router), static export (`output: "export"`) |
-| UI | React 19, TypeScript, Tailwind CSS v4 |
-| Class merge | `cn()` from `lib/cn.ts` (`clsx` + `tailwind-merge`) |
-| Icons | `icons/` (hand-written SVG) + `lucide-react` in many components |
-| Analytics | PostHog (optional — no key = no tracking) |
-| Deploy | Vercel or Cloudflare Pages (`out/`) |
+| Layer       | Choice                                                          |
+| ----------- | --------------------------------------------------------------- |
+| Framework   | Next.js 16 (App Router), static export (`output: "export"`)     |
+| UI          | React 19, TypeScript, Tailwind CSS v4                           |
+| Class merge | `cn()` from `lib/cn.ts` (`clsx` + `tailwind-merge`)             |
+| Icons       | `icons/` (hand-written SVG) + `lucide-react` in many components |
+| Analytics   | PostHog (optional — no key = no tracking)                       |
+| Deploy      | Vercel or Cloudflare Pages (`out/`)                             |
 
 ## Repository layout
 
@@ -135,14 +135,14 @@ More icons: [nexticons.in](https://nexticons.in)
 
 ## Agent kit
 
-| File | Purpose |
-| ---- | ------- |
-| `skills/opensource-ui/SKILL.md` | Agent workflow |
-| `references/design.md` | Design system |
-| `references/catalog.md` | Component index |
+| File                              | Purpose                                   |
+| --------------------------------- | ----------------------------------------- |
+| `skills/opensource-ui/SKILL.md`   | Agent workflow                            |
+| `references/design.md`            | Design system                             |
+| `references/catalog.md`           | Component index                           |
 | `references/source_inventory.txt` | File paths (showcase + app support files) |
-| `AGENTS.md` | Multi-agent setup guide |
-| `.cursor/rules/` | Cursor project rules |
+| `AGENTS.md`                       | Multi-agent setup guide                   |
+| `.cursor/rules/`                  | Cursor project rules                      |
 
 ## Deploy
 

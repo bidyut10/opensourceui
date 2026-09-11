@@ -40,7 +40,7 @@ function ProfileLink({
         <ArrowUpRight
           size={13}
           aria-hidden
-          className="transition-transform group-hover:-translate-y-px group-hover:translate-x-px"
+          className="transition-transform group-hover:translate-x-px group-hover:-translate-y-px"
         />
       </button>
     );
@@ -52,7 +52,7 @@ function ProfileLink({
       <ArrowUpRight
         size={13}
         aria-hidden
-        className="transition-transform group-hover:-translate-y-px group-hover:translate-x-px"
+        className="transition-transform group-hover:translate-x-px group-hover:-translate-y-px"
       />
     </Link>
   );

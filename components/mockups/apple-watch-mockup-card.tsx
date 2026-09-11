@@ -85,7 +85,7 @@ export function AppleWatchMockupCard({
     <div className={`relative aspect-486/729 w-75 shrink-0 ${className}`}>
       <svg
         viewBox="0 0 486 729"
-        className="pointer-events-none absolute inset-0 mt-2 z-0 h-full w-full"
+        className="pointer-events-none absolute inset-0 z-0 mt-2 h-full w-full"
         preserveAspectRatio="none"
       >
         <defs>
@@ -147,7 +147,7 @@ export function AppleWatchMockupCard({
       {/* BOTTOM STRAP */}
       <svg
         viewBox="0 0 486 729"
-        className="pointer-events-none absolute pb-1 inset-0 z-0 h-full w-full"
+        className="pointer-events-none absolute inset-0 z-0 h-full w-full pb-1"
         preserveAspectRatio="none"
       >
         <defs>
@@ -210,7 +210,7 @@ export function AppleWatchMockupCard({
         />
       </svg>
       <div
-        className="absolute right-[9%] top-[33.3%] z-2 h-[11%] w-[3.2%] overflow-hidden rounded-r-[40%]"
+        className="absolute top-[33.3%] right-[9%] z-2 h-[11%] w-[3.2%] overflow-hidden rounded-r-[40%]"
         style={{
           background: colors.metal,
           boxShadow:
@@ -226,7 +226,7 @@ export function AppleWatchMockupCard({
         />
       </div>
       <div
-        className="absolute left-[11.7%] top-[20.5%] z-3 h-[59.9%] w-[76.6%] rounded-[20.5%] p-[2.8%]"
+        className="absolute top-[20.5%] left-[11.7%] z-3 h-[59.9%] w-[76.6%] rounded-[20.5%] p-[2.8%]"
         style={{
           background: colors.metal,
           boxShadow: `
@@ -271,7 +271,7 @@ export function AppleWatchMockupCard({
         </div>
       </div>
       <div
-        className="pointer-events-none absolute left-[17%] top-[23.4%] z-5 h-[54.5%] w-[66%] rounded-[17%] opacity-[0.045]"
+        className="pointer-events-none absolute top-[23.4%] left-[17%] z-5 h-[54.5%] w-[66%] rounded-[17%] opacity-[0.045]"
         style={{
           background:
             "linear-gradient(125deg,rgba(255,255,255,.95),transparent 30%)",

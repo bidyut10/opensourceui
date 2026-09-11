@@ -80,22 +80,53 @@ function MediaPlaceholder() {
     <div className="flex size-full flex-col items-center justify-center gap-3 bg-neutral-50 p-4">
       <div className="flex items-center gap-4">
         <MediaIcon label="image">
-          <svg viewBox="0 0 20 20" aria-hidden className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg
+            viewBox="0 0 20 20"
+            aria-hidden
+            className="size-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
             <rect x="2.5" y="4" width="15" height="12" rx="1.5" />
-            <circle cx="7" cy="8.5" r="1.25" fill="currentColor" stroke="none" />
-            <path d="M5.5 14l3.5-3 2.5 2 2-1.5 3 2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <circle
+              cx="7"
+              cy="8.5"
+              r="1.25"
+              fill="currentColor"
+              stroke="none"
+            />
+            <path
+              d="M5.5 14l3.5-3 2.5 2 2-1.5 3 2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </MediaIcon>
 
         <MediaIcon label="video">
-          <svg viewBox="0 0 20 20" aria-hidden className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg
+            viewBox="0 0 20 20"
+            aria-hidden
+            className="size-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
             <rect x="2.5" y="5" width="10" height="10" rx="1.5" />
             <path d="M12.5 8.5l4.5-2.5v8l-4.5-2.5z" strokeLinejoin="round" />
           </svg>
         </MediaIcon>
 
         <MediaIcon label="media">
-          <svg viewBox="0 0 20 20" aria-hidden className="size-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+          <svg
+            viewBox="0 0 20 20"
+            aria-hidden
+            className="size-4"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+          >
             <rect x="3" y="3" width="14" height="14" rx="2" />
             <path d="M7 10h6M10 7v6" strokeLinecap="round" />
           </svg>
@@ -209,7 +240,7 @@ export const TransformBoxFrame = forwardRef<
               {skeleton ? (
                 <MediaSkeleton />
               ) : (
-                children ?? <MediaPlaceholder />
+                (children ?? <MediaPlaceholder />)
               )}
             </div>
           </div>
@@ -233,8 +264,14 @@ export const TransformBoxFrame = forwardRef<
 
           <CornerHandle handleColor={colors.handle} className="top-0 left-0" />
           <CornerHandle handleColor={colors.handle} className="top-0 right-0" />
-          <CornerHandle handleColor={colors.handle} className="bottom-0 left-0" />
-          <CornerHandle handleColor={colors.handle} className="right-0 bottom-0" />
+          <CornerHandle
+            handleColor={colors.handle}
+            className="bottom-0 left-0"
+          />
+          <CornerHandle
+            handleColor={colors.handle}
+            className="right-0 bottom-0"
+          />
         </div>
 
         {label ? (

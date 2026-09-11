@@ -141,16 +141,14 @@ export const SwitchFieldInput = forwardRef<
           aria-required={required || undefined}
           aria-invalid={error || undefined}
           aria-labelledby={`${switchId}-label`}
-          aria-describedby={
-            error ? errorId : hint ? hintId : undefined
-          }
+          aria-describedby={error ? errorId : hint ? hintId : undefined}
           onClick={(event) => {
             onClick?.(event);
             if (!event.defaultPrevented) toggle();
           }}
           onKeyDown={handleKeyDown}
           className={cn(
-            "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 transition-[background-color,border-color] duration-200 outline-none ring-0 focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
+            "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 ring-0 transition-[background-color,border-color] duration-200 outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
             isOn
               ? "border-neutral-900 bg-neutral-900"
               : "border-neutral-200 bg-neutral-100",

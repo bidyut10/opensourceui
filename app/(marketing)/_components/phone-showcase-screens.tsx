@@ -183,9 +183,7 @@ export function LibraryPhoneScreen() {
                 aria-hidden
                 className={cn(
                   "h-1 rounded-full transition-all duration-300 motion-reduce:transition-none",
-                  dotIndex === index
-                    ? "w-4 bg-white"
-                    : "w-1 bg-white/30",
+                  dotIndex === index ? "w-4 bg-white" : "w-1 bg-white/30",
                 )}
               />
             ))}
@@ -311,9 +309,7 @@ export function WeatherPhoneScreen() {
                 aria-hidden
                 className={cn(
                   "h-1 rounded-full transition-all duration-300 motion-reduce:transition-none",
-                  dotIndex === index
-                    ? "w-4 bg-white/90"
-                    : "w-1 bg-white/35",
+                  dotIndex === index ? "w-4 bg-white/90" : "w-1 bg-white/35",
                 )}
               />
             ))}

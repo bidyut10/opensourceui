@@ -106,7 +106,12 @@ export const PaymentNotificationBanner = forwardRef<
 
         <div className="grid grid-cols-[2.375rem_minmax(0,1fr)] items-start gap-x-3 gap-y-1 px-3.5 py-3 pr-9">
           <div className="row-span-2 mt-0.5 flex size-9.5 shrink-0 items-center justify-center rounded-[0.625rem] bg-emerald-500 shadow-sm ring-1 ring-black/2">
-            <Banknote size={18} strokeWidth={2} className="text-white" aria-hidden />
+            <Banknote
+              size={18}
+              strokeWidth={2}
+              className="text-white"
+              aria-hidden
+            />
           </div>
 
           <div className="col-start-2 flex min-w-0 items-center justify-between gap-2">

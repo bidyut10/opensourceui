@@ -2,8 +2,7 @@ import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-export interface TropicalTideBackgroundProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface TropicalTideBackgroundProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
@@ -24,7 +23,7 @@ const TropicalTideBackground = forwardRef<
       >
         <div className="absolute inset-0 bg-[#FEFFFE]" />
 
-        <div className="absolute -left-[16%] bottom-[10%] h-[74%] w-[74%] rounded-full bg-[#2DD4BF] opacity-72 blur-3xl" />
+        <div className="absolute bottom-[10%] -left-[16%] h-[74%] w-[74%] rounded-full bg-[#2DD4BF] opacity-72 blur-3xl" />
 
         <div className="absolute top-[-10%] left-[32%] h-[60%] w-[60%] rounded-full bg-[#BEF264] opacity-75 blur-3xl" />
 
@@ -35,7 +34,7 @@ const TropicalTideBackground = forwardRef<
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03] [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:4px_4px]"
+        className="pointer-events-none absolute inset-0 -z-10 [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:4px_4px] opacity-[0.03]"
       />
 
       {children}

@@ -185,7 +185,7 @@ export const CircleCutFrame = forwardRef<HTMLDivElement, CircleCutFrameProps>(
               {skeleton ? (
                 <MediaSkeleton />
               ) : (
-                children ?? <MediaPlaceholder />
+                (children ?? <MediaPlaceholder />)
               )}
             </div>
           </div>

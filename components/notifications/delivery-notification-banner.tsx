@@ -103,12 +103,19 @@ export const DeliveryNotificationBanner = forwardRef<
         </button>
 
         <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sky-50">
-          <Package size={18} strokeWidth={2} className="text-sky-600" aria-hidden />
+          <Package
+            size={18}
+            strokeWidth={2}
+            className="text-sky-600"
+            aria-hidden
+          />
         </div>
 
         <div className="min-w-0 flex-1">
           <p className="text-[13px] font-semibold text-neutral-900">{status}</p>
-          <p className="mt-0.5 text-[12px] leading-snug text-neutral-600">{eta}</p>
+          <p className="mt-0.5 text-[12px] leading-snug text-neutral-600">
+            {eta}
+          </p>
           <p className="mt-1 text-[11px] text-neutral-400">Order {orderId}</p>
         </div>
       </output>

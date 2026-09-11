@@ -10,5 +10,7 @@ export function resolveShowcaseCategory<T extends ShowcaseCategoryLike>(
   const normalized = param.trim().toLowerCase();
   if (!normalized) return undefined;
 
-  return categories.find((group) => group.category.toLowerCase() === normalized);
+  return categories.find(
+    (group) => group.category.toLowerCase() === normalized,
+  );
 }

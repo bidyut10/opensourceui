@@ -1,6 +1,10 @@
 /**
- * Proxies PostHog requests from /ingest/* to PostHog's US endpoints.
- * Used on Cloudflare Pages so NEXT_PUBLIC_POSTHOG_HOST=/ingest works in production.
+ * Proxies PostHog /ingest/* → PostHog US.
+ *
+ * IMPORTANT: This is a Cloudflare Pages Function. The production deploy for
+ * this repo is Workers + static assets (wrangler.toml), so this file is NOT
+ * used there. PostHog falls back to https://us.i.posthog.com instead
+ * (see lib/analytics/client/posthog.ts). Keep this only if you switch to Pages.
  */
 export async function onRequest(context) {
   const request = context.request;
@@ -10,7 +14,8 @@ export async function onRequest(context) {
       status: 204,
       headers: {
         "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, PATCH, DELETE, OPTIONS",
+        "Access-Control-Allow-Methods":
+          "GET, POST, PUT, PATCH, DELETE, OPTIONS",
         "Access-Control-Allow-Headers": "*",
         "Access-Control-Max-Age": "86400",
       },

@@ -126,9 +126,7 @@ export const LikeButton = forwardRef<HTMLButtonElement, LikeButtonProps>(
           />
         </span>
 
-        <span className="tabular-nums">
-          {shown.toLocaleString()}
-        </span>
+        <span className="tabular-nums">{shown.toLocaleString()}</span>
       </button>
     );
   },

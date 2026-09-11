@@ -7,7 +7,7 @@
 
 [opensourceui.in](https://opensourceui.in) — free React and Next.js UI you copy into your project.
 
-**200+ components**, Tailwind, TypeScript, live previews. MIT for good — no paywall later, no “free forever*” fine print. I maintain this myself.
+**200+ components**, Tailwind, TypeScript, live previews. MIT for good — no paywall later, no “free forever\*” fine print. I maintain this myself.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bidyut10/opensourceui)
 
@@ -44,18 +44,18 @@ No shadcn, MUI, or Radix under the hood — React, Tailwind, and SVG.
 
 ## Where things live on the site
 
-| Route | What you get |
-| ----- | ------------ |
-| `/` | Homepage — demos, FAQ, sponsors |
-| `/components` | Full catalog |
-| `/components?q=iphone` | Search |
-| `/components/category/mockups` | Category browse (swap the slug) |
-| `/components/[slug]` | Preview, setup, copy source |
-| `/about` | Story and who runs this |
-| `/contact` | Support, bugs, PRs, contributions |
-| `/careers` | Hiring truth (usually: nothing open) |
-| `/sponsor` | Brand placement on the site |
-| `/privacy` · `/terms` | Legal |
+| Route                          | What you get                         |
+| ------------------------------ | ------------------------------------ |
+| `/`                            | Homepage — demos, FAQ, sponsors      |
+| `/components`                  | Full catalog                         |
+| `/components?q=iphone`         | Search                               |
+| `/components/category/mockups` | Category browse (swap the slug)      |
+| `/components/[slug]`           | Preview, setup, copy source          |
+| `/about`                       | Story and who runs this              |
+| `/contact`                     | Support, bugs, PRs, contributions    |
+| `/careers`                     | Hiring truth (usually: nothing open) |
+| `/sponsor`                     | Brand placement on the site          |
+| `/privacy` · `/terms`          | Legal                                |
 
 Docs on a wide screen: sidebar, content, TOC. Dead search queries get popular demos instead of an empty hole.
 
@@ -125,11 +125,33 @@ npm run dev            # dev server
 npm run build          # static export (runs check:showcase)
 npm run lint
 npm run typecheck
-npm run format
+npm run format         # Prettier + Tailwind class sort
+npm run format:check
+npm run test           # vitest unit tests
+npm run verify         # full gate before push (format, lint, types, catalog, design, tests, build, e2e)
+npm run verify:quick   # same without build + e2e
 npm run check:showcase
 ```
 
 Needs Node.js 20+.
+
+**Before push:** Husky runs Prettier/ESLint on commit, then `npm run verify` on push. If verify fails, the push is blocked until you fix it. GitHub CI mirrors the same checks.
+
+## Folder structure
+
+| Path                    | What it is                             |
+| ----------------------- | -------------------------------------- |
+| `components/`           | Copy-paste UI only (no tests mixed in) |
+| `app/`                  | Marketing site + docs shell            |
+| `lib/`                  | Shared helpers, showcase registry, SEO |
+| `icons/`                | SVG icons                              |
+| `tests/unit/`           | Vitest unit tests                      |
+| `tests/e2e/`            | Playwright smoke + a11y                |
+| `scripts/checks/`       | Catalog / design integrity gates       |
+| `scripts/deploy/`       | Build strip + Cloudflare deploy        |
+| `skills/opensource-ui/` | Agent kit for AI assistants            |
+
+Details: [tests/README.md](./tests/README.md), [scripts/README.md](./scripts/README.md), [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Use a component in your app
 
@@ -172,15 +194,34 @@ Optional. Set `NEXT_PUBLIC_POSTHOG_KEY` in `.env.local` if you want page views a
 
 ## Deploy
 
-Built for [Vercel](https://vercel.com) as a static export:
+### Vercel (primary)
 
 1. Fork or clone [github.com/bidyut10/opensourceui](https://github.com/bidyut10/opensourceui)
 2. Import in [Vercel](https://vercel.com/new)
-3. Env from `.env.example` only if you care about PostHog
+3. Framework: **Next.js** (static export is automatic via `output: "export"`)
+4. Build: `npm run build` → output `out/`
+5. Env from `.env.example` only if you want PostHog / Search Console
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/bidyut10/opensourceui)
 
-Cloudflare Pages works too — see `wrangler.toml` and `npm run pages:deploy`.
+`vercel.json` sets security headers + optional `/ingest` → PostHog rewrites.
+
+### Cloudflare (Worker + static assets)
+
+This is **not** Cloudflare Pages. Config: `wrangler.toml`.
+
+| Dashboard field  | Value               |
+| ---------------- | ------------------- |
+| Build command    | `npm run build`     |
+| Deploy command   | `npm run cf:deploy` |
+| Output directory | `out`               |
+
+Local: `npm run cf:dev` (build + `wrangler dev`).  
+Do **not** use `wrangler pages deploy` for this project.
+
+PostHog on Workers uses the direct API host (not `/ingest`). The `functions/ingest/` folder is Pages-only and unused on the Worker path.
+
+Security headers for CF come from `public/_headers` → copied into `out/` on build.
 
 ## Sponsoring
 

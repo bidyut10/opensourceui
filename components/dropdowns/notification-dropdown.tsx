@@ -171,7 +171,9 @@ export const NotificationDropdown = forwardRef<
             }}
             className={cn(
               "relative inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border bg-white transition-colors",
-              open ? "border-neutral-200" : "border-neutral-100 hover:border-neutral-200",
+              open
+                ? "border-neutral-200"
+                : "border-neutral-100 hover:border-neutral-200",
             )}
           >
             <Bell size={16} strokeWidth={2} className="text-neutral-500" />

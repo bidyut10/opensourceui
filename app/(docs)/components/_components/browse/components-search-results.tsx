@@ -81,9 +81,7 @@ export function ComponentsSearchResults({
                 key={item.slug}
                 item={item}
                 index={index}
-                categoryIsAllNew={
-                  categoryAllNewMap.get(item.category) ?? false
-                }
+                categoryIsAllNew={categoryAllNewMap.get(item.category) ?? false}
               />
             ))}
           </ul>

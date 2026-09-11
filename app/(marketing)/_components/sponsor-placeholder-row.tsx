@@ -23,7 +23,7 @@ export function SponsorPlaceholderRow({
     <li className="min-w-0">
       <Link
         href={siteConfig.sponsorship.path}
-        className="group flex min-w-0 w-full items-center gap-2.5 py-0.5 max-[499px]:gap-2"
+        className="group flex w-full min-w-0 items-center gap-2.5 py-0.5 max-[499px]:gap-2"
       >
         <div className="flex h-5 w-5 shrink-0 items-center justify-center rounded border border-dashed border-neutral-300">
           <span className="font-sans text-[10px] text-neutral-400">+</span>

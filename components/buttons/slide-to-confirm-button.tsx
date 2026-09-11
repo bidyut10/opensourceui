@@ -92,7 +92,7 @@ export const SlideToConfirmButton = forwardRef<
           className={cn(
             // transform-gpu + isolate promote the track to its own compositor
             // layer so the knob's moving shadow can't leave stale ghost pixels.
-            "relative h-14 w-72 transform-gpu isolate overflow-hidden rounded-full p-1 transition-[background-color,box-shadow] duration-300",
+            "relative isolate h-14 w-72 transform-gpu overflow-hidden rounded-full p-1 transition-[background-color,box-shadow] duration-300",
             "shadow-[inset_0_1px_2px_rgba(0,0,0,0.08),inset_0_2px_4px_rgba(0,0,0,0.05),inset_0_-2px_3px_rgba(0,0,0,0.06),0_1px_0_rgba(255,255,255,0.9)]",
             confirmed
               ? "bg-emerald-600 shadow-[inset_0_1px_3px_rgba(0,0,0,0.2),inset_0_-2px_3px_rgba(0,0,0,0.12),0_1px_0_rgba(255,255,255,0.9)]"

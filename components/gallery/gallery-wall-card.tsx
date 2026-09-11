@@ -54,7 +54,9 @@ export const GalleryWallCard = forwardRef<HTMLDivElement, GalleryWallCardProps>(
             <p className="text-[10px] tracking-[0.2em] text-neutral-400 uppercase">
               {gallery}
             </p>
-            <p className="mt-1 font-serif text-sm italic text-neutral-800">{title}</p>
+            <p className="mt-1 font-serif text-sm text-neutral-800 italic">
+              {title}
+            </p>
             <div className="mt-2 flex items-center justify-between gap-2 text-xs text-neutral-500">
               <span>{artist}</span>
               <span>{year}</span>

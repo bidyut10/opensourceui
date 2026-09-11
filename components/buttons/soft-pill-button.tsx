@@ -41,7 +41,10 @@ const VARIANT: Record<SoftPillButtonVariant, string> = {
 };
 
 // SoftPillButton — floating rounded pill; pass any children.
-export const SoftPillButton = forwardRef<HTMLButtonElement, SoftPillButtonProps>(
+export const SoftPillButton = forwardRef<
+  HTMLButtonElement,
+  SoftPillButtonProps
+>(
   (
     {
       className,

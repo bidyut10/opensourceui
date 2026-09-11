@@ -21,10 +21,14 @@ export function ComponentsCategoryView({
     <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
       <div className="flex min-h-0 flex-1 overflow-hidden">
         <main
+          id="main-content"
           data-docs-scroll
           className="scrollbar-hover data-docs-scroll min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-y-contain"
         >
-          <ComponentsCatalog categories={categories} category={activeGroup.category} />
+          <ComponentsCatalog
+            categories={categories}
+            category={activeGroup.category}
+          />
         </main>
 
         <DocsToc

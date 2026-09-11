@@ -29,7 +29,8 @@ function ComponentsPageContent({
 }: ComponentsPageClientProps) {
   const router = useRouter();
   const searchParams = useHydratedSearchParams();
-  const categoryParam = getHydratedSearchParam(searchParams, "category") ?? undefined;
+  const categoryParam =
+    getHydratedSearchParam(searchParams, "category") ?? undefined;
   const searchQuery = getHydratedSearchParam(searchParams, "q")?.trim() ?? "";
   const isSearching = searchQuery.length > 0;
 
@@ -55,6 +56,7 @@ function ComponentsPageContent({
       {listJsonLd ? <JsonLd data={listJsonLd} /> : null}
       <div className="flex min-h-0 flex-1 overflow-hidden">
         <main
+          id="main-content"
           data-docs-scroll
           className="scrollbar-hover data-docs-scroll min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-y-contain"
         >
@@ -110,10 +112,14 @@ function ComponentsPageFallback({
     <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
       <div className="flex min-h-0 flex-1 overflow-hidden">
         <main
+          id="main-content"
           data-docs-scroll
           className="scrollbar-hover data-docs-scroll min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-y-contain"
         >
-          <ComponentsBrowseAll categories={categories} totalCount={totalCount} />
+          <ComponentsBrowseAll
+            categories={categories}
+            totalCount={totalCount}
+          />
         </main>
 
         <DocsToc
@@ -148,10 +154,7 @@ export function ComponentsPageClient({
         />
       }
     >
-      <ComponentsPageContent
-        categories={categories}
-        totalCount={totalCount}
-      />
+      <ComponentsPageContent categories={categories} totalCount={totalCount} />
     </Suspense>
   );
 }

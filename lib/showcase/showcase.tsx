@@ -213,7 +213,10 @@ import { FlightArrivalWidget } from "@/components/widgets/flight-arrival-widget"
 import { MinimalAgendaWidget } from "@/components/widgets/minimal-agenda-widget";
 import { RidePickupWidget } from "@/components/widgets/ride-pickup-widget";
 import { WiFiToggleWidget } from "@/components/widgets/wifi-toggle-widget";
-import { AnnotatedTextShowcase, ANNOTATED_TEXT_USAGE } from "@/components/underlines/annotated-text-showcase";
+import {
+  AnnotatedTextShowcase,
+  ANNOTATED_TEXT_USAGE,
+} from "@/components/underlines/annotated-text-showcase";
 import { OtpBoxedInput } from "@/components/otp/otp-boxed-input";
 import { OtpUnderlineInput } from "@/components/otp/otp-underline-input";
 
@@ -293,7 +296,7 @@ export const showcaseRows = [
   [
     c(
       "soft-ui-button",
-      <div className="flex flex-wrap items-center justify-center gap-3 bg-neutral-100 p-4 rounded-2xl">
+      <div className="flex flex-wrap items-center justify-center gap-3 rounded-2xl bg-neutral-100 p-4">
         <SoftUiButton>
           Get started
           <ArrowRight size={15} strokeWidth={2} aria-hidden />
@@ -373,7 +376,8 @@ export const showcaseRows = [
         title: "Sheen Pill",
         description:
           "Frosted pill with layered shade veil, light band, and rim wire — hover brightens the sheen and clears the fill. Pass width, height, and highlight to tune the frame.",
-        usage: '<SheenPillButton width={200} height={60}>Get started</SheenPillButton>',
+        usage:
+          "<SheenPillButton width={200} height={60}>Get started</SheenPillButton>",
       },
     ),
   ],
@@ -387,7 +391,7 @@ export const showcaseRows = [
         title: "Prism Depth",
         description:
           "Dark depth button with a cyan edge flare, rim glow, and layered core veil — pass any label as children.",
-        usage: '<PrismDepthButton>Get started</PrismDepthButton>',
+        usage: "<PrismDepthButton>Get started</PrismDepthButton>",
       },
     ),
   ],
@@ -418,7 +422,7 @@ export const showcaseRows = [
         isNew: true,
         description:
           "Charcoal latch button with a warm ember under-glow, center groove, and face sheen — built for secure-action CTAs.",
-        usage: '<CinderLatchButton>Unlock</CinderLatchButton>',
+        usage: "<CinderLatchButton>Unlock</CinderLatchButton>",
       },
     ),
     c(
@@ -445,7 +449,7 @@ export const showcaseRows = [
         title: "Linen Tab",
         description:
           "Woven linen tab with dashed stitch borders and a soft fold sheen — warm, editorial, and understated.",
-        usage: '<LinenTabButton>View details</LinenTabButton>',
+        usage: "<LinenTabButton>View details</LinenTabButton>",
       },
     ),
   ],
@@ -473,7 +477,7 @@ export const showcaseRows = [
         description:
           "Press and hold as a fill sweeps across; release early to cancel, hold to the end to delete. Prevents accidental destructive taps.",
         usage:
-          '<HoldToDeleteButton holdMs={1100} onHoldComplete={handleDelete} />',
+          "<HoldToDeleteButton holdMs={1100} onHoldComplete={handleDelete} />",
       },
     ),
   ],
@@ -500,7 +504,7 @@ export const showcaseRows = [
         title: "Like Toggle",
         description:
           "Heart toggle that pops and scatters particles on the way up, with a live count. Pill fills rose when active — no glow, no gradient.",
-        usage: '<LikeButton count={128} defaultLiked={false} />',
+        usage: "<LikeButton count={128} defaultLiked={false} />",
       },
     ),
     c(
@@ -526,7 +530,8 @@ export const showcaseRows = [
         title: "Quantity Stepper",
         description:
           "Inline minus / count / plus control for carts and forms. Clamps between min and max, disables at the edges.",
-        usage: '<QuantityStepperButton value={1} min={0} max={99} onChange={setQty} />',
+        usage:
+          "<QuantityStepperButton value={1} min={0} max={99} onChange={setQty} />",
       },
     ),
     c(
@@ -839,30 +844,18 @@ export const showcaseRows = [
     ),
   ],
   [
-    c(
-      "mac-dock",
-      <MacDock />,
-      "components/docks/mac-dock.tsx",
-      "MacDock",
-      {
-        description:
-          "Frosted macOS-style app dock with smooth hover lift, tooltips, and brand icons — Tailwind-only, no motion library.",
-        usage:
-          '<MacDock items={[{ title: "Home", href: "/", icon: <Home className="size-full" /> }]} />',
-      },
-    ),
-    c(
-      "app-dock",
-      <AppDock />,
-      "components/docks/app-dock.tsx",
-      "AppDock",
-      {
-        description:
-          "Bottom app launcher dock matching MacDock shell, spacing, and hover lift — with active state and optional labels.",
-        usage:
-          '<AppDock activeId="home" showLabels onSelect={(id) => console.log(id)} />',
-      },
-    ),
+    c("mac-dock", <MacDock />, "components/docks/mac-dock.tsx", "MacDock", {
+      description:
+        "Frosted macOS-style app dock with smooth hover lift, tooltips, and brand icons — Tailwind-only, no motion library.",
+      usage:
+        '<MacDock items={[{ title: "Home", href: "/", icon: <Home className="size-full" /> }]} />',
+    }),
+    c("app-dock", <AppDock />, "components/docks/app-dock.tsx", "AppDock", {
+      description:
+        "Bottom app launcher dock matching MacDock shell, spacing, and hover lift — with active state and optional labels.",
+      usage:
+        '<AppDock activeId="home" showLabels onSelect={(id) => console.log(id)} />',
+    }),
   ],
   [
     c(
@@ -886,7 +879,7 @@ export const showcaseRows = [
         description:
           "Collaborator presence dock with MacDock-sized avatar tiles and expandable member list.",
         usage:
-          '<PresenceDock maxVisible={3} onSelect={(id) => console.log(id)} />',
+          "<PresenceDock maxVisible={3} onSelect={(id) => console.log(id)} />",
       },
     ),
   ],
@@ -899,8 +892,7 @@ export const showcaseRows = [
       {
         description:
           "Spotlight-style command search in the frosted dock shell — keyboard nav and suggestions.",
-        usage:
-          '<SpotlightBar onSelectSuggestion={(id) => console.log(id)} />',
+        usage: "<SpotlightBar onSelectSuggestion={(id) => console.log(id)} />",
       },
     ),
   ],
@@ -913,7 +905,8 @@ export const showcaseRows = [
       {
         description:
           "Editorial step stat — light wide card, large number, goal in a quiet footer row. No progress bars or icons.",
-        usage: '<StepCountWidget steps={8432} goal={10000} label="steps today" />',
+        usage:
+          '<StepCountWidget steps={8432} goal={10000} label="steps today" />',
       },
     ),
     c(
@@ -948,7 +941,8 @@ export const showcaseRows = [
       {
         description:
           "Sleep score in the DND face layout — sleeping mascot at the bottom, score and quality above, duration tucked below.",
-        usage: '<SleepScoreWidget score={87} quality="Good" duration="7h 24m" />',
+        usage:
+          '<SleepScoreWidget score={87} quality="Good" duration="7h 24m" />',
       },
     ),
     c(
@@ -959,7 +953,7 @@ export const showcaseRows = [
       {
         description:
           "Heart rate in the DND face layout — mascot at the bottom, BPM above the dial, soft pulse on the ring.",
-        usage: '<HeartRateWidget bpm={72} />',
+        usage: "<HeartRateWidget bpm={72} />",
       },
     ),
     c(
@@ -971,7 +965,7 @@ export const showcaseRows = [
         description:
           "Month grid for the current month — today is highlighted in orange, with a short emerald streak on prior days. Pass activeDays or highlightDay to override.",
         usage:
-          '<DailyActivityCalendarWidget activeDays={[12, 13, 14, 15, 16]} highlightDay={17} />',
+          "<DailyActivityCalendarWidget activeDays={[12, 13, 14, 15, 16]} highlightDay={17} />",
       },
     ),
   ],
@@ -984,7 +978,7 @@ export const showcaseRows = [
       {
         description:
           "Full month picker with prev/next navigation — tap any day to select it, today gets a quiet ring.",
-        usage: '<MonthPickerCalendar onSelect={(date) => console.log(date)} />',
+        usage: "<MonthPickerCalendar onSelect={(date) => console.log(date)} />",
       },
     ),
     c(
@@ -995,7 +989,7 @@ export const showcaseRows = [
       {
         description:
           "Horizontal week strip for booking and scheduling apps — arrow through weeks, tap a day to select.",
-        usage: '<WeekStripCalendar onSelect={(date) => {}} />',
+        usage: "<WeekStripCalendar onSelect={(date) => {}} />",
       },
     ),
     c(
@@ -1006,7 +1000,7 @@ export const showcaseRows = [
       {
         description:
           "Travel-style date range picker — first tap sets check-in, second sets check-out, days between fill in.",
-        usage: '<DateRangePickerCard onChange={(start, end) => {}} />',
+        usage: "<DateRangePickerCard onChange={(start, end) => {}} />",
       },
     ),
   ],
@@ -1113,7 +1107,7 @@ export const showcaseRows = [
       {
         description:
           "Appointment booking flow — week strip on top, time slots below. Unavailable slots are crossed out, tap to book.",
-        usage: '<BookingSlotCalendar onBook={(date, slot) => {}} />',
+        usage: "<BookingSlotCalendar onBook={(date, slot) => {}} />",
       },
     ),
     c(
@@ -1253,7 +1247,8 @@ export const showcaseRows = [
         isNew: true,
         description:
           "Classic iPod frame with a screen slot and click wheel — silver, black, white, pink, blue, green, or red finishes. Drop any UI into the screen area.",
-        usage: '<IpodMockupCard variant="silver">{screenContent}</IpodMockupCard>',
+        usage:
+          '<IpodMockupCard variant="silver">{screenContent}</IpodMockupCard>',
       },
     ),
   ],
@@ -1301,7 +1296,8 @@ export const showcaseRows = [
         title: "Weather Snapshot",
         description:
           "Compact weather card with temperature, highs/lows, humidity, and wind — clear or rain variants.",
-        usage: '<WeatherSnapshotCard city="Kolkata" variant="rain" temperature={28} />',
+        usage:
+          '<WeatherSnapshotCard city="Kolkata" variant="rain" temperature={28} />',
       },
     ),
   ],
@@ -1536,7 +1532,7 @@ export const showcaseRows = [
         description:
           "List row that expands inline — actions open inside the same card so widths always align.",
         usage:
-          '<KebabActionsDropdown onItemClick={(item) => console.log(item.id)} />',
+          "<KebabActionsDropdown onItemClick={(item) => console.log(item.id)} />",
       },
     ),
   ],
@@ -1550,7 +1546,7 @@ export const showcaseRows = [
         description:
           "Square icon trigger opens a horizontal brand rail — four social tiles in a row plus a full-width copy button.",
         usage:
-          '<ShareMenuDropdown copied={false} onItemClick={(item) => console.log(item.id)} />',
+          "<ShareMenuDropdown copied={false} onItemClick={(item) => console.log(item.id)} />",
       },
     ),
     c(
@@ -1562,7 +1558,7 @@ export const showcaseRows = [
         description:
           "Square bell trigger with a gray inset tray — each notification is a small bordered card inside the panel.",
         usage:
-          '<NotificationDropdown onNotificationClick={(n) => console.log(n.id)} />',
+          "<NotificationDropdown onNotificationClick={(n) => console.log(n.id)} />",
       },
     ),
     c(
@@ -1588,7 +1584,7 @@ export const showcaseRows = [
         description:
           "Rectangular org bar that expands inline — workspace list opens inside the same bordered box, not a floating panel.",
         usage:
-          '<WorkspaceSwitcherDropdown onWorkspaceChange={(w) => console.log(w.id)} />',
+          "<WorkspaceSwitcherDropdown onWorkspaceChange={(w) => console.log(w.id)} />",
       },
     ),
   ],
@@ -1780,7 +1776,8 @@ export const showcaseRows = [
         title: "Ink Stamp Document",
         description:
           "Paper filing card with reference metadata and a rotated approval stamp — contracts, invoices, and admin dashboards.",
-        usage: '<InkStampDocumentCard stampLabel="Approved" title="Vendor Agreement" />',
+        usage:
+          '<InkStampDocumentCard stampLabel="Approved" title="Vendor Agreement" />',
       },
     ),
     c(
@@ -1859,7 +1856,8 @@ export const showcaseRows = [
         title: "Gallery Wall",
         description:
           "Gallery wall mat with cream matting, artwork preview, and caption block — clean exhibition styling.",
-        usage: '<GalleryWallCard title="Winter Light Study" artist="Elena Marchetti" />',
+        usage:
+          '<GalleryWallCard title="Winter Light Study" artist="Elena Marchetti" />',
       },
     ),
     c(
@@ -2133,7 +2131,8 @@ export const showcaseRows = [
         title: "Cafe Menu Board",
         description:
           "Dark chalkboard-style menu with cafe header, item notes, and amber price accents — hospitality and local brand sites.",
-        usage: '<CafeMenuBoardCard cafeName="Corner & Steam" items={menuItems} />',
+        usage:
+          '<CafeMenuBoardCard cafeName="Corner & Steam" items={menuItems} />',
       },
     ),
     c(
@@ -2291,7 +2290,7 @@ export const showcaseRows = [
         description:
           "Accessible checkbox with custom mark, inline label, hint, and error. Controlled or uncontrolled checked state.",
         usage:
-          '<CheckboxFieldInput required checked={accepted} onCheckedChange={setAccepted} error={!accepted} />',
+          "<CheckboxFieldInput required checked={accepted} onCheckedChange={setAccepted} error={!accepted} />",
       },
     ),
   ],
@@ -2370,7 +2369,7 @@ export const showcaseRows = [
       {
         description:
           "Production login form with email/password validation, remember me, show password, loading state, and forgot-password link.",
-        usage: '<LoginForm onSubmit={async (values) => signIn(values)} />',
+        usage: "<LoginForm onSubmit={async (values) => signIn(values)} />",
       },
     ),
     c(
@@ -2381,7 +2380,7 @@ export const showcaseRows = [
       {
         description:
           "Registration form with name, email, password strength rules, confirm password match, and required terms acceptance.",
-        usage: '<SignupForm onSubmit={async (values) => register(values)} />',
+        usage: "<SignupForm onSubmit={async (values) => register(values)} />",
       },
     ),
     c(
@@ -2392,7 +2391,8 @@ export const showcaseRows = [
       {
         description:
           "Contact form with honeypot spam guard, character count, field validation, loading state, and success confirmation screen.",
-        usage: '<ContactForm onSubmit={async (values) => sendMessage(values)} />',
+        usage:
+          "<ContactForm onSubmit={async (values) => sendMessage(values)} />",
       },
     ),
   ],
@@ -2405,7 +2405,8 @@ export const showcaseRows = [
       {
         description:
           "Email subscribe form with inline button, validation, privacy note, and inline success message — built for footers and landing pages.",
-        usage: '<NewsletterForm onSubmit={async (email) => subscribe(email)} />',
+        usage:
+          "<NewsletterForm onSubmit={async (email) => subscribe(email)} />",
       },
     ),
     c(
@@ -2416,7 +2417,8 @@ export const showcaseRows = [
       {
         description:
           "Password reset request form with email validation, loading state, success screen, and back-to-login navigation.",
-        usage: '<ForgotPasswordForm onSubmit={async (email) => requestReset(email)} />',
+        usage:
+          "<ForgotPasswordForm onSubmit={async (email) => requestReset(email)} />",
       },
     ),
   ],
@@ -2460,7 +2462,8 @@ export const showcaseRows = [
         isNew: true,
         description:
           "Animated text loader with a spinning color orb and staggered letter pulses. Pass text, variant, and textColor to match your UI.",
-        usage: '<TextLoader text="Searching" variant="ocean" textColor="#ffffff" />',
+        usage:
+          '<TextLoader text="Searching" variant="ocean" textColor="#ffffff" />',
       },
     ),
   ],

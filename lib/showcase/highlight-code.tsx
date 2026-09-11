@@ -275,7 +275,7 @@ export function HighlightedPartialLine({
   tone?: HighlightTone;
 }>) {
   return (
-    <span className="whitespace-pre-wrap wrap-break-word">
+    <span className="wrap-break-word whitespace-pre-wrap">
       {renderLineContent(text, lineNumber, tone)}
     </span>
   );
@@ -306,10 +306,10 @@ export function HighlightedCode({ code }: Readonly<{ code: string }>) {
   const gutterWidth = String(lines.length).length;
 
   return (
-    <div className="flex min-w-0 font-mono text-xs leading-[1.65] tracking-tight select-none sm:min-w-max sm:text-[13px] sm:leading-[1.7]">
+    <div className="flex min-w-0 font-mono text-xs leading-[1.65] tracking-tight select-none md:min-w-max md:text-[13px] md:leading-[1.7]">
       <div
         aria-hidden
-        className="sticky left-0 hidden shrink-0 border-r border-neutral-700/60 bg-neutral-900 py-3 pr-2 pl-1.5 text-right text-neutral-600 tabular-nums select-none sm:block sm:py-4 sm:pr-3 sm:pl-2"
+        className="sticky left-0 hidden shrink-0 border-r border-neutral-700/60 bg-neutral-900 py-3 pr-2 pl-1.5 text-right text-neutral-600 tabular-nums select-none md:block md:py-4 md:pr-3 md:pl-2"
       >
         {lines.map(({ lineNumber, key }) => (
           <GutterLine
@@ -319,7 +319,7 @@ export function HighlightedCode({ code }: Readonly<{ code: string }>) {
           />
         ))}
       </div>
-      <code className="block min-w-0 py-3 pr-3 pl-3 sm:py-4 sm:pr-4 sm:pl-4">
+      <code className="block min-w-0 py-3 pr-3 pl-3 md:py-4 md:pr-4 md:pl-4">
         {lines.map(({ line, lineNumber, key }) => (
           <CodeLine key={key} line={line} lineNumber={lineNumber} />
         ))}

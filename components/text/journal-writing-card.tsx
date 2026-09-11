@@ -102,6 +102,7 @@ export const JournalWritingCard = forwardRef<
           </span>
           <div
             className="flex h-4 items-center justify-end gap-1.5"
+            role="status"
             aria-live="polite"
             aria-label={saveState === "saving" ? "Saving" : "Saved"}
           >

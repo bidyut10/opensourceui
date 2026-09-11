@@ -22,7 +22,7 @@ export const ANNOTATED_TEXT_USAGE = VARIANTS.map(usageLine).join("\n\n");
 
 export function AnnotatedTextShowcase() {
   return (
-    <div className="scrollbar-none flex max-h-[22rem] flex-col items-start gap-2.5 overflow-y-auto py-1 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+    <div className="flex max-h-[22rem] scrollbar-none flex-col items-start gap-2.5 overflow-y-auto py-1 [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
       {VARIANTS.map((item) => (
         <AnnotatedText
           key={item.variant}

@@ -150,14 +150,12 @@ export const FloatingLabelFieldInput = forwardRef<
           value={isControlled ? current : undefined}
           defaultValue={isControlled ? undefined : String(defaultValue)}
           aria-invalid={error || undefined}
-          aria-describedby={
-            error ? errorId : hint ? hintId : undefined
-          }
+          aria-describedby={error ? errorId : hint ? hintId : undefined}
           onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           className={cn(
-            "h-12 w-full rounded-lg border bg-white px-3.5 pt-4 pb-2 font-sans text-sm text-neutral-900 outline-none ring-0 transition-[border-color] duration-200 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400 read-only:cursor-default read-only:bg-neutral-50",
+            "h-12 w-full rounded-lg border bg-white px-3.5 pt-4 pb-2 font-sans text-sm text-neutral-900 ring-0 transition-[border-color] duration-200 outline-none read-only:cursor-default read-only:bg-neutral-50 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
             error
               ? "border-rose-400 focus:border-rose-500"
               : focused
@@ -173,9 +171,11 @@ export const FloatingLabelFieldInput = forwardRef<
           className={cn(
             "pointer-events-none absolute left-3 max-w-[calc(100%-1.5rem)] origin-left truncate transition-all duration-200 ease-out",
             floated
-              ? "top-0 -translate-y-1/2 bg-white px-1 text-xs font-medium leading-none"
+              ? "top-0 -translate-y-1/2 bg-white px-1 text-xs leading-none font-medium"
               : "top-1/2 -translate-y-1/2 bg-transparent px-0 text-sm leading-none",
-            floated && !error && (focused ? "text-neutral-900" : "text-neutral-600"),
+            floated &&
+              !error &&
+              (focused ? "text-neutral-900" : "text-neutral-600"),
             !floated && "text-neutral-500",
             error && "text-rose-500",
             disabled && "text-neutral-400",

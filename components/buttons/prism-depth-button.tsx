@@ -18,8 +18,7 @@ const PRISM_SHELL =
   "radial-gradient(circle 80px at 80% -10%, #ffffff, #181b1b)";
 const PRISM_EDGE_FLARE =
   "radial-gradient(circle 60px at 0% 100%, #3fe9ff, #0000ff80, transparent)";
-const PRISM_CORE =
-  "radial-gradient(circle 80px at 80% -50%, #777777, #0f1111)";
+const PRISM_CORE = "radial-gradient(circle 80px at 80% -50%, #777777, #0f1111)";
 const PRISM_CORE_VEIL =
   "radial-gradient(circle 60px at 0% 100%, #00e1ff1a, #0000ff11, transparent)";
 
@@ -28,13 +27,7 @@ export const PrismDepthButton = forwardRef<
   PrismDepthButtonProps
 >(
   (
-    {
-      children = "Continue",
-      className,
-      type = "button",
-      disabled,
-      ...props
-    },
+    { children = "Continue", className, type = "button", disabled, ...props },
     ref,
   ) => {
     return (
@@ -44,7 +37,7 @@ export const PrismDepthButton = forwardRef<
         disabled={disabled}
         data-slot="prism-depth-button"
         className={cn(
-          "relative isolate cursor-pointer rounded-2xl border-0 p-0.5 text-[1.4rem] outline-none ring-0",
+          "relative isolate cursor-pointer rounded-2xl border-0 p-0.5 text-[1.4rem] ring-0 outline-none",
           "transition-[transform,opacity] duration-200 ease-out",
           "hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:active:scale-100",
           "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300",

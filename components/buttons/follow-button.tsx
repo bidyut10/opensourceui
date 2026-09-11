@@ -69,7 +69,9 @@ export const FollowButton = forwardRef<HTMLButtonElement, FollowButtonProps>(
           aria-hidden={following}
           className={cn(
             LABEL_LAYER,
-            following ? "opacity-0 duration-200" : "opacity-100 duration-300 delay-200",
+            following
+              ? "opacity-0 duration-200"
+              : "opacity-100 delay-200 duration-300",
           )}
         >
           <UserPlus size={15} strokeWidth={2} aria-hidden />
@@ -80,7 +82,9 @@ export const FollowButton = forwardRef<HTMLButtonElement, FollowButtonProps>(
           aria-hidden={!following}
           className={cn(
             LABEL_LAYER,
-            following ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+            following
+              ? "opacity-100 delay-200 duration-300"
+              : "opacity-0 duration-200",
           )}
         >
           <UserCheck size={15} strokeWidth={2} aria-hidden />

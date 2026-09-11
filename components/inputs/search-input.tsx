@@ -121,12 +121,10 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
             value={current}
             placeholder={placeholder}
             aria-invalid={error || undefined}
-            aria-describedby={
-              error ? errorId : hint ? hintId : undefined
-            }
+            aria-describedby={error ? errorId : hint ? hintId : undefined}
             onChange={handleChange}
             className={cn(
-              "h-10 w-full rounded-lg border bg-white py-2 pr-10 pl-10 font-sans text-sm text-neutral-900 outline-none ring-0 transition-[border-color,background-color] duration-200 placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
+              "h-10 w-full rounded-lg border bg-white py-2 pr-10 pl-10 font-sans text-sm text-neutral-900 ring-0 transition-[border-color,background-color] duration-200 outline-none placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
               "[&::-webkit-search-cancel-button]:hidden [&::-webkit-search-decoration]:hidden",
               error
                 ? "border-rose-300 focus:border-rose-400"

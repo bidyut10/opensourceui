@@ -26,12 +26,17 @@
 !.github/ISSUE_TEMPLATE/
 !.github/ISSUE_TEMPLATE/**
 !.github/pull_request_template.md
+!.github/dependabot.yml
 
 # Impeccable (local design tool cache — do not commit)
 .impeccable/
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
 
 # next.js
 /.next/

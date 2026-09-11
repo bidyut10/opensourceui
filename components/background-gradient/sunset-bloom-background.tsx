@@ -2,8 +2,7 @@ import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-export interface SunsetBloomBackgroundProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface SunsetBloomBackgroundProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
@@ -24,7 +23,7 @@ const SunsetBloomBackground = forwardRef<
       >
         <div className="absolute inset-0 bg-[#FFFAF5]" />
 
-        <div className="absolute -left-[14%] top-[20%] h-[66%] w-[66%] rounded-full bg-[#FB923C] opacity-72 blur-3xl" />
+        <div className="absolute top-[20%] -left-[14%] h-[66%] w-[66%] rounded-full bg-[#FB923C] opacity-72 blur-3xl" />
 
         <div className="absolute top-[-12%] right-[8%] h-[62%] w-[62%] rounded-full bg-[#FACC15] opacity-68 blur-3xl" />
 
@@ -35,7 +34,7 @@ const SunsetBloomBackground = forwardRef<
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.032] [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:4px_4px]"
+        className="pointer-events-none absolute inset-0 -z-10 [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:4px_4px] opacity-[0.032]"
       />
 
       {children}

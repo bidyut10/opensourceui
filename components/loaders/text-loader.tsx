@@ -133,7 +133,7 @@ export function TextLoader({
         {letters.map((letter, index) => (
           <span
             key={`${letter}-${index}`}
-            className="inline-block rounded-[50ch] border-none opacity-40 will-change-[opacity] motion-reduce:animate-none motion-reduce:opacity-100 animate-pulse"
+            className="inline-block animate-pulse rounded-[50ch] border-none opacity-40 will-change-[opacity] motion-reduce:animate-none motion-reduce:opacity-100"
             style={{
               animationDuration: "1.8s",
               animationDelay: `${index * 0.09}s`,

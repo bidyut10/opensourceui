@@ -102,6 +102,7 @@ Density stays light. Hierarchy comes from type pairing and neutral borders, not 
 This system explicitly rejects generic AI UI (purple gradients, Inter monoculture, nested cards, glassmorphism, glow), heavy enterprise / Material-dense dashboards, and over-animated “wow” landing pages.
 
 **Key Characteristics:**
+
 - Neutral stage + sparing demo accents (cyan / rose)
 - Serif display + geometric sans body (Instrument Serif + Geist)
 - Flat surfaces; soft shadow only on primary CTAs
@@ -113,14 +114,17 @@ This system explicitly rejects generic AI UI (purple gradients, Inter monocultur
 A restrained neutral palette with ink for authority and two soft accents for highlight moments on demos and annotations.
 
 ### Primary
+
 - **Workbench Ink** (`#171717` / Tailwind `neutral-900`): Primary text, active nav indicators, strongest borders on focus. Authority and readability.
 - **Ink Soft** (`#262626` / `neutral-800`): Primary CTA fill and secondary button borders. Slightly softer than pure ink so buttons feel solid without shouting.
 
 ### Secondary
+
 - **Soft Cyan Highlight** (`#a5f3fc` / `cyan-200`): Annotation underlines and demo callouts on the marketing page. Rare; used for craft moments, not chrome.
 - **Rose Signal** (`#f43f5e` / `rose-500`): Required markers, soft focus accents in docs search, error-adjacent signals. Never purple-family substitutes.
 
 ### Neutral
+
 - **Paper** (`#ffffff`): Page and card backgrounds.
 - **Paper Tint** (`#fafafa` / `neutral-50`): Subtle recessed fields (search idle, disabled fills).
 - **Border Subtle** (`#f5f5f5` / `neutral-100`): Hairline dividers, card edges, quiet structure.
@@ -130,6 +134,7 @@ A restrained neutral palette with ink for authority and two soft accents for hig
 - **Body Soft** (`#404040` / `neutral-700`): Muted paragraph tone when ink is too strong.
 
 ### Named Rules
+
 **The Stage Rule.** Site chrome stays neutral. Color lives in demos, annotations, and state — never as purple, violet, or indigo family fills.
 
 **The One Voice Rule.** Accents (cyan, rose, amber, teal, emerald in demos) stay ≤10% of any marketing screen. Neutrals carry the rest.
@@ -143,6 +148,7 @@ A restrained neutral palette with ink for authority and two soft accents for hig
 **Character:** Editorial display for brand voice; practical sans for UI and docs. The pairing reads clean and confident — craft without costume.
 
 ### Hierarchy
+
 - **Display** (400, `text-3xl` / 1.875rem, serif): Marketing H1 and brand moments. Instrument Serif only.
 - **Headline** (400, `text-xl`–`text-3xl`, serif): Docs section titles, footer brand line.
 - **Title** (600, `text-sm`, sans): Card titles, sidebar section labels, form labels.
@@ -151,6 +157,7 @@ A restrained neutral palette with ink for authority and two soft accents for hig
 - **Mono** (400, ~10px, mono): Keyboard shortcuts, code-adjacent chrome, platform tags.
 
 ### Named Rules
+
 **The Two-Voice Rule.** Serif carries brand headlines only. Product UI (buttons, inputs, nav lists) stays Geist sans — never Instrument Serif on dense controls.
 
 **The No-Inter Rule.** Do not introduce Inter, Plus Jakarta, DM Sans, or other training-data defaults. Geist + Instrument Serif are the committed pair.
@@ -160,10 +167,12 @@ A restrained neutral palette with ink for authority and two soft accents for hig
 Flat by default. Depth comes from borders, tonal fills (`paper` vs `paper-tint`), and occasional soft shadow on primary CTAs — not from stacked card shadows or glass blur.
 
 ### Shadow Vocabulary
+
 - **CTA lift** (`box-shadow: 0 20px 25px -5px rgb(212 212 212 / 0.5)` / Tailwind `shadow-xl shadow-neutral-300/50`): Primary marketing CTA only (“Browse Components”).
 - **Rest surfaces:** no shadow — white + `border-neutral-100` / `200`.
 
 ### Named Rules
+
 **The Flat-By-Default Rule.** Surfaces are flat at rest. Shadows appear only as a deliberate CTA response, never as ambient card decoration. No glow, no colored blur, no gradients.
 
 ## 5. Components
@@ -171,12 +180,14 @@ Flat by default. Depth comes from borders, tonal fills (`paper` vs `paper-tint`)
 Restrained and copy-ready. Every interactive piece should feel pasteable into a Next.js app without theme providers.
 
 ### Buttons
+
 - **Shape:** Gently rounded (`rounded-md` / 6px)
 - **Primary:** Ink Soft fill (`#262626`), white text, light weight, `px-4 py-2`, optional CTA lift shadow on marketing. Hover deepens toward ink; icon morph uses `--ease-smooth` (~500ms).
 - **Secondary / Ghost:** White fill, ink-soft text, `border-neutral-800`. Full-width on mobile, auto on `md:`.
 - **Focus:** Visible via border / contrast — never purple rings or glow.
 
 ### Cards / Containers
+
 - **Corner Style:** Soft (`rounded-2xl` / 16px on testimonials; `rounded-lg` on fields and smaller cards)
 - **Background:** Paper white
 - **Shadow Strategy:** None by default (see Elevation)
@@ -184,22 +195,26 @@ Restrained and copy-ready. Every interactive piece should feel pasteable into a 
 - **Internal Padding:** `p-4` (16px) typical; avoid nested cards
 
 ### Inputs / Fields
+
 - **Style:** White fill, `rounded-lg` (8px), `h-10`, `border-neutral-200`, Geist `text-sm`
 - **Focus:** `outline-none ring-0`; border shifts to `neutral-900` (or rose on error). Border color only — never `ring-*`
 - **Error / Disabled:** Rose border + message; disabled uses `neutral-50` fill and faint text
 - **Required marker:** Rose asterisk
 
 ### Navigation
+
 - **Docs:** Sans `text-sm` / `13px`; idle `neutral-500`, hover/active `neutral-900`
 - **Active TOC:** 2px ink bar on the left of the current item (structural indicator, not a decorative side-stripe on cards)
 - **Mobile:** Overlay `neutral-900/20`; drawer pattern — no purple accent
 
 ### Signature: Marketing CTA row
+
 Primary “Browse Components” + secondary “Work WIth Us” with waving-hand micro-motion. Ease: `--ease-smooth` (`cubic-bezier(0.22, 1, 0.36, 1)`). Respect `prefers-reduced-motion`.
 
 ## 6. Do's and Don'ts
 
 ### Do:
+
 - **Do** keep site chrome on the neutral stage (paper, ink, hairline borders).
 - **Do** use Instrument Serif for brand headlines and Geist for UI/docs body.
 - **Do** style focus with border color only (`focus:border-neutral-900 focus:ring-0`).
@@ -208,6 +223,7 @@ Primary “Browse Components” + secondary “Work WIth Us” with waving-hand 
 - **Do** aim for WCAG AA contrast; bump muted grays toward ink when close.
 
 ### Don't:
+
 - **Don't** use purple-family colors (purple, violet, indigo) anywhere — text, icons, borders, backgrounds.
 - **Don't** use glow effects, colored blurs, or gradient backgrounds/fills.
 - **Don't** use `ring-*` focus styles on inputs.

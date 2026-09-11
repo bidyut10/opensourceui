@@ -139,8 +139,8 @@ export function LaptopShowcaseScreen() {
             className={cn(
               "absolute inset-0 flex flex-col",
               sceneIndex === index
-                ? "z-10 opacity-100 transition-opacity duration-500 ease-smooth motion-reduce:transition-none"
-                : "z-0 pointer-events-none opacity-0",
+                ? "ease-smooth z-10 opacity-100 transition-opacity duration-500 motion-reduce:transition-none"
+                : "pointer-events-none z-0 opacity-0",
             )}
           >
             <Scene />
@@ -154,7 +154,7 @@ export function LaptopShowcaseScreen() {
             key={scene.id}
             aria-hidden
             className={cn(
-              "rounded-full transition-all duration-300 ease-smooth motion-reduce:transition-none",
+              "ease-smooth rounded-full transition-all duration-300 motion-reduce:transition-none",
               sceneIndex === index
                 ? "size-1 bg-neutral-800"
                 : "size-0.5 bg-neutral-300",

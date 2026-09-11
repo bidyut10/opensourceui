@@ -127,7 +127,9 @@ export const ComboboxFieldInput = forwardRef<
   const [highlighted, setHighlighted] = useState(-1);
 
   const currentValue = isControlled ? String(value ?? "") : internalValue;
-  const selectedOption = options.find((option) => option.value === currentValue);
+  const selectedOption = options.find(
+    (option) => option.value === currentValue,
+  );
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -216,7 +218,8 @@ export const ComboboxFieldInput = forwardRef<
 
   useEffect(() => {
     return () => {
-      if (blurTimerRef.current !== null) window.clearTimeout(blurTimerRef.current);
+      if (blurTimerRef.current !== null)
+        window.clearTimeout(blurTimerRef.current);
     };
   }, []);
 
@@ -235,7 +238,9 @@ export const ComboboxFieldInput = forwardRef<
       setOpen(true);
       const normalized = nextQuery.trim().toLowerCase();
       const nextOptions = normalized
-        ? options.filter((option) => option.label.toLowerCase().includes(normalized))
+        ? options.filter((option) =>
+            option.label.toLowerCase().includes(normalized),
+          )
         : options;
       setHighlighted(nextOptions.findIndex((option) => !option.disabled));
       if (!nextQuery.trim()) emitChange("");
@@ -311,7 +316,13 @@ export const ComboboxFieldInput = forwardRef<
       className={cn("relative w-full max-w-sm font-sans", containerClassName)}
     >
       {name ? (
-        <input type="hidden" name={name} value={currentValue} disabled={disabled} readOnly />
+        <input
+          type="hidden"
+          name={name}
+          value={currentValue}
+          disabled={disabled}
+          readOnly
+        />
       ) : null}
 
       <label
@@ -362,7 +373,7 @@ export const ComboboxFieldInput = forwardRef<
           }}
           onKeyDown={handleKeyDown}
           className={cn(
-            "h-10 w-full rounded-lg border bg-white py-2 pr-10 pl-3.5 font-sans text-sm text-neutral-900 outline-none ring-0 transition-[border-color] duration-200 placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
+            "h-10 w-full rounded-lg border bg-white py-2 pr-10 pl-3.5 font-sans text-sm text-neutral-900 ring-0 transition-[border-color] duration-200 outline-none placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
             error
               ? "border-rose-300 focus:border-rose-400"
               : open
@@ -392,7 +403,9 @@ export const ComboboxFieldInput = forwardRef<
           className="absolute z-20 mt-1.5 max-h-56 w-full overflow-auto rounded-lg border border-neutral-200 bg-white py-1 shadow-sm"
         >
           {filtered.length === 0 ? (
-            <li className="px-3.5 py-2 text-sm text-neutral-400">{emptyMessage}</li>
+            <li className="px-3.5 py-2 text-sm text-neutral-400">
+              {emptyMessage}
+            </li>
           ) : (
             filtered.map((option, index) => {
               const isSelected = option.value === currentValue;
@@ -413,14 +426,22 @@ export const ComboboxFieldInput = forwardRef<
                   className={cn(
                     "flex cursor-pointer items-center justify-between gap-2 px-3.5 py-2 text-sm transition-colors duration-150",
                     option.disabled && "cursor-not-allowed text-neutral-300",
-                    !option.disabled && isHighlighted && "bg-neutral-50 text-neutral-900",
+                    !option.disabled &&
+                      isHighlighted &&
+                      "bg-neutral-50 text-neutral-900",
                     !option.disabled && !isHighlighted && "text-neutral-700",
-                    isSelected && !option.disabled && "font-medium text-neutral-900",
+                    isSelected &&
+                      !option.disabled &&
+                      "font-medium text-neutral-900",
                   )}
                 >
                   <span className="truncate">{option.label}</span>
                   {isSelected ? (
-                    <Check size={14} strokeWidth={2.5} className="shrink-0 text-neutral-900" />
+                    <Check
+                      size={14}
+                      strokeWidth={2.5}
+                      className="shrink-0 text-neutral-900"
+                    />
                   ) : null}
                 </li>
               );

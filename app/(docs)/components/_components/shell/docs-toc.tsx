@@ -2,7 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { useForwardWheelToDocsMain, usePanelWheelScroll } from "@/app/_shared/scroll/docs-scroll";
+import {
+  useForwardWheelToDocsMain,
+  usePanelWheelScroll,
+} from "@/app/_shared/scroll/docs-scroll";
 import { AnnotatedText } from "@/components/underlines/annotated-text";
 import { cn } from "@/lib/cn";
 

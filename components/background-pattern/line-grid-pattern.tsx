@@ -12,7 +12,10 @@ const LineGridPattern = forwardRef<HTMLDivElement, LineGridPatternProps>(
       <div
         ref={ref}
         data-slot="line-grid-pattern"
-        className={cn("relative isolate overflow-hidden bg-[#f7f7f7]", className)}
+        className={cn(
+          "relative isolate overflow-hidden bg-[#f7f7f7]",
+          className,
+        )}
         {...props}
       >
         <div

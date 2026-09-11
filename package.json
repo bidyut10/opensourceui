@@ -14,17 +14,36 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/strip-worker-incompatible-assets.mjs",
+    "postbuild": "node scripts/deploy/strip-worker-incompatible-assets.mjs",
     "prebuild": "npm run check:showcase",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check:showcase": "node scripts/check-showcase-files.mjs",
-    "pages:dev": "npm run build && wrangler pages dev out",
-    "pages:deploy": "node scripts/cloudflare-pages-deploy.mjs",
-    "pages:upload": "wrangler pages deploy out --project-name=opensourceui"
+    "check:showcase": "node scripts/checks/check-showcase-files.mjs",
+    "check:catalog": "node scripts/checks/check-catalog-integrity.mjs",
+    "check:design": "node scripts/checks/check-design-guard.mjs",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "verify": "npm run format:check && npm run lint && npm run typecheck && npm run check:showcase && npm run check:catalog && npm run check:design && npm run test && npm run build && npm run test:e2e",
+    "verify:quick": "npm run format:check && npm run lint && npm run typecheck && npm run check:showcase && npm run check:catalog && npm run check:design && npm run test",
+    "cf:dev": "npm run build && wrangler dev",
+    "cf:deploy": "node scripts/deploy/cloudflare-pages-deploy.mjs",
+    "pages:dev": "npm run cf:dev",
+    "pages:deploy": "npm run cf:deploy",
+    "pages:upload": "node -e \"console.error('Use npm run cf:deploy for this Worker project. pages:upload is Cloudflare Pages only.'); process.exit(1)\"",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs}": [
+      "prettier --write",
+      "eslint --fix --max-warnings=0"
+    ],
+    "*.{json,md,css,yml,yaml}": [
+      "prettier --write"
+    ]
   },
   "engines": {
     "node": ">=20"
@@ -40,16 +59,28 @@
     "tailwind-merge": "^3.6.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4.3.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.7",
+    "husky": "^9.1.7",
+    "jsdom": "^30.0.1",
+    "lint-staged": "^17.5.1",
     "prettier": "^3.8.3",
     "prettier-plugin-tailwindcss": "^0.8.0",
+    "serve": "^14.2.6",
     "tailwindcss": "^4.3.0",
     "typescript": "^5",
+    "vitest": "^3.2.4",
     "wrangler": "^4.127.0"
   }
 }

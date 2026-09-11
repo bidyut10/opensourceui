@@ -143,8 +143,7 @@ export const StickyNotePolaroidFrame = forwardRef<
       ...style,
     };
 
-    const showNote =
-      skeleton || Boolean(noteHeader || noteBody || noteFooter);
+    const showNote = skeleton || Boolean(noteHeader || noteBody || noteFooter);
 
     const hasNoteText = Boolean(noteHeader || noteBody || noteFooter);
     const showNoteSkeleton = skeleton && !hasNoteText;
@@ -172,7 +171,7 @@ export const StickyNotePolaroidFrame = forwardRef<
               {skeleton ? (
                 <MediaSkeleton />
               ) : (
-                children ?? <MediaPlaceholder />
+                (children ?? <MediaPlaceholder />)
               )}
             </div>
           </div>

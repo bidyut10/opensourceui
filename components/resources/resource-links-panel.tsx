@@ -84,7 +84,9 @@ function ListIcon({ item }: { item: ResourceLinkItem }) {
       ) : Icon ? (
         <Icon size={16} className={iconColor} />
       ) : (
-        <span className={`font-sans text-[16px] font-semibold ${letterColor}`}>{letter}</span>
+        <span className={`font-sans text-[16px] font-semibold ${letterColor}`}>
+          {letter}
+        </span>
       )}
     </div>
   );
@@ -116,7 +118,9 @@ function ListRow({ item }: { item: ResourceLinkItem }) {
             <span className="shrink-0 font-sans text-xs leading-snug font-semibold text-neutral-900 group-hover:text-neutral-700">
               {item.name}
             </span>
-            <span className="shrink-0 px-1 font-sans text-xs text-neutral-300">/</span>
+            <span className="shrink-0 px-1 font-sans text-xs text-neutral-300">
+              /
+            </span>
             <span className="min-w-0 truncate font-sans text-xs leading-snug text-neutral-500">
               {mobileDescription}
             </span>
@@ -132,30 +136,41 @@ function ListRow({ item }: { item: ResourceLinkItem }) {
 }
 
 // Resource link list — same row layout as the homepage Resources section. Copy, pass title + items.
-export const ResourceLinksPanel = forwardRef<HTMLDivElement, ResourceLinksPanelProps>(
-  function ResourceLinksPanel(
-    { title = "Resources", items = DEMO_ITEMS, sortItems = true, className, ...props },
-    ref,
-  ) {
-    const rows = sortItems ? [...items].sort((a, b) => a.name.localeCompare(b.name)) : items;
-
-    return (
-      <div
-        ref={ref}
-        className={cn("min-w-0 max-[499px]:overflow-hidden", className)}
-        {...props}
-      >
-        <section>
-          <h3 className="font-sans text-sm font-semibold text-neutral-900">{title}</h3>
-          <ul className="mt-4 flex flex-col gap-2.5">
-            {rows.map((item) => (
-              <ListRow key={item.name} item={item} />
-            ))}
-          </ul>
-        </section>
-      </div>
-    );
+export const ResourceLinksPanel = forwardRef<
+  HTMLDivElement,
+  ResourceLinksPanelProps
+>(function ResourceLinksPanel(
+  {
+    title = "Resources",
+    items = DEMO_ITEMS,
+    sortItems = true,
+    className,
+    ...props
   },
-);
+  ref,
+) {
+  const rows = sortItems
+    ? [...items].sort((a, b) => a.name.localeCompare(b.name))
+    : items;
+
+  return (
+    <div
+      ref={ref}
+      className={cn("min-w-0 max-[499px]:overflow-hidden", className)}
+      {...props}
+    >
+      <section>
+        <h3 className="font-sans text-sm font-semibold text-neutral-900">
+          {title}
+        </h3>
+        <ul className="mt-4 flex flex-col gap-2.5">
+          {rows.map((item) => (
+            <ListRow key={item.name} item={item} />
+          ))}
+        </ul>
+      </section>
+    </div>
+  );
+});
 
 ResourceLinksPanel.displayName = "ResourceLinksPanel";

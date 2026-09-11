@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  forwardRef,
-  useMemo,
-  type ComponentPropsWithoutRef,
-} from "react";
+import { forwardRef, useMemo, type ComponentPropsWithoutRef } from "react";
 
 import { cn } from "@/lib/cn";
 import { Clock } from "lucide-react";

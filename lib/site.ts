@@ -49,10 +49,7 @@ export const siteConfig = {
         featured: false,
         summary: "GitHub + homepage",
         image: "/wallpaper-2.png",
-        includes: [
-          "GitHub README listing",
-          "Homepage Sponsors row",
-        ],
+        includes: ["GitHub README listing", "Homepage Sponsors row"],
       },
       {
         id: "platinum",

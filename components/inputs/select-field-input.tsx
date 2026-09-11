@@ -142,7 +142,9 @@ export const SelectFieldInput = forwardRef<
   const openList = useCallback(() => {
     if (disabled) return;
     setOpen(true);
-    const selectedIndex = options.findIndex((option) => option.value === current);
+    const selectedIndex = options.findIndex(
+      (option) => option.value === current,
+    );
     if (selectedIndex >= 0 && !options[selectedIndex]?.disabled) {
       setHighlighted(selectedIndex);
       return;
@@ -189,7 +191,12 @@ export const SelectFieldInput = forwardRef<
       onKeyDown?.(event);
       if (event.defaultPrevented || disabled) return;
 
-      if (event.key === "ArrowDown" || event.key === "ArrowUp" || event.key === "Enter" || event.key === " ") {
+      if (
+        event.key === "ArrowDown" ||
+        event.key === "ArrowUp" ||
+        event.key === "Enter" ||
+        event.key === " "
+      ) {
         event.preventDefault();
         if (!open) {
           openList();
@@ -269,7 +276,11 @@ export const SelectFieldInput = forwardRef<
         >
           <option value="" />
           {options.map((option) => (
-            <option key={option.value} value={option.value} disabled={option.disabled}>
+            <option
+              key={option.value}
+              value={option.value}
+              disabled={option.disabled}
+            >
               {option.label}
             </option>
           ))}
@@ -297,7 +308,9 @@ export const SelectFieldInput = forwardRef<
         aria-expanded={open}
         aria-controls={listboxId}
         aria-activedescendant={
-          open && highlighted >= 0 ? `${listboxId}-option-${highlighted}` : undefined
+          open && highlighted >= 0
+            ? `${listboxId}-option-${highlighted}`
+            : undefined
         }
         aria-describedby={error ? errorId : hint ? hintId : undefined}
         onClick={(event) => {
@@ -315,7 +328,7 @@ export const SelectFieldInput = forwardRef<
         }}
         onKeyDown={handleTriggerKeyDown}
         className={cn(
-          "flex h-10 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border bg-white px-3.5 text-left font-sans text-sm outline-none ring-0 transition-[border-color] duration-200 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
+          "flex h-10 w-full cursor-pointer items-center justify-between gap-2 rounded-lg border bg-white px-3.5 text-left font-sans text-sm ring-0 transition-[border-color] duration-200 outline-none focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
           hasValue ? "text-neutral-900" : "text-neutral-400",
           error
             ? "border-rose-300 focus:border-rose-400"
@@ -326,9 +339,7 @@ export const SelectFieldInput = forwardRef<
         )}
         {...props}
       >
-        <span className="truncate">
-          {selectedOption?.label ?? placeholder}
-        </span>
+        <span className="truncate">{selectedOption?.label ?? placeholder}</span>
         <ChevronDown
           size={16}
           strokeWidth={2}
@@ -366,14 +377,22 @@ export const SelectFieldInput = forwardRef<
                 className={cn(
                   "flex cursor-pointer items-center justify-between gap-2 px-3.5 py-2 text-sm transition-colors duration-150",
                   option.disabled && "cursor-not-allowed text-neutral-300",
-                  !option.disabled && isHighlighted && "bg-neutral-50 text-neutral-900",
+                  !option.disabled &&
+                    isHighlighted &&
+                    "bg-neutral-50 text-neutral-900",
                   !option.disabled && !isHighlighted && "text-neutral-700",
-                  isSelected && !option.disabled && "font-medium text-neutral-900",
+                  isSelected &&
+                    !option.disabled &&
+                    "font-medium text-neutral-900",
                 )}
               >
                 <span className="truncate">{option.label}</span>
                 {isSelected ? (
-                  <Check size={14} strokeWidth={2.5} className="shrink-0 text-neutral-900" />
+                  <Check
+                    size={14}
+                    strokeWidth={2.5}
+                    className="shrink-0 text-neutral-900"
+                  />
                 ) : null}
               </li>
             );

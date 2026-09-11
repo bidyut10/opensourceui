@@ -195,7 +195,7 @@ function UsageExample({
       <div className="space-y-3 px-3 py-3 md:px-4 md:py-4">
         <ImportLine exportName={exportName} importPath={importPath} />
 
-        <div className="scrollbar-none max-h-72 space-y-2 overflow-y-auto rounded-lg border border-neutral-100 bg-neutral-50/50 px-3 py-2.5 md:max-h-96">
+        <div className="max-h-72 scrollbar-none space-y-2 overflow-y-auto rounded-lg border border-neutral-100 bg-neutral-50/50 px-3 py-2.5 md:max-h-96">
           {usageBlocks.map((block, index) => (
             <div key={`${index}-${block}`} className="break-all">
               <UsageLine line={block} />

@@ -78,7 +78,7 @@ export function CopyEmail({
         id={tipId}
         role="tooltip"
         className={cn(
-          "pointer-events-none absolute bottom-full left-1/2 z-20 mb-1.5 -translate-x-1/2 rounded-md bg-neutral-900 px-2 py-1 font-sans text-[11px] font-medium whitespace-nowrap text-white shadow-sm transition-[opacity,transform] duration-150 ease-smooth",
+          "ease-smooth pointer-events-none absolute bottom-full left-1/2 z-20 mb-1.5 -translate-x-1/2 rounded-md bg-neutral-900 px-2 py-1 font-sans text-[11px] font-medium whitespace-nowrap text-white shadow-sm transition-[opacity,transform] duration-150",
           showTip
             ? "translate-y-0 opacity-100"
             : "translate-y-0.5 opacity-0 motion-reduce:translate-y-0",

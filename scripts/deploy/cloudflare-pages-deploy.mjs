@@ -2,14 +2,25 @@
  * Deploy command for Cloudflare Workers Git builds.
  *
  * Uploads the Next.js static export (out/) via wrangler deploy + [assets].
- * Manual Pages upload (different host): npm run pages:upload
+ * npm aliases: cf:deploy, pages:deploy
+ *
+ * Do NOT use wrangler pages deploy — wrong product for this wrangler.toml.
  */
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const wranglerBin = path.join(root, "node_modules", "wrangler", "bin", "wrangler.js");
+const root = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../..",
+);
+const wranglerBin = path.join(
+  root,
+  "node_modules",
+  "wrangler",
+  "bin",
+  "wrangler.js",
+);
 
 console.log("Deploying out/ to Worker (wrangler deploy)...");
 

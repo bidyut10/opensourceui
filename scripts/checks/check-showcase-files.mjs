@@ -2,20 +2,23 @@
  * Fails if any showcase `file` path in lib/showcase/showcase.tsx is missing on disk.
  * Run after moving components so stale paths cannot ship silently.
  *
- * Usage: node scripts/check-showcase-files.mjs
+ * Usage: node scripts/checks/check-showcase-files.mjs
  */
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const root = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../..",
+);
 const showcasePath = path.join(root, "lib", "showcase", "showcase.tsx");
 const source = readFileSync(showcasePath, "utf8");
 
 const FILE_RE = /["'](components\/[a-z0-9/_-]+\.tsx)["']/gi;
-const files = [...new Set([...source.matchAll(FILE_RE)].map((m) => m[1]))].filter(
-  (file) => !file.includes("..."),
-);
+const files = [
+  ...new Set([...source.matchAll(FILE_RE)].map((m) => m[1])),
+].filter((file) => !file.includes("..."));
 
 if (files.length === 0) {
   console.error("No component file paths found in showcase.tsx");

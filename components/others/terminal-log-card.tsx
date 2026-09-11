@@ -52,7 +52,7 @@ export const TerminalLogCard = forwardRef<HTMLDivElement, TerminalLogCardProps>(
       ref={ref}
       data-slot="terminal-log-card"
       className={cn(
-        "w-sm overflow-hidden rounded-xl border border-neutral-800 bg-[#0d0d0d] font-mono text-[11px] shadow-2xl shadow-black/40 sm:max-w-xs",
+        "w-sm overflow-hidden rounded-xl border border-neutral-800 bg-[#0d0d0d] font-mono text-[11px] shadow-2xl shadow-black/40 md:max-w-xs",
         className,
       )}
       {...props}

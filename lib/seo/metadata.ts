@@ -102,9 +102,7 @@ export function createComponentMetadata(
   const description = `${entry.description} Free reusable copy-paste ${entry.exportName} from the Opensource UI library for React and Next.js. MIT licensed, TypeScript, Tailwind CSS v4.`;
   const path = `/components/${entry.slug}`;
   const mockupKeywords =
-    entry.category === "Mockups"
-      ? getMockupComponentKeywords(entry.title)
-      : [];
+    entry.category === "Mockups" ? getMockupComponentKeywords(entry.title) : [];
   const keywords = [
     entry.title,
     entry.exportName,

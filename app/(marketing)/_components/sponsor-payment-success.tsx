@@ -9,10 +9,7 @@ import { CopyEmail } from "@/components/contact/copy-email";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/lib/site";
 
-const PLAN_ASSETS: Record<
-  string,
-  { title: string; items: string[] }
-> = {
+const PLAN_ASSETS: Record<string, { title: string; items: string[] }> = {
   silver: {
     title: "Silver — send these",
     items: ["Brand / company name", "Optional link for the README"],
@@ -75,7 +72,7 @@ export function SponsorPaymentSuccess() {
       role="status"
       aria-live="polite"
       className={cn(
-        "mb-8 rounded-2xl border border-neutral-900 bg-neutral-900 p-5 text-white ease-smooth transition-[opacity,transform] duration-500",
+        "ease-smooth mb-8 rounded-2xl border border-neutral-900 bg-neutral-900 p-5 text-white transition-[opacity,transform] duration-500",
         visible
           ? "translate-y-0 opacity-100"
           : "translate-y-2 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100",

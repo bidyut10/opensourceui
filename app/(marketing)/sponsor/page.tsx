@@ -41,16 +41,14 @@ export default function SponsorPage() {
         <div className="w-full max-w-xl px-4 md:px-0">
           <MarketingSiteNav />
 
-          <Suspense fallback={<div className="mt-20" />}>
-            <MarketingGoBack>
-              <Heading>Become a sponsor</Heading>
-              <Paragraph>
-                Pick a tier, pay on Polar, send your brand assets. We place you
-                on GitHub, the homepage, and — for Platinum — the docs sidebar.{" "}
-                {rateLabel}.
-              </Paragraph>
-            </MarketingGoBack>
-          </Suspense>
+          <MarketingGoBack>
+            <Heading>Become a sponsor</Heading>
+            <Paragraph>
+              Pick a tier, pay on Polar, send your brand assets. We place you on
+              GitHub, the homepage, and — for Platinum — the docs sidebar.{" "}
+              {rateLabel}.
+            </Paragraph>
+          </MarketingGoBack>
 
           <Suspense fallback={null}>
             <div className="mt-8">
@@ -75,7 +73,7 @@ export default function SponsorPage() {
                   className={cn(
                     "relative h-full min-h-0 w-full md:min-w-0",
                     isPlatinum
-                      ? "order-first z-10 md:order-2"
+                      ? "z-10 order-first md:order-2"
                       : isSilver
                         ? "md:order-1"
                         : "md:order-3",
@@ -176,7 +174,9 @@ export default function SponsorPage() {
                               aria-hidden="true"
                               className={cn(
                                 "mt-2 size-1.5 shrink-0 rounded-full",
-                                isPlatinum ? "bg-neutral-900" : "bg-neutral-300",
+                                isPlatinum
+                                  ? "bg-neutral-900"
+                                  : "bg-neutral-300",
                               )}
                             />
                             <span>{item}</span>
@@ -212,8 +212,7 @@ export default function SponsorPage() {
               className="font-medium text-neutral-700 underline decoration-neutral-300 underline-offset-2 hover:decoration-neutral-500"
             >
               Terms
-            </Link>
-            {" "}
+            </Link>{" "}
             (no gambling, adult, or fraud — violations are non-refundable).
           </p>
         </div>
@@ -222,8 +221,8 @@ export default function SponsorPage() {
           <Heading>What you get from this audience</Heading>
           <Paragraph>
             Launched {launchLabel} — {siteConfig.stats.pageViews} visits and{" "}
-            {siteConfig.stats.visitors} unique users since. More views means more
-            people learn your name.
+            {siteConfig.stats.visitors} unique users since. More views means
+            more people learn your name.
           </Paragraph>
           <div className="mt-10">
             <SponsorTrafficChart />

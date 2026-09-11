@@ -70,7 +70,7 @@ function CodeEditor({
   return (
     <div
       className={cn(
-        "relative flex w-full flex-col overflow-hidden rounded-xl border border-neutral-700 bg-neutral-800 shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-[opacity,transform] duration-700 ease-smooth motion-reduce:transition-none",
+        "ease-smooth relative flex w-full flex-col overflow-hidden rounded-xl border border-neutral-700 bg-neutral-800 shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-[opacity,transform] duration-700 motion-reduce:transition-none",
         visible
           ? "translate-y-0 scale-100 opacity-100"
           : "translate-y-3 scale-[0.97] opacity-0",
@@ -117,7 +117,7 @@ function CodeEditor({
             >
               {line.number}
             </span>
-            <pre className="min-w-0 whitespace-pre-wrap wrap-break-word">
+            <pre className="min-w-0 wrap-break-word whitespace-pre-wrap">
               <code>
                 {line.started ? (
                   <HighlightedPartialLine
@@ -215,7 +215,7 @@ export function PhoneCustomizeDemo() {
           {!reducedMotion ? (
             <div
               className={cn(
-                "flex w-full items-center justify-center transition-[opacity,transform] duration-700 ease-smooth motion-reduce:transition-none",
+                "ease-smooth flex w-full items-center justify-center transition-[opacity,transform] duration-700 motion-reduce:transition-none",
                 phase === "code"
                   ? "relative z-10 translate-y-0 opacity-100"
                   : "pointer-events-none absolute inset-0 z-0 -translate-y-2 scale-[0.98] opacity-0",
@@ -232,7 +232,7 @@ export function PhoneCustomizeDemo() {
 
           <div
             className={cn(
-              "flex items-center justify-center transition-[opacity,transform] duration-700 ease-smooth motion-reduce:transition-none",
+              "ease-smooth flex items-center justify-center transition-[opacity,transform] duration-700 motion-reduce:transition-none",
               phase === "preview"
                 ? "relative z-10 translate-y-0 scale-100 opacity-100"
                 : "pointer-events-none absolute inset-0 z-0 translate-y-2 scale-[0.96] opacity-0",

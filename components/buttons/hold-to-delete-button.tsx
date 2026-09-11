@@ -62,7 +62,8 @@ export const HoldToDeleteButton = forwardRef<
 
     useEffect(() => {
       return () => {
-        if (timerRef.current !== null) globalThis.clearTimeout(timerRef.current);
+        if (timerRef.current !== null)
+          globalThis.clearTimeout(timerRef.current);
       };
     }, []);
 
@@ -129,7 +130,8 @@ export const HoldToDeleteButton = forwardRef<
           // Outer keycap shadows only — the inset bevels live on an overlay so
           // they stay visible above the red fill.
           "shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_1px_rgba(0,0,0,0.12),0_2px_3px_rgba(0,0,0,0.12)]",
-          (holding || done) && "shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_1px_rgba(0,0,0,0.06)]",
+          (holding || done) &&
+            "shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_1px_rgba(0,0,0,0.06)]",
           !done && "cursor-pointer",
           className,
         )}

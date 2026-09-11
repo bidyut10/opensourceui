@@ -48,12 +48,11 @@ export function DocsSidebarNav({
 
   usePanelWheelScroll(navRef);
 
-  const activeSlug =
-    pathname.startsWith("/components/category/")
-      ? null
-      : pathname.startsWith("/components/")
-        ? pathname.replace("/components/", "")
-        : null;
+  const activeSlug = pathname.startsWith("/components/category/")
+    ? null
+    : pathname.startsWith("/components/")
+      ? pathname.replace("/components/", "")
+      : null;
 
   const categoryParam = getHydratedSearchParam(searchParams, "category");
   const categoryFromPath = pathname.startsWith("/components/category/")

@@ -17,7 +17,10 @@ export function DocsSidebarFooter() {
   useForwardWheelToDocsMain(footerRef);
 
   return (
-    <div ref={footerRef} className="shrink-0 border-t border-neutral-100 px-5 py-4">
+    <div
+      ref={footerRef}
+      className="shrink-0 border-t border-neutral-100 px-5 py-4"
+    >
       <p className="font-sans text-xs leading-relaxed text-neutral-500">
         {siteConfig.license.shortNote}{" "}
         <a

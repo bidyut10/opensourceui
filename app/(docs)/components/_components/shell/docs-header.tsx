@@ -26,12 +26,12 @@ export function DocsHeader() {
             sizes="96px"
             className="h-auto w-14 md:w-24"
           /> */}
-                  <div className="flex items-center gap-1">
-          <LogoIcon className="w-6"/>
-          <span className="text-lg tracking-tighter font-medium font-sans">
-            {siteConfig.displayName}
-          </span>
-        </div>
+          <div className="flex items-center gap-1">
+            <LogoIcon className="w-6" />
+            <span className="font-sans text-lg font-medium tracking-tighter">
+              {siteConfig.displayName}
+            </span>
+          </div>
         </Link>
 
         <div className="flex min-w-0 flex-1 items-center gap-2 md:justify-center">

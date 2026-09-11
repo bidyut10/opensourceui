@@ -78,7 +78,9 @@ export const BookmarkSaveButton = forwardRef<
             aria-hidden={saved}
             className={cn(
               LABEL_LAYER,
-              saved ? "opacity-0 duration-200" : "opacity-100 duration-300 delay-200",
+              saved
+                ? "opacity-0 duration-200"
+                : "opacity-100 delay-200 duration-300",
             )}
           >
             {label}
@@ -87,7 +89,9 @@ export const BookmarkSaveButton = forwardRef<
             aria-hidden={!saved}
             className={cn(
               LABEL_LAYER,
-              saved ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              saved
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             {savedLabel}

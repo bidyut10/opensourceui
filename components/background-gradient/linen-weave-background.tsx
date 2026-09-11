@@ -2,8 +2,7 @@ import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-export interface LinenWeaveBackgroundProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface LinenWeaveBackgroundProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
@@ -25,12 +24,12 @@ const LinenWeaveBackground = forwardRef<
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-60 [background-image:repeating-linear-gradient(45deg,rgba(120,98,72,0.08)_0px,rgba(120,98,72,0.08)_1px,transparent_1px,transparent_6px),repeating-linear-gradient(-45deg,rgba(120,98,72,0.06)_0px,rgba(120,98,72,0.06)_1px,transparent_1px,transparent_6px)]"
+        className="pointer-events-none absolute inset-0 -z-10 [background-image:repeating-linear-gradient(45deg,rgba(120,98,72,0.08)_0px,rgba(120,98,72,0.08)_1px,transparent_1px,transparent_6px),repeating-linear-gradient(-45deg,rgba(120,98,72,0.06)_0px,rgba(120,98,72,0.06)_1px,transparent_1px,transparent_6px)] opacity-60"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-40 [background-image:linear-gradient(to_right,rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.35)_1px,transparent_1px)] [background-size:24px_24px]"
+        className="pointer-events-none absolute inset-0 -z-10 [background-image:linear-gradient(to_right,rgba(255,255,255,0.45)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.35)_1px,transparent_1px)] [background-size:24px_24px] opacity-40"
       />
 
       <div

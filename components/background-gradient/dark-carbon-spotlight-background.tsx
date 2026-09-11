@@ -2,8 +2,7 @@ import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-export interface DarkCarbonSpotlightBackgroundProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface DarkCarbonSpotlightBackgroundProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
@@ -25,7 +24,7 @@ const DarkCarbonSpotlightBackground = forwardRef<
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-50 [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.14)_0%,transparent_46%)]"
+        className="pointer-events-none absolute inset-0 -z-10 [background-image:radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.14)_0%,transparent_46%)] opacity-50"
       />
 
       <div
@@ -35,7 +34,7 @@ const DarkCarbonSpotlightBackground = forwardRef<
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03] [background-image:radial-gradient(circle_at_center,rgba(255,255,255,0.7)_1px,transparent_1px)] [background-size:4px_4px]"
+        className="pointer-events-none absolute inset-0 -z-10 [background-image:radial-gradient(circle_at_center,rgba(255,255,255,0.7)_1px,transparent_1px)] [background-size:4px_4px] opacity-[0.03]"
       />
 
       {children}

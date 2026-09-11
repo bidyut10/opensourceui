@@ -73,11 +73,15 @@ export const CustomersTable = forwardRef<HTMLDivElement, CustomersTableProps>(
         <div className="flex items-end justify-between border-b border-neutral-100 px-4 py-3">
           <div>
             <p className="text-sm font-semibold text-neutral-900">Customers</p>
-            <p className="text-xs text-neutral-500">{CUSTOMERS.length} accounts</p>
+            <p className="text-xs text-neutral-500">
+              {CUSTOMERS.length} accounts
+            </p>
           </div>
           <p className="text-right">
-            <span className="block text-[10px] text-neutral-400 uppercase tracking-wide">MRR</span>
-            <span className="text-sm font-semibold tabular-nums text-neutral-900">
+            <span className="block text-[10px] tracking-wide text-neutral-400 uppercase">
+              MRR
+            </span>
+            <span className="text-sm font-semibold text-neutral-900 tabular-nums">
               ${totalMrr}/mo
             </span>
           </p>
@@ -89,7 +93,9 @@ export const CustomersTable = forwardRef<HTMLDivElement, CustomersTableProps>(
               <tr className="text-xs text-neutral-500">
                 <th className="px-4 py-2.5 font-medium">Customer</th>
                 <th className="px-3 py-2.5 font-medium">Plan</th>
-                <th className="hidden px-3 py-2.5 font-medium md:table-cell">Last active</th>
+                <th className="hidden px-3 py-2.5 font-medium md:table-cell">
+                  Last active
+                </th>
                 <th className="px-4 py-2.5 text-right font-medium">MRR</th>
               </tr>
             </thead>
@@ -109,16 +115,22 @@ export const CustomersTable = forwardRef<HTMLDivElement, CustomersTableProps>(
                         className="size-7 shrink-0 rounded-full object-cover"
                       />
                       <div className="min-w-0">
-                        <p className="truncate font-medium text-neutral-900">{customer.name}</p>
-                        <p className="truncate text-xs text-neutral-500">{customer.company}</p>
+                        <p className="truncate font-medium text-neutral-900">
+                          {customer.name}
+                        </p>
+                        <p className="truncate text-xs text-neutral-500">
+                          {customer.company}
+                        </p>
                       </div>
                     </div>
                   </td>
-                  <td className="px-3 py-3 text-neutral-600">{customer.plan}</td>
+                  <td className="px-3 py-3 text-neutral-600">
+                    {customer.plan}
+                  </td>
                   <td className="hidden px-3 py-3 text-neutral-500 md:table-cell">
                     {customer.lastActive}
                   </td>
-                  <td className="px-4 py-3 text-right tabular-nums text-neutral-900">
+                  <td className="px-4 py-3 text-right text-neutral-900 tabular-nums">
                     {customer.mrr > 0 ? `$${customer.mrr}` : "—"}
                   </td>
                 </tr>

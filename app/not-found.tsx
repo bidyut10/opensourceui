@@ -5,21 +5,22 @@ import { ChevronRight, MoveRight } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center px-4 selection:bg-neutral-800 selection:text-white md:px-0">
+    <main
+      id="main-content"
+      className="flex min-h-screen w-full flex-col items-center justify-center px-4 selection:bg-neutral-800 selection:text-white md:px-0"
+    >
       <div className="w-full max-w-xl text-left">
         <h1 className="flex flex-wrap items-baseline gap-x-3 font-serif text-neutral-900">
-          <span className="text-5xl md:text-6xl">
-            404
-          </span>
+          <span className="text-5xl md:text-6xl">404</span>
           <span className="text-2xl md:text-3xl"> || Page not found</span>
         </h1>
 
         <p className="mt-3 text-sm leading-relaxed text-neutral-500">
-        The link may be {" "} 
-        <AnnotatedText variant="wavy" color="text-cyan-200">
-         broken,
-        </AnnotatedText>{" "} or this page moved. Either way, there&apos;s
-        nothing here to copy. 
+          The link may be{" "}
+          <AnnotatedText variant="wavy" color="text-cyan-200">
+            broken,
+          </AnnotatedText>{" "}
+          or this page moved. Either way, there&apos;s nothing here to copy.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-start gap-4">
@@ -61,6 +62,6 @@ export default function NotFound() {
           </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

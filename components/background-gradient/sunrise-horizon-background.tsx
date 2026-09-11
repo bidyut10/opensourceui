@@ -2,8 +2,7 @@ import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-export interface SunriseHorizonBackgroundProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface SunriseHorizonBackgroundProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
@@ -27,7 +26,7 @@ const SunriseHorizonBackground = forwardRef<
         aria-hidden="true"
         className="pointer-events-none absolute -z-10 blur-2xl"
       >
-        <div className="absolute -left-[15%] bottom-[8%] h-[55%] w-[70%] rounded-[100%] bg-[#FFB38A] opacity-55" />
+        <div className="absolute bottom-[8%] -left-[15%] h-[55%] w-[70%] rounded-[100%] bg-[#FFB38A] opacity-55" />
         <div className="absolute bottom-[12%] left-[28%] h-[42%] w-[48%] rounded-[100%] bg-[#FF8F6B] opacity-45" />
         <div className="absolute -right-[10%] bottom-[6%] h-[50%] w-[58%] rounded-[100%] bg-[#7DD3C7] opacity-40" />
       </div>
@@ -39,7 +38,7 @@ const SunriseHorizonBackground = forwardRef<
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.04] [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:5px_5px]"
+        className="pointer-events-none absolute inset-0 -z-10 [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:5px_5px] opacity-[0.04]"
       />
 
       {children}

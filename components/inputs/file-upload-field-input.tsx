@@ -47,7 +47,10 @@ function formatFileSize(bytes: number): string {
 }
 
 function isImageFile(file: File): boolean {
-  return file.type.startsWith("image/") || /\.(png|jpe?g|gif|webp|svg)$/i.test(file.name);
+  return (
+    file.type.startsWith("image/") ||
+    /\.(png|jpe?g|gif|webp|svg)$/i.test(file.name)
+  );
 }
 
 function isPdfFile(file: File): boolean {
@@ -185,13 +188,18 @@ export const FileUploadFieldInput = forwardRef<
       const previous = entriesRef.current;
       const existingIds = new Set(previous.map((entry) => entry.id));
       const uniqueFiles = validFiles.filter(
-        (file) => !existingIds.has(`${file.name}-${file.size}-${file.lastModified}`),
+        (file) =>
+          !existingIds.has(`${file.name}-${file.size}-${file.lastModified}`),
       );
-      const availableSlots = multiple ? Math.max(0, safeMaxFiles - previous.length) : 1;
+      const availableSlots = multiple
+        ? Math.max(0, safeMaxFiles - previous.length)
+        : 1;
       const filesToAdd = uniqueFiles.slice(0, availableSlots);
 
       if (uniqueFiles.length > availableSlots) {
-        setLocalError(`You can upload up to ${safeMaxFiles} ${safeMaxFiles === 1 ? "file" : "files"}.`);
+        setLocalError(
+          `You can upload up to ${safeMaxFiles} ${safeMaxFiles === 1 ? "file" : "files"}.`,
+        );
       }
       if (filesToAdd.length === 0) return;
 
@@ -249,16 +257,19 @@ export const FileUploadFieldInput = forwardRef<
     [disabled, validateAndAdd],
   );
 
-  const removeFile = useCallback((id: string) => {
-    const previous = entriesRef.current;
-    const target = previous.find((entry) => entry.id === id);
-    if (target) revokeEntryPreview(target);
-    const next = previous.filter((entry) => entry.id !== id);
-    entriesRef.current = next;
-    setEntries(next);
-    onFilesChange?.(next.map((entry) => entry.file));
-    setLocalError("");
-  }, [onFilesChange]);
+  const removeFile = useCallback(
+    (id: string) => {
+      const previous = entriesRef.current;
+      const target = previous.find((entry) => entry.id === id);
+      if (target) revokeEntryPreview(target);
+      const next = previous.filter((entry) => entry.id !== id);
+      entriesRef.current = next;
+      setEntries(next);
+      onFilesChange?.(next.map((entry) => entry.file));
+      setLocalError("");
+    },
+    [onFilesChange],
+  );
 
   const showError = error || Boolean(localError);
   const message = localError || errorMessage;
@@ -266,7 +277,8 @@ export const FileUploadFieldInput = forwardRef<
   const acceptTokens = parseAcceptTokens(accept);
   const maxSizeLabel = formatFileSize(safeMaxSizeBytes);
   const primaryEntry = entries[0];
-  const showSinglePreview = !multiple && primaryEntry && isImageFile(primaryEntry.file);
+  const showSinglePreview =
+    !multiple && primaryEntry && isImageFile(primaryEntry.file);
 
   return (
     <div
@@ -275,7 +287,10 @@ export const FileUploadFieldInput = forwardRef<
       data-filled={hasFiles || undefined}
       className={cn("w-full max-w-sm font-sans", containerClassName)}
     >
-      <label htmlFor={inputId} className="mb-1.5 block w-fit cursor-pointer text-sm font-medium text-neutral-900">
+      <label
+        htmlFor={inputId}
+        className="mb-1.5 block w-fit cursor-pointer text-sm font-medium text-neutral-900"
+      >
         {label}
         {required ? (
           <span className="ml-0.5 text-rose-500" aria-hidden>
@@ -329,16 +344,20 @@ export const FileUploadFieldInput = forwardRef<
               }}
               onDragLeave={(event) => {
                 event.preventDefault();
-                if (!event.currentTarget.contains(event.relatedTarget as Node)) {
+                if (
+                  !event.currentTarget.contains(event.relatedTarget as Node)
+                ) {
                   bindDrag(false);
                 }
               }}
               onDrop={handleDrop}
               className={cn(
-                "group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-xl border outline-none ring-0 transition-[border-color,background-color] duration-200 focus:border-neutral-900 focus:ring-0",
+                "group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-xl border ring-0 transition-[border-color,background-color] duration-200 outline-none focus:border-neutral-900 focus:ring-0",
                 dragging && !showError && "border-neutral-900 bg-neutral-50",
                 showError && "border-rose-300 bg-rose-50/40",
-                !dragging && !showError && "border-neutral-100 bg-neutral-50 hover:border-neutral-300 hover:bg-neutral-50/80",
+                !dragging &&
+                  !showError &&
+                  "border-neutral-100 bg-neutral-50 hover:border-neutral-300 hover:bg-neutral-50/80",
                 disabled && "cursor-not-allowed opacity-60",
               )}
             >
@@ -376,7 +395,8 @@ export const FileUploadFieldInput = forwardRef<
                   className={cn(
                     "mb-3 flex size-12 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-600 transition-[border-color,transform] duration-200",
                     dragging && "scale-105 border-neutral-900 text-neutral-900",
-                    !dragging && "group-hover:border-neutral-400 group-hover:text-neutral-900",
+                    !dragging &&
+                      "group-hover:border-neutral-400 group-hover:text-neutral-900",
                   )}
                 >
                   <ImagePlus size={22} strokeWidth={1.75} aria-hidden />

@@ -121,8 +121,16 @@ export const NewsletterForm = forwardRef<HTMLFormElement, NewsletterFormProps>(
         </div>
 
         {success ? (
-          <div role="status" aria-live="polite" className="flex items-start gap-2 border-l-2 border-emerald-500 bg-emerald-50 px-3.5 py-3">
-            <Check size={16} className="mt-0.5 shrink-0 text-emerald-600" aria-hidden />
+          <div
+            role="status"
+            aria-live="polite"
+            className="flex items-start gap-2 border-l-2 border-emerald-500 bg-emerald-50 px-3.5 py-3"
+          >
+            <Check
+              size={16}
+              className="mt-0.5 shrink-0 text-emerald-600"
+              aria-hidden
+            />
             <p className="text-sm text-emerald-700">{successMessage}</p>
           </div>
         ) : (
@@ -136,15 +144,19 @@ export const NewsletterForm = forwardRef<HTMLFormElement, NewsletterFormProps>(
                 disabled={busy}
                 value={email}
                 aria-invalid={Boolean(error)}
-                aria-describedby={error ? `${formId}-email-error` : `${formId}-privacy`}
+                aria-describedby={
+                  error ? `${formId}-email-error` : `${formId}-privacy`
+                }
                 onChange={(event) => {
                   setEmail(event.target.value);
                   setSubmitError("");
                   if (error) setError("");
                 }}
                 className={cn(
-                  "h-11 min-w-0 flex-1 rounded-md border bg-white px-3.5 text-sm outline-none ring-0 transition-colors focus:ring-0 disabled:bg-neutral-50",
-                  error ? "border-rose-300" : "border-neutral-200 focus:border-neutral-900",
+                  "h-11 min-w-0 flex-1 rounded-md border bg-white px-3.5 text-sm ring-0 transition-colors outline-none focus:ring-0 disabled:bg-neutral-50",
+                  error
+                    ? "border-rose-300"
+                    : "border-neutral-200 focus:border-neutral-900",
                 )}
                 placeholder={placeholder}
               />
@@ -153,18 +165,27 @@ export const NewsletterForm = forwardRef<HTMLFormElement, NewsletterFormProps>(
                 disabled={busy}
                 className="flex h-11 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 px-5 text-sm font-semibold text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 disabled:cursor-not-allowed disabled:opacity-60 md:px-6"
               >
-                {busy ? <Loader2 size={16} className="animate-spin" aria-hidden /> : null}
+                {busy ? (
+                  <Loader2 size={16} className="animate-spin" aria-hidden />
+                ) : null}
                 {busy ? "Joining…" : submitLabel}
                 {!busy ? <ChevronRight size={15} aria-hidden /> : null}
               </button>
             </div>
 
             {error ? (
-              <p id={`${formId}-email-error`} role="alert" className="mt-1.5 text-xs text-rose-600">
+              <p
+                id={`${formId}-email-error`}
+                role="alert"
+                className="mt-1.5 text-xs text-rose-600"
+              >
                 {error}
               </p>
             ) : (
-              <p id={`${formId}-privacy`} className="mt-2 text-xs text-neutral-400">
+              <p
+                id={`${formId}-privacy`}
+                className="mt-2 text-xs text-neutral-400"
+              >
                 {privacyNote}
               </p>
             )}
@@ -173,7 +194,11 @@ export const NewsletterForm = forwardRef<HTMLFormElement, NewsletterFormProps>(
                 role="alert"
                 className="mt-3 flex items-start gap-2.5 border-l-2 border-rose-500 bg-rose-50 px-3 py-2.5 text-sm text-rose-700"
               >
-                <AlertCircle size={16} className="mt-0.5 shrink-0" aria-hidden />
+                <AlertCircle
+                  size={16}
+                  className="mt-0.5 shrink-0"
+                  aria-hidden
+                />
                 <span>{submitError}</span>
               </div>
             ) : null}

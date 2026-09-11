@@ -128,7 +128,7 @@ function IpodMenu({ active }: { active: boolean }) {
       </p>
       <div className="relative">
         <div
-          className="absolute inset-x-0 rounded bg-neutral-900 transition-transform duration-700 ease-smooth motion-reduce:transition-none"
+          className="ease-smooth absolute inset-x-0 rounded bg-neutral-900 transition-transform duration-700 motion-reduce:transition-none"
           style={{
             height: "18px",
             transform: `translateY(${selected * 18}px)`,
@@ -141,7 +141,7 @@ function IpodMenu({ active }: { active: boolean }) {
           >
             <p
               className={cn(
-                "text-[9px] transition-colors duration-700 ease-smooth motion-reduce:transition-none",
+                "ease-smooth text-[9px] transition-colors duration-700 motion-reduce:transition-none",
                 itemIndex === selected
                   ? "font-medium text-white"
                   : "text-neutral-600",
@@ -193,7 +193,7 @@ function IpodLibrary({ active }: { active: boolean }) {
       </p>
       <div className="relative">
         <div
-          className="absolute inset-x-0 rounded bg-neutral-100 transition-transform duration-700 ease-smooth motion-reduce:transition-none"
+          className="ease-smooth absolute inset-x-0 rounded bg-neutral-100 transition-transform duration-700 motion-reduce:transition-none"
           style={{
             height: "26px",
             transform: `translateY(${activeTrack * 26}px)`,
@@ -203,7 +203,7 @@ function IpodLibrary({ active }: { active: boolean }) {
           <div key={track.title} className="relative rounded px-1.5 py-0.5">
             <p
               className={cn(
-                "truncate text-[9px] transition-colors duration-700 ease-smooth motion-reduce:transition-none",
+                "ease-smooth truncate text-[9px] transition-colors duration-700 motion-reduce:transition-none",
                 trackIndex === activeTrack
                   ? "font-medium text-neutral-900"
                   : "text-neutral-600",
@@ -213,7 +213,7 @@ function IpodLibrary({ active }: { active: boolean }) {
             </p>
             <p
               className={cn(
-                "truncate text-[7px] transition-colors duration-700 ease-smooth motion-reduce:transition-none",
+                "ease-smooth truncate text-[7px] transition-colors duration-700 motion-reduce:transition-none",
                 trackIndex === activeTrack
                   ? "text-neutral-500"
                   : "text-neutral-400",
@@ -242,7 +242,7 @@ function IpodDots({ index }: { index: number }) {
           key={scene.id}
           aria-hidden
           className={cn(
-            "rounded-full transition-all duration-500 ease-smooth motion-reduce:transition-none",
+            "ease-smooth rounded-full transition-all duration-500 motion-reduce:transition-none",
             sceneIndex === index
               ? "h-0.5 w-2.5 bg-neutral-800"
               : "size-0.5 bg-neutral-300",
@@ -274,7 +274,7 @@ export function IpodShowcaseScreen() {
           key={id}
           aria-hidden={sceneIndex !== index}
           className={cn(
-            "absolute inset-0 transition-opacity duration-700 ease-smooth motion-reduce:transition-none",
+            "ease-smooth absolute inset-0 transition-opacity duration-700 motion-reduce:transition-none",
             sceneIndex === index ? "z-10 opacity-100" : "z-0 opacity-0",
           )}
         >

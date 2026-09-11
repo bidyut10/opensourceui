@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { FooterSkyline } from "@/app/(marketing)/_components/footer-skyline";
 import { MarketingGoBack } from "@/app/(marketing)/_components/marketing-go-back";
@@ -30,14 +29,12 @@ export default function CareersPage() {
         <article className="w-full max-w-xl">
           <MarketingSiteNav />
 
-          <Suspense fallback={<div className="mt-20" />}>
-            <MarketingGoBack>
-              <h1 className="font-serif text-3xl text-neutral-900">Careers</h1>
-              <p className="mt-2 text-sm text-neutral-500">
-                No open roles — and why I&apos;m not faking any
-              </p>
-            </MarketingGoBack>
-          </Suspense>
+          <MarketingGoBack>
+            <h1 className="font-serif text-3xl text-neutral-900">Careers</h1>
+            <p className="mt-2 text-sm text-neutral-500">
+              No open roles — and why I&apos;m not faking any
+            </p>
+          </MarketingGoBack>
 
           <div className="mt-8 space-y-6 text-sm leading-relaxed text-neutral-700">
             <section>
@@ -47,8 +44,8 @@ export default function CareersPage() {
               <p className="mt-2">
                 There are no job positions at {displayName} today. Not a
                 &quot;we&apos;re always hiring&quot; page with empty roles. Just
-                the truth: this is still a one-person project, and I am not ready
-                to hire yet.
+                the truth: this is still a one-person project, and I am not
+                ready to hire yet.
               </p>
               <p className="mt-2">
                 I would rather say that clearly than list phantom jobs or make
@@ -62,15 +59,15 @@ export default function CareersPage() {
               </h2>
               <p className="mt-2">
                 I built {displayName} on nights and weekends. Components, docs,
-                the site, sponsorships, replies to email — that is mostly me. The
-                library is free and MIT licensed because that is the point, not
-                because there is a big company behind it.
+                the site, sponsorships, replies to email — that is mostly me.
+                The library is free and MIT licensed because that is the point,
+                not because there is a big company behind it.
               </p>
               <p className="mt-2">
                 Growth has been real, and that is exciting. It is also why I am
                 careful. Hiring too early, with no structure and no clear role,
-                would waste someone&apos;s time and mine. When that changes, this
-                page will change too.
+                would waste someone&apos;s time and mine. When that changes,
+                this page will change too.
               </p>
             </section>
 
@@ -85,9 +82,9 @@ export default function CareersPage() {
                 attached.
               </p>
               <p className="mt-2">
-                When there is a real opening, you will see it here with an honest
-                description of the work, how we work together, and how to apply.
-                No ghost listings.
+                When there is a real opening, you will see it here with an
+                honest description of the work, how we work together, and how to
+                apply. No ghost listings.
               </p>
             </section>
 

@@ -2,8 +2,7 @@ import { forwardRef, type HTMLAttributes, type ReactNode } from "react";
 
 import { cn } from "@/lib/cn";
 
-export interface HalftonePopBackgroundProps
-  extends HTMLAttributes<HTMLDivElement> {
+export interface HalftonePopBackgroundProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
 }
 
@@ -25,17 +24,17 @@ const HalftonePopBackground = forwardRef<
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-[10%] -top-[12%] -z-10 h-[72%] w-[72%] opacity-35 [background-image:radial-gradient(circle,#FB7185_1.2px,transparent_1.2px)] [background-size:7px_7px]"
+        className="pointer-events-none absolute -top-[12%] -right-[10%] -z-10 h-[72%] w-[72%] [background-image:radial-gradient(circle,#FB7185_1.2px,transparent_1.2px)] [background-size:7px_7px] opacity-35"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-[14%] -left-[8%] -z-10 h-[68%] w-[68%] opacity-30 [background-image:radial-gradient(circle,#2DD4BF_1.2px,transparent_1.2px)] [background-size:9px_9px]"
+        className="pointer-events-none absolute -bottom-[14%] -left-[8%] -z-10 h-[68%] w-[68%] [background-image:radial-gradient(circle,#2DD4BF_1.2px,transparent_1.2px)] [background-size:9px_9px] opacity-30"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-[32%] left-[38%] -z-10 h-[48%] w-[48%] opacity-22 [background-image:radial-gradient(circle,#F59E0B_1px,transparent_1px)] [background-size:5px_5px]"
+        className="pointer-events-none absolute top-[32%] left-[38%] -z-10 h-[48%] w-[48%] [background-image:radial-gradient(circle,#F59E0B_1px,transparent_1px)] [background-size:5px_5px] opacity-22"
       />
 
       <div

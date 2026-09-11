@@ -112,7 +112,9 @@ export const AddToCartButton = forwardRef<
             aria-hidden
             className={cn(
               ICON_LAYER,
-              idle ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              idle
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             <ShoppingBag size={15} strokeWidth={2} />
@@ -121,7 +123,9 @@ export const AddToCartButton = forwardRef<
             aria-hidden
             className={cn(
               ICON_LAYER,
-              loading ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              loading
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             <Loader2
@@ -134,7 +138,9 @@ export const AddToCartButton = forwardRef<
             aria-hidden
             className={cn(
               ICON_LAYER,
-              added ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              added
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             <Check size={16} strokeWidth={2.5} />
@@ -146,7 +152,9 @@ export const AddToCartButton = forwardRef<
             aria-hidden={!idle}
             className={cn(
               LABEL_LAYER,
-              idle ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              idle
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             {label}
@@ -155,7 +163,9 @@ export const AddToCartButton = forwardRef<
             aria-hidden={!loading}
             className={cn(
               LABEL_LAYER,
-              loading ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              loading
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             {loadingLabel}
@@ -164,7 +174,9 @@ export const AddToCartButton = forwardRef<
             aria-hidden={!added}
             className={cn(
               LABEL_LAYER,
-              added ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              added
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             {addedLabel}

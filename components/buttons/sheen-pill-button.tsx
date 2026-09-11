@@ -79,7 +79,7 @@ export const SheenPillButton = forwardRef<
         <span
           aria-hidden="true"
           data-layer="sheen-shade-veil"
-          className="pointer-events-none absolute left-1/2 top-[35%] z-0 -translate-x-1/2 border border-[rgba(0,0,0,0.9)] blur-sm transition-[opacity,transform,filter] duration-250 ease-linear group-hover:opacity-80 group-hover:blur-md motion-reduce:transition-none"
+          className="pointer-events-none absolute top-[35%] left-1/2 z-0 -translate-x-1/2 border border-[rgba(0,0,0,0.9)] blur-sm transition-[opacity,transform,filter] duration-250 ease-linear group-hover:opacity-80 group-hover:blur-md motion-reduce:transition-none"
           style={{
             width: shadeVeilWidth,
             height: shadeVeilHeight,
@@ -90,7 +90,7 @@ export const SheenPillButton = forwardRef<
         <span
           aria-hidden="true"
           data-layer="sheen-light-band"
-          className="pointer-events-none absolute inset-0 z-10 blur-[7px] opacity-80 transition-[opacity,transform,filter] duration-250 ease-linear group-hover:scale-105 group-hover:opacity-100 group-hover:blur-[9px] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+          className="pointer-events-none absolute inset-0 z-10 opacity-80 blur-[7px] transition-[opacity,transform,filter] duration-250 ease-linear group-hover:scale-105 group-hover:opacity-100 group-hover:blur-[9px] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
           style={{
             borderRadius: SHEEN_PILL_RADIUS,
             background: `linear-gradient(45deg, rgba(255,255,255,0.8) 0%, transparent ${highlight}%, transparent calc(100% - ${highlight}%), rgba(255,255,255,0.8) 100%)`,
@@ -100,7 +100,7 @@ export const SheenPillButton = forwardRef<
         <span
           aria-hidden="true"
           data-layer="sheen-rim-wire"
-          className="pointer-events-none absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 border border-[rgba(255,255,255,0.2)] blur-[1px] transition-[border-color,opacity] duration-250 ease-linear group-hover:border-[rgba(255,255,255,0.45)] group-hover:opacity-100 motion-reduce:transition-none"
+          className="pointer-events-none absolute top-1/2 left-1/2 z-20 -translate-x-1/2 -translate-y-1/2 border border-[rgba(255,255,255,0.2)] blur-[1px] transition-[border-color,opacity] duration-250 ease-linear group-hover:border-[rgba(255,255,255,0.45)] group-hover:opacity-100 motion-reduce:transition-none"
           style={{
             width: rimWireWidth,
             height: rimWireHeight,
@@ -114,7 +114,7 @@ export const SheenPillButton = forwardRef<
         >
           <span
             data-layer="sheen-label"
-            className="whitespace-nowrap text-lg leading-none text-[#3e3e3e] transition-[color,filter,transform] duration-250 ease-linear filter-[drop-shadow(0_25px_3px_rgba(102,102,102,0.15))] group-hover:translate-y-[-0.5px] group-hover:text-neutral-800 group-hover:filter-[drop-shadow(0_28px_4px_rgba(102,102,102,0.2))] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0"
+            className="text-lg leading-none whitespace-nowrap text-[#3e3e3e] filter-[drop-shadow(0_25px_3px_rgba(102,102,102,0.15))] transition-[color,filter,transform] duration-250 ease-linear group-hover:translate-y-[-0.5px] group-hover:text-neutral-800 group-hover:filter-[drop-shadow(0_28px_4px_rgba(102,102,102,0.2))] motion-reduce:transition-none motion-reduce:group-hover:translate-y-0"
           >
             {children}
           </span>

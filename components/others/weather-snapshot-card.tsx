@@ -66,16 +66,22 @@ export const WeatherSnapshotCard = forwardRef<
               data-layer="weather-icon"
               className={cn(
                 "flex size-11 items-center justify-center rounded-2xl",
-                isRain ? "bg-sky-200/70 text-sky-800" : "bg-amber-200/80 text-amber-800",
+                isRain
+                  ? "bg-sky-200/70 text-sky-800"
+                  : "bg-amber-200/80 text-amber-800",
               )}
             >
-              {isRain ? <CloudRain size={22} aria-hidden /> : <Sun size={22} aria-hidden />}
+              {isRain ? (
+                <CloudRain size={22} aria-hidden />
+              ) : (
+                <Sun size={22} aria-hidden />
+              )}
             </div>
           </div>
 
           <p className="mt-4 text-5xl font-light tracking-tight">
             {temperature}
-            <span className="text-2xl align-top">°</span>
+            <span className="align-top text-2xl">°</span>
           </p>
 
           <p className="mt-1 text-xs text-neutral-500">
@@ -86,14 +92,26 @@ export const WeatherSnapshotCard = forwardRef<
         <div
           className={cn(
             "grid grid-cols-2 gap-px border-t text-xs",
-            isRain ? "border-sky-200 bg-sky-200" : "border-amber-200 bg-amber-200",
+            isRain
+              ? "border-sky-200 bg-sky-200"
+              : "border-amber-200 bg-amber-200",
           )}
         >
-          <div className={cn("flex items-center gap-2 px-4 py-3", isRain ? "bg-sky-50" : "bg-amber-50")}>
+          <div
+            className={cn(
+              "flex items-center gap-2 px-4 py-3",
+              isRain ? "bg-sky-50" : "bg-amber-50",
+            )}
+          >
             <Droplets size={14} className="text-neutral-500" aria-hidden />
             <span>{humidity}% humidity</span>
           </div>
-          <div className={cn("flex items-center gap-2 px-4 py-3", isRain ? "bg-sky-50" : "bg-amber-50")}>
+          <div
+            className={cn(
+              "flex items-center gap-2 px-4 py-3",
+              isRain ? "bg-sky-50" : "bg-amber-50",
+            )}
+          >
             <Wind size={14} className="text-neutral-500" aria-hidden />
             <span>{wind}</span>
           </div>

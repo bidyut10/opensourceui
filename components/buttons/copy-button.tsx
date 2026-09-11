@@ -86,7 +86,9 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
           "shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_1px_rgba(0,0,0,0.12),0_2px_3px_rgba(0,0,0,0.12),inset_0_-2px_3px_rgba(0,0,0,0.08)]",
           // Pressing sinks the key with the balanced inset recipe.
           "active:bg-neutral-100 active:shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_1px_rgba(0,0,0,0.06),inset_0_1px_1px_rgba(0,0,0,0.06),inset_0_2px_3px_rgba(0,0,0,0.03),inset_0_-2px_3px_rgba(0,0,0,0.05)]",
-          copied ? "text-emerald-700" : "text-neutral-700 hover:text-neutral-900",
+          copied
+            ? "text-emerald-700"
+            : "text-neutral-700 hover:text-neutral-900",
           className,
         )}
         {...props}
@@ -97,7 +99,9 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
             aria-hidden
             className={cn(
               ICON_LAYER,
-              copied ? "opacity-0 duration-200" : "opacity-100 duration-300 delay-200",
+              copied
+                ? "opacity-0 duration-200"
+                : "opacity-100 delay-200 duration-300",
             )}
           >
             <Copy size={12} strokeWidth={2} className={ICON_SHADOW} />
@@ -106,7 +110,9 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
             aria-hidden
             className={cn(
               ICON_LAYER,
-              copied ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              copied
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             <Check size={14} strokeWidth={2.5} className={ICON_SHADOW_COPIED} />
@@ -118,7 +124,9 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
             aria-hidden={copied}
             className={cn(
               LABEL_LAYER,
-              copied ? "opacity-0 duration-200" : "opacity-100 duration-300 delay-200",
+              copied
+                ? "opacity-0 duration-200"
+                : "opacity-100 delay-200 duration-300",
             )}
           >
             {label}
@@ -127,7 +135,9 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
             aria-hidden={!copied}
             className={cn(
               LABEL_LAYER,
-              copied ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              copied
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             {copiedLabel}

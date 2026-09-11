@@ -182,7 +182,7 @@ export const BookingSlotCalendar = forwardRef<
               disabled={!canGoPrev}
               onClick={goPrevWeek}
               className={cn(
-                "flex size-8 items-center justify-center rounded-full outline-none transition-colors duration-150",
+                "flex size-8 items-center justify-center rounded-full transition-colors duration-150 outline-none",
                 "focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800",
                 canGoPrev
                   ? "cursor-pointer text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
@@ -195,7 +195,7 @@ export const BookingSlotCalendar = forwardRef<
               type="button"
               aria-label="Next week"
               onClick={goNextWeek}
-              className="flex size-8 cursor-pointer items-center justify-center rounded-full text-neutral-500 outline-none transition-colors duration-150 hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800"
+              className="flex size-8 cursor-pointer items-center justify-center rounded-full text-neutral-500 transition-colors duration-150 outline-none hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800"
             >
               <ChevronRight size={16} strokeWidth={2} aria-hidden />
             </button>

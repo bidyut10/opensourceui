@@ -31,8 +31,9 @@ const FAQ_ITEMS: FaqItem[] = [
         >
           sponsor page
         </Link>{" "}
-        are optional support so the project can keep shipping. They do not unlock
-        components and they do not turn the library into a subscription product.
+        are optional support so the project can keep shipping. They do not
+        unlock components and they do not turn the library into a subscription
+        product.
       </>
     ),
   },
@@ -79,10 +80,10 @@ const FAQ_ITEMS: FaqItem[] = [
     question: "Is the code clean enough for production?",
     answer: (
       <>
-        Yes. Source is TypeScript-first, readable props, Tailwind utility classes
-        in the file you paste — not a black-box package. Built for real apps:
-        clear structure, MIT license, no mystery runtime. You can edit, delete,
-        or restyle anything after it lands in your repo.
+        Yes. Source is TypeScript-first, readable props, Tailwind utility
+        classes in the file you paste — not a black-box package. Built for real
+        apps: clear structure, MIT license, no mystery runtime. You can edit,
+        delete, or restyle anything after it lands in your repo.
       </>
     ),
   },
@@ -96,8 +97,7 @@ const FAQ_ITEMS: FaqItem[] = [
         for its own sake. Motion respects reduced-motion. Responsive with base
         styles plus{" "}
         <span className="font-mono text-[12px] text-neutral-700">md:</span> —
-        not{" "}
-        <span className="font-mono text-[12px] text-neutral-700">sm:</span>.
+        not <span className="font-mono text-[12px] text-neutral-700">sm:</span>.
         Focus is border change, not colored rings. Goal: UI that feels shipped,
         not demo-reel.
       </>
@@ -200,7 +200,7 @@ export function HomeSeoFaq() {
                     strokeWidth={2}
                     aria-hidden
                     className={cn(
-                      "shrink-0 text-neutral-400 transition-transform duration-300 ease-smooth motion-reduce:transition-none",
+                      "ease-smooth shrink-0 text-neutral-400 transition-transform duration-300 motion-reduce:transition-none",
                       isOpen && "rotate-180",
                     )}
                   />
@@ -212,7 +212,7 @@ export function HomeSeoFaq() {
                 role="region"
                 aria-labelledby={buttonId}
                 className={cn(
-                  "grid transition-[grid-template-rows] duration-300 ease-smooth motion-reduce:transition-none",
+                  "ease-smooth grid transition-[grid-template-rows] duration-300 motion-reduce:transition-none",
                   isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
                 )}
               >

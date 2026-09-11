@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 
 import { getShowcaseByCategory } from "@/lib/showcase/showcase";
-import { getCategoryGroupBySlug, getCategoryPath, getCategorySlug } from "@/lib/showcase/category-slug";
+import {
+  getCategoryGroupBySlug,
+  getCategoryPath,
+  getCategorySlug,
+} from "@/lib/showcase/category-slug";
 import {
   createPageMetadata,
   getCategorySeoDescription,
@@ -37,7 +41,9 @@ export async function generateMetadata({ params }: Props) {
   });
 }
 
-export default async function ComponentsCategoryPage({ params }: Readonly<Props>) {
+export default async function ComponentsCategoryPage({
+  params,
+}: Readonly<Props>) {
   const { slug } = await params;
   const categories = getShowcaseByCategory();
   const group = getCategoryGroupBySlug(categories, slug);
@@ -52,7 +58,10 @@ export default async function ComponentsCategoryPage({ params }: Readonly<Props>
   return (
     <>
       <JsonLd data={listJsonLd} />
-      <ComponentsCategoryView categories={categories} category={group.category} />
+      <ComponentsCategoryView
+        categories={categories}
+        category={group.category}
+      />
     </>
   );
 }

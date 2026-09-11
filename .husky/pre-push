@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# Block push unless format, lint, types, showcase paths, tests, and build all pass.
+npm run verify

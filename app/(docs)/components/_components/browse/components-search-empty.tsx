@@ -41,12 +41,7 @@ const FEATURED = [
   },
 ] as const;
 
-const TRY_CATEGORIES = [
-  "Mockups",
-  "Buttons",
-  "Widgets",
-  "Forms",
-] as const;
+const TRY_CATEGORIES = ["Mockups", "Buttons", "Widgets", "Forms"] as const;
 
 function DemoStage({
   scale,
@@ -92,7 +87,7 @@ export function ComponentsSearchEmpty() {
         className={cn(
           "mt-3 grid grid-cols-2 gap-3",
           "auto-rows-[10.5rem]",
-          "md:grid-cols-4 md:auto-rows-[12.5rem]",
+          "md:auto-rows-[12.5rem] md:grid-cols-4",
         )}
       >
         {featured.map(({ entry, scale, cell }) => (

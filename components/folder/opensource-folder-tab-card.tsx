@@ -65,7 +65,7 @@ export const OpensourceFolderTabCard = forwardRef<
       </div>
 
       <div
-        className="absolute inset-x-1 bottom-1 top-[28%] z-10 overflow-hidden"
+        className="absolute inset-x-1 top-[28%] bottom-1 z-10 overflow-hidden"
         style={{
           borderBottomLeftRadius: "2.35rem",
           borderBottomRightRadius: "2.35rem",
@@ -73,7 +73,7 @@ export const OpensourceFolderTabCard = forwardRef<
       >
         <div className="pointer-events-none absolute inset-0">
           <div
-            className="absolute inset-x-0 bottom-0 top-[10%] bg-neutral-800"
+            className="absolute inset-x-0 top-[10%] bottom-0 bg-neutral-800"
             style={{
               borderBottomLeftRadius: "2.35rem",
               borderBottomRightRadius: "2.35rem",
@@ -96,13 +96,17 @@ export const OpensourceFolderTabCard = forwardRef<
 
         <div className="relative z-30 flex h-full flex-col justify-between px-6 pt-[18%] pb-7">
           <div>
-            <h2 className="text-lg font-medium leading-tight text-white">{title}</h2>
+            <h2 className="text-lg leading-tight font-medium text-white">
+              {title}
+            </h2>
             <p className="mt-1 text-sm text-neutral-400">{subtitle}</p>
           </div>
 
           <div className="flex items-end justify-between gap-3">
             <p className="flex items-baseline gap-2 text-white">
-              <span className="text-xl font-bold leading-none">{primaryValue}</span>
+              <span className="text-xl leading-none font-bold">
+                {primaryValue}
+              </span>
               <span className="text-sm font-normal">{primaryLabel}</span>
             </p>
             <p className="pb-1 text-sm text-neutral-400">

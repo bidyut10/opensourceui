@@ -19,7 +19,11 @@ const MOCKUP_KEYWORDS = [
 
 const CATEGORY_EXTRA_KEYWORDS: Record<string, readonly string[]> = {
   Mockups: MOCKUP_KEYWORDS,
-  Buttons: ["free react buttons", "tailwind button components", "copy paste buttons"],
+  Buttons: [
+    "free react buttons",
+    "tailwind button components",
+    "copy paste buttons",
+  ],
   Widgets: ["react widgets", "free ui widgets", "dashboard widgets"],
   Forms: ["react form components", "tailwind form blocks", "free form ui"],
   Inputs: ["react input components", "tailwind inputs"],
@@ -96,7 +100,11 @@ export function getMockupComponentKeywords(title: string): string[] {
     );
   }
   if (lower.includes("macbook") || lower.includes("mac book")) {
-    specific.push("macbook mockup", "apple macbook mockup", "laptop mockup react");
+    specific.push(
+      "macbook mockup",
+      "apple macbook mockup",
+      "laptop mockup react",
+    );
   }
   if (lower.includes("ipad")) {
     specific.push("ipad mockup", "apple ipad mockup");
@@ -108,7 +116,11 @@ export function getMockupComponentKeywords(title: string): string[] {
     specific.push("ipod mockup", "apple ipod mockup");
   }
   if (lower.includes("browser")) {
-    specific.push("browser mockup", "safari browser mockup", "desktop browser frame");
+    specific.push(
+      "browser mockup",
+      "safari browser mockup",
+      "desktop browser frame",
+    );
   }
 
   return [...specific, ...MOCKUP_KEYWORDS];

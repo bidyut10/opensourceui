@@ -99,7 +99,7 @@ export const NowPlayingBar = forwardRef<HTMLDivElement, NowPlayingBarProps>(
 
         <div
           data-slot="now-playing-bar-progress"
-          className="hidden h-1 w-16 overflow-hidden rounded-full bg-neutral-800 sm:block"
+          className="hidden h-1 w-16 overflow-hidden rounded-full bg-neutral-800 md:block"
         >
           <div
             className="h-full rounded-full bg-emerald-500"

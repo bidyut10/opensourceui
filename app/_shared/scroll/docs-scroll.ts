@@ -24,9 +24,7 @@ export function useForwardWheelToDocsMain(
 }
 
 /** Manual wheel scroll for side panels while the page body is locked. */
-export function usePanelWheelScroll(
-  panelRef: RefObject<HTMLElement | null>,
-) {
+export function usePanelWheelScroll(panelRef: RefObject<HTMLElement | null>) {
   useEffect(() => {
     const panel = panelRef.current;
     if (!panel) return;

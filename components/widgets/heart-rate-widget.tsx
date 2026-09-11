@@ -23,10 +23,7 @@ export type HeartRateWidgetProps = Readonly<
 
 // Heart rate — DND-style face card with a soft pulse on the dial.
 export const HeartRateWidget = forwardRef<HTMLDivElement, HeartRateWidgetProps>(
-  (
-    { className, bpm: defaultBpm = 72, label = "BPM", ...props },
-    ref,
-  ) => {
+  ({ className, bpm: defaultBpm = 72, label = "BPM", ...props }, ref) => {
     const [bpm, setBpm] = useState(defaultBpm);
     const [pulse, setPulse] = useState(false);
 

@@ -19,7 +19,10 @@ const LINEN_BODY =
 const LINEN_WEAVE =
   "repeating-linear-gradient(90deg, rgba(120,113,108,0.04) 0 1px, transparent 1px 4px), repeating-linear-gradient(0deg, rgba(120,113,108,0.03) 0 1px, transparent 1px 5px)";
 
-export const LinenTabButton = forwardRef<HTMLButtonElement, LinenTabButtonProps>(
+export const LinenTabButton = forwardRef<
+  HTMLButtonElement,
+  LinenTabButtonProps
+>(
   (
     {
       children = "View details",
@@ -37,7 +40,7 @@ export const LinenTabButton = forwardRef<HTMLButtonElement, LinenTabButtonProps>
         disabled={disabled}
         data-slot="linen-tab-button"
         className={cn(
-          "relative isolate overflow-hidden rounded-lg border border-[#d4cbc0] px-6 py-3 text-[1rem] outline-none ring-0",
+          "relative isolate overflow-hidden rounded-lg border border-[#d4cbc0] px-6 py-3 text-[1rem] ring-0 outline-none",
           "font-sans font-medium tracking-tight text-neutral-800",
           "shadow-[0_1px_0_rgba(255,255,255,0.85),0_6px_14px_rgba(120,113,108,0.16),inset_0_1px_0_rgba(255,255,255,0.65)]",
           "transition-[transform,box-shadow,filter] duration-200 ease-out",

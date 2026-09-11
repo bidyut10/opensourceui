@@ -12,7 +12,10 @@ const AuroraBackground = forwardRef<HTMLDivElement, AuroraBackgroundProps>(
       <div
         ref={ref}
         data-slot="aurora-background"
-        className={cn("relative isolate overflow-hidden bg-[#FFFEFB]", className)}
+        className={cn(
+          "relative isolate overflow-hidden bg-[#FFFEFB]",
+          className,
+        )}
         {...props}
       >
         <div
@@ -21,18 +24,18 @@ const AuroraBackground = forwardRef<HTMLDivElement, AuroraBackgroundProps>(
         >
           <div className="absolute inset-0 bg-[#FFFEFB]" />
 
-          <div className="absolute -left-[10%] -top-[20%] h-[70%] w-[70%] rounded-full bg-[#E9FF95] opacity-80 blur-3xl" />
+          <div className="absolute -top-[20%] -left-[10%] h-[70%] w-[70%] rounded-full bg-[#E9FF95] opacity-80 blur-3xl" />
 
-          <div className="absolute -right-[10%] top-[10%] h-[65%] w-[65%] rounded-full bg-[#59E39C] opacity-70 blur-3xl" />
+          <div className="absolute top-[10%] -right-[10%] h-[65%] w-[65%] rounded-full bg-[#59E39C] opacity-70 blur-3xl" />
 
           <div className="absolute bottom-[-30%] left-[20%] h-[70%] w-[70%] rounded-full bg-[#1EC9D8] opacity-65 blur-3xl" />
 
-          <div className="absolute bottom-[-20%] right-[10%] h-[60%] w-[60%] rounded-full bg-[#2874F0] opacity-55 blur-3xl" />
+          <div className="absolute right-[10%] bottom-[-20%] h-[60%] w-[60%] rounded-full bg-[#2874F0] opacity-55 blur-3xl" />
         </div>
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.035] [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:4px_4px]"
+          className="pointer-events-none absolute inset-0 -z-10 [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:4px_4px] opacity-[0.035]"
         />
 
         {children}

@@ -15,13 +15,7 @@ export type StepCountWidgetProps = Readonly<
 // Daily steps — editorial stat card, typography-led.
 export const StepCountWidget = forwardRef<HTMLDivElement, StepCountWidgetProps>(
   (
-    {
-      className,
-      steps = 8432,
-      goal = 10_000,
-      label = "steps today",
-      ...props
-    },
+    { className, steps = 8432, goal = 10_000, label = "steps today", ...props },
     ref,
   ) => {
     const progress = Math.min(100, Math.round((steps / goal) * 100));

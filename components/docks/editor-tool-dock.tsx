@@ -1,10 +1,6 @@
 "use client";
 
-import {
-  forwardRef,
-  useState,
-  type ComponentPropsWithoutRef,
-} from "react";
+import { forwardRef, useState, type ComponentPropsWithoutRef } from "react";
 
 import {
   AudioLines,
@@ -88,7 +84,7 @@ export const EditorToolDock = forwardRef<HTMLElement, EditorToolDockProps>(
                 onSelect?.(tool.id);
               }}
               className={cn(
-                "flex size-11 items-center justify-center rounded-lg shadow-xs shadow-neutral-100 transition-[background-color,color,transform] duration-300 ease-smooth will-change-transform",
+                "ease-smooth flex size-11 items-center justify-center rounded-lg shadow-xs shadow-neutral-100 transition-[background-color,color,transform] duration-300 will-change-transform",
                 active
                   ? "bg-neutral-900 text-white"
                   : "bg-neutral-50 text-neutral-600 hover:scale-110 hover:text-neutral-900",
@@ -104,7 +100,7 @@ export const EditorToolDock = forwardRef<HTMLElement, EditorToolDockProps>(
             type="button"
             aria-label={allToolsLabel}
             onClick={onAllTools}
-            className="flex size-11 items-center justify-center rounded-lg bg-rose-200 text-white shadow-xs transition-transform duration-300 ease-smooth hover:scale-110"
+            className="ease-smooth flex size-11 items-center justify-center rounded-lg bg-rose-200 text-white shadow-xs transition-transform duration-300 hover:scale-110"
           >
             <Folder size={16} aria-hidden fill="currentColor" />
           </button>

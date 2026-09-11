@@ -50,7 +50,8 @@ function buildGrowthSeries(
       const ramp = Math.pow(growT, shape.rampPower);
       const wave =
         1 + shape.weekWave * Math.sin((i / 7) * Math.PI * 2 + shape.seed);
-      const noise = 1 + (seededNoise(i + shape.seed * 3) - 0.5) * shape.noiseAmp;
+      const noise =
+        1 + (seededNoise(i + shape.seed * 3) - 0.5) * shape.noiseAmp;
       w =
         (shape.earlyFloor * 1.15 +
           (1 - shape.earlyFloor) * (0.35 + ramp * 1.4)) *
@@ -222,8 +223,7 @@ export function SponsorTrafficChart() {
         {(() => {
           const earlyDays = Math.min(14, Math.floor(daysLive * 0.25));
           const x =
-            pad +
-            (earlyDays / Math.max(daysLive - 1, 1)) * (width - pad * 2);
+            pad + (earlyDays / Math.max(daysLive - 1, 1)) * (width - pad * 2);
           return (
             <line
               x1={x}

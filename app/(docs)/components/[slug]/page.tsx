@@ -15,11 +15,7 @@ import {
   readShowcaseSource,
 } from "@/lib/showcase";
 import { getCategoryPath } from "@/lib/showcase/category-slug";
-import {
-  JsonLd,
-  createComponentMetadata,
-  getComponentJsonLd,
-} from "@/lib/seo";
+import { JsonLd, createComponentMetadata, getComponentJsonLd } from "@/lib/seo";
 import type { Props } from "@/types/types";
 
 import { DocsPreviewStage } from "../_components/detail";
@@ -80,6 +76,7 @@ export default async function ComponentDetailPage({ params }: Readonly<Props>) {
     <div className="flex min-h-0 flex-1 overflow-hidden">
       <JsonLd data={getComponentJsonLd(entry)} />
       <main
+        id="main-content"
         data-docs-scroll
         className="scrollbar-hover data-docs-scroll min-h-0 min-w-0 flex-1 overflow-y-auto overscroll-y-contain"
       >
@@ -133,8 +130,8 @@ export default async function ComponentDetailPage({ params }: Readonly<Props>) {
                 {entry.title}
               </h1>
               <p className="sr-only">
-                Free {entry.category} React component — {entry.exportName}.
-                MIT licensed, copy-paste ready for Next.js and Tailwind CSS.
+                Free {entry.category} React component — {entry.exportName}. MIT
+                licensed, copy-paste ready for Next.js and Tailwind CSS.
               </p>
               <p className="mt-4 max-w-2xl text-base leading-relaxed text-neutral-500">
                 {entry.description}

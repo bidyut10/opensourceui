@@ -171,12 +171,17 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
           <h2 className="font-sans text-2xl font-semibold tracking-tight text-neutral-950">
             {title}
           </h2>
-          <p className="mt-3 max-w-sm text-sm leading-6 text-neutral-500">{subtitle}</p>
+          <p className="mt-3 max-w-sm text-sm leading-6 text-neutral-500">
+            {subtitle}
+          </p>
         </div>
 
         <div className="space-y-4">
           <div>
-            <label htmlFor={`${formId}-email`} className="mb-1.5 block text-sm font-medium text-neutral-900">
+            <label
+              htmlFor={`${formId}-email`}
+              className="mb-1.5 block text-sm font-medium text-neutral-900"
+            >
               Email
             </label>
             <input
@@ -188,20 +193,29 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
               disabled={busy}
               value={email}
               aria-invalid={Boolean(errors.email)}
-              aria-describedby={errors.email ? `${formId}-email-error` : undefined}
+              aria-describedby={
+                errors.email ? `${formId}-email-error` : undefined
+              }
               onChange={(event) => {
                 setEmail(event.target.value);
                 setSubmitError("");
-                if (errors.email) setErrors((prev) => ({ ...prev, email: undefined }));
+                if (errors.email)
+                  setErrors((prev) => ({ ...prev, email: undefined }));
               }}
               className={cn(
-                "h-11 w-full rounded-md border bg-white px-3.5 text-sm text-neutral-900 outline-none ring-0 transition-[border-color,background-color] duration-200 placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50",
-                errors.email ? "border-rose-300 focus:border-rose-400" : "border-neutral-200 focus:border-neutral-900",
+                "h-11 w-full rounded-md border bg-white px-3.5 text-sm text-neutral-900 ring-0 transition-[border-color,background-color] duration-200 outline-none placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50",
+                errors.email
+                  ? "border-rose-300 focus:border-rose-400"
+                  : "border-neutral-200 focus:border-neutral-900",
               )}
               placeholder="you@company.com"
             />
             {errors.email ? (
-              <p id={`${formId}-email-error`} role="alert" className="mt-1.5 text-xs text-rose-600">
+              <p
+                id={`${formId}-email-error`}
+                role="alert"
+                className="mt-1.5 text-xs text-rose-600"
+              >
                 {errors.email}
               </p>
             ) : null}
@@ -209,7 +223,10 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
 
           <div>
             <div className="mb-1.5 flex items-center justify-between gap-2">
-              <label htmlFor={`${formId}-password`} className="text-sm font-medium text-neutral-900">
+              <label
+                htmlFor={`${formId}-password`}
+                className="text-sm font-medium text-neutral-900"
+              >
                 Password
               </label>
               <FormLink
@@ -228,15 +245,20 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
                 disabled={busy}
                 value={password}
                 aria-invalid={Boolean(errors.password)}
-                aria-describedby={errors.password ? `${formId}-password-error` : undefined}
+                aria-describedby={
+                  errors.password ? `${formId}-password-error` : undefined
+                }
                 onChange={(event) => {
                   setPassword(event.target.value);
                   setSubmitError("");
-                  if (errors.password) setErrors((prev) => ({ ...prev, password: undefined }));
+                  if (errors.password)
+                    setErrors((prev) => ({ ...prev, password: undefined }));
                 }}
                 className={cn(
-                  "h-11 w-full rounded-md border bg-white py-2 pr-10 pl-3.5 text-sm text-neutral-900 outline-none ring-0 transition-[border-color,background-color] duration-200 placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50",
-                  errors.password ? "border-rose-300 focus:border-rose-400" : "border-neutral-200 focus:border-neutral-900",
+                  "h-11 w-full rounded-md border bg-white py-2 pr-10 pl-3.5 text-sm text-neutral-900 ring-0 transition-[border-color,background-color] duration-200 outline-none placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50",
+                  errors.password
+                    ? "border-rose-300 focus:border-rose-400"
+                    : "border-neutral-200 focus:border-neutral-900",
                 )}
                 placeholder="Enter your password"
               />
@@ -248,11 +270,19 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
                 onClick={() => setShowPassword((prev) => !prev)}
                 className="absolute top-1/2 right-2.5 flex size-7 -translate-y-1/2 cursor-pointer items-center justify-center text-neutral-400 transition-colors hover:text-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-900 disabled:opacity-50"
               >
-                {showPassword ? <EyeOff size={16} aria-hidden /> : <Eye size={16} aria-hidden />}
+                {showPassword ? (
+                  <EyeOff size={16} aria-hidden />
+                ) : (
+                  <Eye size={16} aria-hidden />
+                )}
               </button>
             </div>
             {errors.password ? (
-              <p id={`${formId}-password-error`} role="alert" className="mt-1.5 text-xs text-rose-600">
+              <p
+                id={`${formId}-password-error`}
+                role="alert"
+                className="mt-1.5 text-xs text-rose-600"
+              >
                 {errors.password}
               </p>
             ) : null}
@@ -267,7 +297,9 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
               onChange={(event) => setRemember(event.target.checked)}
               className="size-4 cursor-pointer rounded border-neutral-300 text-neutral-900 accent-neutral-900 disabled:cursor-not-allowed"
             />
-            <span className="text-sm text-neutral-700">Remember me for 30 days</span>
+            <span className="text-sm text-neutral-700">
+              Remember me for 30 days
+            </span>
           </label>
         </div>
 
@@ -286,7 +318,9 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
           disabled={busy}
           className="mt-6 flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 px-4 text-sm font-semibold text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 disabled:cursor-not-allowed disabled:opacity-60"
         >
-          {busy ? <Loader2 size={16} className="animate-spin" aria-hidden /> : null}
+          {busy ? (
+            <Loader2 size={16} className="animate-spin" aria-hidden />
+          ) : null}
           {busy ? "Signing in…" : submitLabel}
           {!busy ? <ChevronRight size={15} aria-hidden /> : null}
         </button>

@@ -53,7 +53,9 @@ export function SponsorPlacementPreviews() {
             </div>
             <div className="flex min-w-0 flex-1 items-center gap-3">
               <p className="min-w-0 flex-1 truncate font-sans text-sm leading-snug">
-                <span className="font-semibold text-neutral-400">{DEMO_BRAND}</span>
+                <span className="font-semibold text-neutral-400">
+                  {DEMO_BRAND}
+                </span>
                 <span className="text-neutral-300"> / </span>
                 <span className="text-neutral-400">{DEMO_LINE}</span>
               </p>
@@ -97,7 +99,9 @@ export function SponsorPlacementPreviews() {
                   Demo
                 </span>
               </div>
-              <p className="mt-2 font-serif text-base leading-snug">{DEMO_BRAND}</p>
+              <p className="mt-2 font-serif text-base leading-snug">
+                {DEMO_BRAND}
+              </p>
               <p className="mt-1 font-sans text-[11px] leading-relaxed text-neutral-400">
                 {DEMO_LINE}
               </p>

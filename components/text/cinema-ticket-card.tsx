@@ -44,12 +44,12 @@ export const CinemaTicketCard = forwardRef<
       <div className="flex overflow-hidden rounded-2xl bg-neutral-950">
         <div
           data-slot="cinema-ticket-card-main"
-          className="min-w-0 flex-1 p-4 sm:p-5"
+          className="min-w-0 flex-1 p-4 md:p-5"
         >
           <p className="font-mono text-[9px] tracking-[0.25em] text-amber-500/70 uppercase">
             Admit one
           </p>
-          <h3 className="mt-1 truncate text-lg font-semibold tracking-tight text-white sm:text-xl">
+          <h3 className="mt-1 truncate text-lg font-semibold tracking-tight text-white md:text-xl">
             {filmTitle}
           </h3>
           <p className="mt-0.5 truncate text-xs text-neutral-500">{cinema}</p>

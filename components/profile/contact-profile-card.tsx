@@ -46,7 +46,10 @@ function ContactFieldRow({ label, value, href }: ContactField) {
 }
 
 // Contact profile — museum placard directory entry, typography only.
-export const ContactProfileCard = forwardRef<HTMLElement, ContactProfileCardProps>(
+export const ContactProfileCard = forwardRef<
+  HTMLElement,
+  ContactProfileCardProps
+>(
   (
     {
       className,
@@ -75,15 +78,13 @@ export const ContactProfileCard = forwardRef<HTMLElement, ContactProfileCardProp
         {catalogRef}
       </p>
 
-      <h3 className="mt-3 font-serif text-xl leading-snug text-neutral-900">{name}</h3>
+      <h3 className="mt-3 font-serif text-xl leading-snug text-neutral-900">
+        {name}
+      </h3>
       <p className="mt-1 text-xs text-neutral-500">{title}</p>
 
       <div className="mt-4 space-y-0.5 border-t border-neutral-200 pt-3">
-        <ContactFieldRow
-          label="Email"
-          value={email}
-          href={`mailto:${email}`}
-        />
+        <ContactFieldRow label="Email" value={email} href={`mailto:${email}`} />
         <ContactFieldRow
           label="Phone"
           value={phone}

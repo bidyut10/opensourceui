@@ -35,7 +35,7 @@ export const StampPostcardCard = forwardRef<
       {...props}
     >
       <div className="relative overflow-hidden rounded-sm border border-neutral-200 bg-[#fffef8] shadow-md">
-        <div className="relative h-32 sm:h-36">
+        <div className="relative h-32 md:h-36">
           <Image
             src={imageSrc}
             alt={location}

@@ -98,7 +98,7 @@ export const TextareaFieldInput = forwardRef<
           <span
             id={countId}
             className={cn(
-              "text-xs tabular-nums text-neutral-400",
+              "text-xs text-neutral-400 tabular-nums",
               atLimit && "text-amber-600",
             )}
           >
@@ -127,7 +127,7 @@ export const TextareaFieldInput = forwardRef<
         }
         onChange={handleChange}
         className={cn(
-          "min-h-24 w-full resize-y rounded-lg border bg-white px-3.5 py-2.5 font-sans text-sm leading-relaxed text-neutral-900 outline-none ring-0 transition-[border-color,background-color] duration-200 placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
+          "min-h-24 w-full resize-y rounded-lg border bg-white px-3.5 py-2.5 font-sans text-sm leading-relaxed text-neutral-900 ring-0 transition-[border-color,background-color] duration-200 outline-none placeholder:text-neutral-400 focus:ring-0 disabled:cursor-not-allowed disabled:bg-neutral-50 disabled:text-neutral-400",
           error
             ? "border-rose-300 focus:border-rose-400"
             : "border-neutral-200 focus:border-neutral-900",

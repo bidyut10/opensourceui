@@ -12,7 +12,10 @@ const FineGrainPattern = forwardRef<HTMLDivElement, FineGrainPatternProps>(
       <div
         ref={ref}
         data-slot="fine-grain-pattern"
-        className={cn("relative isolate overflow-hidden bg-[#FAFAFA]", className)}
+        className={cn(
+          "relative isolate overflow-hidden bg-[#FAFAFA]",
+          className,
+        )}
         {...props}
       >
         <div

@@ -6,10 +6,15 @@ import { existsSync, unlinkSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const root = path.resolve(
+  path.dirname(fileURLToPath(import.meta.url)),
+  "../..",
+);
 const redirects = path.join(root, "out", "_redirects");
 
 if (existsSync(redirects)) {
   unlinkSync(redirects);
-  console.log("Removed out/_redirects (not supported on Workers static assets).");
+  console.log(
+    "Removed out/_redirects (not supported on Workers static assets).",
+  );
 }

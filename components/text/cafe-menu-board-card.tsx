@@ -26,7 +26,10 @@ const DEFAULT_ITEMS: readonly CafeMenuItem[] = [
   { name: "Matcha Latte", price: "₹220" },
 ];
 
-export const CafeMenuBoardCard = forwardRef<HTMLDivElement, CafeMenuBoardCardProps>(
+export const CafeMenuBoardCard = forwardRef<
+  HTMLDivElement,
+  CafeMenuBoardCardProps
+>(
   (
     {
       className,
@@ -53,7 +56,9 @@ export const CafeMenuBoardCard = forwardRef<HTMLDivElement, CafeMenuBoardCardPro
               <Coffee size={18} aria-hidden />
             </div>
             <div>
-              <h3 className="text-base font-semibold tracking-tight">{cafeName}</h3>
+              <h3 className="text-base font-semibold tracking-tight">
+                {cafeName}
+              </h3>
               <p className="text-xs text-neutral-400">{tagline}</p>
             </div>
           </div>
@@ -65,17 +70,25 @@ export const CafeMenuBoardCard = forwardRef<HTMLDivElement, CafeMenuBoardCardPro
               key={item.name}
               className={cn(
                 "py-3",
-                index < items.length - 1 ? "border-b border-neutral-800/80" : undefined,
+                index < items.length - 1
+                  ? "border-b border-neutral-800/80"
+                  : undefined,
               )}
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="min-w-0">
-                  <p className="text-sm font-medium text-neutral-100">{item.name}</p>
+                  <p className="text-sm font-medium text-neutral-100">
+                    {item.name}
+                  </p>
                   {item.note ? (
-                    <p className="mt-0.5 text-[11px] text-neutral-500">{item.note}</p>
+                    <p className="mt-0.5 text-[11px] text-neutral-500">
+                      {item.note}
+                    </p>
                   ) : null}
                 </div>
-                <p className="shrink-0 text-sm font-semibold text-amber-300">{item.price}</p>
+                <p className="shrink-0 text-sm font-semibold text-amber-300">
+                  {item.price}
+                </p>
               </div>
             </li>
           ))}

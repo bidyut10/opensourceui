@@ -108,7 +108,11 @@ export const SpotlightBar = forwardRef<HTMLFormElement, SpotlightBarProps>(
           <label htmlFor={inputId} className="sr-only">
             Spotlight search
           </label>
-          <Search size={16} aria-hidden className="ml-1 shrink-0 text-neutral-400" />
+          <Search
+            size={16}
+            aria-hidden
+            className="ml-1 shrink-0 text-neutral-400"
+          />
           <input
             id={inputId}
             value={value}
@@ -120,7 +124,7 @@ export const SpotlightBar = forwardRef<HTMLFormElement, SpotlightBarProps>(
             onFocus={() => setOpen(true)}
             onKeyDown={onKeyDown}
             placeholder={placeholder}
-            className="min-w-0 flex-1 bg-transparent text-sm text-neutral-900 outline-none ring-0 placeholder:text-neutral-400 focus:border-transparent focus:ring-0"
+            className="min-w-0 flex-1 bg-transparent text-sm text-neutral-900 ring-0 outline-none placeholder:text-neutral-400 focus:border-transparent focus:ring-0"
           />
           {showShortcut ? (
             <kbd className="hidden items-center gap-0.5 rounded-md border border-neutral-100 bg-neutral-50 px-1.5 py-0.5 text-[10px] font-medium text-neutral-500 md:inline-flex">
@@ -132,7 +136,7 @@ export const SpotlightBar = forwardRef<HTMLFormElement, SpotlightBarProps>(
         <ul
           role="listbox"
           className={cn(
-            "absolute top-[calc(100%+0.5rem)] left-0 z-10 w-full origin-top overflow-hidden rounded-2xl border border-neutral-50 bg-white/90 p-2 shadow-xl shadow-black/10 backdrop-blur-md transition-[opacity,transform] duration-200 ease-smooth",
+            "ease-smooth absolute top-[calc(100%+0.5rem)] left-0 z-10 w-full origin-top overflow-hidden rounded-2xl border border-neutral-50 bg-white/90 p-2 shadow-xl shadow-black/10 backdrop-blur-md transition-[opacity,transform] duration-200",
             open && filtered.length > 0
               ? "pointer-events-auto scale-100 opacity-100"
               : "pointer-events-none scale-95 opacity-0",
@@ -151,7 +155,7 @@ export const SpotlightBar = forwardRef<HTMLFormElement, SpotlightBarProps>(
                   setOpen(false);
                 }}
                 className={cn(
-                  "flex w-full items-center justify-between gap-3 rounded-lg px-2.5 py-2.5 text-left transition-colors duration-150 ease-smooth",
+                  "ease-smooth flex w-full items-center justify-between gap-3 rounded-lg px-2.5 py-2.5 text-left transition-colors duration-150",
                   index === activeIndex
                     ? "bg-neutral-100 text-neutral-900"
                     : "text-neutral-700 hover:bg-neutral-50",

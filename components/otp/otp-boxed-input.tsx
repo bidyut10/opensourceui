@@ -37,7 +37,11 @@ function sanitizeChar(char: string, mode: OtpInputMode): string | null {
   return /^[a-zA-Z0-9]$/.test(next) ? next.toUpperCase() : null;
 }
 
-function sanitizeValue(raw: string, length: number, mode: OtpInputMode): string {
+function sanitizeValue(
+  raw: string,
+  length: number,
+  mode: OtpInputMode,
+): string {
   const filtered =
     mode === "numeric"
       ? raw.replace(/\D/g, "")
@@ -318,159 +322,159 @@ export const OtpBoxedInput = forwardRef<HTMLDivElement, OtpBoxedInputProps>(
     const isComplete = filledCount === otp.length;
 
     return (
-        <div
-          ref={ref}
-          data-slot="otp-boxed-input"
-          data-error={error || undefined}
-          data-complete={isComplete || undefined}
-          className={cn(
-            "w-full max-w-md px-6 py-7 font-sans",
-            className,
-          )}
-          {...props}
-        >
-          <div className="mb-6 flex flex-col items-center text-center">
-            <div
-              className={cn(
-                "mb-4 flex size-12 items-center justify-center rounded-full transition-colors duration-300",
-                error
-                  ? "text-rose-500"
-                  : isComplete
-                    ? "text-emerald-600"
-                    : "text-neutral-700",
-              )}
-            >
-              <Mail size={20} strokeWidth={1.75} aria-hidden />
-            </div>
-
-            <p
-              id={`${otp.groupId}-label`}
-              className="font-serif text-2xl text-neutral-900"
-            >
-              {label}
-            </p>
-            <p
-              id={`${otp.groupId}-hint`}
-              className="mt-2 max-w-xs text-sm leading-relaxed text-neutral-500"
-            >
-              {hint ?? (
-                <>
-                  We sent a {otp.length}-digit code to{" "}
-                  <span className="font-medium text-neutral-700">{destination}</span>
-                </>
-              )}
-            </p>
-          </div>
-
+      <div
+        ref={ref}
+        data-slot="otp-boxed-input"
+        data-error={error || undefined}
+        data-complete={isComplete || undefined}
+        className={cn("w-full max-w-md px-6 py-7 font-sans", className)}
+        {...props}
+      >
+        <div className="mb-6 flex flex-col items-center text-center">
           <div
-            role="group"
-            aria-labelledby={`${otp.groupId}-label`}
-            aria-describedby={`${otp.groupId}-hint${error ? ` ${otp.groupId}-error` : ""}`}
             className={cn(
-              "flex justify-center gap-2 md:gap-2.5",
-              error && "rounded-xl border border-rose-200 px-1 py-1",
+              "mb-4 flex size-12 items-center justify-center rounded-full transition-colors duration-300",
+              error
+                ? "text-rose-500"
+                : isComplete
+                  ? "text-emerald-600"
+                  : "text-neutral-700",
             )}
           >
-            {otp.digits.map((digit, index) => (
-              <div
-                key={`${otp.groupId}-${index}`}
-                className={cn(
-                  "relative transition-transform duration-200 ease-out",
-                  activeIndex === index && "z-10 scale-105",
-                )}
-              >
-                <input
-                  ref={otp.setInputRef(index)}
-                  type="text"
-                  inputMode={inputMode === "numeric" ? "numeric" : "text"}
-                  autoComplete={index === 0 ? "one-time-code" : "off"}
-                  name={index === 0 ? "one-time-code" : undefined}
-                  pattern={inputMode === "numeric" ? "[0-9]*" : "[A-Za-z0-9]*"}
-                  maxLength={otp.length}
-                  value={digit}
-                  disabled={disabled}
-                  aria-label={`Digit ${index + 1} of ${otp.length}`}
-                  aria-invalid={error || undefined}
-                  onChange={(event) => otp.handleChange(index, event)}
-                  onKeyDown={(event) => otp.handleKeyDown(index, event)}
-                  onPaste={(event) => otp.handlePaste(index, event)}
-                  onFocus={() => {
-                    setActiveIndex(index);
-                    otp.handleFocus(index);
-                  }}
-                  onBlur={() => setActiveIndex(null)}
-                  className={cn(
-                    "size-12 rounded-xl border-2 bg-neutral-50/30 text-center font-mono text-2xl font-semibold text-neutral-900 outline-none ring-0 transition-[border-color,background-color,transform,color] duration-200 focus:ring-0 md:size-14",
-                    error
-                      ? "border-rose-200 bg-rose-50/40 focus:border-rose-400"
-                      : "border-neutral-100 focus:border-neutral-900 focus:bg-white",
-                    digit && !error && "border-neutral-900 bg-white",
-                    disabled && "cursor-not-allowed bg-neutral-50 text-neutral-400",
-                  )}
-                />
-                {activeIndex === index && !digit ? (
-                  <span
-                    aria-hidden
-                    className="pointer-events-none absolute inset-x-0 top-1/2 mx-auto h-6 w-0.5 -translate-y-1/2 animate-pulse bg-neutral-400"
-                  />
-                ) : null}
-              </div>
-            ))}
+            <Mail size={20} strokeWidth={1.75} aria-hidden />
           </div>
 
-          <div className="mt-4 flex justify-center gap-1.5" aria-hidden>
-            {otp.digits.map((digit, index) => (
-              <span
-                key={`${otp.groupId}-dot-${index}`}
+          <p
+            id={`${otp.groupId}-label`}
+            className="font-serif text-2xl text-neutral-900"
+          >
+            {label}
+          </p>
+          <p
+            id={`${otp.groupId}-hint`}
+            className="mt-2 max-w-xs text-sm leading-relaxed text-neutral-500"
+          >
+            {hint ?? (
+              <>
+                We sent a {otp.length}-digit code to{" "}
+                <span className="font-medium text-neutral-700">
+                  {destination}
+                </span>
+              </>
+            )}
+          </p>
+        </div>
+
+        <div
+          role="group"
+          aria-labelledby={`${otp.groupId}-label`}
+          aria-describedby={`${otp.groupId}-hint${error ? ` ${otp.groupId}-error` : ""}`}
+          className={cn(
+            "flex justify-center gap-2 md:gap-2.5",
+            error && "rounded-xl border border-rose-200 px-1 py-1",
+          )}
+        >
+          {otp.digits.map((digit, index) => (
+            <div
+              key={`${otp.groupId}-${index}`}
+              className={cn(
+                "relative transition-transform duration-200 ease-out",
+                activeIndex === index && "z-10 scale-105",
+              )}
+            >
+              <input
+                ref={otp.setInputRef(index)}
+                type="text"
+                inputMode={inputMode === "numeric" ? "numeric" : "text"}
+                autoComplete={index === 0 ? "one-time-code" : "off"}
+                name={index === 0 ? "one-time-code" : undefined}
+                pattern={inputMode === "numeric" ? "[0-9]*" : "[A-Za-z0-9]*"}
+                maxLength={otp.length}
+                value={digit}
+                disabled={disabled}
+                aria-label={`Digit ${index + 1} of ${otp.length}`}
+                aria-invalid={error || undefined}
+                onChange={(event) => otp.handleChange(index, event)}
+                onKeyDown={(event) => otp.handleKeyDown(index, event)}
+                onPaste={(event) => otp.handlePaste(index, event)}
+                onFocus={() => {
+                  setActiveIndex(index);
+                  otp.handleFocus(index);
+                }}
+                onBlur={() => setActiveIndex(null)}
                 className={cn(
-                  "size-1.5 rounded-full transition-all duration-300",
-                  digit ? "scale-125 bg-neutral-900" : "bg-neutral-200",
-                  activeIndex === index && "scale-150 bg-neutral-900",
-                  error && digit && "bg-rose-400",
-                  isComplete && "bg-emerald-500",
+                  "size-12 rounded-xl border-2 bg-neutral-50/30 text-center font-mono text-2xl font-semibold text-neutral-900 ring-0 transition-[border-color,background-color,transform,color] duration-200 outline-none focus:ring-0 md:size-14",
+                  error
+                    ? "border-rose-200 bg-rose-50/40 focus:border-rose-400"
+                    : "border-neutral-100 focus:border-neutral-900 focus:bg-white",
+                  digit && !error && "border-neutral-900 bg-white",
+                  disabled &&
+                    "cursor-not-allowed bg-neutral-50 text-neutral-400",
                 )}
               />
-            ))}
-          </div>
-
-          <div className="mt-6 space-y-2 text-center">
-            {error ? (
-              <p
-                id={`${otp.groupId}-error`}
-                role="alert"
-                className="text-sm text-rose-600"
-              >
-                {errorMessage}
-              </p>
-            ) : isComplete ? (
-              <p className="text-sm font-medium text-emerald-600">
-                Code entered — verifying…
-              </p>
-            ) : (
-              <p className="text-sm text-neutral-500">
-                Paste from clipboard or type each digit
-              </p>
-            )}
-
-            <p className="text-sm text-neutral-500">
-              Didn&apos;t receive it?{" "}
-              {resend.canResend ? (
-                <button
-                  type="button"
-                  disabled={disabled}
-                  onClick={resend.resend}
-                  className="font-medium text-neutral-900 underline-offset-2 transition-opacity hover:underline disabled:cursor-not-allowed disabled:opacity-50"
-                >
-                  Resend code
-                </button>
-              ) : (
-                <span className="tabular-nums text-neutral-400">
-                  Resend in {resend.remaining}s
-                </span>
-              )}
-            </p>
-          </div>
+              {activeIndex === index && !digit ? (
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-0 top-1/2 mx-auto h-6 w-0.5 -translate-y-1/2 animate-pulse bg-neutral-400"
+                />
+              ) : null}
+            </div>
+          ))}
         </div>
+
+        <div className="mt-4 flex justify-center gap-1.5" aria-hidden>
+          {otp.digits.map((digit, index) => (
+            <span
+              key={`${otp.groupId}-dot-${index}`}
+              className={cn(
+                "size-1.5 rounded-full transition-all duration-300",
+                digit ? "scale-125 bg-neutral-900" : "bg-neutral-200",
+                activeIndex === index && "scale-150 bg-neutral-900",
+                error && digit && "bg-rose-400",
+                isComplete && "bg-emerald-500",
+              )}
+            />
+          ))}
+        </div>
+
+        <div className="mt-6 space-y-2 text-center">
+          {error ? (
+            <p
+              id={`${otp.groupId}-error`}
+              role="alert"
+              className="text-sm text-rose-600"
+            >
+              {errorMessage}
+            </p>
+          ) : isComplete ? (
+            <p className="text-sm font-medium text-emerald-600">
+              Code entered — verifying…
+            </p>
+          ) : (
+            <p className="text-sm text-neutral-500">
+              Paste from clipboard or type each digit
+            </p>
+          )}
+
+          <p className="text-sm text-neutral-500">
+            Didn&apos;t receive it?{" "}
+            {resend.canResend ? (
+              <button
+                type="button"
+                disabled={disabled}
+                onClick={resend.resend}
+                className="font-medium text-neutral-900 underline-offset-2 transition-opacity hover:underline disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Resend code
+              </button>
+            ) : (
+              <span className="text-neutral-400 tabular-nums">
+                Resend in {resend.remaining}s
+              </span>
+            )}
+          </p>
+        </div>
+      </div>
     );
   },
 );

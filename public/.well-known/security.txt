@@ -1,0 +1,5 @@
+Contact: https://opensourceui.in/contact
+Expires: 2027-09-11T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://opensourceui.in/.well-known/security.txt
+Policy: https://github.com/bidyut10/opensourceui/blob/main/SECURITY.md

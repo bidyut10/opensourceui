@@ -58,7 +58,9 @@ export const MonthPickerCalendar = forwardRef<
     ref,
   ) => {
     const today = useMemo(() => new Date(), []);
-    const [viewYear, setViewYear] = useState(defaultYear ?? today.getFullYear());
+    const [viewYear, setViewYear] = useState(
+      defaultYear ?? today.getFullYear(),
+    );
     const [viewMonth, setViewMonth] = useState(
       defaultMonth ?? today.getMonth(),
     );
@@ -82,7 +84,11 @@ export const MonthPickerCalendar = forwardRef<
       const next = new Date(viewYear, viewMonth + delta, 1);
       setViewYear(next.getFullYear());
       setViewMonth(next.getMonth());
-      const lastDay = new Date(next.getFullYear(), next.getMonth() + 1, 0).getDate();
+      const lastDay = new Date(
+        next.getFullYear(),
+        next.getMonth() + 1,
+        0,
+      ).getDate();
       setSelectedDay((day) => Math.min(day, lastDay));
     };
 
@@ -113,7 +119,7 @@ export const MonthPickerCalendar = forwardRef<
 
           <p
             key={monthLabel}
-            className="text-sm font-semibold text-neutral-900 opacity-100 starting:opacity-0 starting:translate-y-0.5 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+            className="text-sm font-semibold text-neutral-900 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:translate-y-0.5 starting:opacity-0"
           >
             {monthLabel}
           </p>

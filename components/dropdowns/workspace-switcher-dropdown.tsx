@@ -93,10 +93,9 @@ function WorkspaceRow({ item, onSelect, createLabel }: WorkspaceRowProps) {
         {isCreate ? (
           <Plus size={14} strokeWidth={2} />
         ) : item.icon ? (
-          cloneElement(
-            item.icon as ReactElement<{ size?: number }>,
-            { size: 14 },
-          )
+          cloneElement(item.icon as ReactElement<{ size?: number }>, {
+            size: 14,
+          })
         ) : null}
       </span>
       <span className="min-w-0 flex-1 truncate">
@@ -220,10 +219,7 @@ export const WorkspaceSwitcherDropdown = forwardRef<
               ) : null}
             </span>
 
-            <ChevronsUpDown
-              size={14}
-              className="shrink-0 text-neutral-400"
-            />
+            <ChevronsUpDown size={14} className="shrink-0 text-neutral-400" />
           </button>
 
           {open ? (

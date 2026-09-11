@@ -42,7 +42,10 @@ Out of scope:
 
 - Never commit `.env` or `.env.local` — use `.env.example` as a template only
 - PostHog keys are public client keys (`NEXT_PUBLIC_*`) — restrict project access in PostHog dashboard
-- Review `public/_headers` and hosting provider security settings for your deployment
+- Security response headers (CSP, `X-Frame-Options`, `nosniff`, referrer, permissions) are set in:
+  - `vercel.json` → `headers` (Vercel)
+  - `public/_headers` (copied into `out/` for Cloudflare Workers static assets)
+- Review those files if you change third-party script hosts (PostHog EU, etc.)
 
 ## Disclosure
 

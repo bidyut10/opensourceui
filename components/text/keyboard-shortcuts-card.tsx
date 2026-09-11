@@ -44,7 +44,7 @@ export const KeyboardShortcutsCard = forwardRef<
       ref={ref}
       data-slot="keyboard-shortcuts-card"
       className={cn(
-        "w-xs rounded-2xl border border-neutral-100 bg-white p-4 font-sans shadow-lg sm:p-5",
+        "w-xs rounded-2xl border border-neutral-100 bg-white p-4 font-sans shadow-lg md:p-5",
         className,
       )}
       {...props}

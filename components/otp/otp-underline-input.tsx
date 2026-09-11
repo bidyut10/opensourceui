@@ -35,7 +35,11 @@ function sanitizeChar(char: string, mode: OtpInputMode): string | null {
   return /^[a-zA-Z0-9]$/.test(next) ? next.toUpperCase() : null;
 }
 
-function sanitizeValue(raw: string, length: number, mode: OtpInputMode): string {
+function sanitizeValue(
+  raw: string,
+  length: number,
+  mode: OtpInputMode,
+): string {
   const filtered =
     mode === "numeric"
       ? raw.replace(/\D/g, "")
@@ -287,10 +291,7 @@ export const OtpUnderlineInput = forwardRef<
       ref={ref}
       data-slot="otp-underline-input"
       data-error={error || undefined}
-      className={cn(
-        "w-full max-w-96 px-6 py-6 font-sans",
-        className,
-      )}
+      className={cn("w-full max-w-96 px-6 py-6 font-sans", className)}
       {...props}
     >
       <div className="mb-6 text-center">
@@ -300,10 +301,7 @@ export const OtpUnderlineInput = forwardRef<
         >
           {label}
         </p>
-        <p
-          id={`${otp.groupId}-hint`}
-          className="mt-2 text-sm text-neutral-500"
-        >
+        <p id={`${otp.groupId}-hint`} className="mt-2 text-sm text-neutral-500">
           {hint ?? `We sent a ${otp.length}-digit code to your inbox.`}
         </p>
       </div>
@@ -333,7 +331,7 @@ export const OtpUnderlineInput = forwardRef<
               onPaste={(event) => otp.handlePaste(index, event)}
               onFocus={() => otp.handleFocus(index)}
               className={cn(
-                "peer h-12 w-full border-0 border-b-2 bg-transparent text-center font-mono text-2xl font-medium text-neutral-900 outline-none ring-0 transition-[border-color,color] duration-200 focus:ring-0",
+                "peer h-12 w-full border-0 border-b-2 bg-transparent text-center font-mono text-2xl font-medium text-neutral-900 ring-0 transition-[border-color,color] duration-200 outline-none focus:ring-0",
                 error
                   ? "border-rose-400 focus:border-rose-500"
                   : "border-neutral-200 focus:border-neutral-900",

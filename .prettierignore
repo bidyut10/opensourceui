@@ -1,0 +1,15 @@
+# Build / export output
+out
+.next
+.wrangler
+
+# Dependencies
+node_modules
+package-lock.json
+
+# Coverage / caches
+coverage
+*.tsbuildinfo
+
+# Generated
+next-env.d.ts

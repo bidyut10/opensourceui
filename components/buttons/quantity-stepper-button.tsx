@@ -72,7 +72,12 @@ export const QuantityStepperButton = forwardRef<
           onClick={() => update(value - 1)}
           className={keyClass}
         >
-          <Minus size={15} strokeWidth={2.5} aria-hidden className={iconClass} />
+          <Minus
+            size={15}
+            strokeWidth={2.5}
+            aria-hidden
+            className={iconClass}
+          />
         </button>
 
         <span

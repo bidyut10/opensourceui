@@ -109,7 +109,11 @@ export const RadioGroupFieldInput = forwardRef<
       aria-describedby={error ? errorId : hint ? hintId : undefined}
       data-slot="radio-group-field-input"
       data-error={error || undefined}
-      className={cn("w-full max-w-sm border-0 p-0 font-sans", containerClassName, className)}
+      className={cn(
+        "w-full max-w-sm border-0 p-0 font-sans",
+        containerClassName,
+        className,
+      )}
       {...props}
     >
       <legend className="mb-2 block text-sm font-medium text-neutral-900">
@@ -126,7 +130,9 @@ export const RadioGroupFieldInput = forwardRef<
         aria-required={required || undefined}
         className={cn(
           "flex gap-2",
-          orientation === "vertical" ? "flex-col" : "flex-col md:flex-row md:flex-wrap",
+          orientation === "vertical"
+            ? "flex-col"
+            : "flex-col md:flex-row md:flex-wrap",
         )}
       >
         {options.map((option) => {
@@ -141,7 +147,9 @@ export const RadioGroupFieldInput = forwardRef<
                 "flex cursor-pointer items-start gap-3 rounded-lg border px-3.5 py-3 transition-[border-color,background-color] duration-200",
                 orientation === "horizontal" && "md:min-w-44 md:flex-1",
                 isSelected && !error && "border-neutral-900 bg-neutral-50",
-                !isSelected && !error && "border-neutral-200 bg-white hover:border-neutral-300",
+                !isSelected &&
+                  !error &&
+                  "border-neutral-200 bg-white hover:border-neutral-300",
                 error && isSelected && "border-rose-400 bg-rose-50/40",
                 error && !isSelected && "border-rose-200 bg-white",
                 option.disabled && "cursor-not-allowed opacity-50",

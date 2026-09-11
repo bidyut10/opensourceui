@@ -30,7 +30,10 @@ const CHIP_TRACK =
 const CHIP_THUMB =
   "absolute left-[0.08em] top-1/2 size-[1.22em] -translate-y-1/2 rounded-full bg-white shadow-[0_2px_5px_rgba(0,0,0,0.22),inset_0_1px_0_rgba(255,255,255,0.95)] transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none";
 
-export const SlateChipSwitch = forwardRef<HTMLInputElement, SlateChipSwitchProps>(
+export const SlateChipSwitch = forwardRef<
+  HTMLInputElement,
+  SlateChipSwitchProps
+>(
   (
     {
       className,
@@ -76,7 +79,7 @@ export const SlateChipSwitch = forwardRef<HTMLInputElement, SlateChipSwitchProps
           disabled={disabled}
           aria-label={label}
           onChange={handleChange}
-          className="peer absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none opacity-0 outline-none ring-0 focus:ring-0 disabled:cursor-not-allowed"
+          className="peer absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none opacity-0 ring-0 outline-none focus:ring-0 disabled:cursor-not-allowed"
           {...props}
         />
 

@@ -15,7 +15,8 @@ function readStack(): string[] {
     const parsed = JSON.parse(raw) as unknown;
     if (!Array.isArray(parsed)) return [];
     return parsed.filter(
-      (item): item is string => typeof item === "string" && item.startsWith("/"),
+      (item): item is string =>
+        typeof item === "string" && item.startsWith("/"),
     );
   } catch {
     return [];
@@ -23,10 +24,7 @@ function readStack(): string[] {
 }
 
 function writeStack(stack: string[]) {
-  sessionStorage.setItem(
-    STACK_KEY,
-    JSON.stringify(stack.slice(-MAX_STACK)),
-  );
+  sessionStorage.setItem(STACK_KEY, JSON.stringify(stack.slice(-MAX_STACK)));
 }
 
 /** Call on each client route change to keep an internal back stack. */
@@ -38,9 +36,9 @@ export function rememberPath(pathname: string, search = "") {
 
   if (!booted) {
     sessionStorage.setItem(BOOT_KEY, "1");
-    const nav = performance.getEntriesByType(
-      "navigation",
-    )[0] as PerformanceNavigationTiming | undefined;
+    const nav = performance.getEntriesByType("navigation")[0] as
+      | PerformanceNavigationTiming
+      | undefined;
     const referrer = document.referrer;
     const sameOrigin =
       Boolean(referrer) && referrer.startsWith(window.location.origin);

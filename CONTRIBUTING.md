@@ -29,13 +29,13 @@ Also skim [CONTRIBUTING.md](./CONTRIBUTING.md) setup below and `skills/opensourc
 
 Reference files for coding agents live in **`skills/opensource-ui/`**:
 
-| File | Purpose |
-| ---- | ------- |
-| `skills/opensource-ui/SKILL.md` | Workflow and design rules for agents |
-| `skills/opensource-ui/references/catalog.md` | Component index (names, slugs, routes) |
-| `skills/opensource-ui/references/design.md` | Full design system |
-| `skills/opensource-ui/references/implementation.md` | Repo layout and copy-paste steps |
-| `skills/opensource-ui/references/source_inventory.txt` | Exact component file paths |
+| File                                                   | Purpose                                |
+| ------------------------------------------------------ | -------------------------------------- |
+| `skills/opensource-ui/SKILL.md`                        | Workflow and design rules for agents   |
+| `skills/opensource-ui/references/catalog.md`           | Component index (names, slugs, routes) |
+| `skills/opensource-ui/references/design.md`            | Full design system                     |
+| `skills/opensource-ui/references/implementation.md`    | Repo layout and copy-paste steps       |
+| `skills/opensource-ui/references/source_inventory.txt` | Exact component file paths             |
 
 When you add a component, update `source_inventory.txt` and `catalog.md` if needed. See [AGENTS.md](./AGENTS.md) for how users set this up with Cursor, Claude Code, Codex, and other tools.
 
@@ -61,10 +61,27 @@ npm run dev            # start dev server
 npm run build          # production build (runs check:showcase)
 npm run lint           # eslint
 npm run typecheck      # TypeScript check
-npm run format         # prettier write
+npm run format         # prettier write (sorts Tailwind classes)
 npm run format:check   # prettier check (dry run)
 npm run check:showcase # verify showcase file paths
+npm run check:catalog  # unique slugs + inventory sync
+npm run check:design   # ban sm: breakpoints + purple / colored focus rings
+npm run test           # unit tests in tests/unit (vitest)
+npm run test:e2e       # Playwright in tests/e2e (needs build → out/)
+npm run verify:quick   # format + lint + types + checks + unit tests
+npm run verify         # full gate including build + e2e
 ```
+
+Keep `components/` for copy-paste UI only. Put new unit tests under `tests/unit/` and e2e under `tests/e2e/`. Maintenance scripts live in `scripts/checks/` and `scripts/deploy/` — see those folders’ READMEs.
+
+### Push gate (local)
+
+After `npm install`, Husky hooks are set up:
+
+1. **pre-commit** — Prettier (+ Tailwind class sort) and ESLint on staged files only
+2. **pre-push** — runs `npm run verify`; push is blocked if anything fails
+
+Fix failures locally (`npm run format`, then re-run `npm run verify`) before pushing again. GitHub Actions CI runs the same checks on every push and PR to `main`.
 
 Analytics is **optional** for local dev. Copy `.env.example` to `.env.local` only if you want to test PostHog or Google Search Console verification.
 
@@ -107,17 +124,20 @@ c(
 
 See the [README](./README.md#folder-structure) for the full layout. Key paths:
 
-| Path | Purpose |
-| ---- | ------- |
-| `components/` | Copy-paste UI widgets (organized by category) |
-| `components/system/` | App infrastructure (loaders, analytics tracker) |
-| `icons/` | SVG icon components |
-| `lib/showcase/showcase.tsx` | Component registry + homepage grid |
-| `lib/docs/` | Docs shared code (`SaveScrollLink`, `CopyCodeBlock`) |
-| `app/(docs)/components/` | Docs routes — browse, category, search, detail |
-| `app/(marketing)/` | Homepage, about, contact, careers, sponsor, privacy, terms |
-| `skills/opensource-ui/` | Agent kit for AI coding assistants |
-| `AGENTS.md` | AI assistant setup guide |
+| Path                        | Purpose                                                    |
+| --------------------------- | ---------------------------------------------------------- |
+| `components/`               | Copy-paste UI widgets only (no tests)                      |
+| `components/system/`        | App infrastructure (loaders, analytics tracker)            |
+| `icons/`                    | SVG icon components                                        |
+| `lib/showcase/showcase.tsx` | Component registry + homepage grid                         |
+| `lib/docs/`                 | Docs shared code (`SaveScrollLink`, `CopyCodeBlock`)       |
+| `app/(docs)/components/`    | Docs routes — browse, category, search, detail             |
+| `app/(marketing)/`          | Homepage, about, contact, careers, sponsor, privacy, terms |
+| `tests/`                    | Unit (Vitest) + e2e (Playwright) — see `tests/README.md`   |
+| `scripts/checks/`           | Catalog / design integrity gates                           |
+| `scripts/deploy/`           | Build strip + Cloudflare deploy helpers                    |
+| `skills/opensource-ui/`     | Agent kit for AI coding assistants                         |
+| `AGENTS.md`                 | AI assistant setup guide                                   |
 
 ## Questions
 

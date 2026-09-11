@@ -17,7 +17,10 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
   }, [error]);
 
   return (
-    <div className="flex min-h-screen w-full flex-col items-center justify-center px-4 selection:bg-neutral-800 selection:text-white md:px-0">
+    <main
+      id="main-content"
+      className="flex min-h-screen w-full flex-col items-center justify-center px-4 selection:bg-neutral-800 selection:text-white md:px-0"
+    >
       <div className="w-full max-w-xl text-left">
         <h1 className="flex flex-wrap items-baseline gap-x-3 font-serif text-neutral-900">
           <span className="text-5xl md:text-6xl">Error</span>
@@ -78,6 +81,6 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
           </Link>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

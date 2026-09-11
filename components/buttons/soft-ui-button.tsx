@@ -27,14 +27,7 @@ const SIZE: Record<SoftUiButtonSize, string> = {
 // SoftUiButton — universal soft-UI button; pass any children.
 export const SoftUiButton = forwardRef<HTMLButtonElement, SoftUiButtonProps>(
   (
-    {
-      className,
-      children,
-      size = "md",
-      type = "button",
-      disabled,
-      ...props
-    },
+    { className, children, size = "md", type = "button", disabled, ...props },
     ref,
   ) => {
     return (

@@ -1,6 +1,11 @@
 "use client";
 
-import { forwardRef, useId, useState, type ComponentPropsWithoutRef } from "react";
+import {
+  forwardRef,
+  useId,
+  useState,
+  type ComponentPropsWithoutRef,
+} from "react";
 
 import { cn } from "@/lib/cn";
 
@@ -57,11 +62,7 @@ export const HydrationWidget = forwardRef<
         </div>
 
         <div className="relative mt-5 flex flex-1 items-end justify-center">
-          <svg
-            viewBox="0 0 64 120"
-            className="h-full w-14"
-            aria-hidden
-          >
+          <svg viewBox="0 0 64 120" className="h-full w-14" aria-hidden>
             <defs>
               <clipPath id={clipId}>
                 <rect x="12" y="18" width="40" height="94" rx="18" />

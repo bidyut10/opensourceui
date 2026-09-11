@@ -48,7 +48,9 @@ export const InkStampDocumentCard = forwardRef<
             <p className="font-mono text-[10px] tracking-[0.18em] text-neutral-400 uppercase">
               {reference}
             </p>
-            <h3 className="mt-2 text-base font-semibold text-neutral-900">{title}</h3>
+            <h3 className="mt-2 text-base font-semibold text-neutral-900">
+              {title}
+            </h3>
           </div>
           <div className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-neutral-100 text-neutral-500">
             <FileText size={16} aria-hidden />
@@ -57,7 +59,8 @@ export const InkStampDocumentCard = forwardRef<
 
         <div className="mt-4 space-y-2 text-xs text-neutral-600">
           <p>
-            <span className="text-neutral-400">Submitted by</span> · {submittedBy}
+            <span className="text-neutral-400">Submitted by</span> ·{" "}
+            {submittedBy}
           </p>
           <p>
             <span className="text-neutral-400">Date</span> · {submittedOn}

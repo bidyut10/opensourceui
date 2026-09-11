@@ -73,7 +73,7 @@ export const ChatBubbleNotificationBanner = forwardRef<
           onClick={handleShow}
           className={cn(
             "cursor-pointer rounded-full bg-neutral-100 px-4 py-2 text-xs font-medium text-neutral-700",
-            "opacity-100 starting:opacity-0 transition-opacity duration-200 hover:bg-neutral-200",
+            "opacity-100 transition-opacity duration-200 hover:bg-neutral-200 starting:opacity-0",
             className,
           )}
         >

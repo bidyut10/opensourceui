@@ -11,7 +11,7 @@ export function DocsSponsorCard() {
     <div className="shrink-0 border-t border-neutral-100 px-6 py-5">
       <Link
         href={`${siteConfig.sponsorship.path}`}
-        className="group block w-full rounded-lg border-2 border-neutral-900 bg-neutral-900 p-4 text-left text-white outline-none transition-colors hover:border-neutral-800 hover:bg-neutral-800"
+        className="group block w-full rounded-lg border-2 border-neutral-900 bg-neutral-900 p-4 text-left text-white transition-colors outline-none hover:border-neutral-800 hover:bg-neutral-800"
       >
         <div className="flex items-center justify-between gap-2">
           <span className="font-mono text-[10px] tracking-[0.14em] text-neutral-400 uppercase">

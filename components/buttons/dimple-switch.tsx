@@ -81,11 +81,15 @@ export const DimpleSwitch = forwardRef<HTMLInputElement, DimpleSwitchProps>(
           disabled={disabled}
           aria-label={label}
           onChange={handleChange}
-          className="peer absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none opacity-0 outline-none ring-0 focus:ring-0 disabled:cursor-not-allowed"
+          className="peer absolute inset-0 z-10 h-full w-full cursor-pointer appearance-none opacity-0 ring-0 outline-none focus:ring-0 disabled:cursor-not-allowed"
           {...props}
         />
 
-        <span aria-hidden="true" data-layer="dimple-track" className={DIMPLE_TRACK}>
+        <span
+          aria-hidden="true"
+          data-layer="dimple-track"
+          className={DIMPLE_TRACK}
+        >
           <span data-layer="dimple-knob" className={DIMPLE_KNOB}>
             <span
               data-layer="dimple-knob-grid"

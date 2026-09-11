@@ -6,9 +6,10 @@
 
 Opensource UI
 Search components
-+ K
-GitHub
-201
+
+- K
+  GitHub
+  201
 
 GETTING STARTED
 
@@ -330,7 +331,7 @@ India
 
 COMPONENTS / DOCS
 
-All 
+All
 Available components
 .
 

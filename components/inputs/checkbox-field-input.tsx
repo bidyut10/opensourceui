@@ -20,7 +20,10 @@ export type CheckboxFieldInputProps = Readonly<
     error?: boolean;
     errorMessage?: string;
     containerClassName?: string;
-    onCheckedChange?: (checked: boolean, event: ChangeEvent<HTMLInputElement>) => void;
+    onCheckedChange?: (
+      checked: boolean,
+      event: ChangeEvent<HTMLInputElement>,
+    ) => void;
   } & Omit<ComponentPropsWithoutRef<"input">, "size" | "type" | "onChange">
 >;
 
@@ -86,9 +89,7 @@ export const CheckboxFieldInput = forwardRef<
             checked={isControlled ? isChecked : undefined}
             defaultChecked={isControlled ? undefined : defaultChecked}
             aria-invalid={error || undefined}
-            aria-describedby={
-              error ? errorId : hint ? hintId : undefined
-            }
+            aria-describedby={error ? errorId : hint ? hintId : undefined}
             onChange={handleChange}
             className={cn(
               "peer absolute size-4 cursor-pointer opacity-0 disabled:cursor-not-allowed",

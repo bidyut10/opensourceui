@@ -12,7 +12,10 @@ const ArcBandsBackground = forwardRef<HTMLDivElement, ArcBandsBackgroundProps>(
       <div
         ref={ref}
         data-slot="arc-bands-background"
-        className={cn("relative isolate overflow-hidden bg-[#FFFCF7]", className)}
+        className={cn(
+          "relative isolate overflow-hidden bg-[#FFFCF7]",
+          className,
+        )}
         {...props}
       >
         <div
@@ -37,7 +40,7 @@ const ArcBandsBackground = forwardRef<HTMLDivElement, ArcBandsBackgroundProps>(
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 -z-10 opacity-[0.03] [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:4px_4px]"
+          className="pointer-events-none absolute inset-0 -z-10 [background-image:radial-gradient(circle_at_center,#000_1px,transparent_1px)] [background-size:4px_4px] opacity-[0.03]"
         />
 
         {children}

@@ -49,7 +49,8 @@ export const HOME_REVIEWS: HomeReview[] = [
     rating: 5,
   },
   {
-    quote: "Genuinely well put together — 154 components across 26 categories is no joke, and the tone throughout feels intentional, not templated",
+    quote:
+      "Genuinely well put together — 154 components across 26 categories is no joke, and the tone throughout feels intentional, not templated",
     name: "Patrick Chen",
     platform: "twitter",
     href: "https://x.com/sublimeartsio",

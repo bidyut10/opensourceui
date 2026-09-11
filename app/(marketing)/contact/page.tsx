@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { FooterSkyline } from "@/app/(marketing)/_components/footer-skyline";
 import { MarketingGoBack } from "@/app/(marketing)/_components/marketing-go-back";
@@ -38,33 +37,35 @@ export default function ContactPage() {
         <article className="w-full max-w-xl">
           <MarketingSiteNav />
 
-          <Suspense fallback={<div className="mt-20" />}>
-            <MarketingGoBack>
-              <h1 className="font-serif text-3xl text-neutral-900">Contact</h1>
-              <p className="mt-2 text-sm text-neutral-500">
-                How to reach me — and what to include so I can actually help
-              </p>
-            </MarketingGoBack>
-          </Suspense>
+          <MarketingGoBack>
+            <h1 className="font-serif text-3xl text-neutral-900">Contact</h1>
+            <p className="mt-2 text-sm text-neutral-500">
+              How to reach me — and what to include so I can actually help
+            </p>
+          </MarketingGoBack>
 
           <div className="mt-8 space-y-6 text-sm leading-relaxed text-neutral-700">
             <section>
               <h2 className="font-semibold text-neutral-900">Start here</h2>
               <p className="mt-2">
-                {displayName} is still in an early, hands-on phase. I maintain the
-                site, ship components, answer mail, and handle sponsorships myself.
-                That is why this page points at my personal inbox instead of some
-                faceless support bot — one person reads the thread and replies.
+                {displayName} is still in an early, hands-on phase. I maintain
+                the site, ship components, answer mail, and handle sponsorships
+                myself. That is why this page points at my personal inbox
+                instead of some faceless support bot — one person reads the
+                thread and replies.
               </p>
               <p className="mt-2">
-                I am streamlining how people reach out so messages do not pile up as
-                vague &quot;hi I want to contribute&quot; notes with no context. Tell
-                me what you need, give enough detail, and I can answer faster.
+                I am streamlining how people reach out so messages do not pile
+                up as vague &quot;hi I want to contribute&quot; notes with no
+                context. Tell me what you need, give enough detail, and I can
+                answer faster.
               </p>
             </section>
 
             <section id="links">
-              <h2 className="font-semibold text-neutral-900">Ways to connect</h2>
+              <h2 className="font-semibold text-neutral-900">
+                Ways to connect
+              </h2>
               <ul className="mt-3 space-y-2">
                 <li>
                   Site:{" "}
@@ -120,16 +121,17 @@ export default function ContactPage() {
                 Why personal email
               </h2>
               <p className="mt-2">
-                There is no support desk behind {displayName} yet. Early on I tried
-                to keep everything simple: ship components, keep the MIT license
-                clear, and stay reachable without building a ticket system I cannot
-                staff. So mail comes to me — {author.name} — at <CopyEmail />.
+                There is no support desk behind {displayName} yet. Early on I
+                tried to keep everything simple: ship components, keep the MIT
+                license clear, and stay reachable without building a ticket
+                system I cannot staff. So mail comes to me — {author.name} — at{" "}
+                <CopyEmail />.
               </p>
               <p className="mt-2">
-                That also means reply time is not instant. Nights and weekends get
-                most of the attention. If your message is clear, I can usually get
-                back within a few days. Please skip marketing blasts and cold sales
-                pitches; I ignore those.
+                That also means reply time is not instant. Nights and weekends
+                get most of the attention. If your message is clear, I can
+                usually get back within a few days. Please skip marketing blasts
+                and cold sales pitches; I ignore those.
               </p>
             </section>
 
@@ -142,14 +144,20 @@ export default function ContactPage() {
                 something should look in your app? Email me. Include:
               </p>
               <ul className="mt-3 list-disc space-y-1.5 pl-5">
-                <li>The component name or page URL (for example /components/phone)</li>
+                <li>
+                  The component name or page URL (for example /components/phone)
+                </li>
                 <li>What you expected vs what happened</li>
-                <li>Framework (React / Next.js) and roughly which Tailwind setup you use</li>
+                <li>
+                  Framework (React / Next.js) and roughly which Tailwind setup
+                  you use
+                </li>
                 <li>Short snippet or screenshot if it helps</li>
               </ul>
               <p className="mt-2">
-                I cannot debug every private codebase end-to-end, but I will help
-                you understand how the piece is meant to work and where to look next.
+                I cannot debug every private codebase end-to-end, but I will
+                help you understand how the piece is meant to work and where to
+                look next.
               </p>
             </section>
 
@@ -163,12 +171,12 @@ export default function ContactPage() {
                   sponsor page
                 </Link>
                 . After you pay, email your brand assets so I can publish the
-                placement. Say which tier you bought (Silver, Gold, or Platinum) and
-                attach what that tier needs — name, link, short line, logo.
+                placement. Say which tier you bought (Silver, Gold, or Platinum)
+                and attach what that tier needs — name, link, short line, logo.
               </p>
               <p className="mt-2">
-                Questions before you buy — invoice needs, logo sizes, wording on the
-                docs card — same inbox. Subject line tip: start with
+                Questions before you buy — invoice needs, logo sizes, wording on
+                the docs card — same inbox. Subject line tip: start with
                 &quot;Sponsor:&quot; so I can spot it quickly.
               </p>
             </section>
@@ -178,8 +186,8 @@ export default function ContactPage() {
                 Found a bug or issue
               </h2>
               <p className="mt-2">
-                Prefer GitHub when something is broken in the library or the site.
-                Open an issue on{" "}
+                Prefer GitHub when something is broken in the library or the
+                site. Open an issue on{" "}
                 <a
                   href={issuesUrl}
                   target="_blank"
@@ -214,9 +222,7 @@ export default function ContactPage() {
             </section>
 
             <section id="pull-requests">
-              <h2 className="font-semibold text-neutral-900">
-                Pull requests
-              </h2>
+              <h2 className="font-semibold text-neutral-900">Pull requests</h2>
               <p className="mt-2">
                 Fixes and small improvements are welcome. Before you open a PR,
                 check{" "}
@@ -233,19 +239,22 @@ export default function ContactPage() {
               <p className="mt-2">Please follow this shape:</p>
               <ol className="mt-3 list-decimal space-y-1.5 pl-5">
                 <li>Fork the repo and branch from the default branch</li>
-                <li>Keep the change focused — one problem per PR when you can</li>
                 <li>
-                  Match the project design rules (neutral stage, no purple chrome,
-                  base + <span className="font-mono text-[12px]">md:</span> only,
-                  no <span className="font-mono text-[12px]">sm:</span>)
+                  Keep the change focused — one problem per PR when you can
+                </li>
+                <li>
+                  Match the project design rules (neutral stage, no purple
+                  chrome, base +{" "}
+                  <span className="font-mono text-[12px]">md:</span> only, no{" "}
+                  <span className="font-mono text-[12px]">sm:</span>)
                 </li>
                 <li>Describe what changed and why in the PR body</li>
                 <li>Link the issue if there is one</li>
               </ol>
               <p className="mt-2">
-                Huge drive-by refactors or new components with no prior conversation
-                are harder to review. If the change is large, email or open an issue
-                first so we agree on direction.
+                Huge drive-by refactors or new components with no prior
+                conversation are harder to review. If the change is large, email
+                or open an issue first so we agree on direction.
               </p>
             </section>
 
@@ -264,13 +273,13 @@ export default function ContactPage() {
                   CONTRIBUTING.md
                 </a>{" "}
                 on GitHub for local setup and PR basics. Contribution paths are
-                still being shaped in practice — docs, components, design polish,
-                triage. I would rather align first than get a vague &quot;I just
-                want to contribute&quot; message with no scope.
+                still being shaped in practice — docs, components, design
+                polish, triage. I would rather align first than get a vague
+                &quot;I just want to contribute&quot; message with no scope.
               </p>
               <p className="mt-2">
-                Do not send only &quot;I want to contribute.&quot; Tell me what kind
-                of help you mean, for example:
+                Do not send only &quot;I want to contribute.&quot; Tell me what
+                kind of help you mean, for example:
               </p>
               <ul className="mt-3 list-disc space-y-1.5 pl-5">
                 <li>New component idea (what it does, where it would live)</li>

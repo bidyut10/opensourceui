@@ -135,7 +135,7 @@ export const HardShadowPolaroidFrame = forwardRef<
                   {skeleton ? (
                     <MediaSkeleton />
                   ) : (
-                    children ?? <MediaPlaceholder />
+                    (children ?? <MediaPlaceholder />)
                   )}
                 </div>
               </div>

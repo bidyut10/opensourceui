@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Suspense } from "react";
 
 import { FooterSkyline } from "@/app/(marketing)/_components/footer-skyline";
 import { MarketingGoBack } from "@/app/(marketing)/_components/marketing-go-back";
@@ -24,16 +23,14 @@ export default function TermsPage() {
         <article className="w-full max-w-xl">
           <MarketingSiteNav />
 
-          <Suspense fallback={<div className="mt-20" />}>
-            <MarketingGoBack>
-              <h1 className="font-serif text-3xl text-neutral-900">
-                Terms of Use
-              </h1>
-              <p className="mt-2 text-sm text-neutral-500">
-                Last updated: September 2026
-              </p>
-            </MarketingGoBack>
-          </Suspense>
+          <MarketingGoBack>
+            <h1 className="font-serif text-3xl text-neutral-900">
+              Terms of Use
+            </h1>
+            <p className="mt-2 text-sm text-neutral-500">
+              Last updated: September 2026
+            </p>
+          </MarketingGoBack>
 
           <div className="mt-8 space-y-6 text-sm leading-relaxed text-neutral-700">
             <section>
@@ -54,7 +51,9 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-semibold text-neutral-900">2. The site &amp; components</h2>
+              <h2 className="font-semibold text-neutral-900">
+                2. The site &amp; components
+              </h2>
               <p className="mt-2">
                 Components and code on {displayName} are offered under the{" "}
                 <a
@@ -76,7 +75,9 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-semibold text-neutral-900">3. Sponsorships</h2>
+              <h2 className="font-semibold text-neutral-900">
+                3. Sponsorships
+              </h2>
               <p className="mt-2">
                 Paid tiers (Silver, Gold, Platinum) and prices are described on{" "}
                 <Link
@@ -138,11 +139,14 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-semibold text-neutral-900">5. Review &amp; verification</h2>
+              <h2 className="font-semibold text-neutral-900">
+                5. Review &amp; verification
+              </h2>
               <p className="mt-2">
-                We may review your brand name, assets, and links before and after
-                publication. We may check your site again at any time. If we find
-                prohibited content, fraud, or a policy violation, we may:
+                We may review your brand name, assets, and links before and
+                after publication. We may check your site again at any time. If
+                we find prohibited content, fraud, or a policy violation, we
+                may:
               </p>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 <li>Refuse to publish the placement</li>
@@ -159,25 +163,27 @@ export default function TermsPage() {
                   Policy violations are non-refundable.
                 </span>{" "}
                 If we refuse or remove a placement because it violates Section 4
-                (or related fraud / misuse), you are not entitled to a refund for
-                the current billing period or unused time.
+                (or related fraud / misuse), you are not entitled to a refund
+                for the current billing period or unused time.
               </p>
               <p className="mt-2">
-                If we cannot fulfill a valid, approved sponsorship solely because
-                of an error on our side (for example we permanently fail to
-                publish after approving your assets), contact <CopyEmail />{" "}
+                If we cannot fulfill a valid, approved sponsorship solely
+                because of an error on our side (for example we permanently fail
+                to publish after approving your assets), contact <CopyEmail />{" "}
                 within 14 days and we will work with you and/or Polar on a fair
                 remedy, which may include a refund or credit at our discretion.
               </p>
               <p className="mt-2">
-                Canceling a Polar subscription stops future renewals; it does not
-                by itself create a refund for the period already paid unless
+                Canceling a Polar subscription stops future renewals; it does
+                not by itself create a refund for the period already paid unless
                 Polar’s own policies provide one.
               </p>
             </section>
 
             <section>
-              <h2 className="font-semibold text-neutral-900">7. Your promises</h2>
+              <h2 className="font-semibold text-neutral-900">
+                7. Your promises
+              </h2>
               <p className="mt-2">You represent that:</p>
               <ul className="mt-2 list-disc space-y-1 pl-5">
                 <li>
@@ -211,14 +217,16 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="font-semibold text-neutral-900">9. Limitation of liability</h2>
+              <h2 className="font-semibold text-neutral-900">
+                9. Limitation of liability
+              </h2>
               <p className="mt-2">
                 To the fullest extent allowed by law, {displayName} and{" "}
                 {author.name} are not liable for indirect, incidental, or
-                consequential damages, lost profits, or loss of data arising from
-                the site or sponsorships. Our total liability for any claim
-                related to a sponsorship is limited to the fees you paid for that
-                sponsorship in the three months before the claim.
+                consequential damages, lost profits, or loss of data arising
+                from the site or sponsorships. Our total liability for any claim
+                related to a sponsorship is limited to the fees you paid for
+                that sponsorship in the three months before the claim.
               </p>
             </section>
 

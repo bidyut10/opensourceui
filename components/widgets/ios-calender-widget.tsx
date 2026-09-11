@@ -46,7 +46,7 @@ export const IosCalenderWidget = forwardRef<
       {...props}
     >
       {now ? (
-        <div className="flex h-full flex-col opacity-100 starting:opacity-0 transition-opacity duration-500 ease-out">
+        <div className="flex h-full flex-col opacity-100 transition-opacity duration-500 ease-out starting:opacity-0">
           <p
             className="text-[13px] leading-none font-semibold tracking-[-0.02em] transition-colors duration-300"
             style={{ color: IOS_RED }}
@@ -57,7 +57,7 @@ export const IosCalenderWidget = forwardRef<
           <div className="mt-auto flex items-baseline gap-1.5">
             <p
               key={day}
-              className="text-7xl leading-none font-medium tracking-tighter text-black tabular-nums opacity-100 starting:opacity-0 starting:translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
+              className="text-7xl leading-none font-medium tracking-tighter text-black tabular-nums opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:translate-y-1 starting:opacity-0"
             >
               {day}
             </p>

@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# Auto-fix staged files (Prettier + Tailwind class sort + ESLint) before commit.
+npx lint-staged

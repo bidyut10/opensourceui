@@ -26,13 +26,7 @@ export const CinderLatchButton = forwardRef<
   CinderLatchButtonProps
 >(
   (
-    {
-      children = "Unlock",
-      className,
-      type = "button",
-      disabled,
-      ...props
-    },
+    { children = "Unlock", className, type = "button", disabled, ...props },
     ref,
   ) => {
     return (
@@ -42,7 +36,7 @@ export const CinderLatchButton = forwardRef<
         disabled={disabled}
         data-slot="cinder-latch-button"
         className={cn(
-          "relative isolate overflow-hidden rounded-[18px] border-0 px-6 py-3.5 text-[1.05rem] outline-none ring-0",
+          "relative isolate overflow-hidden rounded-[18px] border-0 px-6 py-3.5 text-[1.05rem] ring-0 outline-none",
           "font-sans font-medium tracking-tight text-neutral-100",
           "shadow-[0_1px_0_rgba(255,255,255,0.14),0_12px_28px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.12)]",
           "transition-[transform,box-shadow,filter] duration-200 ease-out",

@@ -6,6 +6,7 @@ import { AnalyticsTracker } from "@/components/system/analytics";
 import { NavigationLoader } from "@/app/_shared/navigation/navigation-loader";
 import { PathMemoryTracker } from "@/app/_shared/navigation/path-memory-tracker";
 import { ScrollToTopButton } from "@/app/_shared/scroll/scroll-to-top-button";
+import { SkipToContent } from "@/app/_shared/skip-to-content";
 import { JsonLd, getRootSiteJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import { Suspense } from "react";
@@ -35,7 +36,9 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.displayName,
-  authors: [{ name: siteConfig.author.name, url: siteConfig.author.portfolioUrl }],
+  authors: [
+    { name: siteConfig.author.name, url: siteConfig.author.portfolioUrl },
+  ],
   creator: siteConfig.author.name,
   publisher: siteConfig.displayName,
   keywords: [...siteConfig.keywords],
@@ -114,6 +117,7 @@ export default function RootLayout({
         className="flex min-h-full flex-col overflow-x-hidden"
       >
         <JsonLd data={getRootSiteJsonLd()} />
+        <SkipToContent />
         {children}
         <AnalyticsTracker />
         <Suspense fallback={null}>

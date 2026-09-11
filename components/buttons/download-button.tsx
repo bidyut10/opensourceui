@@ -34,7 +34,10 @@ const LABEL_LAYER =
 
 // Download — raised key sinks while downloading, then settles into a green
 // done state; icon morphs arrow → spinner → check in place.
-export const DownloadButton = forwardRef<HTMLButtonElement, DownloadButtonProps>(
+export const DownloadButton = forwardRef<
+  HTMLButtonElement,
+  DownloadButtonProps
+>(
   (
     {
       className,
@@ -54,7 +57,8 @@ export const DownloadButton = forwardRef<HTMLButtonElement, DownloadButtonProps>
 
     useEffect(() => {
       return () => {
-        if (timerRef.current !== null) globalThis.clearTimeout(timerRef.current);
+        if (timerRef.current !== null)
+          globalThis.clearTimeout(timerRef.current);
       };
     }, []);
 
@@ -120,7 +124,10 @@ export const DownloadButton = forwardRef<HTMLButtonElement, DownloadButtonProps>
           </span>
           <span
             aria-hidden
-            className={cn(ICON_LAYER, downloading ? "opacity-100" : "opacity-0")}
+            className={cn(
+              ICON_LAYER,
+              downloading ? "opacity-100" : "opacity-0",
+            )}
           >
             <Loader2
               size={15}
@@ -141,7 +148,9 @@ export const DownloadButton = forwardRef<HTMLButtonElement, DownloadButtonProps>
             aria-hidden={!idle}
             className={cn(
               LABEL_LAYER,
-              idle ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              idle
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             {label}
@@ -151,7 +160,7 @@ export const DownloadButton = forwardRef<HTMLButtonElement, DownloadButtonProps>
             className={cn(
               LABEL_LAYER,
               downloading
-                ? "opacity-100 duration-300 delay-200"
+                ? "opacity-100 delay-200 duration-300"
                 : "opacity-0 duration-200",
             )}
           >
@@ -161,7 +170,9 @@ export const DownloadButton = forwardRef<HTMLButtonElement, DownloadButtonProps>
             aria-hidden={!done}
             className={cn(
               LABEL_LAYER,
-              done ? "opacity-100 duration-300 delay-200" : "opacity-0 duration-200",
+              done
+                ? "opacity-100 delay-200 duration-300"
+                : "opacity-0 duration-200",
             )}
           >
             {doneLabel}
