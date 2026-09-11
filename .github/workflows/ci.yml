@@ -16,7 +16,9 @@ jobs:
 
       - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          # jsdom 30 (Vitest) needs Node ^22.22.2 || ^24 — Node 20 throws
+          # markAsUncloneable / CacheStorage errors during worker startup.
+          node-version: 22
           cache: npm
 
       - run: npm ci

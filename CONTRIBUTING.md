@@ -43,7 +43,7 @@ Cursor project rules live in **`.cursor/rules/`** (`opensource-ui.mdc`, `compone
 
 ## Local development
 
-Requirements: **Node.js 20+**, **npm**
+Requirements: **Node.js 22.22+**, **npm**
 
 ```bash
 git clone https://github.com/bidyut10/opensourceui.git
