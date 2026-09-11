@@ -19,4 +19,10 @@ npm run test:watch  # unit tests, watch mode
 npm run test:e2e    # Playwright (run `npm run build` first)
 ```
 
+First-time e2e on a machine:
+
+```bash
+npx playwright install chromium
+```
+
 Configs stay at the repo root: `vitest.config.ts`, `playwright.config.ts`.

@@ -67,9 +67,9 @@ npm run check:showcase # verify showcase file paths
 npm run check:catalog  # unique slugs + inventory sync
 npm run check:design   # ban sm: breakpoints + purple / colored focus rings
 npm run test           # unit tests in tests/unit (vitest)
-npm run test:e2e       # Playwright in tests/e2e (needs build → out/)
-npm run verify:quick   # format + lint + types + checks + unit tests
-npm run verify         # full gate including build + e2e
+npm run test:e2e       # Playwright in tests/e2e (needs build → out/ + Chromium)
+npm run verify:quick   # format + lint + types + checks + unit tests (also the pre-push gate)
+npm run verify         # full gate including build + e2e (CI + optional local)
 ```
 
 Keep `components/` for copy-paste UI only. Put new unit tests under `tests/unit/` and e2e under `tests/e2e/`. Maintenance scripts live in `scripts/checks/` and `scripts/deploy/` — see those folders’ READMEs.
@@ -79,9 +79,10 @@ Keep `components/` for copy-paste UI only. Put new unit tests under `tests/unit/
 After `npm install`, Husky hooks are set up:
 
 1. **pre-commit** — Prettier (+ Tailwind class sort) and ESLint on staged files only
-2. **pre-push** — runs `npm run verify`; push is blocked if anything fails
+2. **pre-push** — runs `npm run verify:quick` (format, lint, types, catalog/design checks, unit tests). Push is blocked if that fails.  
+   Full `npm run verify` (build + Playwright e2e) runs in **GitHub Actions CI**. For local e2e once: `npx playwright install chromium`, then `npm run verify`.
 
-Fix failures locally (`npm run format`, then re-run `npm run verify`) before pushing again. GitHub Actions CI runs the same checks on every push and PR to `main`.
+Fix failures locally (`npm run format`, then re-run `npm run verify:quick`) before pushing again.
 
 Analytics is **optional** for local dev. Copy `.env.example` to `.env.local` only if you want to test PostHog or Google Search Console verification.
 

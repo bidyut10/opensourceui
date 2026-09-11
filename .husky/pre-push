@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
-# Block push unless format, lint, types, showcase paths, tests, and build all pass.
-npm run verify
+# Local push gate: format, lint, types, catalog/design checks, unit tests.
+# Full build + Playwright e2e run in GitHub Actions CI (and via `npm run verify`).
+npm run verify:quick
