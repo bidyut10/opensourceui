@@ -127,7 +127,7 @@ export const StopwatchWidget = forwardRef<HTMLDivElement, StopwatchWidgetProps>(
             onClick={clearTimer}
             disabled={!canReset}
             className={cn(
-              "flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-white text-neutral-500 ring-1 ring-neutral-200/80 transition-all active:scale-95 disabled:cursor-default disabled:opacity-30",
+              "flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-white text-neutral-500 ring-1 ring-neutral-200/80 transition-[scale,opacity] ease-[cubic-bezier(0.23,1,0.32,1)] enabled:active:scale-95 disabled:cursor-default disabled:opacity-30",
             )}
           >
             <Repeat size={11} color="currentColor" />
@@ -138,7 +138,7 @@ export const StopwatchWidget = forwardRef<HTMLDivElement, StopwatchWidgetProps>(
               type="button"
               aria-label="Pause stopwatch"
               onClick={handlePause}
-              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#FF9500] text-white shadow-[0_2px_8px_rgba(255,149,0,0.28)] transition-transform active:scale-95"
+              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#FF9500] text-white shadow-[0_2px_8px_rgba(255,149,0,0.28)] transition-transform ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95"
             >
               <Pause size={14} color="#FFFFFF" fill="#FFFFFF" />
             </button>
@@ -147,7 +147,7 @@ export const StopwatchWidget = forwardRef<HTMLDivElement, StopwatchWidgetProps>(
               type="button"
               aria-label="Start stopwatch"
               onClick={handlePlay}
-              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#34C759] text-white shadow-[0_2px_8px_rgba(52,199,89,0.28)] transition-transform active:scale-95"
+              className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-[#34C759] text-white shadow-[0_2px_8px_rgba(52,199,89,0.28)] transition-transform ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95"
             >
               <Play size={14} color="#FFFFFF" fill="#FFFFFF" />
             </button>
@@ -159,7 +159,7 @@ export const StopwatchWidget = forwardRef<HTMLDivElement, StopwatchWidgetProps>(
             onClick={clearTimer}
             disabled={!canStop}
             className={cn(
-              "flex h-7 w-7 cursor-pointer items-center justify-center rounded-full transition-all active:scale-95 disabled:cursor-default disabled:opacity-30",
+              "flex h-7 w-7 cursor-pointer items-center justify-center rounded-full transition-[scale,opacity,color,background-color,box-shadow] ease-[cubic-bezier(0.23,1,0.32,1)] enabled:active:scale-95 disabled:cursor-default disabled:opacity-30",
               canStop
                 ? "bg-[#FF3B30] text-white shadow-[0_2px_8px_rgba(255,59,48,0.25)]"
                 : "bg-white text-neutral-300 ring-1 ring-neutral-200/80",

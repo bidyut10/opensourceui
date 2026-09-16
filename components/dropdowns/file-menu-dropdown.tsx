@@ -157,7 +157,7 @@ export const FileMenuDropdown = forwardRef<
                 toggleOpen();
               }
             }}
-            className="flex flex-col items-center justify-center select-none"
+            className="flex flex-col items-center justify-center transition-[scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] select-none active:scale-[0.97]"
           >
             <div className="mb-2 flex h-24 w-24 cursor-pointer items-center justify-center rounded-3xl bg-cyan-200">
               <Folder size={48} className="text-white" fill="white" />
@@ -172,7 +172,7 @@ export const FileMenuDropdown = forwardRef<
             <div
               role="menu"
               aria-label={menuAriaLabel}
-              className="absolute top-1/2 left-1/2 z-100 w-48 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-neutral-100 bg-white p-1 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)]"
+              className="absolute top-1/2 left-1/2 z-100 w-48 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-neutral-100 bg-white p-1 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] transition-[opacity,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:scale-95 starting:opacity-0"
             >
               {items.map((item) => (
                 <ContextMenuItemRow

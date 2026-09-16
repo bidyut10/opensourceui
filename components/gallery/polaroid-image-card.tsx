@@ -46,7 +46,9 @@ export const PolaroidImageCard = forwardRef<
         <div
           className={cn(
             "bg-white p-3 pb-10 shadow-[0_8px_30px_rgba(0,0,0,0.12)] transition-transform duration-500 ease-out",
-            rotate ? "-rotate-2 group-hover:rotate-0" : "",
+            rotate
+              ? "-rotate-2 group-hover:rotate-0 motion-reduce:group-hover:-rotate-2"
+              : "",
           )}
         >
           {/* Image */}
@@ -56,7 +58,7 @@ export const PolaroidImageCard = forwardRef<
               alt={imageAlt}
               fill
               sizes="224px"
-              className="object-cover sepia-[0.15] transition-all duration-500 group-hover:sepia-0"
+              className="object-cover sepia-[0.15] transition-[filter] duration-500 group-hover:sepia-0"
             />
           </div>
 

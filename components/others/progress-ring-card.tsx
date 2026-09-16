@@ -157,7 +157,7 @@ export const ProgressRingCard = forwardRef<
               strokeLinecap="round"
               strokeDasharray={circumference}
               strokeDashoffset={offset}
-              className="transition-[stroke-dashoffset] duration-700 ease-out"
+              className="transition-[stroke-dashoffset] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]"
             />
             <defs>
               <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
@@ -187,7 +187,7 @@ export const ProgressRingCard = forwardRef<
               onClick={() => handleStageClick(stage, index)}
               data-slot="progress-ring-card-stage"
               className={cn(
-                "flex w-full cursor-pointer items-center gap-2 rounded-lg px-1 py-0.5 text-left transition-colors hover:bg-neutral-50",
+                "flex w-full cursor-pointer items-center gap-2 rounded-lg px-1 py-0.5 text-left transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 active:scale-[0.98] motion-reduce:transition-colors motion-reduce:active:scale-100",
                 activeStage === index && "bg-teal-50",
               )}
             >
@@ -197,7 +197,7 @@ export const ProgressRingCard = forwardRef<
               <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-neutral-100">
                 <div
                   className={cn(
-                    "h-full rounded-full transition-all duration-500",
+                    "h-full rounded-full transition-[width,background-color] duration-500",
                     stage.color ?? "bg-teal-500",
                   )}
                   style={{ width: `${stage.value}%` }}

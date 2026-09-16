@@ -268,7 +268,7 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
                 aria-label={showPassword ? "Hide password" : "Show password"}
                 aria-pressed={showPassword}
                 onClick={() => setShowPassword((prev) => !prev)}
-                className="absolute top-1/2 right-2.5 flex size-7 -translate-y-1/2 cursor-pointer items-center justify-center text-neutral-400 transition-colors hover:text-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-900 disabled:opacity-50"
+                className="absolute top-1/2 right-2.5 flex size-7 -translate-y-1/2 cursor-pointer items-center justify-center text-neutral-400 transition-[color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-900 enabled:active:scale-95 disabled:opacity-50 motion-reduce:enabled:active:scale-100"
               >
                 {showPassword ? (
                   <EyeOff size={16} aria-hidden />
@@ -316,7 +316,7 @@ export const LoginForm = forwardRef<HTMLFormElement, LoginFormProps>(
         <button
           type="submit"
           disabled={busy}
-          className="mt-6 flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 px-4 text-sm font-semibold text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 disabled:cursor-not-allowed disabled:opacity-60"
+          className="mt-6 flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 px-4 text-sm font-semibold text-white transition-[background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 enabled:active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:enabled:active:scale-100"
         >
           {busy ? (
             <Loader2 size={16} className="animate-spin" aria-hidden />

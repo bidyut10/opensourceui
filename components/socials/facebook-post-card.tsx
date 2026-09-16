@@ -164,7 +164,7 @@ export const FacebookPostCard = forwardRef<
             type="button"
             aria-label={`Like post from ${username}`}
             onClick={onLike}
-            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md py-1.5 text-xs font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-black"
+            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md py-1.5 text-xs font-medium text-neutral-500 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 hover:text-black active:scale-[0.97] motion-reduce:transition-[color,background-color]"
           >
             {likeIcon ?? <ThumbsUp size={14} />}
             Like
@@ -174,7 +174,7 @@ export const FacebookPostCard = forwardRef<
             type="button"
             aria-label={`Comment on post from ${username}`}
             onClick={onComment}
-            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md py-1.5 text-xs font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-black"
+            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md py-1.5 text-xs font-medium text-neutral-500 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 hover:text-black active:scale-[0.97] motion-reduce:transition-[color,background-color]"
           >
             {commentIcon ?? <MessageCircle size={14} />}
             Comment
@@ -184,7 +184,7 @@ export const FacebookPostCard = forwardRef<
             type="button"
             aria-label={`Share post from ${username}`}
             onClick={onShare}
-            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md py-1.5 text-xs font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-black"
+            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-md py-1.5 text-xs font-medium text-neutral-500 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 hover:text-black active:scale-[0.97] motion-reduce:transition-[color,background-color]"
           >
             {shareIcon ?? <Share2 size={14} />}
             Share

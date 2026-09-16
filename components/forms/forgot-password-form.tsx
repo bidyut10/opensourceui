@@ -248,7 +248,7 @@ export const ForgotPasswordForm = forwardRef<
         <button
           type="submit"
           disabled={busy}
-          className="mt-6 flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 px-4 text-sm font-semibold text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 disabled:cursor-not-allowed disabled:opacity-60"
+          className="mt-6 flex h-11 w-full cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 px-4 text-sm font-semibold text-white transition-[background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 enabled:active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:enabled:active:scale-100"
         >
           {busy ? (
             <Loader2 size={16} className="animate-spin" aria-hidden />

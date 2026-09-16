@@ -11,10 +11,10 @@ export const StackedCardsEffect = forwardRef<
     className={cn("group relative h-64 w-56 font-sans", className)}
     {...props}
   >
-    <div className="absolute inset-x-4 top-8 bottom-0 -rotate-6 rounded-2xl bg-neutral-200 transition-transform duration-500 group-hover:rotate-[-8deg]" />
-    <div className="absolute inset-x-2 top-4 bottom-0 rotate-3 rounded-2xl border border-neutral-200 bg-neutral-100 transition-transform duration-500 group-hover:rotate-[5deg]" />
+    <div className="absolute inset-x-4 top-8 bottom-0 -rotate-6 rounded-2xl bg-neutral-200 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:rotate-[-8deg] motion-reduce:group-hover:-rotate-6" />
+    <div className="absolute inset-x-2 top-4 bottom-0 rotate-3 rounded-2xl border border-neutral-200 bg-neutral-100 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:rotate-[5deg] motion-reduce:group-hover:rotate-3" />
 
-    <div className="absolute inset-0 overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-lg transition-transform duration-500 group-hover:-translate-y-1">
+    <div className="absolute inset-0 overflow-hidden rounded-2xl border border-neutral-100 bg-white shadow-lg transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-1 motion-reduce:group-hover:translate-y-0">
       <div className="relative h-28 overflow-hidden">
         <Image
           src="/background4.webp"

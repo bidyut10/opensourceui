@@ -39,9 +39,9 @@ function AgendaTitle({ done, children }: AgendaTitleProps) {
         <span
           aria-hidden
           className={cn(
-            "pointer-events-none absolute top-2 left-0 h-px bg-neutral-400/80",
-            "transition-[width] duration-500 ease-in-out",
-            done ? "w-full" : "w-0",
+            "pointer-events-none absolute top-2 left-0 h-px w-full origin-left bg-neutral-400/80",
+            "transition-[scale] duration-300 ease-out motion-reduce:transition-none",
+            done ? "scale-x-100" : "scale-x-0",
           )}
         />
       </span>

@@ -70,7 +70,7 @@ export const NowPlayingBar = forwardRef<HTMLDivElement, NowPlayingBarProps>(
           <button
             type="button"
             aria-label="Previous track"
-            className="cursor-pointer text-sm text-neutral-500 transition-colors hover:text-white"
+            className="cursor-pointer text-sm text-neutral-500 transition-[color,scale] duration-150 hover:text-white active:scale-[0.95]"
           >
             <SkipBack size={14} />
           </button>
@@ -79,7 +79,7 @@ export const NowPlayingBar = forwardRef<HTMLDivElement, NowPlayingBarProps>(
             type="button"
             aria-label={playing ? "Pause" : "Play"}
             onClick={() => setPlaying(!playing)}
-            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-xs text-neutral-900 transition-transform hover:scale-105"
+            className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-white text-xs text-neutral-900 transition-transform ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 active:scale-[0.97] hover:active:scale-100"
           >
             {playing ? (
               <Pause size={14} fill="black" />
@@ -91,7 +91,7 @@ export const NowPlayingBar = forwardRef<HTMLDivElement, NowPlayingBarProps>(
           <button
             type="button"
             aria-label="Next track"
-            className="cursor-pointer text-sm text-neutral-500 transition-colors hover:text-white"
+            className="cursor-pointer text-sm text-neutral-500 transition-[color,scale] duration-150 hover:text-white active:scale-[0.95]"
           >
             <SkipForward size={14} />
           </button>

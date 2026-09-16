@@ -98,7 +98,7 @@ export const WeekStripCalendar = forwardRef<
             type="button"
             aria-label="Previous week"
             onClick={goPrevWeek}
-            className="flex size-8 cursor-pointer items-center justify-center rounded-full text-neutral-500 transition-colors duration-150 outline-none hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800"
+            className="flex size-8 cursor-pointer items-center justify-center rounded-full text-neutral-500 transition-[color,background-color,outline-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800 active:scale-95"
           >
             <ChevronLeft size={16} strokeWidth={2} aria-hidden />
           </button>
@@ -106,7 +106,7 @@ export const WeekStripCalendar = forwardRef<
             type="button"
             aria-label="Next week"
             onClick={goNextWeek}
-            className="flex size-8 cursor-pointer items-center justify-center rounded-full text-neutral-500 transition-colors duration-150 outline-none hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800"
+            className="flex size-8 cursor-pointer items-center justify-center rounded-full text-neutral-500 transition-[color,background-color,outline-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800 active:scale-95"
           >
             <ChevronRight size={16} strokeWidth={2} aria-hidden />
           </button>
@@ -115,7 +115,7 @@ export const WeekStripCalendar = forwardRef<
 
       <p
         key={rangeLabel}
-        className="mb-4 text-xs font-medium text-neutral-500 opacity-100 transition-opacity duration-300 ease-out starting:opacity-0"
+        className="mb-4 text-xs font-medium text-neutral-500 opacity-100 transition-opacity duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:opacity-0"
       >
         {rangeLabel}
       </p>
@@ -123,7 +123,7 @@ export const WeekStripCalendar = forwardRef<
       <div
         key={weekStart.toISOString()}
         className={cn(
-          "grid grid-cols-7 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:opacity-0",
+          "grid grid-cols-7 opacity-100 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:opacity-0",
           slideDirection >= 0
             ? "starting:translate-x-2"
             : "starting:-translate-x-2",
@@ -139,7 +139,7 @@ export const WeekStripCalendar = forwardRef<
               type="button"
               aria-pressed={isSelected}
               onClick={() => selectDay(date)}
-              className="group flex cursor-pointer flex-col items-center gap-1.5 outline-none"
+              className="group flex cursor-pointer flex-col items-center gap-1.5 transition-[scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none active:scale-[0.97]"
             >
               <span
                 className={cn(

@@ -55,7 +55,7 @@ export const MuseumPlacardCard = forwardRef<
         >
           <div
             className={cn(
-              "relative h-52 w-full transition-transform duration-500 [transform-style:preserve-3d]",
+              "relative h-52 w-full transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] [transform-style:preserve-3d] motion-reduce:transition-none",
               flipped && "[transform:rotateY(180deg)]",
             )}
           >

@@ -232,3 +232,48 @@ Primary “Browse Components” + secondary “Work WIth Us” with waving-hand 
 - **Don't** build over-animated “wow” landing pages that prioritize motion theater over clarity.
 - **Don't** use `sm:` Tailwind breakpoints.
 - **Don't** use `border-left` / `border-right` greater than 1px as a colored accent stripe on cards or callouts.
+
+## 7. Motion
+
+Motion serves the component, never the demo. Adapted from Emil Kowalski's animation guidance ([emilkowal.ski](https://emilkowal.ski/ui), [animations.dev](https://animations.dev)) and applied across `components/`.
+
+### Property lists
+
+Tailwind v4 compiles `scale-*`, `translate-*` and `rotate-*` to the standalone `scale` / `translate` / `rotate` CSS properties, **not** `transform`. A list such as `transition-[transform,opacity]` therefore never animates them — they snap.
+
+```tsx
+// ✅ names the properties that actually change
+className =
+  "transition-[scale,opacity] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]";
+
+// ❌ transform is ignored by scale-110 / active:translate-y-px in v4
+className = "transition-[transform,opacity]";
+```
+
+Never use `transition-all`. List the exact properties, or use `transition-transform` (which covers `transform, translate, scale, rotate`). `cn()` merges through tailwind-merge, so keep **one** `transition-*`, one `duration-*` and one `ease-*` per element per branch — a second one silently wins.
+
+### Curves
+
+Write curves as arbitrary values so a copied file stays self-contained.
+
+| Motion                                                      | Curve                                 |
+| ----------------------------------------------------------- | ------------------------------------- |
+| Entering, exiting, press feedback                           | `ease-[cubic-bezier(0.23,1,0.32,1)]`  |
+| Moving or morphing on screen (sliding thumb, tab indicator) | `ease-[cubic-bezier(0.77,0,0.175,1)]` |
+| Drawers and sheets                                          | `ease-[cubic-bezier(0.32,0.72,0,1)]`  |
+| Color-only hover                                            | default timing (no `ease-*` class)    |
+| Constant motion (spinner, marquee)                          | `ease-linear`                         |
+
+Never `ease-in` on UI — it delays the moment the user is watching most closely.
+
+### Durations
+
+Press feedback 100–160ms · tooltips and small popovers 125–200ms · dropdowns and selects 150–250ms · modals and drawers 200–500ms. Routine UI motion stays under 300ms. Decorative loops, loaders, celebrations and deliberate holds (hold-to-delete, slide-to-confirm) are exempt.
+
+### Named Rules
+
+**The Press Rule.** Every pressable control answers the press: `active:scale-[0.97]` at ~150ms, unless it already depresses with an inset shadow or a 1px sink. Guard real buttons with `enabled:` so disabled controls stay still.
+
+**The Origin Rule.** Menus and popovers scale in from their trigger — `origin-top-left` / `origin-top-right` / `origin-bottom` to match placement — using `starting:scale-95 starting:opacity-0`. Modals are exempt and stay centered. Never animate in from `scale-0`; nothing in the real world appears from nothing.
+
+**The Reduced-Motion Rule.** `motion-reduce:` removes movement, not meaning. Drop transforms and decorative loops; keep color and opacity fades, and keep loading indication.

@@ -39,7 +39,7 @@ function Burst({ color }: BurstProps) {
       {PARTICLES.map((particle, index) => (
         <span
           key={index}
-          className="absolute top-1/2 left-1/2 size-1.5 rounded-full transition-all duration-500 ease-out"
+          className="absolute top-1/2 left-1/2 size-1.5 rounded-full transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity"
           style={{
             backgroundColor: color,
             opacity: out ? 0 : 1,
@@ -117,7 +117,7 @@ export const LikeButton = forwardRef<HTMLButtonElement, LikeButtonProps>(
             strokeWidth={2}
             aria-hidden
             className={cn(
-              "relative z-10 transition-[transform,fill,color,filter] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]",
+              "relative z-10 transition-[scale,fill,color,filter] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] motion-reduce:transition-[fill,color,filter]",
               "filter-[drop-shadow(0_1px_1px_rgba(0,0,0,0.22))_drop-shadow(0_2px_3px_rgba(0,0,0,0.12))]",
               liked
                 ? "scale-110 fill-rose-500 text-rose-500 filter-[drop-shadow(0_1px_1px_rgba(244,63,94,0.35))_drop-shadow(0_2px_4px_rgba(244,63,94,0.2))]"

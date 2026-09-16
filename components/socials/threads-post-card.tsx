@@ -136,7 +136,7 @@ export const ThreadsPostCard = forwardRef<HTMLDivElement, ThreadsPostCardProps>(
                     aria-label={label}
                     aria-pressed={id === "like" ? active : undefined}
                     onClick={onClick}
-                    className="flex cursor-pointer items-center gap-1 text-neutral-500 transition-colors hover:text-neutral-900"
+                    className="flex cursor-pointer items-center gap-1 text-neutral-500 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-[color]"
                   >
                     <Icon
                       size={14}

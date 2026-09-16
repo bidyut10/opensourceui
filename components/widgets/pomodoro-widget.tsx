@@ -81,7 +81,7 @@ export const PomodoroWidget = forwardRef<
         onClick?.(event);
       }}
       className={cn(
-        "relative h-44 w-44 max-w-full cursor-pointer overflow-hidden rounded-[1.75rem] bg-[#0C0C0C] font-sans shadow-lg shadow-black/5 transition-transform select-none active:scale-[0.98]",
+        "relative h-44 w-44 max-w-full cursor-pointer overflow-hidden rounded-[1.75rem] bg-[#0C0C0C] font-sans shadow-lg shadow-black/5 transition-transform ease-[cubic-bezier(0.23,1,0.32,1)] select-none active:scale-[0.98]",
         className,
       )}
       {...props}

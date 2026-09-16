@@ -345,7 +345,7 @@ export const DateFieldInput = forwardRef<
           id={calendarId}
           role="dialog"
           aria-label={`${label} calendar`}
-          className="absolute z-20 mt-1.5 w-full rounded-xl border border-neutral-200 bg-white p-3 shadow-sm"
+          className="absolute z-20 mt-1.5 w-full origin-top rounded-xl border border-neutral-200 bg-white p-3 shadow-sm transition-[opacity,scale] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:scale-95 starting:opacity-0"
         >
           <div className="mb-3 flex items-center justify-between">
             <p className="text-sm font-semibold text-neutral-900">
@@ -356,7 +356,7 @@ export const DateFieldInput = forwardRef<
                 type="button"
                 aria-label="Previous month"
                 onClick={() => setViewMonth((prev) => addMonths(prev, -1))}
-                className="flex size-7 cursor-pointer items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+                className="flex size-7 cursor-pointer items-center justify-center rounded-md text-neutral-500 transition-[color,background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-colors"
               >
                 <ChevronLeft size={14} strokeWidth={2} aria-hidden />
               </button>
@@ -364,7 +364,7 @@ export const DateFieldInput = forwardRef<
                 type="button"
                 aria-label="Next month"
                 onClick={() => setViewMonth((prev) => addMonths(prev, 1))}
-                className="flex size-7 cursor-pointer items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-neutral-100 hover:text-neutral-900"
+                className="flex size-7 cursor-pointer items-center justify-center rounded-md text-neutral-500 transition-[color,background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-colors"
               >
                 <ChevronRight size={14} strokeWidth={2} aria-hidden />
               </button>
@@ -406,7 +406,7 @@ export const DateFieldInput = forwardRef<
                   aria-pressed={isSelected}
                   onClick={() => selectDay(day)}
                   className={cn(
-                    "flex h-9 cursor-pointer items-center justify-center rounded-lg text-sm ring-0 transition-colors duration-150 outline-none focus:ring-0",
+                    "flex h-9 cursor-pointer items-center justify-center rounded-lg text-sm ring-0 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none focus:ring-0 enabled:active:scale-[0.97] motion-reduce:transition-colors",
                     !inMonth && "text-neutral-300",
                     inMonth &&
                       !isSelected &&
