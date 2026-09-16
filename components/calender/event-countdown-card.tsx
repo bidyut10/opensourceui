@@ -87,7 +87,7 @@ export const EventCountdownCard = forwardRef<
             <div key={unit.label} className="text-center">
               <p
                 key={`${unit.label}-${unit.value}`}
-                className="text-2xl leading-none font-light text-neutral-900 tabular-nums opacity-100 transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:translate-y-1 starting:opacity-0"
+                className="text-2xl leading-none font-light text-neutral-900 tabular-nums opacity-100 transition-[opacity,translate] duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] motion-reduce:transition-opacity starting:translate-y-1 starting:opacity-0"
               >
                 {String(unit.value).padStart(2, "0")}
               </p>

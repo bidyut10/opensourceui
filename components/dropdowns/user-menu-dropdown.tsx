@@ -181,7 +181,7 @@ export const UserMenuDropdown = forwardRef<
               }
             }}
             className={cn(
-              "group inline-flex h-12 cursor-pointer items-center gap-3 rounded-full border bg-white pr-4 pl-1.5 transition-all duration-300",
+              "group inline-flex h-12 cursor-pointer items-center gap-3 rounded-full border bg-white pr-4 pl-1.5 transition-[border-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:active:scale-100",
               open ? "border-neutral-200" : "border-neutral-100",
             )}
           >
@@ -205,7 +205,7 @@ export const UserMenuDropdown = forwardRef<
             <ChevronDown
               size={14}
               className={cn(
-                "shrink-0 text-neutral-400 transition-transform duration-300 ease-out",
+                "shrink-0 text-neutral-400 transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
                 open ? "rotate-180" : "group-hover:translate-y-px",
               )}
             />
@@ -222,7 +222,7 @@ export const UserMenuDropdown = forwardRef<
                 "shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)]",
                 "blur-0 translate-y-0 scale-100 opacity-100",
                 "starting:-translate-y-1 starting:scale-[0.96] starting:opacity-0 starting:blur-[3px]",
-                "transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+                "transition-[translate,scale,opacity,filter] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-[opacity,filter]",
               )}
             >
               {/* Caret — integrated into the panel, not a separate blob */}

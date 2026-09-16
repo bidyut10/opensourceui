@@ -99,7 +99,7 @@ export const PhotoAlbumCard = forwardRef<HTMLDivElement, PhotoAlbumCardProps>(
                 aria-pressed={i === index}
                 onClick={() => select(i)}
                 className={cn(
-                  "h-1.5 rounded-full transition-all duration-200",
+                  "h-1.5 rounded-full transition-[width,background-color] duration-200 ease-[cubic-bezier(0.77,0,0.175,1)]",
                   i === index ? "w-5 bg-neutral-900" : "w-1.5 bg-neutral-300",
                 )}
               />

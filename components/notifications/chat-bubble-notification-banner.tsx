@@ -73,7 +73,7 @@ export const ChatBubbleNotificationBanner = forwardRef<
           onClick={handleShow}
           className={cn(
             "cursor-pointer rounded-full bg-neutral-100 px-4 py-2 text-xs font-medium text-neutral-700",
-            "opacity-100 transition-opacity duration-200 hover:bg-neutral-200 starting:opacity-0",
+            "opacity-100 transition-[opacity,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-200 active:scale-[0.97] motion-reduce:transition-[opacity,background-color] motion-reduce:active:scale-100 starting:opacity-0",
             className,
           )}
         >
@@ -90,8 +90,9 @@ export const ChatBubbleNotificationBanner = forwardRef<
         className={cn(
           "relative block w-72 font-sans",
           "translate-y-0 opacity-100 starting:translate-y-2 starting:opacity-0",
-          "transition-all duration-300 ease-out",
-          "data-[phase=closing]:translate-y-1.5 data-[phase=closing]:opacity-0",
+          "transition-[translate,opacity] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity",
+          "data-[phase=closing]:translate-y-1.5 data-[phase=closing]:opacity-0 motion-reduce:data-[phase=closing]:translate-y-0",
+          "data-[phase=closing]:duration-260",
           className,
         )}
         {...props}
@@ -100,7 +101,7 @@ export const ChatBubbleNotificationBanner = forwardRef<
           type="button"
           onClick={handleDismiss}
           aria-label="Dismiss"
-          className="absolute -top-1 -right-1 z-10 flex size-6 cursor-pointer items-center justify-center rounded-full bg-white text-neutral-400 shadow-sm transition-colors hover:text-neutral-600"
+          className="absolute -top-1 -right-1 z-10 flex size-6 cursor-pointer items-center justify-center rounded-full bg-white text-neutral-400 shadow-sm transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-neutral-600 active:scale-[0.97] motion-reduce:transition-colors motion-reduce:active:scale-100"
         >
           <X size={10} strokeWidth={2} />
         </button>

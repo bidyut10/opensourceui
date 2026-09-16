@@ -88,13 +88,13 @@ export const WiFiToggleWidget = forwardRef<
             aria-pressed={on}
             onClick={() => setOn(!on)}
             className={cn(
-              "flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full p-0.5 transition-colors",
+              "flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full p-0.5 transition-[background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:transition-[background-color] motion-reduce:active:scale-100",
               on ? "bg-emerald-400" : "bg-neutral-200",
             )}
           >
             <span
               className={cn(
-                "h-5 w-5 rounded-full bg-white shadow-sm transition-transform duration-200 ease-out",
+                "h-5 w-5 rounded-full bg-white shadow-sm transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
                 on ? "translate-x-5" : "translate-x-0",
               )}
             />

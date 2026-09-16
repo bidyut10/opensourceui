@@ -149,7 +149,7 @@ export const InstagramPostCard = forwardRef<
                 type="button"
                 aria-label={`Like post from ${username}`}
                 onClick={onLike}
-                className="cursor-pointer text-neutral-700 transition-colors hover:text-black"
+                className="cursor-pointer text-neutral-700 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-black active:scale-[0.97] motion-reduce:transition-[color]"
               >
                 {likeIcon ?? <ThumbsUp size={15} />}
               </button>
@@ -158,7 +158,7 @@ export const InstagramPostCard = forwardRef<
                 type="button"
                 aria-label={`Comment on post from ${username}`}
                 onClick={onComment}
-                className="cursor-pointer text-neutral-700 transition-colors hover:text-black"
+                className="cursor-pointer text-neutral-700 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-black active:scale-[0.97] motion-reduce:transition-[color]"
               >
                 {commentIcon ?? <MessageCircle size={15} />}
               </button>
@@ -167,7 +167,7 @@ export const InstagramPostCard = forwardRef<
                 type="button"
                 aria-label={`Share post from ${username}`}
                 onClick={onShare}
-                className="cursor-pointer text-neutral-700 transition-colors hover:text-black"
+                className="cursor-pointer text-neutral-700 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-black active:scale-[0.97] motion-reduce:transition-[color]"
               >
                 {shareIcon ?? <Share2 size={15} />}
               </button>
@@ -177,7 +177,7 @@ export const InstagramPostCard = forwardRef<
               type="button"
               aria-label={`Save post from ${username}`}
               onClick={onBookmark}
-              className="cursor-pointer text-neutral-700 transition-colors hover:text-black"
+              className="cursor-pointer text-neutral-700 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-black active:scale-[0.97] motion-reduce:transition-[color]"
             >
               {bookmarkIcon ?? <Bookmark size={15} />}
             </button>

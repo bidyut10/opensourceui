@@ -114,7 +114,7 @@ export const JournalWritingCard = forwardRef<
             <span className="relative inline-flex h-2 w-2 shrink-0">
               {saveState === "saving" ? (
                 <>
-                  <span className="absolute inset-0 animate-ping rounded-full bg-amber-400 opacity-60" />
+                  <span className="absolute inset-0 animate-ping rounded-full bg-amber-400 opacity-60 motion-reduce:animate-none" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500" />
                 </>
               ) : (

@@ -116,7 +116,7 @@ export const TwitterProfileCard = forwardRef<
                 type="button"
                 aria-label={`Follow ${name}`}
                 onClick={onFollow}
-                className="cursor-pointer rounded-full bg-neutral-800 px-3 pt-1 pb-0.5 text-[10px] font-medium text-white transition-colors hover:bg-black"
+                className="cursor-pointer rounded-full bg-neutral-800 px-3 pt-1 pb-0.5 text-[10px] font-medium text-white transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-black active:scale-[0.97]"
               >
                 {followLabel}
               </button>

@@ -163,7 +163,7 @@ export const NewsletterForm = forwardRef<HTMLFormElement, NewsletterFormProps>(
               <button
                 type="submit"
                 disabled={busy}
-                className="flex h-11 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 px-5 text-sm font-semibold text-white transition-colors hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 disabled:cursor-not-allowed disabled:opacity-60 md:px-6"
+                className="flex h-11 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-md bg-neutral-950 px-5 text-sm font-semibold text-white transition-[background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-800 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900 enabled:active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 motion-reduce:enabled:active:scale-100 md:px-6"
               >
                 {busy ? (
                   <Loader2 size={16} className="animate-spin" aria-hidden />

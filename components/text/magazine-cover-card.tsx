@@ -55,7 +55,7 @@ export const MagazineCoverCard = forwardRef<
         data-slot="magazine-cover-card"
         onClick={onClick}
         className={cn(
-          "group relative h-96 w-72 cursor-pointer overflow-hidden rounded-2xl shadow-lg",
+          "group relative h-96 w-72 cursor-pointer overflow-hidden rounded-2xl shadow-lg transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.99]",
           className,
         )}
         {...props}
@@ -66,7 +66,7 @@ export const MagazineCoverCard = forwardRef<
           alt={imageAlt}
           fill
           sizes="288px"
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+          className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-105 motion-reduce:group-hover:scale-100"
         />
 
         {/* Gradient overlay */}
@@ -95,7 +95,7 @@ export const MagazineCoverCard = forwardRef<
               By {author} · {readTime}
             </p>
 
-            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-md transition-all duration-300 group-hover:bg-white group-hover:text-neutral-900">
+            <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/15 text-white backdrop-blur-md transition-colors duration-300 group-hover:bg-white group-hover:text-neutral-900">
               {arrowIcon ?? <ArrowRight size={14} />}
             </div>
           </div>
