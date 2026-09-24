@@ -6,6 +6,7 @@ import { Typescript } from "@/icons/brands/typescript";
 import { Vercel } from "@/icons/brands/vercel";
 import { Unplash } from "@/icons/brands/unplash";
 import { NextJs } from "@/icons/brands/next-js";
+import { Sentry } from "@/icons/brands/sentry";
 import { siteConfig } from "@/lib/site";
 import { SponsorPlaceholderRow } from "./sponsor-placeholder-row";
 
@@ -192,6 +193,17 @@ function ListRow({
   );
 }
 
+const sponsors: ResourceItem[] = [
+  {
+    name: "Sentry",
+    description: "Open-source sponsor — error monitoring",
+    shortDescription: "OSS error monitoring",
+    href: "https://sentry.io/for/open-source/",
+    domain: "sentry.io",
+    Icon: Sentry,
+  },
+];
+
 const sponsorPlaceholder = {
   name: "Your brand",
   description: "Gold or Platinum — see plans",
@@ -212,6 +224,9 @@ export function OpenSourcePanel() {
           </Link>
         </h3>
         <ul className="mt-4 flex flex-col gap-2.5">
+          {sponsors.map((item) => (
+            <ListRow key={item.name} item={item} />
+          ))}
           <SponsorPlaceholderRow {...sponsorPlaceholder} />
         </ul>
       </section>

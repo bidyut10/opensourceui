@@ -42,6 +42,7 @@ export function initPostHog() {
     person_profiles: "identified_only",
     capture_pageview: false,
     capture_pageleave: true,
+    capture_exceptions: true,
     persistence: "localStorage+cookie",
   });
 
@@ -51,6 +52,11 @@ export function initPostHog() {
 function ensurePostHog() {
   if (!initialized) initPostHog();
   return initialized;
+}
+
+export function capturePostHogException(error: unknown) {
+  if (!ensurePostHog()) return;
+  posthog.captureException(error);
 }
 
 export function identifyPostHogVisitor(visitorId: string) {

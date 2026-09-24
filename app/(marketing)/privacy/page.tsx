@@ -61,6 +61,27 @@ export default function PrivacyPage() {
             </section>
 
             <section>
+              <h2 className="font-semibold text-neutral-900">
+                Error monitoring
+              </h2>
+              <p className="mt-2">
+                We use{" "}
+                <a
+                  href="https://sentry.io/privacy/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-medium text-neutral-900 underline decoration-neutral-300 underline-offset-2"
+                >
+                  Sentry
+                </a>{" "}
+                (via their open-source sponsorship program) to capture
+                application errors so we can fix bugs. We configure Sentry to
+                limit personally identifiable information. See Sentry&apos;s
+                privacy policy for how they process that data.
+              </p>
+            </section>
+
+            <section>
               <h2 className="font-semibold text-neutral-900">Contact</h2>
               <p className="mt-2">
                 If you email us about the site, we use your message only to

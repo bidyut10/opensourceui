@@ -18,3 +18,8 @@ account_id = "aa80904ac82949fe89814f98b5a3894d"
 [assets]
 directory = "./out"
 not_found_handling = "404-page"
+
+# Cloudflare Workers Observability — off for now (Sentry covers app errors).
+# Re-enable in the dashboard or set enabled = true if you want CF logs/traces.
+[observability]
+enabled = false

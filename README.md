@@ -232,6 +232,8 @@ If this saved you an afternoon:
 
 Components stay free either way. Sponsoring is optional.
 
+**Tooling sponsors:** Error monitoring is sponsored by [Sentry](https://sentry.io/for/open-source/) through their open-source program.
+
 ## Contributing
 
 Happy to take help. [CONTRIBUTING.md](./CONTRIBUTING.md) covers setup and PRs.

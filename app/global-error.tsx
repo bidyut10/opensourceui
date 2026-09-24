@@ -1,7 +1,10 @@
 "use client";
 
+import * as Sentry from "@sentry/nextjs";
 import Link from "next/link";
 import { useEffect } from "react";
+
+import { capturePostHogException } from "@/lib/analytics/client/posthog";
 
 type GlobalErrorProps = Readonly<{
   error: Error & { digest?: string };
@@ -11,7 +14,8 @@ type GlobalErrorProps = Readonly<{
 /** Root crash boundary — same minimal layout with inline styles. */
 export default function GlobalError({ error, reset }: GlobalErrorProps) {
   useEffect(() => {
-    console.error(error);
+    Sentry.captureException(error);
+    capturePostHogException(error);
   }, [error]);
 
   return (

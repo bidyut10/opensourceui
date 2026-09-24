@@ -64,7 +64,16 @@ yarn-error.log*
 
 # cloudflare
 .wrangler
+.wrangler-dry
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Sentry Config File
+.env.sentry-build-plugin
+.env
+
+# local agent / report scratch
+.claude/
+posthog-error-tracking-report.md
