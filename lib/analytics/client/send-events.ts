@@ -17,7 +17,12 @@ function randomId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 11)}`;
 }
 
+function isLocalStorageAvailable(): boolean {
+  return typeof localStorage !== "undefined" && localStorage !== null;
+}
+
 export function getVisitorId(): string {
+  if (!isLocalStorageAvailable()) return randomId();
   let id = localStorage.getItem(VISITOR_KEY);
   if (!id) {
     id = randomId();
