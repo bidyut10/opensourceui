@@ -18,7 +18,12 @@ function randomId(): string {
 }
 
 function isLocalStorageAvailable(): boolean {
-  return typeof localStorage !== "undefined" && localStorage !== null;
+  try {
+    localStorage.getItem("");
+    return true;
+  } catch {
+    return false;
+  }
 }
 
 export function getVisitorId(): string {
