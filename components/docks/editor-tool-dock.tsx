@@ -84,7 +84,7 @@ export const EditorToolDock = forwardRef<HTMLElement, EditorToolDockProps>(
                 onSelect?.(tool.id);
               }}
               className={cn(
-                "ease-smooth flex size-11 items-center justify-center rounded-lg shadow-xs shadow-neutral-100 transition-[background-color,color,transform] duration-300 will-change-transform",
+                "flex size-11 items-center justify-center rounded-lg shadow-xs shadow-neutral-100 transition-[background-color,color,scale] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform motion-reduce:transition-colors",
                 active
                   ? "bg-neutral-900 text-white"
                   : "bg-neutral-50 text-neutral-600 hover:scale-110 hover:text-neutral-900",
@@ -100,7 +100,7 @@ export const EditorToolDock = forwardRef<HTMLElement, EditorToolDockProps>(
             type="button"
             aria-label={allToolsLabel}
             onClick={onAllTools}
-            className="ease-smooth flex size-11 items-center justify-center rounded-lg bg-rose-200 text-white shadow-xs transition-transform duration-300 hover:scale-110"
+            className="flex size-11 items-center justify-center rounded-lg bg-rose-200 text-white shadow-xs transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-110"
           >
             <Folder size={16} aria-hidden fill="currentColor" />
           </button>

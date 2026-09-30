@@ -140,7 +140,7 @@ export const FilterSortDropdown = forwardRef<
               }
             }}
             className={cn(
-              "flex w-full cursor-pointer items-center justify-between rounded-lg border bg-white px-3 py-2.5 text-left transition-colors",
+              "flex w-full cursor-pointer items-center justify-between rounded-lg border bg-white px-3 py-2.5 text-left transition-[border-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:active:scale-100",
               open
                 ? "border-neutral-300"
                 : "border-neutral-200 hover:border-neutral-300",
@@ -157,7 +157,7 @@ export const FilterSortDropdown = forwardRef<
             <ChevronDown
               size={14}
               className={cn(
-                "shrink-0 text-neutral-400 transition-transform",
+                "shrink-0 text-neutral-400 transition-transform duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
                 open && "rotate-180",
               )}
             />
@@ -168,7 +168,7 @@ export const FilterSortDropdown = forwardRef<
               id={menuId}
               role="menu"
               aria-label={menuAriaLabel}
-              className="absolute top-[calc(100%+4px)] right-0 left-0 z-100 overflow-hidden rounded-lg border border-neutral-200 bg-white py-1 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.1)]"
+              className="absolute top-[calc(100%+4px)] right-0 left-0 z-100 origin-top overflow-hidden rounded-lg border border-neutral-200 bg-white py-1 shadow-[0_8px_24px_-8px_rgba(0,0,0,0.1)] transition-[opacity,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:scale-95 starting:opacity-0"
             >
               {options.map((option) => (
                 <FilterSortOptionRow

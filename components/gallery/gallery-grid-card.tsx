@@ -66,7 +66,7 @@ export const GalleryGridCard = forwardRef<HTMLDivElement, GalleryGridCardProps>(
               alt={title}
               fill
               sizes="288px"
-              className="object-cover transition-transform duration-500 hover:scale-105"
+              className="object-cover transition-transform duration-200 hover:scale-105 motion-reduce:transition-none motion-reduce:hover:scale-100"
             />
           </div>
 

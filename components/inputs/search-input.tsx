@@ -139,7 +139,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
               type="button"
               aria-label={clearLabel}
               onClick={handleClear}
-              className="absolute top-1/2 right-2.5 flex size-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded-md text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-700"
+              className="absolute top-1/2 right-2.5 flex size-6 -translate-y-1/2 cursor-pointer items-center justify-center rounded-md text-neutral-400 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 hover:text-neutral-700 active:scale-[0.97] motion-reduce:transition-colors"
             >
               <X size={14} strokeWidth={2} aria-hidden />
             </button>

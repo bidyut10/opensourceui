@@ -169,7 +169,7 @@ export const FloatingLabelFieldInput = forwardRef<
         <label
           htmlFor={inputId}
           className={cn(
-            "pointer-events-none absolute left-3 max-w-[calc(100%-1.5rem)] origin-left truncate transition-all duration-200 ease-out",
+            "pointer-events-none absolute left-3 max-w-[calc(100%-1.5rem)] origin-left truncate transition-[top,padding,font-size,font-weight,color,background-color] duration-200 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-[color]",
             floated
               ? "top-0 -translate-y-1/2 bg-white px-1 text-xs leading-none font-medium"
               : "top-1/2 -translate-y-1/2 bg-transparent px-0 text-sm leading-none",

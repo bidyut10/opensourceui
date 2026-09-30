@@ -97,7 +97,7 @@ export const PresenceDock = forwardRef<HTMLDivElement, PresenceDockProps>(
           aria-expanded={open}
           aria-label={label ?? `${onlineCount} people online`}
           onClick={() => setOpen((value) => !value)}
-          className="ease-smooth relative flex h-[3.75rem] items-center rounded-full border border-neutral-50 bg-white/50 px-2.5 py-2 shadow-xl shadow-black/10 backdrop-blur-md transition-transform duration-300 will-change-transform hover:scale-[1.02]"
+          className="relative flex h-[3.75rem] items-center rounded-full border border-neutral-50 bg-white/50 px-2.5 py-2 shadow-xl shadow-black/10 backdrop-blur-md transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform hover:scale-[1.02]"
         >
           <span className="flex items-center">
             {visible.map((person, index) => (
@@ -131,10 +131,10 @@ export const PresenceDock = forwardRef<HTMLDivElement, PresenceDockProps>(
 
         <ul
           className={cn(
-            "ease-smooth absolute top-[calc(100%+0.5rem)] left-0 z-20 w-full origin-top overflow-hidden rounded-2xl border border-neutral-50 bg-white/90 p-2 shadow-xl shadow-black/10 backdrop-blur-md transition-[opacity,transform] duration-200",
+            "absolute top-[calc(100%+0.5rem)] left-0 z-20 w-full origin-top overflow-hidden rounded-2xl border border-neutral-50 bg-white/90 p-2 shadow-xl shadow-black/10 backdrop-blur-md transition-[opacity,scale] ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-opacity",
             open
-              ? "pointer-events-auto scale-100 opacity-100"
-              : "pointer-events-none scale-95 opacity-0",
+              ? "pointer-events-auto scale-100 opacity-100 duration-200"
+              : "pointer-events-none scale-95 opacity-0 duration-150",
           )}
         >
           {people.map((person) => (
@@ -142,7 +142,7 @@ export const PresenceDock = forwardRef<HTMLDivElement, PresenceDockProps>(
               <button
                 type="button"
                 onClick={() => onSelect?.(person.id)}
-                className="ease-smooth flex w-full items-center gap-2.5 rounded-lg px-2 py-2 text-left transition-colors duration-150 hover:bg-neutral-50"
+                className="flex w-full items-center gap-2.5 rounded-lg px-2 py-2 text-left transition-colors duration-150 ease-[cubic-bezier(0.22,1,0.36,1)] hover:bg-neutral-50"
               >
                 <span
                   className={cn(

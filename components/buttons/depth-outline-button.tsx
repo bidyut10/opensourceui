@@ -51,7 +51,7 @@ export const DepthOutlineButton = forwardRef<
         data-size={size}
         className={cn(
           "inline-flex cursor-pointer items-center justify-center bg-white font-sans font-semibold text-neutral-800 outline-none select-none",
-          "transition-[background-color,box-shadow,color,transform] duration-200 ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none",
+          "transition-[background-color,box-shadow,color,translate] duration-200 ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:transition-none",
           "active:translate-y-px motion-reduce:active:translate-y-0",
           "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-900",
           "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-40",

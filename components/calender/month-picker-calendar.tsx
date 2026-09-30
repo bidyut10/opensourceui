@@ -112,14 +112,14 @@ export const MonthPickerCalendar = forwardRef<
             type="button"
             aria-label="Previous month"
             onClick={() => shiftMonth(-1)}
-            className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-neutral-500 transition-all duration-200 ease-out hover:bg-neutral-100 active:scale-95"
+            className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-neutral-500 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 active:scale-95"
           >
             <ChevronLeft size={16} strokeWidth={2} />
           </button>
 
           <p
             key={monthLabel}
-            className="text-sm font-semibold text-neutral-900 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:translate-y-0.5 starting:opacity-0"
+            className="text-sm font-semibold text-neutral-900 opacity-100 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:translate-y-0.5 starting:opacity-0"
           >
             {monthLabel}
           </p>
@@ -128,7 +128,7 @@ export const MonthPickerCalendar = forwardRef<
             type="button"
             aria-label="Next month"
             onClick={() => shiftMonth(1)}
-            className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-neutral-500 transition-all duration-200 ease-out hover:bg-neutral-100 active:scale-95"
+            className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-neutral-500 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 active:scale-95"
           >
             <ChevronRight size={16} strokeWidth={2} />
           </button>
@@ -143,7 +143,7 @@ export const MonthPickerCalendar = forwardRef<
         <div
           key={`${viewYear}-${viewMonth}`}
           className={cn(
-            "grid grid-cols-7 gap-y-1 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:opacity-0",
+            "grid grid-cols-7 gap-y-1 opacity-100 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:opacity-0",
             slideDirection >= 0
               ? "starting:translate-x-2"
               : "starting:-translate-x-2",
@@ -163,7 +163,7 @@ export const MonthPickerCalendar = forwardRef<
                 type="button"
                 onClick={() => selectDay(day)}
                 className={cn(
-                  "mx-auto flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-sm tabular-nums transition-all duration-200 ease-out active:scale-95",
+                  "mx-auto flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-sm tabular-nums transition-[color,background-color,box-shadow,font-weight,scale] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95",
                   isSelected
                     ? "scale-100 bg-neutral-900 font-semibold text-white"
                     : "text-neutral-700 hover:bg-neutral-100",

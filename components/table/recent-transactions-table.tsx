@@ -100,7 +100,7 @@ export const RecentTransactionsTable = forwardRef<
           type="button"
           disabled={page === 0}
           onClick={() => setPage((p) => p - 1)}
-          className="flex size-7 items-center justify-center rounded-md text-neutral-500 transition-colors enabled:hover:bg-neutral-100 disabled:opacity-30"
+          className="flex size-7 items-center justify-center rounded-md text-neutral-500 transition-[background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] enabled:hover:bg-neutral-100 enabled:active:scale-[0.97] disabled:opacity-30"
           aria-label="Previous page"
         >
           <ChevronLeft className="size-4" strokeWidth={2} />
@@ -112,7 +112,7 @@ export const RecentTransactionsTable = forwardRef<
           type="button"
           disabled={page >= totalPages - 1}
           onClick={() => setPage((p) => p + 1)}
-          className="flex size-7 items-center justify-center rounded-md text-neutral-500 transition-colors enabled:hover:bg-neutral-100 disabled:opacity-30"
+          className="flex size-7 items-center justify-center rounded-md text-neutral-500 transition-[background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] enabled:hover:bg-neutral-100 enabled:active:scale-[0.97] disabled:opacity-30"
           aria-label="Next page"
         >
           <ChevronRight className="size-4" strokeWidth={2} />

@@ -104,7 +104,7 @@ export const HoldToDeleteButton = forwardRef<
       "transition-transform motion-reduce:transition-none motion-reduce:transform-none",
       holding || done
         ? cn("ease-linear", step.className)
-        : "duration-300 ease-out",
+        : "duration-200 ease-[cubic-bezier(0.23,1,0.32,1)]",
     );
 
     return (
@@ -159,7 +159,7 @@ export const HoldToDeleteButton = forwardRef<
               "absolute inset-0 flex items-center justify-center gap-2 text-white",
               wipeMotion,
               holding || done ? "translate-x-0" : "translate-x-full",
-              "transition-[transform,opacity]",
+              "transition-[translate,opacity]",
               // Once deleted, the hold label slowly fades out first...
               done ? "opacity-0 duration-300 ease-out" : "opacity-100",
             )}

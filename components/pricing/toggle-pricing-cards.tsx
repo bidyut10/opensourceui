@@ -106,13 +106,13 @@ export const TogglePricingCards = forwardRef<
             aria-label="Toggle billing period"
             onClick={() => setYearly((prev) => !prev)}
             className={cn(
-              "relative h-6 w-11 cursor-pointer rounded-full transition-colors",
+              "relative h-6 w-11 cursor-pointer rounded-full transition-[background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:transition-[background-color]",
               yearly ? "bg-neutral-800" : "bg-neutral-200",
             )}
           >
             <div
               className={cn(
-                "absolute top-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform",
+                "absolute top-0.5 h-5 w-5 rounded-full bg-white shadow-sm transition-transform duration-200 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none",
                 yearly ? "translate-x-5.5" : "translate-x-0.5",
               )}
             />
@@ -144,7 +144,7 @@ export const TogglePricingCards = forwardRef<
                 key={plan.name}
                 data-slot="toggle-pricing-cards-plan"
                 className={cn(
-                  "flex-1 rounded-xl border p-3 transition-all",
+                  "flex-1 rounded-xl border p-3 transition-[color,background-color,border-color,box-shadow]",
                   plan.popular
                     ? "border-neutral-900 bg-neutral-900 text-white shadow-lg"
                     : "border-neutral-100 bg-white",

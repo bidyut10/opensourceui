@@ -39,7 +39,7 @@ export const CinderLatchButton = forwardRef<
           "relative isolate overflow-hidden rounded-[18px] border-0 px-6 py-3.5 text-[1.05rem] ring-0 outline-none",
           "font-sans font-medium tracking-tight text-neutral-100",
           "shadow-[0_1px_0_rgba(255,255,255,0.14),0_12px_28px_rgba(0,0,0,0.34),inset_0_1px_0_rgba(255,255,255,0.12)]",
-          "transition-[transform,box-shadow,filter] duration-200 ease-out",
+          "transition-[translate,filter] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]",
           "hover:brightness-110 active:translate-y-px active:brightness-95",
           "motion-reduce:transition-none motion-reduce:hover:brightness-100 motion-reduce:active:translate-y-0",
           "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300",
