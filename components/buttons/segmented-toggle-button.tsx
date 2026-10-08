@@ -1,6 +1,12 @@
 "use client";
 
-import { forwardRef, useState, type ComponentPropsWithoutRef } from "react";
+import {
+  forwardRef,
+  useRef,
+  useState,
+  type ComponentPropsWithoutRef,
+  type KeyboardEvent,
+} from "react";
 
 import { cn } from "@/lib/cn";
 
@@ -77,10 +83,35 @@ export const SegmentedToggleButton = forwardRef<
     const [active, setActive] = useState(defaultIndex);
     const count = options.length;
     const safeActive = Math.min(Math.max(active, 0), Math.max(count - 1, 0));
+    const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
 
     const select = (index: number) => {
       setActive(index);
+      buttonRefs.current[index]?.focus();
       onChange?.(index, options[index] ?? "");
+    };
+
+    const handleKeyDown = (
+      event: KeyboardEvent<HTMLButtonElement>,
+      index: number,
+    ) => {
+      if (count <= 1) return;
+
+      let targetIndex: number | null = null;
+      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+        targetIndex = (index + 1) % count;
+      } else if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+        targetIndex = (index - 1 + count) % count;
+      } else if (event.key === "Home") {
+        targetIndex = 0;
+      } else if (event.key === "End") {
+        targetIndex = count - 1;
+      }
+
+      if (targetIndex !== null) {
+        event.preventDefault();
+        select(targetIndex);
+      }
     };
 
     return (
@@ -110,11 +141,15 @@ export const SegmentedToggleButton = forwardRef<
         {options.map((option, index) => (
           <button
             key={option}
+            ref={(node) => {
+              buttonRefs.current[index] = node;
+            }}
             type="button"
             role="tab"
             aria-selected={safeActive === index}
             tabIndex={safeActive === index ? 0 : -1}
             onClick={() => select(index)}
+            onKeyDown={(event) => handleKeyDown(event, index)}
             className={cn(
               "relative z-10 min-w-18 cursor-pointer rounded-lg px-4 py-2 text-center whitespace-nowrap outline-none focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-900",
               LABEL_MOTION,
