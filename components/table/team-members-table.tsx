@@ -75,7 +75,7 @@ export const TeamMembersTable = forwardRef<
         </div>
         <button
           type="button"
-          className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-neutral-600 transition-colors hover:bg-neutral-100"
+          className="rounded-lg px-2.5 py-1.5 text-xs font-medium text-neutral-600 transition-[background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 active:scale-[0.97]"
         >
           Invite
         </button>
@@ -138,7 +138,7 @@ export const TeamMembersTable = forwardRef<
                   <button
                     type="button"
                     aria-label={`Actions for ${member.name}`}
-                    className="flex size-7 items-center justify-center rounded-md text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600"
+                    className="flex size-7 items-center justify-center rounded-md text-neutral-400 transition-[color,background-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 hover:text-neutral-600 active:scale-[0.97]"
                   >
                     <MoreHorizontal className="size-4" strokeWidth={1.75} />
                   </button>

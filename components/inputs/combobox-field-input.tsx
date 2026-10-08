@@ -389,7 +389,7 @@ export const ComboboxFieldInput = forwardRef<
           strokeWidth={2}
           aria-hidden
           className={cn(
-            "pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-neutral-400 transition-transform duration-200",
+            "pointer-events-none absolute top-1/2 right-3 -translate-y-1/2 text-neutral-400 transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
             open && "rotate-180",
           )}
         />
@@ -400,7 +400,7 @@ export const ComboboxFieldInput = forwardRef<
           id={listboxId}
           role="listbox"
           aria-label={label}
-          className="absolute z-20 mt-1.5 max-h-56 w-full overflow-auto rounded-lg border border-neutral-200 bg-white py-1 shadow-sm"
+          className="absolute z-20 mt-1.5 max-h-56 w-full origin-top overflow-auto rounded-lg border border-neutral-200 bg-white py-1 shadow-sm transition-[opacity,scale] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:scale-95 starting:opacity-0"
         >
           {filtered.length === 0 ? (
             <li className="px-3.5 py-2 text-sm text-neutral-400">
@@ -424,7 +424,7 @@ export const ComboboxFieldInput = forwardRef<
                   onMouseDown={(event) => event.preventDefault()}
                   onClick={() => selectOption(option)}
                   className={cn(
-                    "flex cursor-pointer items-center justify-between gap-2 px-3.5 py-2 text-sm transition-colors duration-150",
+                    "flex cursor-pointer items-center justify-between gap-2 px-3.5 py-2 text-sm",
                     option.disabled && "cursor-not-allowed text-neutral-300",
                     !option.disabled &&
                       isHighlighted &&

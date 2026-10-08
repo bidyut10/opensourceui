@@ -56,7 +56,7 @@ export const PhotoContactSheetCard = forwardRef<
               alt={`Frame ${frame.number}`}
               fill
               sizes="160px"
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
+              className="object-cover transition-transform duration-500 group-hover:scale-105 motion-reduce:group-hover:scale-100"
             />
             <span className="absolute top-1 left-1 bg-white/90 px-1 py-px text-[8px] font-bold text-neutral-800">
               {frame.number}

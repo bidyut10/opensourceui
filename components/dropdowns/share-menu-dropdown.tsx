@@ -127,7 +127,7 @@ export const ShareMenuDropdown = forwardRef<
               }
             }}
             className={cn(
-              "inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border bg-white transition-colors",
+              "inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border bg-white transition-[border-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:active:scale-100",
               open
                 ? "border-neutral-200"
                 : "border-neutral-100 hover:border-neutral-200",
@@ -141,7 +141,7 @@ export const ShareMenuDropdown = forwardRef<
               id={menuId}
               role="menu"
               aria-label={menuAriaLabel}
-              className="absolute top-[calc(100%+8px)] left-0 z-100 w-56 rounded-xl border border-neutral-100 bg-white p-3 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)]"
+              className="absolute top-[calc(100%+8px)] left-0 z-100 w-56 origin-top-left rounded-xl border border-neutral-100 bg-white p-3 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.05)] transition-[opacity,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:scale-95 starting:opacity-0"
             >
               <p className="mb-2.5 text-[10px] font-medium tracking-wide text-neutral-400 uppercase">
                 {buttonLabel}
@@ -155,7 +155,7 @@ export const ShareMenuDropdown = forwardRef<
                     role="menuitem"
                     aria-label={`Share on ${item.label}`}
                     onClick={() => handleItemSelect(item)}
-                    className="flex flex-1 cursor-pointer flex-col items-center gap-1.5 rounded-lg py-2 transition-colors hover:bg-neutral-50"
+                    className="flex flex-1 cursor-pointer flex-col items-center gap-1.5 rounded-lg py-2 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 active:scale-[0.97] motion-reduce:active:scale-100"
                   >
                     <span className="text-neutral-700">
                       {cloneElement(
@@ -176,7 +176,7 @@ export const ShareMenuDropdown = forwardRef<
                   role="menuitem"
                   aria-label={copied ? "Link copied" : copy.label}
                   onClick={() => handleItemSelect(copy)}
-                  className="mt-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-neutral-100 py-2 text-[11px] font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
+                  className="mt-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg border border-neutral-100 py-2 text-[11px] font-medium text-neutral-700 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 active:scale-[0.97] motion-reduce:active:scale-100"
                 >
                   {copied ? (
                     <Check size={13} strokeWidth={2} />

@@ -38,8 +38,8 @@ export const PrismDepthButton = forwardRef<
         data-slot="prism-depth-button"
         className={cn(
           "relative isolate cursor-pointer rounded-2xl border-0 p-0.5 text-[1.4rem] ring-0 outline-none",
-          "transition-[transform,opacity] duration-200 ease-out",
-          "hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-none motion-reduce:hover:scale-100 motion-reduce:active:scale-100",
+          "transition-[scale,opacity] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)]",
+          "hover:scale-[1.02] active:scale-[0.98] motion-reduce:transition-opacity motion-reduce:hover:scale-100 motion-reduce:active:scale-100",
           "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-300",
           "disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
           className,

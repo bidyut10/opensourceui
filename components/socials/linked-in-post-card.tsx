@@ -169,7 +169,7 @@ export const LinkedInPostCard = forwardRef<
             type="button"
             aria-label={`Like post from ${username}`}
             onClick={onLike}
-            className="flex flex-1 cursor-pointer flex-col items-center gap-1 rounded-md py-1 text-[11px] font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-neutral-900"
+            className="flex flex-1 cursor-pointer flex-col items-center gap-1 rounded-md py-1 text-[11px] font-medium text-neutral-500 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-[color,background-color]"
           >
             {likeIcon ?? <ThumbsUp size={14} />}
             Like
@@ -179,7 +179,7 @@ export const LinkedInPostCard = forwardRef<
             type="button"
             aria-label={`Comment on post from ${username}`}
             onClick={onComment}
-            className="flex flex-1 cursor-pointer flex-col items-center gap-1 rounded-md py-1 text-[11px] font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-neutral-900"
+            className="flex flex-1 cursor-pointer flex-col items-center gap-1 rounded-md py-1 text-[11px] font-medium text-neutral-500 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-[color,background-color]"
           >
             {commentIcon ?? <MessageCircle size={14} />}
             Comment
@@ -189,7 +189,7 @@ export const LinkedInPostCard = forwardRef<
             type="button"
             aria-label={`Repost post from ${username}`}
             onClick={onRepost}
-            className="flex flex-1 cursor-pointer flex-col items-center gap-1 rounded-md py-1 text-[11px] font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-neutral-900"
+            className="flex flex-1 cursor-pointer flex-col items-center gap-1 rounded-md py-1 text-[11px] font-medium text-neutral-500 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-[color,background-color]"
           >
             {repostIcon ?? <Repeat size={14} />}
             Repost
@@ -199,7 +199,7 @@ export const LinkedInPostCard = forwardRef<
             type="button"
             aria-label={`Send post from ${username}`}
             onClick={onSend}
-            className="flex flex-1 cursor-pointer flex-col items-center gap-1 rounded-md py-1 text-[11px] font-medium text-neutral-500 transition-colors hover:bg-neutral-50 hover:text-neutral-900"
+            className="flex flex-1 cursor-pointer flex-col items-center gap-1 rounded-md py-1 text-[11px] font-medium text-neutral-500 transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-[color,background-color]"
           >
             {sendIcon ?? <Share2 size={14} />}
             Send

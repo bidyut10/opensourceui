@@ -98,12 +98,12 @@ function DockIcon({ item }: Readonly<{ item: MacDockItem }>) {
       ariaLabel={item.title}
       className="group relative z-10 flex flex-col items-center outline-none"
     >
-      <span className="ease-smooth pointer-events-none absolute -top-10 left-1/2 z-20 -translate-x-1/2 rounded-md bg-neutral-950 px-2 py-0.5 text-[10px] font-medium whitespace-nowrap text-white opacity-0 shadow-sm transition-[opacity,transform] duration-200 group-hover:-translate-y-0.5 group-hover:opacity-100 group-focus-visible:opacity-100">
+      <span className="pointer-events-none absolute -top-10 left-1/2 z-20 -translate-x-1/2 rounded-md bg-neutral-950 px-2 py-0.5 text-[10px] font-medium whitespace-nowrap text-white opacity-0 shadow-sm transition-[opacity,translate] duration-200 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5 group-hover:opacity-100 group-focus-visible:opacity-100 motion-reduce:transition-opacity">
         {item.title}
       </span>
 
       {/* Transform on the outer wrapper — backdrop-blur fails if transform/will-change sit on the same node. */}
-      <span className="ease-smooth origin-bottom cursor-pointer transition-transform duration-300 group-hover:-translate-y-2 group-hover:scale-125 group-focus-visible:-translate-y-2 group-focus-visible:scale-125">
+      <span className="origin-bottom cursor-pointer transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-2 group-hover:scale-125 group-focus-visible:-translate-y-2 group-focus-visible:scale-125">
         <span className="flex size-11 items-center justify-center rounded-lg border border-white/20 bg-white/50 shadow-xs shadow-black/5 backdrop-blur-xl">
           <span className="size-8">{item.icon}</span>
         </span>

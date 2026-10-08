@@ -13,10 +13,10 @@ export type SegmentedToggleButtonProps = Readonly<
 >;
 
 const SEGMENT_MOTION =
-  "transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none";
+  "transition-transform duration-250 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none";
 
 const LABEL_MOTION =
-  "transition-[color,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transition-none";
+  "transition-[color,opacity] duration-250 ease-[cubic-bezier(0.22,1,0.36,1)]";
 
 function segmentGridClass(count: number): string {
   if (count <= 2) return "grid-cols-2";

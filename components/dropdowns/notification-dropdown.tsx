@@ -170,7 +170,7 @@ export const NotificationDropdown = forwardRef<
               }
             }}
             className={cn(
-              "relative inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border bg-white transition-colors",
+              "relative inline-flex size-10 cursor-pointer items-center justify-center rounded-lg border bg-white transition-[border-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:active:scale-100",
               open
                 ? "border-neutral-200"
                 : "border-neutral-100 hover:border-neutral-200",
@@ -192,7 +192,7 @@ export const NotificationDropdown = forwardRef<
               id={menuId}
               role="menu"
               aria-label={menuAriaLabel}
-              className="absolute top-[calc(100%+8px)] right-0 z-100 w-60 rounded-xl bg-neutral-50 p-2 md:w-64"
+              className="absolute top-[calc(100%+8px)] right-0 z-100 w-60 origin-top-right rounded-xl bg-neutral-50 p-2 transition-[opacity,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity md:w-64 starting:scale-95 starting:opacity-0"
             >
               <div className="mb-2 flex items-center justify-between px-1">
                 <p className="text-[11px] font-semibold text-neutral-700">

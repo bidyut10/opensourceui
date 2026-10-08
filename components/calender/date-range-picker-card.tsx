@@ -135,13 +135,13 @@ export const DateRangePickerCard = forwardRef<
           type="button"
           aria-label="Previous month"
           onClick={() => shiftMonth(-1)}
-          className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-neutral-500 transition-all duration-200 ease-out hover:bg-neutral-100 active:scale-95"
+          className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-neutral-500 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 active:scale-95"
         >
           <ChevronLeft size={16} strokeWidth={2} />
         </button>
         <p
           key={monthLabel}
-          className="text-sm font-semibold text-neutral-900 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:opacity-0"
+          className="text-sm font-semibold text-neutral-900 opacity-100 transition-opacity duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:opacity-0"
         >
           {monthLabel}
         </p>
@@ -149,7 +149,7 @@ export const DateRangePickerCard = forwardRef<
           type="button"
           aria-label="Next month"
           onClick={() => shiftMonth(1)}
-          className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-neutral-500 transition-all duration-200 ease-out hover:bg-neutral-100 active:scale-95"
+          className="flex size-8 cursor-pointer items-center justify-center rounded-lg text-neutral-500 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-100 active:scale-95"
         >
           <ChevronRight size={16} strokeWidth={2} />
         </button>
@@ -157,7 +157,7 @@ export const DateRangePickerCard = forwardRef<
 
       <p
         key={rangeLabel}
-        className="mb-3 text-xs text-neutral-500 opacity-100 transition-all duration-300 ease-out starting:opacity-0"
+        className="mb-3 text-xs text-neutral-500 opacity-100 transition-opacity duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:opacity-0"
       >
         {rangeLabel}
       </p>
@@ -171,7 +171,7 @@ export const DateRangePickerCard = forwardRef<
       <div
         key={`${viewYear}-${viewMonth}`}
         className={cn(
-          "grid grid-cols-7 gap-y-1 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:opacity-0",
+          "grid grid-cols-7 gap-y-1 opacity-100 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:opacity-0",
           slideDirection >= 0
             ? "starting:translate-x-2"
             : "starting:-translate-x-2",
@@ -193,7 +193,7 @@ export const DateRangePickerCard = forwardRef<
               type="button"
               onClick={() => selectCell(cell)}
               className={cn(
-                "mx-auto flex h-9 w-9 cursor-pointer items-center justify-center text-sm tabular-nums transition-all duration-200 ease-out active:scale-95",
+                "mx-auto flex h-9 w-9 cursor-pointer items-center justify-center text-sm tabular-nums transition-[color,background-color,font-weight,scale] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95 motion-reduce:transition-colors",
                 isBetween &&
                   "w-full rounded-none bg-neutral-100 text-neutral-800",
                 (isStart || isEnd) &&

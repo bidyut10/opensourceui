@@ -55,7 +55,7 @@ export const AudioRecorderWidget = forwardRef<
         {BAR_IDS.map((bar) => (
           <span
             key={bar}
-            className="w-1.5 rounded-full bg-red-500 transition-all duration-100"
+            className="w-1.5 rounded-full bg-red-500 transition-[height] duration-100"
             style={{ height: `${bars[bar]}%` }}
           />
         ))}
@@ -69,7 +69,7 @@ export const AudioRecorderWidget = forwardRef<
           aria-label={recording ? "Pause recording" : "Resume recording"}
           aria-pressed={recording}
           className={cn(
-            "flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-white transition-transform hover:scale-105 active:scale-95",
+            "flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-white transition-transform ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 active:scale-95",
             recording ? "bg-red-500" : "bg-neutral-700",
           )}
         >
