@@ -51,12 +51,12 @@
   },
   "dependencies": {
     "@posthog/nextjs-config": "^1.11.1",
-    "@sentry/nextjs": "^11.0.0",
+    "@sentry/nextjs": "^11.4.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^1.48.0",
-    "next": "^16.3.6",
-    "postcss": "^8.5.28",
-    "posthog-js": "^1.434.12",
+    "lucide-react": "^1.52.0",
+    "next": "^16.3.8",
+    "postcss": "^8.5.29",
+    "posthog-js": "^1.436.1",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "tailwind-merge": "^3.7.0"
