@@ -57,4 +57,28 @@ describe("HoldToDeleteButton", () => {
       screen.getByRole("button", { name: /hold to delete/i }),
     ).toBeInTheDocument();
   });
+
+  it("cancels when the button loses focus while holding", async () => {
+    const user = userEvent.setup({ advanceTimers: vi.advanceTimersByTime });
+    const onHoldComplete = vi.fn();
+    render(
+      <HoldToDeleteButton holdMs={1000} onHoldComplete={onHoldComplete} />,
+    );
+
+    const button = screen.getByRole("button", { name: /hold to delete/i });
+    button.focus();
+    await user.keyboard("{Enter>}");
+    await act(async () => {
+      vi.advanceTimersByTime(300);
+    });
+    button.blur();
+    await act(async () => {
+      vi.advanceTimersByTime(1000);
+    });
+
+    expect(onHoldComplete).not.toHaveBeenCalled();
+    expect(
+      screen.getByRole("button", { name: /hold to delete/i }),
+    ).toBeInTheDocument();
+  });
 });
