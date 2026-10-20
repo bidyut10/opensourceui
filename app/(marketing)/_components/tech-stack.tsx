@@ -38,12 +38,19 @@ export type TechStackItem = {
   iconClass?: string;
 };
 
+type TechStackCenter = {
+  src: string;
+  alt: string;
+};
+
 export type TechStackProps = {
   items: TechStackItem[];
-  center?: {
-    src: string;
-    alt: string;
-  };
+  center?: TechStackCenter | null;
+};
+
+const DEFAULT_CENTER: TechStackCenter = {
+  src: "/osui-logo.png",
+  alt: "Opensource UI",
 };
 
 export const TECH_STACK_ITEMS: TechStackItem[] = [
@@ -126,10 +133,8 @@ function StackNode({
   );
 }
 
-export function TechStack({
-  items,
-  center = { src: "/osui-logo.png", alt: "Opensource UI" },
-}: TechStackProps) {
+export function TechStack({ items, center }: TechStackProps) {
+  const logo = center ?? DEFAULT_CENTER;
   const isMdUp = useIsMdUp();
   const layout = isMdUp ? DESKTOP_LAYOUT : MOBILE_LAYOUT;
   const { viewbox, center: svgCenter } = getLayout(items.length, layout);
@@ -158,8 +163,8 @@ export function TechStack({
 
         <div className="absolute top-1/2 left-1/2 z-10 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-neutral-100 bg-white md:h-[6.5rem] md:w-[6.5rem]">
           <Image
-            src={center.src}
-            alt={center.alt}
+            src={logo.src}
+            alt={logo.alt}
             width={512}
             height={512}
             className="h-auto w-[2rem] md:w-[3.75rem]"
