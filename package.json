@@ -50,15 +50,15 @@
     "node": "22.x"
   },
   "dependencies": {
-    "@posthog/nextjs-config": "^1.11.1",
-    "@sentry/nextjs": "^11.0.0",
+    "@posthog/nextjs-config": "^1.11.3",
+    "@sentry/nextjs": "^11.8.0",
     "clsx": "^2.1.1",
-    "lucide-react": "^1.48.0",
-    "next": "^16.3.6",
-    "postcss": "^8.5.28",
+    "lucide-react": "^1.59.0",
+    "next": "^16.4.2",
+    "postcss": "^8.5.31",
     "posthog-js": "^1.434.12",
-    "react": "19.3.0",
-    "react-dom": "19.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "tailwind-merge": "^3.7.0"
   },
   "devDependencies": {
