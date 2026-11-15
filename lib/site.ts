@@ -69,8 +69,8 @@ export const siteConfig = {
     ],
   },
   stats: {
-    pageViews: "500K+",
-    visitors: "70K+",
+    pageViews: "900K+",
+    visitors: "100K+",
     avgVisitMinutes: 4,
   },
   keywords: [
