@@ -148,7 +148,7 @@ export const SwitchFieldInput = forwardRef<
           }}
           onKeyDown={handleKeyDown}
           className={cn(
-            "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 ring-0 transition-[background-color,border-color] duration-200 outline-none focus:ring-0 disabled:cursor-not-allowed disabled:opacity-50",
+            "relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 ring-0 transition-[background-color,border-color,scale] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none focus:ring-0 enabled:active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-50 motion-reduce:transition-[background-color,border-color] motion-reduce:enabled:active:scale-100",
             isOn
               ? "border-neutral-900 bg-neutral-900"
               : "border-neutral-200 bg-neutral-100",
@@ -160,7 +160,7 @@ export const SwitchFieldInput = forwardRef<
           <span
             aria-hidden
             className={cn(
-              "pointer-events-none absolute top-0.5 left-0.5 size-4 rounded-full bg-white transition-transform duration-200",
+              "pointer-events-none absolute top-0.5 left-0.5 size-4 rounded-full bg-white transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
               isOn && "translate-x-5",
             )}
           />

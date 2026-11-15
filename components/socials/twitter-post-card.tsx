@@ -130,7 +130,7 @@ export const TwitterPostCard = forwardRef<HTMLDivElement, TwitterPostCardProps>(
                 type="button"
                 aria-label={`Comment on post from ${username}`}
                 onClick={onComment}
-                className="flex cursor-pointer items-center gap-1 transition-colors hover:text-sky-500"
+                className="flex cursor-pointer items-center gap-1 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-sky-500 active:scale-[0.97] motion-reduce:transition-[color]"
               >
                 {commentIcon ?? <MessageCircle size={14} />}
                 <span className="text-xs">{comments.toLocaleString()}</span>
@@ -140,7 +140,7 @@ export const TwitterPostCard = forwardRef<HTMLDivElement, TwitterPostCardProps>(
                 type="button"
                 aria-label={`Repost post from ${username}`}
                 onClick={onRepost}
-                className="flex cursor-pointer items-center gap-1 transition-colors hover:text-emerald-500"
+                className="flex cursor-pointer items-center gap-1 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-emerald-500 active:scale-[0.97] motion-reduce:transition-[color]"
               >
                 {repostIcon ?? <Repeat size={16} />}
                 <span className="text-xs">{reposts.toLocaleString()}</span>
@@ -150,7 +150,7 @@ export const TwitterPostCard = forwardRef<HTMLDivElement, TwitterPostCardProps>(
                 type="button"
                 aria-label={`Like post from ${username}`}
                 onClick={onLike}
-                className="flex cursor-pointer items-center gap-1 transition-colors hover:text-rose-500"
+                className="flex cursor-pointer items-center gap-1 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-rose-500 active:scale-[0.97] motion-reduce:transition-[color]"
               >
                 {likeIcon ?? <Heart size={15} />}
                 <span className="text-xs">{likes.toLocaleString()}</span>
@@ -160,7 +160,7 @@ export const TwitterPostCard = forwardRef<HTMLDivElement, TwitterPostCardProps>(
                 type="button"
                 aria-label={`Save post from ${username}`}
                 onClick={onBookmark}
-                className="flex cursor-pointer items-center gap-1 transition-colors hover:text-sky-500"
+                className="flex cursor-pointer items-center gap-1 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-sky-500 active:scale-[0.97] motion-reduce:transition-[color]"
               >
                 {bookmarkIcon ?? <Bookmark size={15} />}
               </button>
@@ -169,7 +169,7 @@ export const TwitterPostCard = forwardRef<HTMLDivElement, TwitterPostCardProps>(
                 type="button"
                 aria-label={`Share post from ${username}`}
                 onClick={onShare}
-                className="flex cursor-pointer items-center gap-1 transition-colors hover:text-sky-500"
+                className="flex cursor-pointer items-center gap-1 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-sky-500 active:scale-[0.97] motion-reduce:transition-[color]"
               >
                 {shareIcon ?? <Share size={14} />}
               </button>

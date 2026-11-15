@@ -182,7 +182,7 @@ export const BookingSlotCalendar = forwardRef<
               disabled={!canGoPrev}
               onClick={goPrevWeek}
               className={cn(
-                "flex size-8 items-center justify-center rounded-full transition-colors duration-150 outline-none",
+                "flex size-8 items-center justify-center rounded-full transition-[color,background-color,outline-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none enabled:active:scale-95",
                 "focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800",
                 canGoPrev
                   ? "cursor-pointer text-neutral-500 hover:bg-neutral-100 hover:text-neutral-900"
@@ -195,7 +195,7 @@ export const BookingSlotCalendar = forwardRef<
               type="button"
               aria-label="Next week"
               onClick={goNextWeek}
-              className="flex size-8 cursor-pointer items-center justify-center rounded-full text-neutral-500 transition-colors duration-150 outline-none hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800"
+              className="flex size-8 cursor-pointer items-center justify-center rounded-full text-neutral-500 transition-[color,background-color,outline-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none hover:bg-neutral-100 hover:text-neutral-900 focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800 active:scale-95"
             >
               <ChevronRight size={16} strokeWidth={2} aria-hidden />
             </button>
@@ -206,7 +206,7 @@ export const BookingSlotCalendar = forwardRef<
         <div
           key={weekStart.toISOString()}
           className={cn(
-            "mb-4 grid grid-cols-7 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:opacity-0",
+            "mb-4 grid grid-cols-7 opacity-100 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:opacity-0",
             slideDirection >= 0
               ? "starting:translate-x-2"
               : "starting:-translate-x-2",
@@ -225,7 +225,7 @@ export const BookingSlotCalendar = forwardRef<
                 disabled={past}
                 onClick={() => pickDay(date)}
                 className={cn(
-                  "group flex flex-col items-center gap-1 outline-none",
+                  "group flex flex-col items-center gap-1 transition-[scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none enabled:active:scale-[0.97]",
                   past ? "cursor-not-allowed" : "cursor-pointer",
                 )}
               >
@@ -267,7 +267,7 @@ export const BookingSlotCalendar = forwardRef<
         {/* Selected day */}
         <p
           key={dayLabel}
-          className="mb-2.5 text-xs font-medium text-neutral-500 opacity-100 transition-all duration-300 ease-out starting:opacity-0"
+          className="mb-2.5 text-xs font-medium text-neutral-500 opacity-100 transition-opacity duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] starting:opacity-0"
         >
           {dayLabel}
         </p>
@@ -275,7 +275,7 @@ export const BookingSlotCalendar = forwardRef<
         {/* Time slots */}
         <div
           key={`${selectedDay.toISOString()}-slots`}
-          className="grid grid-cols-2 gap-2 opacity-100 transition-all duration-300 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] starting:translate-y-1 starting:opacity-0"
+          className="grid grid-cols-2 gap-2 opacity-100 transition-[opacity,translate] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:translate-y-1 starting:opacity-0"
         >
           {slots.map((slot) => {
             const taken = slot === "10:30 AM" || slot === "2:30 PM";
@@ -290,7 +290,7 @@ export const BookingSlotCalendar = forwardRef<
                 onClick={() => pickSlot(slot)}
                 className={cn(
                   "h-9 rounded-lg text-xs font-medium tabular-nums outline-none",
-                  "transition-colors duration-150",
+                  "transition-[color,background-color,outline-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] enabled:active:scale-[0.97]",
                   "focus-visible:outline-2 focus-visible:outline-offset-1 focus-visible:outline-neutral-800",
                   taken &&
                     "cursor-not-allowed bg-neutral-50 text-neutral-300 line-through",

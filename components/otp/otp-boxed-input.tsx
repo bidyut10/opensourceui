@@ -378,7 +378,7 @@ export const OtpBoxedInput = forwardRef<HTMLDivElement, OtpBoxedInputProps>(
             <div
               key={`${otp.groupId}-${index}`}
               className={cn(
-                "relative transition-transform duration-200 ease-out",
+                "relative transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
                 activeIndex === index && "z-10 scale-105",
               )}
             >
@@ -427,7 +427,7 @@ export const OtpBoxedInput = forwardRef<HTMLDivElement, OtpBoxedInputProps>(
             <span
               key={`${otp.groupId}-dot-${index}`}
               className={cn(
-                "size-1.5 rounded-full transition-all duration-300",
+                "size-1.5 rounded-full transition-[scale,background-color] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-colors",
                 digit ? "scale-125 bg-neutral-900" : "bg-neutral-200",
                 activeIndex === index && "scale-150 bg-neutral-900",
                 error && digit && "bg-rose-400",

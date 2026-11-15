@@ -342,7 +342,7 @@ export const OtpUnderlineInput = forwardRef<
             <span
               aria-hidden
               className={cn(
-                "pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-center scale-x-0 bg-neutral-900 transition-transform duration-300 peer-focus:scale-x-100",
+                "pointer-events-none absolute inset-x-0 bottom-0 h-0.5 origin-center scale-x-0 bg-neutral-900 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] peer-focus:scale-x-100 motion-reduce:transition-none",
                 error && "bg-rose-500",
               )}
             />

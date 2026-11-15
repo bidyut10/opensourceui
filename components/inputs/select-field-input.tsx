@@ -345,7 +345,7 @@ export const SelectFieldInput = forwardRef<
           strokeWidth={2}
           aria-hidden
           className={cn(
-            "shrink-0 text-neutral-400 transition-transform duration-200",
+            "shrink-0 text-neutral-400 transition-transform duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-none",
             open && "rotate-180",
           )}
         />
@@ -356,7 +356,7 @@ export const SelectFieldInput = forwardRef<
           id={listboxId}
           role="listbox"
           aria-label={label}
-          className="absolute z-20 mt-1.5 max-h-56 w-full overflow-auto rounded-lg border border-neutral-200 bg-white py-1 shadow-sm"
+          className="absolute z-20 mt-1.5 max-h-56 w-full origin-top overflow-auto rounded-lg border border-neutral-200 bg-white py-1 shadow-sm transition-[opacity,scale] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:scale-95 starting:opacity-0"
         >
           {options.map((option, index) => {
             const isSelected = option.value === current;
@@ -375,7 +375,7 @@ export const SelectFieldInput = forwardRef<
                 onMouseDown={(event) => event.preventDefault()}
                 onClick={() => selectAt(index)}
                 className={cn(
-                  "flex cursor-pointer items-center justify-between gap-2 px-3.5 py-2 text-sm transition-colors duration-150",
+                  "flex cursor-pointer items-center justify-between gap-2 px-3.5 py-2 text-sm",
                   option.disabled && "cursor-not-allowed text-neutral-300",
                   !option.disabled &&
                     isHighlighted &&

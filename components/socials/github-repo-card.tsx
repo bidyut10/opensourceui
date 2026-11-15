@@ -90,7 +90,7 @@ export const GitHubRepoCard = forwardRef<HTMLDivElement, GitHubRepoCardProps>(
             aria-pressed={starred}
             data-slot="github-repo-card-star"
             className={cn(
-              "flex cursor-pointer items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] font-semibold transition-colors",
+              "flex cursor-pointer items-center gap-1 rounded-lg px-2.5 py-1 text-[11px] font-semibold transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:transition-[color,background-color]",
               starred
                 ? "bg-amber-50 text-amber-700"
                 : "bg-neutral-50 text-neutral-700",

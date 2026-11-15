@@ -27,10 +27,10 @@ const DIMPLE_FRAME =
   "relative inline-flex items-center justify-center rounded-lg p-0.5 text-2xl bg-linear-to-b from-[#d5d5d5] to-[#e8e8e8] shadow-[0_1px_1px_rgba(255,255,255,0.6)]";
 
 const DIMPLE_TRACK =
-  "relative flex h-[1.5em] w-[3em] items-center rounded-md bg-[#e8e8e8] shadow-[inset_0_0_0.0625em_0.125em_rgba(255,255,255,0.2),inset_0_0_0.0625em_0.125em_rgba(0,0,0,0.4)] transition-[background-color] duration-400 ease-linear motion-reduce:transition-none peer-checked:bg-[#f3b519] peer-checked:[&>span]:left-[1.5625em]";
+  "relative flex h-[1.5em] w-[3em] items-center rounded-md bg-[#e8e8e8] shadow-[inset_0_0_0.0625em_0.125em_rgba(255,255,255,0.2),inset_0_0_0.0625em_0.125em_rgba(0,0,0,0.4)] transition-[background-color] duration-250 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none peer-checked:bg-[#f3b519] peer-checked:[&>span]:translate-x-[1.5em]";
 
 const DIMPLE_KNOB =
-  "absolute left-[0.0625em] flex h-[1.375em] w-[1.375em] items-center justify-center rounded-[0.3125em] bg-[#e8e8e8] shadow-[inset_0_-0.0625em_0.0625em_0.125em_rgba(0,0,0,0.1),inset_0_-0.125em_0.0625em_rgba(0,0,0,0.2),inset_0_0.1875em_0.0625em_rgba(255,255,255,0.3),0_0.125em_0.125em_rgba(0,0,0,0.5)] transition-[left] duration-400 ease-linear motion-reduce:transition-none";
+  "absolute left-[0.0625em] flex h-[1.375em] w-[1.375em] items-center justify-center rounded-[0.3125em] bg-[#e8e8e8] shadow-[inset_0_-0.0625em_0.0625em_0.125em_rgba(0,0,0,0.1),inset_0_-0.125em_0.0625em_rgba(0,0,0,0.2),inset_0_0.1875em_0.0625em_rgba(255,255,255,0.3),0_0.125em_0.125em_rgba(0,0,0,0.5)] transition-[translate] duration-250 ease-[cubic-bezier(0.77,0,0.175,1)] motion-reduce:transition-none";
 
 const DIMPLE_MARK_GRADIENT =
   "radial-gradient(circle at 50% 0, #f5f5f5, #c4c4c4)";

@@ -108,13 +108,6 @@ export const TestimonialCard = forwardRef<HTMLDivElement, TestimonialCardProps>(
         )}
         {...props}
       >
-        <style>{`
-          @keyframes testimonial-fade {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-          }
-        `}</style>
-
         <div
           data-slot="testimonial-card-quote-icon"
           className="pointer-events-none absolute top-5 right-5 text-neutral-100 select-none"
@@ -124,7 +117,7 @@ export const TestimonialCard = forwardRef<HTMLDivElement, TestimonialCardProps>(
 
         <div
           key={current.name}
-          style={{ animation: "testimonial-fade 0.32s ease-out" }}
+          className="transition-[translate,opacity] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity starting:translate-y-1.5 starting:opacity-0"
         >
           <div
             data-slot="testimonial-card-rating"
@@ -182,7 +175,7 @@ export const TestimonialCard = forwardRef<HTMLDivElement, TestimonialCardProps>(
                 aria-label={`Go to testimonial ${items.indexOf(item) + 1}`}
                 onClick={() => goTo(items.indexOf(item))}
                 className={cn(
-                  "h-1.5 cursor-pointer rounded-full transition-all duration-300",
+                  "h-1.5 cursor-pointer rounded-full transition-[width,background-color] duration-300 ease-[cubic-bezier(0.77,0,0.175,1)]",
                   items.indexOf(item) === index
                     ? "w-5 bg-neutral-900"
                     : "w-1.5 bg-neutral-200 hover:bg-neutral-300",
@@ -196,7 +189,7 @@ export const TestimonialCard = forwardRef<HTMLDivElement, TestimonialCardProps>(
               type="button"
               aria-label="Previous testimonial"
               onClick={prev}
-              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:bg-neutral-50"
+              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 active:scale-[0.97]"
             >
               <ChevronLeft size={14} />
             </button>
@@ -204,7 +197,7 @@ export const TestimonialCard = forwardRef<HTMLDivElement, TestimonialCardProps>(
               type="button"
               aria-label="Next testimonial"
               onClick={next}
-              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-colors hover:bg-neutral-50"
+              className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full border border-neutral-200 text-neutral-500 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 active:scale-[0.97]"
             >
               <ChevronRight size={14} />
             </button>

@@ -160,7 +160,7 @@ export const KebabActionsDropdown = forwardRef<
                 }
               }}
               className={cn(
-                "inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-lg transition-colors",
+                "inline-flex size-7 shrink-0 cursor-pointer items-center justify-center rounded-lg transition-[color,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97] motion-reduce:active:scale-100",
                 open
                   ? "bg-neutral-100 text-neutral-700"
                   : "text-neutral-400 hover:bg-neutral-50 hover:text-neutral-600",

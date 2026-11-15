@@ -111,7 +111,7 @@ export const DailyActivityCalendarWidget = forwardRef<
                 <span
                   key={day}
                   className={cn(
-                    "flex h-5 w-5 items-center justify-center rounded-full text-[9px] transition-all duration-200 ease-out",
+                    "flex h-5 w-5 items-center justify-center rounded-full text-[9px] transition-[color,background-color] duration-200 ease-out",
                     isActive &&
                       "scale-100 bg-emerald-500 font-semibold text-white",
                     isHighlight &&

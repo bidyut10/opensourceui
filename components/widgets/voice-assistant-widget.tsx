@@ -71,7 +71,7 @@ export const VoiceAssistantWidget = forwardRef<
           <span
             key={bar}
             className={cn(
-              "w-1 rounded-full transition-all duration-100",
+              "w-1 rounded-full transition-[height,background-color] duration-100",
               active ? "bg-neutral-900" : "bg-neutral-200",
             )}
             style={{ height: `${levels[bar]}%` }}
@@ -86,7 +86,7 @@ export const VoiceAssistantWidget = forwardRef<
         aria-label={active ? "Stop listening" : "Start listening"}
         aria-pressed={active}
         className={cn(
-          "flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-colors active:scale-95",
+          "flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-[scale,background-color] ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-95",
           active ? "bg-red-500 text-white" : "bg-neutral-900 text-white",
         )}
       >

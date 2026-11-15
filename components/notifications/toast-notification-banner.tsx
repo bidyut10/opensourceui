@@ -68,7 +68,7 @@ export const ToastNotificationBanner = forwardRef<
           className={cn(
             "cursor-pointer rounded-xl bg-[#f2f2f7] px-4 py-2 text-xs font-medium text-neutral-700",
             "opacity-100 starting:opacity-0",
-            "transition-opacity duration-280 ease-out hover:bg-[#e8e8ed]",
+            "transition-[opacity,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-[#e8e8ed] active:scale-[0.97] motion-reduce:transition-[opacity,background-color] motion-reduce:active:scale-100",
             className,
           )}
         >
@@ -86,9 +86,9 @@ export const ToastNotificationBanner = forwardRef<
           "inline-flex max-w-80 items-center gap-2.5 rounded-xl border border-neutral-200/80 bg-white/95 px-3 py-2.5 font-sans backdrop-blur-xl",
           "shadow-[0_4px_24px_-2px_rgba(0,0,0,0.10),0_0_0_1px_rgba(0,0,0,0.02)]",
           "translate-y-0 opacity-100 starting:translate-y-3 starting:opacity-0",
-          "transition-all duration-340 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]",
-          "data-[phase=closing]:translate-y-3 data-[phase=closing]:opacity-0",
-          "data-[phase=closing]:duration-260 data-[phase=closing]:ease-[cubic-bezier(0.4,0,0.6,1)]",
+          "transition-[translate,opacity] duration-340 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity",
+          "data-[phase=closing]:translate-y-3 data-[phase=closing]:opacity-0 motion-reduce:data-[phase=closing]:translate-y-0",
+          "data-[phase=closing]:duration-260",
           className,
         )}
         {...props}
@@ -108,7 +108,7 @@ export const ToastNotificationBanner = forwardRef<
           <button
             type="button"
             onClick={onAction}
-            className="shrink-0 cursor-pointer text-[13px] font-semibold text-sky-600 transition-colors hover:text-sky-700"
+            className="shrink-0 cursor-pointer text-[13px] font-semibold text-sky-600 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-sky-700 active:scale-[0.97] motion-reduce:transition-colors motion-reduce:active:scale-100"
           >
             {actionLabel}
           </button>
@@ -118,7 +118,7 @@ export const ToastNotificationBanner = forwardRef<
           type="button"
           onClick={handleDismiss}
           aria-label="Dismiss"
-          className="shrink-0 cursor-pointer px-0.5 text-[11px] text-neutral-400 transition-colors hover:text-neutral-600"
+          className="shrink-0 cursor-pointer px-0.5 text-[11px] text-neutral-400 transition-[color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:text-neutral-600 active:scale-[0.97] motion-reduce:transition-colors motion-reduce:active:scale-100"
         >
           ✕
         </button>

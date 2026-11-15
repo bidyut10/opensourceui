@@ -352,7 +352,7 @@ export const FileUploadFieldInput = forwardRef<
               }}
               onDrop={handleDrop}
               className={cn(
-                "group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-xl border ring-0 transition-[border-color,background-color] duration-200 outline-none focus:border-neutral-900 focus:ring-0",
+                "group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-xl border ring-0 transition-[border-color,background-color] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] outline-none focus:border-neutral-900 focus:ring-0",
                 dragging && !showError && "border-neutral-900 bg-neutral-50",
                 showError && "border-rose-300 bg-rose-50/40",
                 !dragging &&
@@ -375,25 +375,25 @@ export const FileUploadFieldInput = forwardRef<
 
               <span
                 aria-hidden
-                className="absolute top-3 left-3 size-5 border-t-2 border-l-2 border-neutral-300 transition-colors duration-200 group-hover:border-neutral-500"
+                className="absolute top-3 left-3 size-5 border-t-2 border-l-2 border-neutral-300 transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:border-neutral-500"
               />
               <span
                 aria-hidden
-                className="absolute top-3 right-3 size-5 border-t-2 border-r-2 border-neutral-300 transition-colors duration-200 group-hover:border-neutral-500"
+                className="absolute top-3 right-3 size-5 border-t-2 border-r-2 border-neutral-300 transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:border-neutral-500"
               />
               <span
                 aria-hidden
-                className="absolute bottom-3 left-3 size-5 border-b-2 border-l-2 border-neutral-300 transition-colors duration-200 group-hover:border-neutral-500"
+                className="absolute bottom-3 left-3 size-5 border-b-2 border-l-2 border-neutral-300 transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:border-neutral-500"
               />
               <span
                 aria-hidden
-                className="absolute right-3 bottom-3 size-5 border-r-2 border-b-2 border-neutral-300 transition-colors duration-200 group-hover:border-neutral-500"
+                className="absolute right-3 bottom-3 size-5 border-r-2 border-b-2 border-neutral-300 transition-colors duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:border-neutral-500"
               />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center">
                 <span
                   className={cn(
-                    "mb-3 flex size-12 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-600 transition-[border-color,transform] duration-200",
+                    "mb-3 flex size-12 items-center justify-center rounded-xl border border-neutral-200 bg-white text-neutral-600 transition-[border-color,color,scale] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-[border-color,color]",
                     dragging && "scale-105 border-neutral-900 text-neutral-900",
                     !dragging &&
                       "group-hover:border-neutral-400 group-hover:text-neutral-900",
@@ -429,7 +429,7 @@ export const FileUploadFieldInput = forwardRef<
                     event.stopPropagation();
                     openPicker();
                   }}
-                  className="inline-flex h-9 shrink-0 cursor-pointer items-center rounded-lg bg-neutral-900 px-4 text-sm font-medium text-white transition-opacity hover:opacity-90"
+                  className="inline-flex h-9 shrink-0 cursor-pointer items-center rounded-lg bg-neutral-900 px-4 text-sm font-medium text-white transition-[opacity,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:opacity-90 active:scale-[0.97] motion-reduce:transition-opacity"
                 >
                   {browseLabel}
                 </button>
@@ -461,7 +461,7 @@ export const FileUploadFieldInput = forwardRef<
                   type="button"
                   aria-label={`Remove ${primaryEntry.file.name}`}
                   onClick={() => removeFile(primaryEntry.id)}
-                  className="absolute top-2.5 right-2.5 flex size-8 cursor-pointer items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-600 transition-colors hover:border-neutral-300 hover:text-neutral-900"
+                  className="absolute top-2.5 right-2.5 flex size-8 cursor-pointer items-center justify-center rounded-full border border-neutral-200 bg-white text-neutral-600 transition-[color,border-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-neutral-300 hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-colors"
                 >
                   <X size={14} strokeWidth={2} aria-hidden />
                 </button>
@@ -529,7 +529,7 @@ export const FileUploadFieldInput = forwardRef<
                       type="button"
                       aria-label={`Remove ${entry.file.name}`}
                       onClick={() => removeFile(entry.id)}
-                      className="flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-neutral-200 bg-white text-neutral-500 transition-colors hover:border-neutral-300 hover:text-neutral-900"
+                      className="flex size-8 shrink-0 cursor-pointer items-center justify-center rounded-lg border border-neutral-200 bg-white text-neutral-500 transition-[color,border-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-neutral-300 hover:text-neutral-900 active:scale-[0.97] motion-reduce:transition-colors"
                     >
                       <X size={14} strokeWidth={2} aria-hidden />
                     </button>
@@ -542,7 +542,7 @@ export const FileUploadFieldInput = forwardRef<
               <button
                 type="button"
                 onClick={openPicker}
-                className="flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-neutral-200 bg-white text-sm font-medium text-neutral-700 transition-colors hover:border-neutral-400 hover:bg-neutral-50"
+                className="flex h-10 w-full cursor-pointer items-center justify-center gap-2 rounded-xl border border-dashed border-neutral-200 bg-white text-sm font-medium text-neutral-700 transition-[background-color,border-color,scale] ease-[cubic-bezier(0.23,1,0.32,1)] hover:border-neutral-400 hover:bg-neutral-50 active:scale-[0.98] motion-reduce:transition-colors"
               >
                 <Plus size={16} strokeWidth={2} aria-hidden />
                 Add another file

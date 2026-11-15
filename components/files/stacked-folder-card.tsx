@@ -14,7 +14,7 @@ type LayerIndex = 0 | 1 | 2;
 type StackPosition = "front" | "middle" | "back";
 
 const TRANSITION =
-  "transition-[top,left,width,height,transform,box-shadow] duration-400 ease-[cubic-bezier(0.22,1,0.36,1)]";
+  "transition-[top,left,width,height,rotate,box-shadow] duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:duration-100";
 
 const POSITION_LAYOUT: Record<StackPosition, string> = {
   front:

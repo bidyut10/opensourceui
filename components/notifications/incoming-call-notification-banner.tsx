@@ -74,7 +74,7 @@ export const IncomingCallNotificationBanner = forwardRef<
           className={cn(
             "cursor-pointer rounded-xl bg-[#f2f2f7] px-4 py-2 text-xs font-medium text-neutral-700",
             "opacity-100 starting:opacity-0",
-            "transition-opacity duration-280 ease-out hover:bg-[#e8e8ed]",
+            "transition-[opacity,background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-[#e8e8ed] active:scale-[0.97] motion-reduce:transition-[opacity,background-color] motion-reduce:active:scale-100",
             className,
           )}
         >
@@ -92,9 +92,9 @@ export const IncomingCallNotificationBanner = forwardRef<
           "block w-80 rounded-[1.25rem] border border-white/70 bg-white/90 p-3.5 font-sans backdrop-blur-xl",
           "shadow-[0_8px_32px_-4px_rgba(0,0,0,0.10)]",
           "translate-y-0 opacity-100 starting:-translate-y-2.5 starting:opacity-0",
-          "transition-all duration-340 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]",
-          "data-[phase=closing]:-translate-y-2 data-[phase=closing]:opacity-0",
-          "data-[phase=closing]:duration-260 data-[phase=closing]:ease-[cubic-bezier(0.4,0,0.6,1)]",
+          "transition-[translate,opacity] duration-340 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-opacity",
+          "data-[phase=closing]:-translate-y-2 data-[phase=closing]:opacity-0 motion-reduce:data-[phase=closing]:translate-y-0",
+          "data-[phase=closing]:duration-260",
           className,
         )}
         {...props}
@@ -122,7 +122,7 @@ export const IncomingCallNotificationBanner = forwardRef<
           <button
             type="button"
             onClick={handleDismiss}
-            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full bg-red-500 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-red-600"
+            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full bg-red-500 py-2 text-[13px] font-semibold text-white transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-red-600 active:scale-[0.97] motion-reduce:transition-colors motion-reduce:active:scale-100"
           >
             <PhoneOff size={14} strokeWidth={2} aria-hidden />
             Decline
@@ -130,7 +130,7 @@ export const IncomingCallNotificationBanner = forwardRef<
           <button
             type="button"
             onClick={onAccept}
-            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full bg-emerald-500 py-2 text-[13px] font-semibold text-white transition-colors hover:bg-emerald-600"
+            className="flex flex-1 cursor-pointer items-center justify-center gap-1.5 rounded-full bg-emerald-500 py-2 text-[13px] font-semibold text-white transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-emerald-600 active:scale-[0.97] motion-reduce:transition-colors motion-reduce:active:scale-100"
           >
             <Phone size={14} strokeWidth={2} aria-hidden />
             Accept

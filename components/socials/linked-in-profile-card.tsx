@@ -123,7 +123,7 @@ export const LinkedInProfileCard = forwardRef<
                 type="button"
                 aria-label={`Connect with ${name}`}
                 onClick={onConnect}
-                className="flex-1 cursor-pointer rounded-full bg-neutral-800 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-black"
+                className="flex-1 cursor-pointer rounded-full bg-neutral-800 py-1.5 text-xs font-semibold text-white transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-black active:scale-[0.97] motion-reduce:transition-[background-color]"
               >
                 {connectLabel}
               </button>
@@ -134,7 +134,7 @@ export const LinkedInProfileCard = forwardRef<
                 type="button"
                 aria-label={`Message ${name}`}
                 onClick={onMessage}
-                className="flex-1 cursor-pointer rounded-full border border-neutral-200 py-1.5 text-xs font-medium text-neutral-600 transition-colors hover:bg-neutral-50"
+                className="flex-1 cursor-pointer rounded-full border border-neutral-200 py-1.5 text-xs font-medium text-neutral-600 transition-[background-color,scale] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] hover:bg-neutral-50 active:scale-[0.97] motion-reduce:transition-[background-color]"
               >
                 {messageLabel}
               </button>

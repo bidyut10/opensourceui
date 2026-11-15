@@ -136,10 +136,10 @@ export const SpotlightBar = forwardRef<HTMLFormElement, SpotlightBarProps>(
         <ul
           role="listbox"
           className={cn(
-            "ease-smooth absolute top-[calc(100%+0.5rem)] left-0 z-10 w-full origin-top overflow-hidden rounded-2xl border border-neutral-50 bg-white/90 p-2 shadow-xl shadow-black/10 backdrop-blur-md transition-[opacity,transform] duration-200",
+            "absolute top-[calc(100%+0.5rem)] left-0 z-10 w-full origin-top overflow-hidden rounded-2xl border border-neutral-50 bg-white/90 p-2 shadow-xl shadow-black/10 backdrop-blur-md transition-opacity ease-[cubic-bezier(0.22,1,0.36,1)]",
             open && filtered.length > 0
-              ? "pointer-events-auto scale-100 opacity-100"
-              : "pointer-events-none scale-95 opacity-0",
+              ? "pointer-events-auto scale-100 opacity-100 duration-200"
+              : "pointer-events-none scale-95 opacity-0 duration-150",
           )}
         >
           {filtered.map((item, index) => (
@@ -155,7 +155,7 @@ export const SpotlightBar = forwardRef<HTMLFormElement, SpotlightBarProps>(
                   setOpen(false);
                 }}
                 className={cn(
-                  "ease-smooth flex w-full items-center justify-between gap-3 rounded-lg px-2.5 py-2.5 text-left transition-colors duration-150",
+                  "flex w-full items-center justify-between gap-3 rounded-lg px-2.5 py-2.5 text-left",
                   index === activeIndex
                     ? "bg-neutral-100 text-neutral-900"
                     : "text-neutral-700 hover:bg-neutral-50",

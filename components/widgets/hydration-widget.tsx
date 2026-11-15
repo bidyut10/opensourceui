@@ -48,7 +48,7 @@ export const HydrationWidget = forwardRef<
           onClick?.(event);
         }}
         className={cn(
-          "flex h-60 w-36 cursor-pointer flex-col items-center rounded-[2rem] border border-neutral-200/80 bg-white px-5 pt-5 pb-6 font-sans shadow-lg shadow-black/5 select-none",
+          "flex h-60 w-36 cursor-pointer flex-col items-center rounded-[2rem] border border-neutral-200/80 bg-white px-5 pt-5 pb-6 font-sans shadow-lg shadow-black/5 transition-transform ease-[cubic-bezier(0.23,1,0.32,1)] select-none active:scale-[0.98]",
           className,
         )}
         {...props}
@@ -97,7 +97,7 @@ export const HydrationWidget = forwardRef<
               height={94 * fill}
               fill="#7DD3FC"
               clipPath={`url(#${clipId})`}
-              className="transition-all duration-300 ease-out"
+              className="transition-[y,height] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]"
             />
           </svg>
         </div>

@@ -111,7 +111,7 @@ export const MusicPlayerCard = forwardRef<HTMLDivElement, MusicPlayerCardProps>(
             <button
               type="button"
               aria-label="Previous track"
-              className="cursor-pointer text-lg text-neutral-500 transition-colors hover:text-white"
+              className="cursor-pointer text-lg text-neutral-500 transition-[color,scale] duration-150 hover:text-white active:scale-[0.95]"
             >
               <SkipBack size={14} />
             </button>
@@ -120,7 +120,7 @@ export const MusicPlayerCard = forwardRef<HTMLDivElement, MusicPlayerCardProps>(
               type="button"
               aria-label={playing ? "Pause" : "Play"}
               onClick={() => setPlaying((prev) => !prev)}
-              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white transition-transform hover:scale-105"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white transition-transform ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 active:scale-[0.97] hover:active:scale-100"
             >
               {playing ? (
                 <Pause size={14} fill="black" />
@@ -132,7 +132,7 @@ export const MusicPlayerCard = forwardRef<HTMLDivElement, MusicPlayerCardProps>(
             <button
               type="button"
               aria-label="Next track"
-              className="cursor-pointer text-lg text-neutral-500 transition-colors hover:text-white"
+              className="cursor-pointer text-lg text-neutral-500 transition-[color,scale] duration-150 hover:text-white active:scale-[0.95]"
             >
               <SkipForward size={14} />
             </button>

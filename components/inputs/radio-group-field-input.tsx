@@ -180,10 +180,10 @@ export const RadioGroupFieldInput = forwardRef<
                 >
                   <span
                     className={cn(
-                      "size-2 rounded-full transition-transform duration-150",
+                      "size-2 rounded-full transition-[scale,opacity,background-color] duration-150 ease-[cubic-bezier(0.23,1,0.32,1)] motion-reduce:transition-[opacity,background-color]",
                       isSelected && !error && "scale-100 bg-neutral-900",
                       isSelected && error && "scale-100 bg-rose-500",
-                      !isSelected && "scale-0 bg-transparent",
+                      !isSelected && "scale-90 bg-transparent opacity-0",
                     )}
                   />
                 </span>

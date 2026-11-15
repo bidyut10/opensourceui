@@ -65,7 +65,7 @@ export const BookmarkSaveButton = forwardRef<
           strokeWidth={2}
           aria-hidden
           className={cn(
-            "shrink-0 transition-[fill,color,transform,filter] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] motion-reduce:transition-none",
+            "shrink-0 transition-[fill,color,scale,filter] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)] motion-reduce:transition-none",
             "filter-[drop-shadow(0_1px_1px_rgba(0,0,0,0.22))_drop-shadow(0_2px_3px_rgba(0,0,0,0.12))]",
             saved
               ? "scale-110 fill-amber-500 text-amber-500 filter-[drop-shadow(0_1px_1px_rgba(245,158,11,0.35))_drop-shadow(0_2px_4px_rgba(245,158,11,0.2))]"
