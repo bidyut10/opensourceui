@@ -121,6 +121,7 @@ export const HoldToDeleteButton = forwardRef<
         onPointerCancel={cancel}
         onKeyDown={handleKeyDown}
         onKeyUp={handleKeyUp}
+        onBlur={cancel}
         onContextMenu={(event) => event.preventDefault()}
         disabled={done}
         className={cn(
